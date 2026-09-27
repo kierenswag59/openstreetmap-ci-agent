@@ -9,8 +9,8 @@ class ModerationZonesController < ApplicationController
   authorize_resource
 
   before_action :check_database_readable
-  before_action :check_database_writable, :except => [:index]
-  before_action :set_moderation_zone, :only => [:edit, :update]
+  before_action :check_database_writable, except: [:index]
+  before_action :set_moderation_zone, only: [:edit, :update]
 
   def index
     @moderation_zones = ModerationZone.all
@@ -20,16 +20,34 @@ class ModerationZonesController < ApplicationController
     @moderation_zone = ModerationZone.new
   end
 
-  def edit; end
+  def edit
+    @can_update = can?(:update, @moderation_zone)
+    if @can_update
+      @can_edit_name = true
+      @can_edit_reason = true
+      @can_edit_zone = true
+      @can_edit_period = true
+
+      if @moderation_zone.active? && current_user != @moderation_zone.creator && current_user != @moderation_zone.revoker
+        @can_edit_name = false
+        @can_edit_reason = false
+        @can_edit_zone = false
+      end
+
+      if @moderation_zone.inactive?
+        @can_edit_period = false
+      end
+    end
+  end
 
   def create
     @moderation_zone = ModerationZone.new(moderation_zone_params)
     @moderation_zone.creator = current_user
 
     if @moderation_zone.save
-      redirect_to moderation_zones_url, :notice => t(".success")
+      redirect_to moderation_zones_url, notice: t(".success")
     else
-      render :new, :status => :unprocessable_content
+      render :new, status: :unprocessable_content
     end
   end
 
@@ -46,9 +64,9 @@ class ModerationZonesController < ApplicationController
       flash[:error] = t(".no_reactivation")
       redirect_to moderation_zones_url
     elsif @moderation_zone.update(moderation_zone_params)
-      redirect_to moderation_zones_url, :notice => t(".success"), :status => :see_other
+      redirect_to moderation_zones_url, notice: t(".success"), status: :see_other
     else
-      render :edit, :status => :unprocessable_content
+      render :edit, status: :unprocessable_content
     end
   end
 
@@ -59,7 +77,7 @@ class ModerationZonesController < ApplicationController
   end
 
   def moderation_zone_params
-    params.expect(:moderation_zone => [:name, :reason, :zone, :period]).tap do |safe_params|
+    params.expect(moderation_zone: [:name, :reason, :zone, :period]).tap do |safe_params|
       safe_params[:ends_at] = safe_params.delete("period").to_i.hours.from_now
     end
   end
