@@ -5,3 +5,4 @@
 /^SET idle_in_transaction_session_timeout /d
 /^\\restrict /d
 /^\\unrestrict /d
+s/ CONSTRAINT [a-z][a-z_]* NOT NULL,/ NOT NULL,/
