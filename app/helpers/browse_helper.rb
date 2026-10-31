@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module BrowseHelper
+  # Element names are formatted by printable_element_name.
   def element_icon(type, object)
     selected_icon_data = { :filename => "#{type}.svg", :priority => 1 }
 
