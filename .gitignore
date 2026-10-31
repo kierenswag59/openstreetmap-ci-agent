@@ -25,3 +25,6 @@ tmp
 
 # docker-compose database directory
 docker-db-data
+
+# gh-aw local run logs
+.github/aw/logs/
