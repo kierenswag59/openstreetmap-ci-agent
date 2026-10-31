@@ -84,6 +84,8 @@ Quote **at most 15** lines **verbatim** from `context.md` or a `block.txt` file,
 fenced `text` block. Never paraphrase inside the block, never invent lines. Prefer
 the tool's own finding lines (file:line, rule/cop name, test name, exception) over
 "Process completed with exit code 1".
+Take counts (failures, offences, problems) only from the tool's summary line, never by
+counting the quoted lines: the quote is capped and usually shows a subset.
 
 ## 5. Write the comment (template; keep every heading)
 

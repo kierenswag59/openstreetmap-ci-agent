@@ -1,0 +1,6 @@
+{
+  "type": "noop",
+  "item_number": null,
+  "label": null,
+  "body": "F7: the only failure is 'This workflow run required approval but was not approved before it expired.' in job 'Prepare replay'. No real work ran, so there is nothing to triage and no comment is warranted. triage-skill: ci-failure-triage v1"
+}

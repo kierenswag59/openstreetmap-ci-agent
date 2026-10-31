@@ -105,6 +105,17 @@ class ExtractFailureTest(unittest.TestCase):
         b = a.replace("2026-10-29T16:58", "2027-01-01T00:00")
         self.assertEqual(extract_failure.extract(a)["signature"], extract_failure.extract(b)["signature"])
 
+    def test_summary_line_kept_past_cap(self):
+        block = ["##[group]Run bundle exec rails test:all"]
+        for i in range(20):
+            block += ["Failure:", f"BrowseHelperTest#test_case_{i:02d} [test/helpers/b_test.rb:{i}]:",
+                      f"bin/rails test test/helpers/b_test.rb:{i}"]
+        block += ["2889 runs, 1230510 assertions, 20 failures, 0 errors, 0 skips",
+                  "##[error]Process completed with exit code 1."]
+        r = extract_failure.extract("\n".join(block))
+        self.assertEqual(len(r["decisive_lines"]), 15)
+        self.assertIn("20 failures", r["decisive_lines"][-1])
+
     def test_cli_help(self):
         with self.assertRaises(SystemExit) as cm, redirect_stdout(io.StringIO()):
             extract_failure.main(["--help"])

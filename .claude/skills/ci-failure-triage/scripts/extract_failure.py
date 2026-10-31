@@ -38,6 +38,7 @@ FAMILIES = [
     ("generic", re.compile(r"^##\[error\](?!Process completed with exit code)|\b(error|failed|fatal)\b", re.I)),
 ]
 
+SUMMARY_RE = re.compile(r"^\d+ runs, \d+ assertions|^\d+ files? inspected|^\u2716 \d+ problems?")
 NOISE_RE = re.compile(r"^(##\[(group|endgroup)\]|\[command\]|shell: |env:|  ruby: )")
 
 
@@ -99,7 +100,13 @@ def decisive_lines(block):
         if l not in seen:
             seen.add(l)
             out.append(l)
-    return kind or "unknown", out[:MAX_LINES]
+    # Keep the tool's summary line (test/offence/problem counts) even when the
+    # cap would drop it: without it a reader cannot tell 7 failures from 20.
+    summary = [l for l in out if SUMMARY_RE.search(l)]
+    capped = out[:MAX_LINES]
+    if summary and summary[-1] not in capped:
+        capped = capped[:MAX_LINES - 1] + [summary[-1]]
+    return kind or "unknown", capped
 
 
 def normalise_for_signature(line):
