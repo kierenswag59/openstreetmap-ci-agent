@@ -28,6 +28,12 @@ $(function () {
 
   const baseMap = new OSM.MapLibre.SecondaryMap();
 
+  const expiryTypeInputs = document.querySelectorAll("input[name='moderation_zone[expiry_type]']");
+  const expiryPanels = document.querySelectorAll("[data-expiry-panel]");
+
+  expiryTypeInputs.forEach(input => input.addEventListener("change", updateExpiryFields));
+  updateExpiryFields();
+
   baseMap.once("style.load", () => {
     try {
       const draw = createTerraDrawInstance(baseMap);
@@ -40,6 +46,20 @@ $(function () {
       throw e;
     }
   });
+
+  function updateExpiryFields() {
+    const selectedType = Array.from(expiryTypeInputs).find(input => input.checked)?.value;
+    if (!selectedType) {
+      return;
+    }
+    expiryPanels.forEach(panel => {
+      const isSelected = panel.dataset.expiryPanel === selectedType;
+      panel.hidden = !isSelected;
+      panel.querySelectorAll("input, select").forEach(input => {
+        input.disabled = !isSelected;
+      });
+    });
+  }
 
   function createTerraDrawInstance(map) {
     return new terraDraw.TerraDraw({
