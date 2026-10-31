@@ -1,0 +1,64 @@
+# Replays a stored historical CI failure so the analyst triggers on a realistic
+# failed run (evaluation only; see evals/golden/README.md).
+#
+# * pull_request: an evaluation PR (head eval/CASE-XX or adv/ADV-XX) replays the
+#   case named by its head branch. The PR carries the original diff and metadata.
+# * workflow_dispatch: replays a case on the branch it is dispatched on, used for
+#   default-branch "master state" seeds and for the non-PR control case CASE-04.
+#
+# Each original failed job becomes a job with the same name; each prints the
+# original raw log (timestamps stripped, so ##[group]/##[error] lines render again)
+# under a step with the original step name, then exits with the original status.
+name: Replay CI failure
+run-name: "Replay ${{ inputs.case_id || github.head_ref }}"
+
+on:
+  pull_request:
+    branches: ["eval-base/**", "adv-base/**"]
+  workflow_dispatch:
+    inputs:
+      case_id:
+        description: "Case directory name, e.g. CASE-01 or SEED-M1"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    name: Prepare replay
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: evals
+      - id: plan
+        env:
+          CASE_REF: ${{ inputs.case_id || github.head_ref }}
+        run: python3 evals/replay_plan.py "$CASE_REF" >> "$GITHUB_OUTPUT"
+
+  replay:
+    needs: plan
+    if: needs.plan.outputs.matrix != '[]'
+    name: ${{ matrix.job.name }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        job: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: evals
+      - name: ${{ matrix.job.step }}
+        env:
+          LOG: ${{ matrix.job.log }}
+          CODE: ${{ matrix.job.exit_code }}
+        run: |
+          sed -E 's/^\xEF\xBB\xBF?[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9:.]+Z ?//' "$LOG"
+          exit "$CODE"

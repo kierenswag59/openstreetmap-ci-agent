@@ -1,0 +1,9 @@
+diff --git a/script/normalise-structure b/script/normalise-structure
+index ace59e20c88..2b866b13fb6 100644
+--- a/script/normalise-structure
++++ b/script/normalise-structure
+@@ -5,3 +5,4 @@
+ /^SET idle_in_transaction_session_timeout /d
+ /^\\restrict /d
+ /^\\unrestrict /d
++s/ CONSTRAINT [a-z][a-z_]* NOT NULL,/ NOT NULL,/
