@@ -6,7 +6,7 @@ module TitleHelper
   end
 
   def set_title(title = nil)
-    project_title = t("layouts.project_name.title")
+    project_title =  t("layouts.project_name.title")
 
     if title
       @title = TitleHelper.coder.decode(title.gsub("<bdi>", "\u202a").gsub("</bdi>", "\u202c"))
