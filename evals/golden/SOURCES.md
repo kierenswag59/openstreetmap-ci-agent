@@ -5,7 +5,7 @@ the public REST API. Nothing was posted to upstream.
 
 ## Evidence dump
 
-* `Assignment 3.md` (repository root): ASSIGNMENT, PROMPT, evidence sections A1-A5, B1-B21,
+* `Assignment 3.md` (kept by the student next to the repository, not committed): ASSIGNMENT, PROMPT, evidence sections A1-A5, B1-B21,
   C1-C42, CASE-01..18, E1-E4, G0-G4 (collected 30 Oct 2026 by the student).
 
 ## gh-aw documentation (evidence section C, plus the CLI)

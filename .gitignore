@@ -28,3 +28,4 @@ docker-db-data
 
 # gh-aw local run logs
 .github/aw/logs/
+__pycache__/

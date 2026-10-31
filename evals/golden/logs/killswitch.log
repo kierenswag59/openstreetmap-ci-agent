@@ -1,0 +1,11 @@
+2026-10-31T12:49:48Z set CI_ANALYST_ENABLED=false
+2026-10-31T12:49:50Z dispatched analyst run_id=41200800249 (CASE-08 replay)
+2026-10-31T12:50:14Z K1 run 41202831665: skipped | pre_activation:skipped agent:skipped conclusion:skipped safe_outputs:skipped detection:skipped activation:skipped
+2026-10-31T12:50:15Z set CI_ANALYST_ENABLED=true
+2026-10-31T12:50:18Z dispatched analyst again
+2026-10-31T12:50:27Z K2 run 41202866774 in_progress
+2026-10-31T12:50:28Z cancel requested for 41202866774
+2026-10-31T12:51:01Z K2 result:  | pre_activation:cancelled detection: activation:cancelled agent:cancelled
+2026-10-31T12:51:02Z workflow disabled
+could not create workflow dispatch event: HTTP 422: Cannot trigger a 'workflow_dispatch' on a disabled workflow (https://api.github.com/repos/kierenswag59/openstreetmap-ci-agent/actions/workflows/402710248/dispatches)
+2026-10-31T12:51:04Z workflow re-enabled

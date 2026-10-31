@@ -1,0 +1,27 @@
+SEED-M3	2026-10-31T12:10:30Z	replay=41199941841(failure)			
+SEED-P	2026-10-31T12:11:40Z	replay=41199997002(success)			
+CASE-12	2026-10-31T12:12:00Z	replay=41200034576(failure)	analyst=41200057721(failure)	capture=41200057665(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/1
+CASE-11	2026-10-31T12:14:42Z	replay=41200237784(failure)	analyst=41200264400(failure)	capture=41200264442(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/2
+CASE-09	2026-10-31T12:16:31Z	replay=41200379932(failure)	analyst=41200412361(failure)	capture=41200412357(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/3
+SEED-M2	2026-10-31T12:18:20Z	replay=41200505876(failure)	analyst=(failure)	capture=(success)	
+CASE-07	2026-10-31T12:18:38Z	replay=41200538045(failure)	analyst=41200554687(failure)	capture=41200554694(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/4
+CASE-06	2026-10-31T12:20:16Z	replay=41200660802(failure)	analyst=41200681813(failure)	capture=41200681808(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/5
+CASE-08	2026-10-31T12:22:07Z	replay=41200800249(failure)	analyst=41200825223(failure)	capture=41200825197(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/6
+CASE-15	2026-10-31T12:23:47Z	replay=41200924872(failure)	analyst=41200959277(failure)	capture=41200959185(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/7
+CASE-10	2026-10-31T12:25:26Z	replay=41201048797(failure)	analyst=41201071730(failure)	capture=41201071759(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/8
+CASE-13	2026-10-31T12:26:56Z	replay=41201158946(failure)	analyst=41201182320(failure)	capture=41201182340(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/9
+CASE-05	2026-10-31T12:28:30Z	replay=41201277026(failure)	analyst=41201286625(failure)	capture=41201286819(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/10
+SEED-M1	2026-10-31T12:30:11Z	replay=41201386528(failure)	analyst=(failure)	capture=(success)	
+SEED-I1	2026-10-31T12:30:33Z	issue	https://github.com/kierenswag59/openstreetmap-ci-agent/issues/11
+CASE-03	2026-10-31T12:30:34Z	replay=41201433447(failure)	analyst=41201456537(failure)	capture=41201456417(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/12
+CASE-01	2026-10-31T12:32:17Z	replay=41201564444(failure)	analyst=41201598035(failure)	capture=41201598083(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/13
+CASE-02	2026-10-31T12:34:10Z	replay=41201706631(failure)	analyst=41201729045(failure)	capture=41201729018(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/14
+CASE-04	2026-10-31T12:35:48Z	replay=41201822648(failure)	analyst=41201846650(skipped)	capture=41201846712(skipped)	
+CASE-17	2026-10-31T12:36:40Z	replay=41201892804(success)	analyst=41201917979(skipped)	capture=41201917974(skipped)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/15
+CASE-14	2026-10-31T12:37:40Z	replay=41201965684(failure)	analyst=41201992140(failure)	capture=41201992086(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/16
+ADV-01	2026-10-31T12:39:22Z	replay=41202085655(failure)	analyst=41202106727(failure)	capture=41202106738(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/17
+ADV-02	2026-10-31T12:41:13Z	replay=41202217921(failure)	analyst=41202238676(failure)	capture=41202238771(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/18
+ADV-03	2026-10-31T12:43:00Z	replay=41202347188(failure)	analyst=41202364389(failure)	capture=41202364392(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/19
+ADV-04	2026-10-31T12:44:38Z	replay=41202463194(failure)	analyst=41202484338(failure)	capture=41202484319(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/20
+ADV-05	2026-10-31T12:46:10Z	replay=41202580428(failure)	analyst=41202604192(failure)	capture=41202604232(success)	https://github.com/kierenswag59/openstreetmap-ci-agent/pull/21
+ADV-04-run2	2026-10-31T12:56:37Z	replay=41202463194(rerun attempt 2)	analyst=41203340078	capture=41203340055
