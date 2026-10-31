@@ -1,0 +1,201 @@
+[fixture note: passing job, last 200 lines of the original log kept]
+2026-08-31T12:26:46.7082471Z [36;1m  asset_path="download/${COVERAGE_REPORTER_VERSION}"[0m
+2026-08-31T12:26:46.7082832Z [36;1m  version_message="$COVERAGE_REPORTER_VERSION"[0m
+2026-08-31T12:26:46.7083119Z [36;1mfi[0m
+2026-08-31T12:26:46.7083320Z [36;1m[0m
+2026-08-31T12:26:46.7083536Z [36;1m# Function to compare version numbers[0m
+2026-08-31T12:26:46.7083822Z [36;1mversion_ge() {[0m
+2026-08-31T12:26:46.7084073Z [36;1m  # Compare two version numbers[0m
+2026-08-31T12:26:46.7084390Z [36;1m  [ "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1" ][0m
+2026-08-31T12:26:46.7084829Z [36;1m}[0m
+2026-08-31T12:26:46.7085222Z [36;1m[0m
+2026-08-31T12:26:46.7085471Z [36;1m# Determine the platform-specific filename:[0m
+2026-08-31T12:26:46.7085958Z [36;1m# This logic is necessary due to the introduction of multiple platform support starting from v0.6.15.[0m
+2026-08-31T12:26:46.7086545Z [36;1m# It selects the correct filename based on the specified platform and version, while ensuring[0m
+2026-08-31T12:26:46.7087141Z [36;1m# backward compatibility with earlier versions that only supported a generic Linux binary for x86_64.[0m
+2026-08-31T12:26:46.7087752Z [36;1mif [ -z "$COVERAGE_REPORTER_PLATFORM" ] || [ "$COVERAGE_REPORTER_PLATFORM" == "auto-detect" ]; then[0m
+2026-08-31T12:26:46.7088207Z [36;1m  COVERAGE_REPORTER_PLATFORM="$(uname -m)"[0m
+2026-08-31T12:26:46.7088591Z [36;1mfi[0m
+2026-08-31T12:26:46.7088834Z [36;1mcase "$COVERAGE_REPORTER_PLATFORM" in[0m
+2026-08-31T12:26:46.7089111Z [36;1m  x86_64|"")[0m
+2026-08-31T12:26:46.7089414Z [36;1m    if version_ge "$COVERAGE_REPORTER_VERSION" "v0.6.15"; then[0m
+2026-08-31T12:26:46.7089799Z [36;1m      platform_filename="coveralls-linux-x86_64.tar.gz"[0m
+2026-08-31T12:26:46.7090107Z [36;1m    else[0m
+2026-08-31T12:26:46.7090374Z [36;1m      platform_filename="coveralls-linux.tar.gz"[0m
+2026-08-31T12:26:46.7090664Z [36;1m    fi[0m
+2026-08-31T12:26:46.7090860Z [36;1m    ;;[0m
+2026-08-31T12:26:46.7091069Z [36;1m  aarch64|arm64)[0m
+2026-08-31T12:26:46.7091365Z [36;1m    if version_ge "$COVERAGE_REPORTER_VERSION" "v0.6.15"; then[0m
+2026-08-31T12:26:46.7091756Z [36;1m      platform_filename="coveralls-linux-aarch64.tar.gz"[0m
+2026-08-31T12:26:46.7092061Z [36;1m    else[0m
+2026-08-31T12:26:46.7092497Z [36;1m      echo "Warning: The aarch64/arm64 platform is only supported from version v0.6.15 onwards. Proceeding with v0.6.15." >&2[0m
+2026-08-31T12:26:46.7093001Z [36;1m      asset_path="download/v0.6.15"[0m
+2026-08-31T12:26:46.7093335Z [36;1m      platform_filename="coveralls-linux-aarch64.tar.gz"[0m
+2026-08-31T12:26:46.7093649Z [36;1m    fi[0m
+2026-08-31T12:26:46.7093846Z [36;1m    ;;[0m
+2026-08-31T12:26:46.7094036Z [36;1m  *)[0m
+2026-08-31T12:26:46.7094506Z [36;1m    echo "Warning: Unsupported platform: $COVERAGE_REPORTER_PLATFORM. The default x86_64 version ($version_message) will be used." >&2[0m
+2026-08-31T12:26:46.7095219Z [36;1m    if version_ge "$COVERAGE_REPORTER_VERSION" "v0.6.15"; then[0m
+2026-08-31T12:26:46.7095606Z [36;1m      platform_filename="coveralls-linux-x86_64.tar.gz"[0m
+2026-08-31T12:26:46.7095907Z [36;1m    else[0m
+2026-08-31T12:26:46.7096169Z [36;1m      platform_filename="coveralls-linux.tar.gz"[0m
+2026-08-31T12:26:46.7096465Z [36;1m    fi[0m
+2026-08-31T12:26:46.7096663Z [36;1m    ;;[0m
+2026-08-31T12:26:46.7096867Z [36;1mesac[0m
+2026-08-31T12:26:46.7097070Z [36;1m[0m
+2026-08-31T12:26:46.7097272Z [36;1m# Checksum verification:[0m
+2026-08-31T12:26:46.7097680Z [36;1m# The following code was chosen to replace the more simple `sha256sum -c` because it provides[0m
+2026-08-31T12:26:46.7098296Z [36;1m# clearer debugging information around our new matrix of supported coverage-reporter versions and platforms.[0m
+2026-08-31T12:26:46.7099009Z [36;1m# We may drop back to `${platform_filename}" coveralls-checksums.txt | sha256sum -c` when we're more confidently handling these.[0m
+2026-08-31T12:26:46.7099494Z [36;1m[0m
+2026-08-31T12:26:46.7099733Z [36;1m# Try to download the binary and checksum file[0m
+2026-08-31T12:26:46.7100267Z [36;1mif ! curl -sLO "https://github.com/coverallsapp/coverage-reporter/releases/${asset_path}/${platform_filename}" ||[0m
+2026-08-31T12:26:46.7100996Z [36;1m  ! curl -sLO "https://github.com/coverallsapp/coverage-reporter/releases/${asset_path}/coveralls-checksums.txt"; then[0m
+2026-08-31T12:26:46.7101563Z [36;1m  echo "Failed to download coveralls binary or checksum (Linux)."[0m
+2026-08-31T12:26:46.7101913Z [36;1m  [ "true" == "false" ] && exit 0[0m
+2026-08-31T12:26:46.7102179Z [36;1m  exit 1[0m
+2026-08-31T12:26:46.7102452Z [36;1mfi[0m
+2026-08-31T12:26:46.7102645Z [36;1m[0m
+2026-08-31T12:26:46.7103136Z [36;1m# DEBUG: Print contents of checksum file for debugging[0m
+2026-08-31T12:26:46.7103579Z [36;1mecho "Contents of coveralls-checksums.txt:"[0m
+2026-08-31T12:26:46.7103900Z [36;1mcat coveralls-checksums.txt[0m
+2026-08-31T12:26:46.7104154Z [36;1m[0m
+2026-08-31T12:26:46.7104357Z [36;1m# Extract expected checksum[0m
+2026-08-31T12:26:46.7104781Z [36;1mexpected_checksum=$(grep "${platform_filename}" coveralls-checksums.txt | awk '{print $1}')[0m
+2026-08-31T12:26:46.7105321Z [36;1mif [ -z "$expected_checksum" ]; then[0m
+2026-08-31T12:26:46.7105678Z [36;1m  echo "Failed to extract checksum for ${platform_filename}"[0m
+2026-08-31T12:26:46.7106013Z [36;1m  [ "true" == "false" ] && exit 0[0m
+2026-08-31T12:26:46.7106347Z [36;1m  exit 1[0m
+2026-08-31T12:26:46.7106560Z [36;1mfi[0m
+2026-08-31T12:26:46.7106752Z [36;1m[0m
+2026-08-31T12:26:46.7106959Z [36;1m# Compute actual checksum[0m
+2026-08-31T12:26:46.7107311Z [36;1mactual_checksum=$(sha256sum "${platform_filename}" | awk '{print $1}')[0m
+2026-08-31T12:26:46.7107772Z [36;1m[0m
+2026-08-31T12:26:46.7108069Z [36;1m# Perform verification by comparing expected and actual checksums[0m
+2026-08-31T12:26:46.7108475Z [36;1mif [ "$expected_checksum" != "$actual_checksum" ]; then[0m
+2026-08-31T12:26:46.7108833Z [36;1m  echo "Checksum verification failed (Linux)."[0m
+2026-08-31T12:26:46.7109150Z [36;1m  echo "Expected: $expected_checksum"[0m
+2026-08-31T12:26:46.7109438Z [36;1m  echo "Actual: $actual_checksum"[0m
+2026-08-31T12:26:46.7109715Z [36;1m  [ "true" == "false" ] && exit 0[0m
+2026-08-31T12:26:46.7109966Z [36;1m  exit 1[0m
+2026-08-31T12:26:46.7110172Z [36;1mfi[0m
+2026-08-31T12:26:46.7110360Z [36;1m[0m
+2026-08-31T12:26:46.7110571Z [36;1mtar -xzf "${platform_filename}"[0m
+2026-08-31T12:26:46.7110834Z [36;1m[0m
+2026-08-31T12:26:46.7111033Z [36;1m# Check if the binary exists[0m
+2026-08-31T12:26:46.7111297Z [36;1mif [ ! -f ~/bin/coveralls ]; then[0m
+2026-08-31T12:26:46.7111639Z [36;1m  echo "Coveralls binary not found after extraction (Linux)."[0m
+2026-08-31T12:26:46.7111973Z [36;1m  [ "true" == "false" ] && exit 0[0m
+2026-08-31T12:26:46.7112227Z [36;1m  exit 1[0m
+2026-08-31T12:26:46.7112424Z [36;1mfi[0m
+2026-08-31T12:26:46.7112608Z [36;1m[0m
+2026-08-31T12:26:46.7112804Z [36;1m# Cleanup[0m
+2026-08-31T12:26:46.7113037Z [36;1mrm coveralls-checksums.txt[0m
+2026-08-31T12:26:46.7113300Z [36;1mecho ~/bin >> $GITHUB_PATH[0m
+2026-08-31T12:26:46.7137011Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-08-31T12:26:46.7137312Z env:
+2026-08-31T12:26:46.7137508Z   RAILS_ENV: test
+2026-08-31T12:26:46.7137729Z   OPENSTREETMAP_MEMCACHE_SERVERS: 127.0.0.1
+2026-08-31T12:26:46.7138003Z   COVERAGE_REPORTER_VERSION: latest
+2026-08-31T12:26:46.7138271Z   COVERAGE_REPORTER_PLATFORM: auto-detect
+2026-08-31T12:26:46.7138521Z ##[endgroup]
+2026-08-31T12:26:47.4534098Z Contents of coveralls-checksums.txt:
+2026-08-31T12:26:47.4543694Z 34fcaf347627307e505ec207acd617c3bfc6c3e2684b22e760be29eb339c36d5  coveralls-linux
+2026-08-31T12:26:47.4544412Z 947e529a54b0c254803947bc3896f8625e51ee81a0d407b2313c8a2513065450  coveralls-linux-aarch64
+2026-08-31T12:26:47.4545649Z 8a421baa5412a79a2de98625c360fd7b28c1032301263189e2077dbc2698b6e9  coveralls-linux-aarch64.tar.gz
+2026-08-31T12:26:47.4546716Z 34fcaf347627307e505ec207acd617c3bfc6c3e2684b22e760be29eb339c36d5  coveralls-linux-x86_64
+2026-08-31T12:26:47.4547775Z cd042b63bcb2c03fd0fd3372c040507331f5013a997828071e2ab7f9584fc7d6  coveralls-linux-x86_64.tar.gz
+2026-08-31T12:26:47.4548903Z cd042b63bcb2c03fd0fd3372c040507331f5013a997828071e2ab7f9584fc7d6  coveralls-linux.tar.gz
+2026-08-31T12:26:47.4549577Z e94b3a29a0ee48d15c94257a9383746afa1169ca461358255085ab23d4a9b390  coveralls-windows.exe
+2026-08-31T12:26:47.4550267Z a33b99888cf5a7ffa79dce30d8800330ea75e8660ef5a73d4a2201f4728a4638  coveralls-windows.zip
+2026-08-31T12:26:47.5308915Z ##[end-action id=__coverallsapp_github-action.__run_4;outcome=success;conclusion=success;duration_ms=825]
+2026-08-31T12:26:47.5311808Z ##[start-action display=Report coverage-reporter-platform exception for Windows;id=__coverallsapp_github-action.__run_5]
+2026-08-31T12:26:47.5318917Z ##[end-action id=__coverallsapp_github-action.__run_5;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-08-31T12:26:47.5321339Z ##[start-action display=Install coveralls reporter (Windows);id=__coverallsapp_github-action.__run_6]
+2026-08-31T12:26:47.5324629Z ##[end-action id=__coverallsapp_github-action.__run_6;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-08-31T12:26:47.5328011Z ##[start-action display=Done report (Unix);id=__coverallsapp_github-action.__run_7]
+2026-08-31T12:26:47.5333214Z ##[end-action id=__coverallsapp_github-action.__run_7;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-08-31T12:26:47.5336372Z ##[start-action display=Done report (Windows);id=__coverallsapp_github-action.__run_8]
+2026-08-31T12:26:47.5339722Z ##[end-action id=__coverallsapp_github-action.__run_8;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-08-31T12:26:47.5342543Z ##[start-action display=Coverage report (Unix);id=__coverallsapp_github-action.__run_9]
+2026-08-31T12:26:47.5363624Z ##[group]Run # Check if coveralls binary exists
+2026-08-31T12:26:47.5363992Z [36;1m# Check if coveralls binary exists[0m
+2026-08-31T12:26:47.5364340Z [36;1mif ! command -v coveralls &> /dev/null; then[0m
+2026-08-31T12:26:47.5364735Z [36;1m  echo "Coveralls binary not found. Skipping coverage report."[0m
+2026-08-31T12:26:47.5365272Z [36;1m  [ "true" == "false" ] && exit 0[0m
+2026-08-31T12:26:47.5365554Z [36;1m  exit 1[0m
+2026-08-31T12:26:47.5365768Z [36;1mfi[0m
+2026-08-31T12:26:47.5366009Z [36;1mcoveralls report       --format lcov  [0m
+2026-08-31T12:26:47.5388862Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-08-31T12:26:47.5389218Z env:
+2026-08-31T12:26:47.5389438Z   RAILS_ENV: test
+2026-08-31T12:26:47.5389693Z   OPENSTREETMAP_MEMCACHE_SERVERS: 127.0.0.1
+2026-08-31T12:26:47.5390012Z   COVERALLS_DEBUG: false
+2026-08-31T12:26:47.5390274Z   COVERALLS_CARRYFORWARD_FLAGS: 
+2026-08-31T12:26:47.5390545Z   COVERALLS_FLAG_NAME: ruby-4.0
+2026-08-31T12:26:47.5390822Z   COVERALLS_PARALLEL: true
+2026-08-31T12:26:47.5391113Z   COVERALLS_ENDPOINT: https://coveralls.io
+2026-08-31T12:26:47.5391411Z   COVERALLS_GIT_BRANCH: 
+2026-08-31T12:26:47.5391652Z   COVERALLS_GIT_COMMIT: 
+2026-08-31T12:26:47.5394442Z   COVERALLS_REPO_TOKEN: ***
+2026-08-31T12:26:47.5394708Z   COVERALLS_COMPARE_REF: 
+2026-08-31T12:26:47.5394952Z   COVERALLS_COMPARE_SHA: 
+2026-08-31T12:26:47.5395479Z   COVERALLS_SOURCE_HEADER: github-action
+2026-08-31T12:26:47.5395940Z ##[endgroup]
+2026-08-31T12:26:47.5453868Z  
+2026-08-31T12:26:47.5454476Z ⠀⠀⠀⠀⠀⠀⣿
+2026-08-31T12:26:47.5455328Z ⠀⠀⠀⠀⠀⣼⣿⣧⠀⠀⠀⠀⠀⠀⠀ ⣠⣶⣾⣿⡇⢀⣴⣾⣿⣷⣆ ⣿⣿⠀⣰⣿⡟⢸⣿⣿⣿⡇ ⣿⣿⣿⣷⣦⠀⠀⢠⣿⣿⣿⠀⠀⣿⣿⠁⠀⣼⣿⡇⠀⢀⣴⣾⣿⡷
+2026-08-31T12:26:47.5456184Z ⠶⣶⣶⣶⣾⣿⣿⣿⣷⣶⣶⣶⠶  ⣸⣿⡟ ⠀⢠⣿⣿⠃⠈⣿⣿⠀⣿⣿⢠⣿⡿⠀⣿⣿⣧⣤⠀⢸⣿⡇⣠⣿⡿⠀⢠⣿⡟⣿⣿⠀⢸⣿⡿⠀⠀⣿⣿⠃⠀⢸⣿⣧⣄
+2026-08-31T12:26:47.5456746Z ⠀⠀⠙⢻⣿⣿⣿⣿⣿⡟⠋⠁⠀⠀ ⣿⣿⡇⠀ ⢸⣿⣿⠀⣸⣿⡟⠀⣿⣿⣾⡿⠁ ⣿⣿⠛⠛⠀⣿⣿⢿⣿⣏⠀⢀⣿⣿⣁⣿⣿⠀⣾⣿⡇⠀⢸⣿⡿⠀⠀⡀⠙⣿⣿⡆
+2026-08-31T12:26:47.5457294Z ⠀⠀⢠⣿⣿⣿⠿⣿⣿⣿⡄⠀⠀⠀ ⠙⢿⣿⣿⠇⠈⠿⣿⣿⡿⠋⠀⠀⢿⣿⡿⠁⠀⢸⣿⣿⣿⡇⢸⣿⣿⠀⣿⣿⣄⣾⣿⠛⠛⣿⣿⢠⣿⣿⣿ ⣼⣿⣿⣿ ⣿⣿⡿⠋⠀
+2026-08-31T12:26:47.5457642Z ⠀⢀⣾⠟⠋⠀⠀⠀⠙⠻⣷⡀⠀⠀
+2026-08-31T12:26:47.5457869Z  
+2026-08-31T12:26:47.5458079Z   v0.6.22
+2026-08-31T12:26:47.5458209Z 
+2026-08-31T12:26:47.5458406Z ✏️ Forced coverage format: lcov
+2026-08-31T12:26:47.9499481Z 🔍 Detected coverage file: coverage/lcov.info
+2026-08-31T12:26:47.9569969Z ⭐️ Running in parallel mode. You must call the webhook after all jobs finish: `coveralls done --build-number 33391131716`
+2026-08-31T12:26:47.9634059Z   ·job_flag: ruby-4.0
+2026-08-31T12:26:47.9634732Z 🚀 Posting coverage data to https://coveralls.io/api/v1/jobs
+2026-08-31T12:26:49.5221412Z ---
+2026-08-31T12:26:49.5223232Z ✅ API Response: {"message":"Coverage for parallel build uploaded","url":"https://coveralls.io/builds/81462874"}
+2026-08-31T12:26:49.5223892Z - 💛, Coveralls
+2026-08-31T12:26:49.5243570Z ##[end-action id=__coverallsapp_github-action.__run_9;outcome=success;conclusion=success;duration_ms=1989]
+2026-08-31T12:26:49.5249885Z ##[start-action display=Coverage report (Windows);id=__coverallsapp_github-action.__run_10]
+2026-08-31T12:26:49.5257243Z ##[end-action id=__coverallsapp_github-action.__run_10;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-08-31T12:26:49.5335765Z Post job cleanup.
+2026-08-31T12:26:49.6362628Z Cache hit occurred on the primary key node-cache-Linux-x64-yarn-3921a54d557fc31ce83533d5a83e0a7b2bf472de816d851e37b8d984679d0f10, not saving cache.
+2026-08-31T12:26:49.6471574Z Post job cleanup.
+2026-08-31T12:26:49.7283767Z [command]/usr/bin/git version
+2026-08-31T12:26:49.7323573Z git version 2.55.0
+2026-08-31T12:26:49.7353240Z Temporarily overriding HOME='/home/runner/work/_temp/87268937-c772-4b2e-86e4-f92b9aa12fc4' before making global git config changes
+2026-08-31T12:26:49.7354476Z Adding repository directory to the temporary git global config as a safe directory
+2026-08-31T12:26:49.7358720Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openstreetmap-website/openstreetmap-website
+2026-08-31T12:26:49.7383229Z Removing SSH command configuration
+2026-08-31T12:26:49.7388834Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-08-31T12:26:49.7416805Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-08-31T12:26:49.7599249Z Removing HTTP extra header
+2026-08-31T12:26:49.7604594Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-08-31T12:26:49.7631202Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-08-31T12:26:49.7811809Z Removing includeIf entries pointing to credentials config files
+2026-08-31T12:26:49.7817060Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-08-31T12:26:49.7839439Z includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path
+2026-08-31T12:26:49.7840624Z includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path
+2026-08-31T12:26:49.7841431Z includeif.gitdir:/github/workspace/.git.path
+2026-08-31T12:26:49.7842049Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-08-31T12:26:49.7847499Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path
+2026-08-31T12:26:49.7866023Z /home/runner/work/_temp/git-credentials-a089a143-761c-42b5-ac2b-60a950e11db8.config
+2026-08-31T12:26:49.7874243Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-a089a143\-761c\-42b5\-ac2b\-60a950e11db8\.config
+2026-08-31T12:26:49.7901841Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path
+2026-08-31T12:26:49.7920384Z /home/runner/work/_temp/git-credentials-a089a143-761c-42b5-ac2b-60a950e11db8.config
+2026-08-31T12:26:49.7928231Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-a089a143\-761c\-42b5\-ac2b\-60a950e11db8\.config
+2026-08-31T12:26:49.7960216Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-08-31T12:26:49.7978332Z /github/runner_temp/git-credentials-a089a143-761c-42b5-ac2b-60a950e11db8.config
+2026-08-31T12:26:49.7984228Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-a089a143\-761c\-42b5\-ac2b\-60a950e11db8\.config
+2026-08-31T12:26:49.8009070Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-08-31T12:26:49.8030518Z /github/runner_temp/git-credentials-a089a143-761c-42b5-ac2b-60a950e11db8.config
+2026-08-31T12:26:49.8038315Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-a089a143\-761c\-42b5\-ac2b\-60a950e11db8\.config
+2026-08-31T12:26:49.8059171Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-08-31T12:26:49.8227050Z Removing credentials config '/home/runner/work/_temp/git-credentials-a089a143-761c-42b5-ac2b-60a950e11db8.config'
+2026-08-31T12:26:49.8347815Z Cleaning up orphan processes
+2026-08-31T12:26:49.8613627Z Terminate orphan process: pid (5693) (Xvfb)

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 99484768153,
+    "name": "Ruby 4.0",
+    "conclusion": "success",
+    "completed_at": "2026-08-31T12:26:52Z",
+    "failed_steps": []
+  },
+  {
+    "id": 99484768390,
+    "name": "Ruby 3.3",
+    "conclusion": "failure",
+    "completed_at": "2026-08-31T12:27:07Z",
+    "failed_steps": [
+      "Run tests"
+    ]
+  },
+  {
+    "id": 99484768565,
+    "name": "Ruby 3.4",
+    "conclusion": "success",
+    "completed_at": "2026-08-31T12:27:47Z",
+    "failed_steps": []
+  },
+  {
+    "id": 99487165980,
+    "name": "Finalise",
+    "conclusion": "skipped",
+    "completed_at": "2026-08-31T12:27:47Z",
+    "failed_steps": []
+  }
+]

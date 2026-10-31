@@ -1,0 +1,14 @@
+{
+  "number": 7350,
+  "title": "Localisation updates from https://translatewiki.net.",
+  "body": "Translation updates",
+  "author": "translatewiki",
+  "author_association": "COLLABORATOR",
+  "created_at": "2026-08-31T12:18:43Z",
+  "head_repo": "openstreetmap/openstreetmap-website",
+  "head_ref": "translatewiki",
+  "tested_head_sha": "d4b47f895ee24aaae895e7302f20e753ceab4928",
+  "tested_base_sha": "8b4d89a5e98d43bbad95294b6892d1b7641a9900",
+  "html_url": "https://github.com/openstreetmap/openstreetmap-website/pull/7350",
+  "note": "title and body are as fetched on 2026-10-31; they may have been edited after T"
+}
