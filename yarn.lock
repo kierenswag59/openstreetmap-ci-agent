@@ -1151,9 +1151,9 @@ lru-cache@^6.0.0:
     yallist "^4.0.0"
 
 make-plural@*:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/make-plural/-/make-plural-8.1.0.tgz#cc7ee2fb10d764fd958051102267c058d768414a"
-  integrity sha512-p8EfQ2LFxnU4KGc82hOYdUplQw0eoWJLzJVKyv2GR9sd4zkjA8bLSXLEmp/qE08c/cFTZOK8j6Ex80+Wey+4PA==
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/make-plural/-/make-plural-8.2.0.tgz#068909723557ef7d755d771624530e89cd01f382"
+  integrity sha512-JCpE6Pu4LqF20v2tTrSE8KvinBvnUuRmo4yeU0if1y1+hvoVTVba5A8c7f8qfq2yWMjwtYQbAe6UJ/6lO8pUQw==
 
 make-plural@7.5.0:
   version "7.5.0"
@@ -1668,9 +1668,9 @@ terra-draw-maplibre-gl-adapter@*:
   integrity sha512-wUv7WDIKln+cWkJOJZ68cOLwFhcBXlSN3GF56Dx8GLnmTTnQEZbIyzWRHjsxhn+TOXvxBOlCDl5JmCghIW3L4g==
 
 terra-draw@*:
-  version "1.38.0"
-  resolved "https://registry.yarnpkg.com/terra-draw/-/terra-draw-1.38.0.tgz#46a482191cfb29b97ba46555a5cb1e619a6790c7"
-  integrity sha512-h7bD5/mIN/t1qNKmPLqwZvsHnwtZpvFWo49PGA3n7CzM28lyc/xcMl85xWNOMBgF0Tq20UT06+KlBJ7g7B24rg==
+  version "1.39.0"
+  resolved "https://registry.yarnpkg.com/terra-draw/-/terra-draw-1.39.0.tgz#a54352babea1caf1f12c51d4c664b129b383d945"
+  integrity sha512-W9myUqAlxTQYydNM6cI1kmaU3/i9IlNUfzbfjr7sZVfE5YrJ1ogEpMTKKXdlXdON7tB/nMd3sPL26u7CAzCxKA==
 
 tinyglobby@^0.2.15, tinyglobby@^0.2.16:
   version "0.2.16"
