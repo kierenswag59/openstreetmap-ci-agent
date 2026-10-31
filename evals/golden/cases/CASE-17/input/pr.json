@@ -1,0 +1,14 @@
+{
+  "number": 7545,
+  "title": "Ignore constraint names for NOT NULL constraints",
+  "body": "Fixes #7544.",
+  "author": "tomhughes",
+  "author_association": "MEMBER",
+  "created_at": "2026-10-28T18:34:18Z",
+  "head_repo": "tomhughes/openstreetmap-website",
+  "head_ref": "schema-normalise",
+  "tested_head_sha": "e87b1df576d5f24e05c4ef4898c5744f7a93aa5a",
+  "tested_base_sha": "97a2efb9aa6647eaf8b53f6ec0d1417f8e4260d3",
+  "html_url": "https://github.com/openstreetmap/openstreetmap-website/pull/7545",
+  "note": "title and body are as fetched on 2026-10-31; they may have been edited after T"
+}
