@@ -1,0 +1,14 @@
+{
+  "number": 7432,
+  "title": "Moderation zone edit form marks non-editable field",
+  "body": "Moderators have limited editing capability for moderation zones depending on creator/revoker role and zone status. This PR adds visual indicators showing which fields cannot be changed.\r\nChanges:\r\n- Controller: Added edit action computing @can_edit_name, @can_edit_reason, @can_edit_zone, @can_edit_period based on permissions and zone status\r\n- Form: Name uses readonly, reason/period use disabled + hidden field for value preservation, map gets .content_map-disabled CSS class with error message\r\n- CSS: Added .content_map-disabled, .readonly-field, .disabled-select styles\r\n- Locale: Added zone_read_only translation\r\n\r\nFIXES: #7389 ",
+  "author": "sachin9058",
+  "author_association": "CONTRIBUTOR",
+  "created_at": "2026-09-27T15:12:55Z",
+  "head_repo": "sachin9058/openstreetmap-website",
+  "head_ref": "issue-7389-disabled-moderation-zone-fields",
+  "tested_head_sha": "1897639263b0d59180c59396978224b5b9543931",
+  "tested_base_sha": null,
+  "html_url": "https://github.com/openstreetmap/openstreetmap-website/pull/7432",
+  "note": "title and body are as fetched on 2026-10-31; they may have been edited after T"
+}

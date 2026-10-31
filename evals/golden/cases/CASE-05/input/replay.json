@@ -1,0 +1,10 @@
+{
+  "case": "CASE-05",
+  "workflow": "Tests",
+  "original_run": "https://github.com/openstreetmap/openstreetmap-website/actions/runs/36330556125",
+  "cutoff_T": "2026-10-27T15:47:23Z",
+  "cutoff_source": "run updated_at (run had no jobs; approval expired)",
+  "no_jobs": true,
+  "annotation": "This workflow run required approval but was not approved before it expired.",
+  "jobs": []
+}

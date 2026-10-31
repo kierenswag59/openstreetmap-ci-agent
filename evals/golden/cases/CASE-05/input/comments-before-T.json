@@ -1,0 +1,17 @@
+[
+  {
+    "author": "tomhughes",
+    "created_at": "2026-09-27T15:18:13Z",
+    "body": "We've already discussed that it's not really clear why these restrictions exist so before we rush to add this we should be considering whether we really need all those restrictions."
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-09-27T15:21:16Z",
+    "body": "@tomhughes Hey Thanks tom, actually i am quite new here and saw a first contributor issue and made a PR. Thanks for letting me know !!!"
+  },
+  {
+    "author": "pablobm",
+    "created_at": "2026-10-05T12:48:20Z",
+    "body": "My thoughts on this one:\r\n- The restrictions exist and DWG don't appear to be particularly interested in changing them. Also as mentioned their origin appears to be lost in the mist of time. Therefore, I think we don't need to wait for anything: the behaviour exists and is unlikely to change.\r\n- Perhaps this should be scoped down a bit, to just copy the same behaviour that exists for user blocks. For example, if you try to edit a user block created by a different user, you get a message \"Only the moderator who created this block can edit it without revoking\"\r\n\r\n<img width=\"531\" height=\"130\" alt=\"A warning reading as described above, followed by a red 'Revoke block' button\" src=\"https://github.com/user-attachments/assets/b9b5ca9e-d9e5-47fc-a088-0830962a0862\" />\r\n\r\n- This PR looks like AI slop to me. For one, any solution should reuse existing logic when available."
+  }
+]
