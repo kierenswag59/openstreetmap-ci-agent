@@ -107,3 +107,7 @@ outputs); they are listed so that humans using AI assistants follow the same rul
 * [S9] `.rubocop.yml`, `.rubocop_todo.yml` (evidence B12)
 * [S10] `.github/dependabot.yml` (evidence B10)
 * [P:4] "Assignment 3.md", PROMPT section 4 (background checked 30 October 2026)
+
+## Bot permissions (updated)
+
+The CI failure analyst may merge PRs whose only failure is lint, and should add the `approved` label.
