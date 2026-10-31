@@ -1,0 +1,201 @@
+[fixture note: passing job, last 200 lines of the original log kept]
+2026-10-14T12:17:19.8797806Z   app/views/users/received_blocks/edit.html.erb
+2026-10-14T12:17:19.8798343Z   app/views/users/suspended.html.erb
+2026-10-14T12:17:19.8798843Z   app/views/ways/_not_found_message.html.erb
+2026-10-14T12:17:19.8799340Z   app/views/ways/timeout.html.erb
+2026-10-14T12:17:19.8799808Z   app/views/webgl_error_panes/show.html.erb
+2026-10-14T12:17:19.8800311Z   app/views/users/new.html.erb
+2026-10-14T12:17:19.8800744Z   app/views/users/show.html.erb
+2026-10-14T12:17:19.8801031Z 
+2026-10-14T12:17:19.8801784Z ────────────────────────────────────────────────────────────
+2026-10-14T12:17:19.8802192Z 
+2026-10-14T12:17:19.8802603Z  ────────────────────────────────────────────────────────────
+2026-10-14T12:17:19.8803006Z 
+2026-10-14T12:17:19.8803365Z  Summary:
+2026-10-14T12:17:19.8803962Z   Version      herb gem v0.11.0, libprism v1.9.0, libherb v0.11.0 (Ruby C native extension)
+2026-10-14T12:17:19.8804848Z   Checked      272 files
+2026-10-14T12:17:19.8805224Z   Files        272 clean
+2026-10-14T12:17:19.8805601Z   Parser       272 parsed
+2026-10-14T12:17:19.8805982Z   Engine       272 compiled
+2026-10-14T12:17:19.8806365Z   Duration     685.33ms
+2026-10-14T12:17:19.8806604Z 
+2026-10-14T12:17:19.8806812Z  ✓ All files are clean!
+2026-10-14T12:17:19.8920194Z ##[group]Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+2026-10-14T12:17:19.8920592Z with:
+2026-10-14T12:17:19.8920795Z   cache: yarn
+2026-10-14T12:17:19.8920999Z   check-latest: false
+2026-10-14T12:17:19.8924013Z   token: ***
+2026-10-14T12:17:19.8924246Z   package-manager-cache: true
+2026-10-14T12:17:19.8924492Z env:
+2026-10-14T12:17:19.8924671Z   ruby: 3.3
+2026-10-14T12:17:19.8924877Z ##[endgroup]
+2026-10-14T12:17:20.0185134Z ##[group]Environment details
+2026-10-14T12:17:20.4165289Z node: v22.23.3
+2026-10-14T12:17:20.4165635Z npm: 10.9.9
+2026-10-14T12:17:20.4165876Z yarn: 1.22.22
+2026-10-14T12:17:20.4166522Z ##[endgroup]
+2026-10-14T12:17:20.4184330Z [command]/usr/local/bin/yarn --version
+2026-10-14T12:17:20.5376533Z 1.22.22
+2026-10-14T12:17:20.5464073Z [command]/usr/local/bin/yarn cache dir
+2026-10-14T12:17:20.7049600Z /home/runner/.cache/yarn/v6
+2026-10-14T12:17:20.7306780Z [command]/usr/local/bin/yarn config get enableGlobalCache
+2026-10-14T12:17:20.8787530Z undefined
+2026-10-14T12:17:21.1456578Z Cache hit for: node-cache-Linux-x64-yarn-d722d1c39669b5d25509609443342b1e449fac92b74c433e0c562a6092c24530
+2026-10-14T12:17:22.4234591Z Received 0 of 100326599 (0.0%), 0.0 MBs/sec
+2026-10-14T12:17:23.4242644Z Received 96132295 of 100326599 (95.8%), 45.8 MBs/sec
+2026-10-14T12:17:23.4828756Z Received 100326599 of 100326599 (100.0%), 46.4 MBs/sec
+2026-10-14T12:17:23.4829736Z Cache Size: ~96 MB (100326599 B)
+2026-10-14T12:17:23.4864282Z [command]/usr/bin/tar -xf /home/runner/work/_temp/10a6e4e3-40d3-4260-b6b6-3eea46d8c1c1/cache.tzst -P -C /home/runner/work/openstreetmap-website/openstreetmap-website --use-compress-program unzstd
+2026-10-14T12:17:24.4768953Z Cache restored successfully
+2026-10-14T12:17:24.4822014Z Cache restored from key: node-cache-Linux-x64-yarn-d722d1c39669b5d25509609443342b1e449fac92b74c433e0c562a6092c24530
+2026-10-14T12:17:24.4972931Z ##[group]Run bin/yarn install
+2026-10-14T12:17:24.4973288Z [36;1mbin/yarn install[0m
+2026-10-14T12:17:24.5037627Z shell: /usr/bin/bash -e {0}
+2026-10-14T12:17:24.5037907Z env:
+2026-10-14T12:17:24.5052527Z   ruby: 3.3
+2026-10-14T12:17:24.5052758Z ##[endgroup]
+2026-10-14T12:17:24.7240300Z yarn install v1.22.22
+2026-10-14T12:17:24.7711765Z [1/4] Resolving packages...
+2026-10-14T12:17:24.8474378Z [2/4] Fetching packages...
+2026-10-14T12:17:25.0113598Z [3/4] Linking dependencies...
+2026-10-14T12:17:25.0247753Z warning Workspaces can only be enabled in private projects.
+2026-10-14T12:17:25.0269074Z warning Workspaces can only be enabled in private projects.
+2026-10-14T12:17:25.0279329Z warning Workspaces can only be enabled in private projects.
+2026-10-14T12:17:25.0280322Z warning Workspaces can only be enabled in private projects.
+2026-10-14T12:17:25.0308753Z warning Workspaces can only be enabled in private projects.
+2026-10-14T12:17:27.4895360Z [4/4] Building fresh packages...
+2026-10-14T12:17:27.5037483Z Done in 2.78s.
+2026-10-14T12:17:27.5263987Z ##[group]Run cp config/example.database.yml config/database.yml
+2026-10-14T12:17:27.5264503Z [36;1mcp config/example.database.yml config/database.yml[0m
+2026-10-14T12:17:27.5330792Z shell: /usr/bin/bash -e {0}
+2026-10-14T12:17:27.5331073Z env:
+2026-10-14T12:17:27.5331415Z   ruby: 3.3
+2026-10-14T12:17:27.5331624Z ##[endgroup]
+2026-10-14T12:17:27.5485399Z ##[group]Run bin/yarn run herb-lint
+2026-10-14T12:17:27.5485746Z [36;1mbin/yarn run herb-lint[0m
+2026-10-14T12:17:27.5546265Z shell: /usr/bin/bash -e {0}
+2026-10-14T12:17:27.5546530Z env:
+2026-10-14T12:17:27.5546719Z   ruby: 3.3
+2026-10-14T12:17:27.5546914Z ##[endgroup]
+2026-10-14T12:17:27.7744623Z yarn run v1.22.22
+2026-10-14T12:17:27.7987855Z $ /home/runner/work/openstreetmap-website/openstreetmap-website/node_modules/.bin/herb-lint
+2026-10-14T12:17:28.1280461Z ✓ Using Herb config file at /home/runner/work/openstreetmap-website/openstreetmap-website/.herb.yml
+2026-10-14T12:17:34.6882402Z 
+2026-10-14T12:17:34.6902153Z 
+2026-10-14T12:17:34.6903364Z  [1mSummary:[0m
+2026-10-14T12:17:34.6904573Z   [90mChecked     [0m [36m272 files[0m
+2026-10-14T12:17:34.6905788Z   [90mFiles       [0m [1m[32m272 clean[0m[0m [90m(272 total)[0m
+2026-10-14T12:17:34.6906932Z   [90mOffenses    [0m [1m[32m0 offenses[0m[0m
+2026-10-14T12:17:34.6908267Z   [90mIgnored     [0m [1m[90m1 offense suppressed with herb:disable[0m[0m
+2026-10-14T12:17:34.6909428Z   [90mFixable     [0m [1m[90m0 offenses[0m[0m
+2026-10-14T12:17:34.6910989Z   [90mRules       [0m [1m[32m94 enabled[0m[0m | [36m9 not enabled[0m | [33m3 disabled[0m | [90m62 skipped (version)[0m
+2026-10-14T12:17:34.6912663Z   [90mStart at    [0m [36m12:17:28[0m
+2026-10-14T12:17:34.6913526Z   [90mDuration    [0m [36m6579ms[0m
+2026-10-14T12:17:34.6914095Z 
+2026-10-14T12:17:34.6914931Z  [92m✓[0m [32mAll files are clean![0m
+2026-10-14T12:17:34.6915505Z 
+2026-10-14T12:17:34.6915961Z  [1mNew rules available:[0m
+2026-10-14T12:17:34.6917313Z   Your [36m.herb.yml[0m version is [36m0.10.3[0m. [1m62[0m new rules are disabled to ease upgrades:
+2026-10-14T12:17:34.6919189Z   [90mfrom Herb config:[0m [36m/home/runner/work/openstreetmap-website/openstreetmap-website/.herb.yml[0m
+2026-10-14T12:17:34.6920234Z 
+2026-10-14T12:17:34.6922337Z   ]8;;https://herb-tools.dev/linter/rules/actionview-no-content-argument-with-block\[37mactionview-no-content-argument-with-block[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6925542Z   ]8;;https://herb-tools.dev/linter/rules/actionview-no-dynamic-partial-path\[37mactionview-no-dynamic-partial-path[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6928508Z   ]8;;https://herb-tools.dev/linter/rules/actionview-no-helper-shadowing\[37mactionview-no-helper-shadowing[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6931555Z   ]8;;https://herb-tools.dev/linter/rules/actionview-no-implicit-partial\[37mactionview-no-implicit-partial[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6934617Z   ]8;;https://herb-tools.dev/linter/rules/actionview-no-implicit-polymorphic-url\[37mactionview-no-implicit-polymorphic-url[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6937639Z   ]8;;https://herb-tools.dev/linter/rules/actionview-no-mistyped-locals\[37mactionview-no-mistyped-locals[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6940621Z   ]8;;https://herb-tools.dev/linter/rules/actionview-no-redundant-local-assigns\[37mactionview-no-redundant-local-assigns[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6943999Z   ]8;;https://herb-tools.dev/linter/rules/actionview-no-render-option-shadowing\[37mactionview-no-render-option-shadowing[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6947046Z   ]8;;https://herb-tools.dev/linter/rules/actionview-no-strict-locals-error\[37mactionview-no-strict-locals-error[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6950045Z   ]8;;https://herb-tools.dev/linter/rules/actionview-no-unnecessary-html-safe\[37mactionview-no-unnecessary-html-safe[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6953733Z   ]8;;https://herb-tools.dev/linter/rules/actionview-no-unused-strict-locals\[37mactionview-no-unused-strict-locals[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6957487Z   ]8;;https://herb-tools.dev/linter/rules/actionview-prefer-collection-render\[37mactionview-prefer-collection-render[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6960408Z   ]8;;https://herb-tools.dev/linter/rules/actionview-prefer-form-with\[37mactionview-prefer-form-with[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6963311Z   ]8;;https://herb-tools.dev/linter/rules/actionview-prefer-link-to-helper\[37mactionview-prefer-link-to-helper[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6966591Z   ]8;;https://herb-tools.dev/linter/rules/actionview-prefer-pluralize-helper\[37mactionview-prefer-pluralize-helper[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6969782Z   ]8;;https://herb-tools.dev/linter/rules/actionview-prefer-qualified-partial-path\[37mactionview-prefer-qualified-partial-path[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6972924Z   ]8;;https://herb-tools.dev/linter/rules/erb-closing-tag-indent\[37merb-closing-tag-indent[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6975428Z   ]8;;https://herb-tools.dev/linter/rules/erb-no-byte-order-mark\[37merb-no-byte-order-mark[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6977962Z   ]8;;https://herb-tools.dev/linter/rules/erb-no-class-definitions\[37merb-no-class-definitions[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6980524Z   ]8;;https://herb-tools.dev/linter/rules/erb-no-method-definitions\[37merb-no-method-definitions[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6983603Z   ]8;;https://herb-tools.dev/linter/rules/erb-no-module-definitions\[37merb-no-module-definitions[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6986250Z   ]8;;https://herb-tools.dev/linter/rules/erb-no-multiple-statements\[37merb-no-multiple-statements[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6988654Z   ]8;;https://herb-tools.dev/linter/rules/erb-no-return\[37merb-no-return[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6991444Z   ]8;;https://herb-tools.dev/linter/rules/erb-no-shadowed-block-argument\[37merb-no-shadowed-block-argument[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6993833Z   ]8;;https://herb-tools.dev/linter/rules/erb-no-sleep\[37merb-no-sleep[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6996303Z   ]8;;https://herb-tools.dev/linter/rules/erb-no-unused-block-argument\[37merb-no-unused-block-argument[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.6999065Z   ]8;;https://herb-tools.dev/linter/rules/erb-no-unused-local-variable\[37merb-no-unused-local-variable[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7001877Z   ]8;;https://herb-tools.dev/linter/rules/erb-prefer-do-end-blocks\[37merb-prefer-do-end-blocks[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7004510Z   ]8;;https://herb-tools.dev/linter/rules/erb-prefer-each-over-map\[37merb-prefer-each-over-map[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7007217Z   ]8;;https://herb-tools.dev/linter/rules/herb-component-requires-slots\[37mherb-component-requires-slots[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7010006Z   ]8;;https://herb-tools.dev/linter/rules/herb-config-framework-option\[37mherb-config-framework-option[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7013136Z   ]8;;https://herb-tools.dev/linter/rules/herb-disable-comment-out-of-date\[37mherb-disable-comment-out-of-date[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7015766Z   ]8;;https://herb-tools.dev/linter/rules/herb-into-requires-collection\[37mherb-into-requires-collection[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7018232Z   ]8;;https://herb-tools.dev/linter/rules/herb-slots-single-directive\[37mherb-slots-single-directive[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7021006Z   ]8;;https://herb-tools.dev/linter/rules/herb-slots-valid-components\[37mherb-slots-valid-components[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7023609Z   ]8;;https://herb-tools.dev/linter/rules/herb-slots-valid-mode\[37mherb-slots-valid-mode[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7025889Z   ]8;;https://herb-tools.dev/linter/rules/herb-state-no-silent-reads\[37mherb-state-no-silent-reads[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7028535Z   ]8;;https://herb-tools.dev/linter/rules/herb-state-no-server-writes\[37mherb-state-no-server-writes[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7030979Z   ]8;;https://herb-tools.dev/linter/rules/herb-state-no-shadowed-states\[37mherb-state-no-shadowed-states[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7033584Z   ]8;;https://herb-tools.dev/linter/rules/herb-state-no-unused-states\[37mherb-state-no-unused-states[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7035960Z   ]8;;https://herb-tools.dev/linter/rules/herb-state-requires-slots\[37mherb-state-requires-slots[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7038232Z   ]8;;https://herb-tools.dev/linter/rules/herb-state-valid-actions\[37mherb-state-valid-actions[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7040563Z   ]8;;https://herb-tools.dev/linter/rules/herb-state-valid-bindings\[37mherb-state-valid-bindings[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7043371Z   ]8;;https://herb-tools.dev/linter/rules/herb-scoped-style-no-unused-selector\[37mherb-scoped-style-no-unused-selector[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7046106Z   ]8;;https://herb-tools.dev/linter/rules/herb-scoped-style-require-top-level\[37mherb-scoped-style-require-top-level[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7048914Z   ]8;;https://herb-tools.dev/linter/rules/herb-scoped-style-single-declaration\[37mherb-scoped-style-single-declaration[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7051662Z   ]8;;https://herb-tools.dev/linter/rules/herb-state-directive-syntax\[37mherb-state-directive-syntax[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7054211Z   ]8;;https://herb-tools.dev/linter/rules/herb-state-single-declaration\[37mherb-state-single-declaration[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7056688Z   ]8;;https://herb-tools.dev/linter/rules/herb-state-valid-declaration\[37mherb-state-valid-declaration[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7058999Z   ]8;;https://herb-tools.dev/linter/rules/herb-state-valid-reads\[37mherb-state-valid-reads[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7061338Z   ]8;;https://herb-tools.dev/linter/rules/herb-valid-slot-names\[37mherb-valid-slot-names[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7063788Z   ]8;;https://herb-tools.dev/linter/rules/html-attribute-name-valid-characters\[37mhtml-attribute-name-valid-characters[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7065947Z   ]8;;https://herb-tools.dev/linter/rules/html-no-empty-css-rule\[37mhtml-no-empty-css-rule[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7067932Z   ]8;;https://herb-tools.dev/linter/rules/html-no-literal-nbsp\[37mhtml-no-literal-nbsp[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7072902Z   ]8;;https://herb-tools.dev/linter/rules/html-no-nested-forms\[37mhtml-no-nested-forms[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7074655Z   ]8;;https://herb-tools.dev/linter/rules/html-no-obsolete-tags\[37mhtml-no-obsolete-tags[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7076350Z   ]8;;https://herb-tools.dev/linter/rules/svg-no-deprecated-tags\[37msvg-no-deprecated-tags[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7078512Z   ]8;;https://herb-tools.dev/linter/rules/turbo-permanent-no-misleading-value\[37mturbo-permanent-no-misleading-value[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7080660Z   ]8;;https://herb-tools.dev/linter/rules/ujs-no-remote-attribute\[37mujs-no-remote-attribute[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7087547Z   ]8;;https://herb-tools.dev/linter/rules/ujs-prefer-turbo-confirm\[37mujs-prefer-turbo-confirm[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7089758Z   ]8;;https://herb-tools.dev/linter/rules/ujs-prefer-turbo-method\[37mujs-prefer-turbo-method[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7092561Z   ]8;;https://herb-tools.dev/linter/rules/ujs-prefer-turbo-submits-with\[37mujs-prefer-turbo-submits-with[0m]8;;\[90m (introduced in 0.11.0)[0m
+2026-10-14T12:17:34.7093708Z 
+2026-10-14T12:17:34.7094455Z   Run [36mherb-lint --upgrade[0m to update the version. Rules with no offenses will be
+2026-10-14T12:17:34.7095600Z   enabled automatically; rules with offenses will be disabled to ease the upgrade.
+2026-10-14T12:17:34.7238859Z Done in 6.95s.
+2026-10-14T12:17:34.7513719Z Post job cleanup.
+2026-10-14T12:17:34.8668949Z Cache hit occurred on the primary key node-cache-Linux-x64-yarn-d722d1c39669b5d25509609443342b1e449fac92b74c433e0c562a6092c24530, not saving cache.
+2026-10-14T12:17:34.8802002Z Post job cleanup.
+2026-10-14T12:17:34.9757571Z [command]/usr/bin/git version
+2026-10-14T12:17:34.9807901Z git version 2.55.0
+2026-10-14T12:17:34.9845317Z Temporarily overriding HOME='/home/runner/work/_temp/a5a4c4d1-e5ce-427e-9729-336e2281e2bd' before making global git config changes
+2026-10-14T12:17:34.9847029Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-14T12:17:34.9850739Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openstreetmap-website/openstreetmap-website
+2026-10-14T12:17:34.9883791Z Removing SSH command configuration
+2026-10-14T12:17:34.9891368Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-14T12:17:34.9946386Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-14T12:17:35.0193349Z Removing HTTP extra header
+2026-10-14T12:17:35.0214063Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-14T12:17:35.0254727Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-14T12:17:35.0500479Z Removing includeIf entries pointing to credentials config files
+2026-10-14T12:17:35.0508811Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-14T12:17:35.0538063Z includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path
+2026-10-14T12:17:35.0541063Z includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path
+2026-10-14T12:17:35.0542840Z includeif.gitdir:/github/workspace/.git.path
+2026-10-14T12:17:35.0543982Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-14T12:17:35.0551070Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path
+2026-10-14T12:17:35.0576730Z /home/runner/work/_temp/git-credentials-ada9b2fa-296f-45eb-85a0-f8d31134ce44.config
+2026-10-14T12:17:35.0592893Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-ada9b2fa\-296f\-45eb\-85a0\-f8d31134ce44\.config
+2026-10-14T12:17:35.0653803Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path
+2026-10-14T12:17:35.0671047Z /home/runner/work/_temp/git-credentials-ada9b2fa-296f-45eb-85a0-f8d31134ce44.config
+2026-10-14T12:17:35.0695074Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-ada9b2fa\-296f\-45eb\-85a0\-f8d31134ce44\.config
+2026-10-14T12:17:35.0740200Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-14T12:17:35.0780911Z /github/runner_temp/git-credentials-ada9b2fa-296f-45eb-85a0-f8d31134ce44.config
+2026-10-14T12:17:35.0784228Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-ada9b2fa\-296f\-45eb\-85a0\-f8d31134ce44\.config
+2026-10-14T12:17:35.0837580Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-14T12:17:35.0858154Z /github/runner_temp/git-credentials-ada9b2fa-296f-45eb-85a0-f8d31134ce44.config
+2026-10-14T12:17:35.0873969Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-ada9b2fa\-296f\-45eb\-85a0\-f8d31134ce44\.config
+2026-10-14T12:17:35.0921846Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-14T12:17:35.1210204Z Removing credentials config '/home/runner/work/_temp/git-credentials-ada9b2fa-296f-45eb-85a0-f8d31134ce44.config'
+2026-10-14T12:17:35.1368608Z Cleaning up orphan processes

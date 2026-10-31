@@ -1,0 +1,263 @@
+diff --git a/app/assets/javascripts/moderation_zone.js b/app/assets/javascripts/moderation_zone.js
+index e28e51695c..82a1ed52de 100644
+--- a/app/assets/javascripts/moderation_zone.js
++++ b/app/assets/javascripts/moderation_zone.js
+@@ -28,6 +28,12 @@ $(function () {
+ 
+   const baseMap = new OSM.MapLibre.SecondaryMap();
+ 
++  const expiryTypeInputs = document.querySelectorAll("input[name='moderation_zone[expiry_type]']");
++  const expiryPanels = document.querySelectorAll("[data-expiry-panel]");
++
++  expiryTypeInputs.forEach(input => input.addEventListener("change", updateExpiryFields));
++  updateExpiryFields();
++
+   baseMap.once("style.load", () => {
+     try {
+       const draw = createTerraDrawInstance(baseMap);
+@@ -41,6 +47,20 @@ $(function () {
+     }
+   });
+ 
++  function updateExpiryFields() {
++    const selectedType = Array.from(expiryTypeInputs).find(input => input.checked)?.value;
++    if (!selectedType) {
++      return;
++    }
++    expiryPanels.forEach(panel => {
++      const isSelected = panel.dataset.expiryPanel === selectedType;
++      panel.hidden = !isSelected;
++      panel.querySelectorAll("input, select").forEach(input => {
++        input.disabled = !isSelected;
++      });
++    });
++  }
++
+   function createTerraDrawInstance(map) {
+     return new terraDraw.TerraDraw({
+       adapter: new terraDrawMaplibreGlAdapter.TerraDrawMapLibreGLAdapter({
+@@ -149,4 +169,4 @@ $(function () {
+     const seed = new maplibregl.LngLatBounds(points[0], points[0]);
+     return points.reduce((bounds, point) => bounds.extend(point), seed);
+   }
+-});
++});
+\ No newline at end of file
+diff --git a/app/controllers/moderation_zones_controller.rb b/app/controllers/moderation_zones_controller.rb
+index 155a4c6d08..65721304b2 100644
+--- a/app/controllers/moderation_zones_controller.rb
++++ b/app/controllers/moderation_zones_controller.rb
+@@ -59,8 +59,10 @@ def set_moderation_zone
+   end
+ 
+   def moderation_zone_params
+-    params.expect(:moderation_zone => [:name, :reason, :zone, :period]).tap do |safe_params|
+-      safe_params[:ends_at] = safe_params.delete("period").to_i.hours.from_now
++    params.expect(:moderation_zone => [:name, :reason, :zone, :period, :expiry_type, :ends_at]).tap do |safe_params|
++      expiry_type = safe_params.delete(:expiry_type)
++      period = safe_params.delete(:period)
++      safe_params[:ends_at] = period.to_i.hours.from_now unless expiry_type == "absolute"
+     end
+   end
+ 
+diff --git a/app/helpers/moderation_zones_helper.rb b/app/helpers/moderation_zones_helper.rb
+index 54e8923d43..ffabad07a7 100644
+--- a/app/helpers/moderation_zones_helper.rb
++++ b/app/helpers/moderation_zones_helper.rb
+@@ -23,6 +23,13 @@ def selected_option_for_moderation_zone_period(moderation_zone)
+     end
+   end
+ 
++  def selected_moderation_zone_expiry_type(moderation_zone)
++    param_value = params.dig(:moderation_zone, :expiry_type)
++    return param_value if %w[relative absolute].include?(param_value)
++
++    moderation_zone.persisted? ? "absolute" : "relative"
++  end
++
+   def moderation_zone_short_status(moderation_zone)
+     if moderation_zone.active?
+       t("moderation_zones.helper.short.active")
+diff --git a/app/views/moderation_zones/_form.html.erb b/app/views/moderation_zones/_form.html.erb
+index 6da3752655..ef2eb8abec 100644
+--- a/app/views/moderation_zones/_form.html.erb
++++ b/app/views/moderation_zones/_form.html.erb
+@@ -15,11 +15,30 @@
+     <%= form.hidden_field :zone %>
+   <% end %>
+ 
+-  <%= form.select(
+-        :period,
+-        options_for_moderation_zone_period,
+-        :selected => selected_option_for_moderation_zone_period(moderation_zone)
++  <%= form.collection_radio_buttons(
++        :expiry_type,
++        %w[relative absolute],
++        :itself,
++        ->(type) { t(".#{type}_expiration") },
++        :label => t(".expiration"),
++        :checked => selected_moderation_zone_expiry_type(moderation_zone)
+       ) %>
+ 
++  <div data-expiry-panel="relative">
++    <%= form.select(
++          :period,
++          options_for_moderation_zone_period,
++          :selected => selected_option_for_moderation_zone_period(moderation_zone)
++        ) %>
++  </div>
++
++  <div data-expiry-panel="absolute">
++    <%= form.datetime_field(
++          :ends_at,
++          :min => moderation_zone.ends_at || Time.now.utc,
++          :max => (moderation_zone.ends_at || Time.now.utc) + 10.years
++        ) %>
++  </div>
++
+   <%= form.primary %>
+ <% end %>
+diff --git a/config/locales/en.yml b/config/locales/en.yml
+index 800988dfd4..6ac4cfd715 100644
+--- a/config/locales/en.yml
++++ b/config/locales/en.yml
+@@ -133,6 +133,7 @@ en:
+         reason: Reason
+         zone: Zone
+         period: Period
++        ends_at: Expiration date and time
+       message:
+         sender: "Sender"
+         title: "Subject"
+@@ -4002,6 +4003,10 @@ en:
+     url_characters: "contains special URL characters (%{characters})"
+     email_characters: "contains invalid characters (%{characters})"
+   moderation_zones:
++    form:
++      expiration: Expiration
++      relative_expiration: For a duration
++      absolute_expiration: Until a specific date and time
+     navigation:
+       new_title: Define a new moderation zone
+       new: New Moderation Zone
+diff --git a/test/controllers/moderation_zones_controller_test.rb b/test/controllers/moderation_zones_controller_test.rb
+index 1d06352ba7..0a371b55b6 100644
+--- a/test/controllers/moderation_zones_controller_test.rb
++++ b/test/controllers/moderation_zones_controller_test.rb
+@@ -66,6 +66,7 @@ class ModerationZonesControllerTest < ActionDispatch::IntegrationTest
+     session_for(create(:moderator_user))
+     get new_moderation_zone_url
+     assert_response :success
++    assert_dom "input[name='moderation_zone[expiry_type]'][value='relative'][checked]"
+   end
+ 
+   test "create, unauthenticated" do
+@@ -114,6 +115,32 @@ class ModerationZonesControllerTest < ActionDispatch::IntegrationTest
+     assert_in_delta moderation_zone.ends_at, 2.days.from_now, 10.seconds
+   end
+ 
++  test "create with an exact expiration time" do
++    session_for(create(:moderator_user))
++    ends_at = 2.days.from_now.change(:hour => 14, :min => 30, :sec => 45)
++
++    assert_difference("ModerationZone.count") do
++      post(
++        moderation_zones_url,
++        :params => {
++          :moderation_zone => {
++            **attributes_for(:moderation_zone).slice(:name, :reason, :zone),
++            :expiry_type => "absolute",
++            :"ends_at(1i)" => ends_at.year.to_s,
++            :"ends_at(2i)" => ends_at.month.to_s,
++            :"ends_at(3i)" => ends_at.day.to_s,
++            :"ends_at(4i)" => ends_at.hour.to_s,
++            :"ends_at(5i)" => ends_at.min.to_s,
++            :"ends_at(6i)" => ends_at.sec.to_s
++          }
++        }
++      )
++    end
++
++    assert_redirected_to moderation_zones_url
++    assert_equal ends_at.to_i, ModerationZone.last.ends_at.to_i
++  end
++
+   test "create, with errors" do
+     moderator = create(:moderator_user)
+     session_for(moderator)
+@@ -149,10 +176,11 @@ class ModerationZonesControllerTest < ActionDispatch::IntegrationTest
+ 
+   test "edit, as moderator" do
+     session_for(create(:moderator_user))
+-    moderation_zone = create(:moderation_zone, :ends_at => 1.year.from_now)
++    ends_at = 2.days.from_now.change(:hour => 14, :min => 30, :sec => 45)
++    moderation_zone = create(:moderation_zone, :ends_at => ends_at)
+     get edit_moderation_zone_url(moderation_zone)
+     assert_response :success
+-    assert_dom "option[selected]", :text => "1 year"
++    assert_dom "input[name='moderation_zone[expiry_type]'][value='absolute'][checked]"
+   end
+ 
+   test "update, unauthenticated" do
+@@ -213,6 +241,33 @@ class ModerationZonesControllerTest < ActionDispatch::IntegrationTest
+     assert_nil moderation_zone.revoker
+   end
+ 
++  test "update, preserving the exact expiration time" do
++    creator = create(:moderator_user)
++    ends_at = 2.days.from_now.change(:hour => 14, :min => 30, :sec => 45)
++    moderation_zone = create(:moderation_zone, :ends_at => ends_at, :creator => creator)
++    session_for(creator)
++
++    patch(
++      moderation_zone_url(moderation_zone),
++      :params => {
++        :moderation_zone => {
++          :name => "Updated name",
++          :expiry_type => "absolute",
++          :"ends_at(1i)" => ends_at.year.to_s,
++          :"ends_at(2i)" => ends_at.month.to_s,
++          :"ends_at(3i)" => ends_at.day.to_s,
++          :"ends_at(4i)" => ends_at.hour.to_s,
++          :"ends_at(5i)" => ends_at.min.to_s,
++          :"ends_at(6i)" => ends_at.sec.to_s
++        }
++      }
++    )
++
++    assert_redirected_to moderation_zones_url
++    assert_equal "Updated name", moderation_zone.reload.name
++    assert_equal ends_at.to_i, moderation_zone.ends_at.to_i
++  end
++
+   test "update, with errors" do
+     creator = create(:moderator_user)
+     moderation_zone = create(:moderation_zone, :ends_at => 1.week.from_now, :creator => creator)
+@@ -278,14 +333,17 @@ class ModerationZonesControllerTest < ActionDispatch::IntegrationTest
+ 
+   test "update, by creator, of inactive+revoked record" do
+     creator = create(:moderator_user)
+-    moderation_zone = create(:moderation_zone, :reason => "Initial reason", :creator => creator, :ends_at => 1.week.ago)
++    ends_at = 1.week.ago
++    moderation_zone = create(:moderation_zone, :reason => "Initial reason", :creator => creator, :ends_at => ends_at)
+     session_for(creator)
+ 
+     patch(
+       moderation_zone_url(moderation_zone),
+       :params => {
+         :moderation_zone => {
+-          :reason => "Updated reason"
++          :reason => "Updated reason",
++          :expiry_type => "absolute",
++          :ends_at => ends_at.to_s
+         }
+       }
+     )
+@@ -295,6 +353,7 @@ class ModerationZonesControllerTest < ActionDispatch::IntegrationTest
+ 
+     moderation_zone.reload
+     assert_equal "Updated reason", moderation_zone.reason
++    assert_equal ends_at.to_i, moderation_zone.ends_at.to_i
+   end
+ 
+   test "update, by non-creator, of revoked record" do
