@@ -1,0 +1,15 @@
+{
+  "id": 35875254785,
+  "name": "Lint",
+  "event": "pull_request",
+  "status": "completed",
+  "conclusion": "failure",
+  "head_sha": "279914dc5388817a73047acc6653c97a18737c16",
+  "head_branch": "ios-15-support",
+  "html_url": "https://github.com/openstreetmap/openstreetmap-website/actions/runs/35875254785",
+  "run_attempt": 1,
+  "created_at": "2026-09-23T14:35:07Z",
+  "run_started_at": "2026-09-23T14:35:07Z",
+  "updated_at": "2026-09-23T14:36:47Z",
+  "display_title": "Avoid regexp not supported in old browsers"
+}
