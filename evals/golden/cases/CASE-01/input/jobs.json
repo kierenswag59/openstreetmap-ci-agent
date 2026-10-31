@@ -1,0 +1,36 @@
+[
+  {
+    "id": 123046602705,
+    "name": "Ruby 3.3",
+    "conclusion": "failure",
+    "completed_at": "2026-10-28T19:24:10Z",
+    "failed_steps": [
+      "Populate database"
+    ]
+  },
+  {
+    "id": 123046603066,
+    "name": "Ruby 3.4",
+    "conclusion": "failure",
+    "completed_at": "2026-10-28T19:23:48Z",
+    "failed_steps": [
+      "Populate database"
+    ]
+  },
+  {
+    "id": 123046603103,
+    "name": "Ruby 4.0",
+    "conclusion": "failure",
+    "completed_at": "2026-10-28T19:24:08Z",
+    "failed_steps": [
+      "Populate database"
+    ]
+  },
+  {
+    "id": 123047805341,
+    "name": "Finalise",
+    "conclusion": "skipped",
+    "completed_at": "2026-10-28T19:24:10Z",
+    "failed_steps": []
+  }
+]
