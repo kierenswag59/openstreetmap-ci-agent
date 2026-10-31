@@ -1,0 +1,15 @@
+{
+  "id": 40916734387,
+  "name": "Lint",
+  "event": "pull_request",
+  "status": "completed",
+  "conclusion": "failure",
+  "head_sha": "3ea8c0295f0436b5f7300ea06d283eaf794be3fa",
+  "head_branch": "avatar-content-types",
+  "html_url": "https://github.com/openstreetmap/openstreetmap-website/actions/runs/40916734387",
+  "run_attempt": 1,
+  "created_at": "2026-10-29T16:58:06Z",
+  "run_started_at": "2026-10-29T16:58:06Z",
+  "updated_at": "2026-10-29T16:59:56Z",
+  "display_title": "Restrict avatar uploads to types we can safely resize"
+}
