@@ -1,0 +1,150 @@
+diff --git a/app/helpers/authorization_helper.rb b/app/helpers/authorization_helper.rb
+index 16b78074fef..17ac1204c42 100644
+--- a/app/helpers/authorization_helper.rb
++++ b/app/helpers/authorization_helper.rb
+@@ -10,9 +10,19 @@ def authorization_scope(scope)
+       html << " "
+       html << role_icon(:classes => "bi-star-fill role-moderator", :title => t("oauth.for_roles.moderator"))
+     end
++    html << " "
++    html << tag.code("(#{scope})", :class => "text-body-secondary")
+     safe_join(html)
+   end
+ 
++  def scopes_list(scopes)
++    tag.ul(:class => "list-unstyled mb-0") do
++      safe_join(scopes.map do |scope|
++        tag.li authorization_scope(scope)
++      end)
++    end
++  end
++
+   def role_icon(classes: "", title: "")
+     safe_join([
+                 tag.i(:class => ["bi fs-5 align-middle", classes], :title => title, :aria => { :hidden => "true" }),
+diff --git a/app/views/oauth2_applications/_application.html.erb b/app/views/oauth2_applications/_application.html.erb
+index 85d9f395f7b..42dabe1eb98 100644
+--- a/app/views/oauth2_applications/_application.html.erb
++++ b/app/views/oauth2_applications/_application.html.erb
+@@ -10,11 +10,7 @@
+     </ul>
+   </td>
+   <td class="align-middle">
+-    <ul class="list-unstyled mb-0">
+-      <% application.scopes.each do |scope| -%>
+-        <li><%= authorization_scope(scope) %> <code class="text-body-secondary">(<%= scope %>)</code></li>
+-      <% end -%>
+-    </ul>
++    <%= scopes_list(application.scopes) %>
+   </td>
+   <td class="align-middle">
+     <%= link_to t(".edit"), edit_oauth_application_path(application), :class => "btn btn-outline-primary" %>
+diff --git a/app/views/oauth2_applications/_form.html.erb b/app/views/oauth2_applications/_form.html.erb
+index b612ca05d2d..aebbbe5f15c 100644
+--- a/app/views/oauth2_applications/_form.html.erb
++++ b/app/views/oauth2_applications/_form.html.erb
+@@ -5,5 +5,5 @@
+ <%= f.form_group :confidential do %>
+   <%= f.check_box :confidential %>
+ <% end %>
+-<%= f.collection_check_boxes :scopes, Oauth.scopes(:privileged => current_user.administrator?), :name, :description %>
++<%= f.collection_check_boxes :scopes, Oauth.scopes(:privileged => current_user.administrator?), :name, ->(scope) { authorization_scope(scope.name) } %>
+ <%= f.primary %>
+diff --git a/app/views/oauth2_applications/show.html.erb b/app/views/oauth2_applications/show.html.erb
+index d0f6aa4e6c9..74cf7fba39f 100644
+--- a/app/views/oauth2_applications/show.html.erb
++++ b/app/views/oauth2_applications/show.html.erb
+@@ -26,11 +26,7 @@
+   <tr>
+     <th><%= t ".permissions" %></th>
+     <td>
+-      <ul class="list-unstyled mb-0">
+-        <% @application.scopes.each do |scope| -%>
+-          <li><%= t "oauth.scopes.#{scope}" %> <code class="text-body-secondary">(<%= scope %>)</code></li>
+-        <% end -%>
+-      </ul>
++      <%= scopes_list(@application.scopes) %>
+     </td>
+   </tr>
+   <tr>
+diff --git a/app/views/oauth2_authorizations/new.html.erb b/app/views/oauth2_authorizations/new.html.erb
+index 8720bf05a64..0553acc345e 100644
+--- a/app/views/oauth2_authorizations/new.html.erb
++++ b/app/views/oauth2_authorizations/new.html.erb
+@@ -4,11 +4,7 @@
+ 
+ <p><%= t ".introduction", :application => @pre_auth.client.name %></p>
+ 
+-<ul>
+-  <% @pre_auth.scopes.each do |scope| -%>
+-    <li><%= authorization_scope(scope) %></li>
+-  <% end -%>
+-</ul>
++<%= scopes_list(@pre_auth.scopes) %>
+ 
+ <div class="row justify-content-start g-0 mx-n1">
+   <div class="col-auto mx-1">
+diff --git a/app/views/oauth2_authorized_applications/_application.html.erb b/app/views/oauth2_authorized_applications/_application.html.erb
+index cbee1b91686..73d96790bcc 100644
+--- a/app/views/oauth2_authorized_applications/_application.html.erb
++++ b/app/views/oauth2_authorized_applications/_application.html.erb
+@@ -5,11 +5,7 @@
+     <%= application.name %>
+   </td>
+   <td class="align-middle">
+-    <ul class="list-unstyled mb-0">
+-      <% application.authorized_scopes_for(current_user).each do |scope| -%>
+-        <li><%= authorization_scope(scope) %></li>
+-      <% end -%>
+-    </ul>
++    <%= scopes_list(application.authorized_scopes_for(current_user)) %>
+   </td>
+   <td class="align-middle">
+     <%= friendly_date_ago(application.authorized_tokens.where(:resource_owner_id => current_user).maximum(:created_at)) %>
+diff --git a/lib/oauth.rb b/lib/oauth.rb
+index 28ebf710984..bb06f0450af 100644
+--- a/lib/oauth.rb
++++ b/lib/oauth.rb
+@@ -15,10 +15,6 @@ class Scope
+     def initialize(name)
+       @name = name
+     end
+-
+-    def description
+-      I18n.t("oauth.scopes.#{name}")
+-    end
+   end
+ 
+   def self.scopes(privileged: false)
+diff --git a/test/controllers/oauth2_applications_controller_test.rb b/test/controllers/oauth2_applications_controller_test.rb
+index 3caf5048143..337e4100373 100644
+--- a/test/controllers/oauth2_applications_controller_test.rb
++++ b/test/controllers/oauth2_applications_controller_test.rb
+@@ -191,6 +191,7 @@ def test_edit
+       assert_select "input#oauth2_application_confidential", 1
+       Oauth.scopes.each do |scope|
+         assert_select "input#oauth2_application_scopes_#{scope.name}", 1
++        assert_select "label[for='oauth2_application_scopes_#{scope.name}'] code", :text => "(#{scope.name})"
+       end
+     end
+   end
+diff --git a/test/controllers/oauth2_authorized_applications_controller_test.rb b/test/controllers/oauth2_authorized_applications_controller_test.rb
+index 6f11f851b33..f8b8d58daa5 100644
+--- a/test/controllers/oauth2_authorized_applications_controller_test.rb
++++ b/test/controllers/oauth2_authorized_applications_controller_test.rb
+@@ -56,9 +56,12 @@ def test_index_scopes
+     assert_select "tbody tr", 1
+     assert_select "tbody tr td ul" do
+       assert_select "li", :count => 3
+-      assert_select "li", :text => "Read user preferences"
+-      assert_select "li", :text => "Modify user preferences"
+-      assert_select "li", :text => "Create diary entries and comments"
++      assert_select "li", :text => /^Read user preferences/
++      assert_select "li", :text => /^Modify user preferences/
++      assert_select "li", :text => /^Create diary entries and comments/
++      assert_select "li code", :text => "(read_prefs)"
++      assert_select "li code", :text => "(write_prefs)"
++      assert_select "li code", :text => "(write_diary)"
+     end
+   end
+ 
