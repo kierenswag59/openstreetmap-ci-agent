@@ -1,0 +1,15 @@
+{
+  "id": 33391131716,
+  "name": "Tests",
+  "event": "pull_request",
+  "status": "completed",
+  "conclusion": "failure",
+  "head_sha": "d4b47f895ee24aaae895e7302f20e753ceab4928",
+  "head_branch": "translatewiki",
+  "html_url": "https://github.com/openstreetmap/openstreetmap-website/actions/runs/33391131716",
+  "run_attempt": 1,
+  "created_at": "2026-08-31T12:18:46Z",
+  "run_started_at": "2026-08-31T12:18:46Z",
+  "updated_at": "2026-08-31T12:27:48Z",
+  "display_title": "Localisation updates from https://translatewiki.net."
+}

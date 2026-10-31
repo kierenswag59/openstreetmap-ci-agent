@@ -1,0 +1,1306 @@
+﻿2026-09-02T23:13:31.4965672Z Current runner version: '2.336.0'
+2026-09-02T23:13:31.4995082Z ##[group]Runner Image Provisioner
+2026-09-02T23:13:31.4996006Z Hosted Compute Agent
+2026-09-02T23:13:31.4996666Z Version: 20260819.586
+2026-09-02T23:13:31.4997327Z Commit: 3cc4a88dfa507ef76119ad1bb3eccc6378bb2b76
+2026-09-02T23:13:31.4998086Z Build Date: 2026-08-18T23:20:18Z
+2026-09-02T23:13:31.4998822Z Worker ID: {e6994265-3eee-49ba-88a5-a0a75ebdcfb4}
+2026-09-02T23:13:31.4999576Z Azure Region: westus
+2026-09-02T23:13:31.5000473Z ##[endgroup]
+2026-09-02T23:13:31.5002042Z ##[group]Operating System
+2026-09-02T23:13:31.5002725Z Ubuntu
+2026-09-02T23:13:31.5003339Z 24.04.4
+2026-09-02T23:13:31.5003857Z LTS
+2026-09-02T23:13:31.5004354Z ##[endgroup]
+2026-09-02T23:13:31.5004964Z ##[group]Runner Image
+2026-09-02T23:13:31.5005600Z Image: ubuntu-24.04
+2026-09-02T23:13:31.5006226Z Version: 20260823.283.1
+2026-09-02T23:13:31.5007505Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260823.283/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-02T23:13:31.5009115Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260823.283
+2026-09-02T23:13:31.5010345Z ##[endgroup]
+2026-09-02T23:13:31.5013280Z ##[group]GITHUB_TOKEN Permissions
+2026-09-02T23:13:31.5015481Z Actions: read
+2026-09-02T23:13:31.5016234Z ArtifactMetadata: read
+2026-09-02T23:13:31.5016890Z Attestations: read
+2026-09-02T23:13:31.5017430Z Checks: read
+2026-09-02T23:13:31.5018049Z CodeQuality: read
+2026-09-02T23:13:31.5018614Z Contents: read
+2026-09-02T23:13:31.5019239Z Deployments: read
+2026-09-02T23:13:31.5020144Z Discussions: read
+2026-09-02T23:13:31.5020711Z Drives: read
+2026-09-02T23:13:31.5021339Z Issues: read
+2026-09-02T23:13:31.5021864Z Metadata: read
+2026-09-02T23:13:31.5022434Z Models: read
+2026-09-02T23:13:31.5023186Z Packages: read
+2026-09-02T23:13:31.5023751Z Pages: read
+2026-09-02T23:13:31.5024344Z PullRequests: read
+2026-09-02T23:13:31.5024962Z RepositoryProjects: read
+2026-09-02T23:13:31.5025637Z SecurityEvents: read
+2026-09-02T23:13:31.5026259Z Statuses: read
+2026-09-02T23:13:31.5026808Z VulnerabilityAlerts: read
+2026-09-02T23:13:31.5027436Z ##[endgroup]
+2026-09-02T23:13:31.5030671Z Secret source: Dependabot
+2026-09-02T23:13:31.5031929Z Prepare workflow directory
+2026-09-02T23:13:31.5455582Z Prepare all required actions
+2026-09-02T23:13:31.5505382Z Getting action download info
+2026-09-02T23:13:31.9010072Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-09-02T23:13:32.4368579Z Download action repository 'ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b' (SHA:95ef2b042f9d7a56d8268cba8559e2842e2ad01b)
+2026-09-02T23:13:32.8939184Z Complete job name: RuboCop
+2026-09-02T23:13:32.9763380Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-09-02T23:13:32.9764627Z with:
+2026-09-02T23:13:32.9765208Z   repository: openstreetmap/openstreetmap-website
+2026-09-02T23:13:32.9769896Z   token: ***
+2026-09-02T23:13:32.9770496Z   ssh-strict: true
+2026-09-02T23:13:32.9771021Z   ssh-user: git
+2026-09-02T23:13:32.9771521Z   persist-credentials: true
+2026-09-02T23:13:32.9772062Z   clean: true
+2026-09-02T23:13:32.9772555Z   sparse-checkout-cone-mode: true
+2026-09-02T23:13:32.9773122Z   fetch-depth: 1
+2026-09-02T23:13:32.9773597Z   fetch-tags: false
+2026-09-02T23:13:32.9774082Z   show-progress: true
+2026-09-02T23:13:32.9774579Z   lfs: false
+2026-09-02T23:13:32.9775044Z   submodules: false
+2026-09-02T23:13:32.9775558Z   set-safe-directory: true
+2026-09-02T23:13:32.9776110Z   allow-unsafe-pr-checkout: false
+2026-09-02T23:13:32.9776960Z env:
+2026-09-02T23:13:32.9777415Z   ruby: 3.3
+2026-09-02T23:13:32.9777863Z ##[endgroup]
+2026-09-02T23:13:33.0791440Z Syncing repository: openstreetmap/openstreetmap-website
+2026-09-02T23:13:33.0793875Z ##[group]Getting Git version info
+2026-09-02T23:13:33.0795280Z Working directory is '/home/runner/work/openstreetmap-website/openstreetmap-website'
+2026-09-02T23:13:33.0796821Z [command]/usr/bin/git version
+2026-09-02T23:13:33.2256434Z git version 2.55.0
+2026-09-02T23:13:33.2283341Z ##[endgroup]
+2026-09-02T23:13:33.2296673Z Temporarily overriding HOME='/home/runner/work/_temp/d6d30c5f-90f3-4baa-8e3b-195de7e053cf' before making global git config changes
+2026-09-02T23:13:33.2299459Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-02T23:13:33.2304283Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openstreetmap-website/openstreetmap-website
+2026-09-02T23:13:33.2557200Z Deleting the contents of '/home/runner/work/openstreetmap-website/openstreetmap-website'
+2026-09-02T23:13:33.2561461Z ##[group]Determining repository object format
+2026-09-02T23:13:33.2564145Z ##[endgroup]
+2026-09-02T23:13:33.2566050Z ##[group]Initializing the repository
+2026-09-02T23:13:33.2570431Z [command]/usr/bin/git init /home/runner/work/openstreetmap-website/openstreetmap-website
+2026-09-02T23:13:33.3094990Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-02T23:13:33.3097301Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-02T23:13:33.3100408Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-02T23:13:33.3102803Z hint: call:
+2026-09-02T23:13:33.3104192Z hint:
+2026-09-02T23:13:33.3105698Z hint: 	git config --global init.defaultBranch <name>
+2026-09-02T23:13:33.3107101Z hint:
+2026-09-02T23:13:33.3108404Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-02T23:13:33.3110696Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-02T23:13:33.3112248Z hint:
+2026-09-02T23:13:33.3113233Z hint: 	git branch -m <name>
+2026-09-02T23:13:33.3114444Z hint:
+2026-09-02T23:13:33.3115828Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-02T23:13:33.3118151Z Initialized empty Git repository in /home/runner/work/openstreetmap-website/openstreetmap-website/.git/
+2026-09-02T23:13:33.3124721Z [command]/usr/bin/git remote add origin https://github.com/openstreetmap/openstreetmap-website
+2026-09-02T23:13:33.3380923Z ##[endgroup]
+2026-09-02T23:13:33.3382812Z ##[group]Disabling automatic garbage collection
+2026-09-02T23:13:33.3386818Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-02T23:13:33.3423423Z ##[endgroup]
+2026-09-02T23:13:33.3425036Z ##[group]Setting up auth
+2026-09-02T23:13:33.3426148Z Removing SSH command configuration
+2026-09-02T23:13:33.3431028Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-02T23:13:33.3468952Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-02T23:13:33.5519138Z Removing HTTP extra header
+2026-09-02T23:13:33.5528331Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-02T23:13:33.5573108Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-02T23:13:33.5816511Z Removing includeIf entries pointing to credentials config files
+2026-09-02T23:13:33.5820594Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-02T23:13:33.5857343Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-02T23:13:33.6142349Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-a3b12259-9eef-4053-9663-347ef4eebb8b.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-02T23:13:33.6182916Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path /home/runner/work/_temp/git-credentials-a3b12259-9eef-4053-9663-347ef4eebb8b.config
+2026-09-02T23:13:33.6214717Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-a3b12259-9eef-4053-9663-347ef4eebb8b.config
+2026-09-02T23:13:33.6249101Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-a3b12259-9eef-4053-9663-347ef4eebb8b.config
+2026-09-02T23:13:33.6284590Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-a3b12259-9eef-4053-9663-347ef4eebb8b.config
+2026-09-02T23:13:33.6314441Z ##[endgroup]
+2026-09-02T23:13:33.6317391Z ##[group]Fetching the repository
+2026-09-02T23:13:33.6324223Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +bd256a447c6264e4bace88c1edb3b7f0549e2d57:refs/remotes/pull/7355/merge
+2026-09-02T23:13:35.2645381Z From https://github.com/openstreetmap/openstreetmap-website
+2026-09-02T23:13:35.2651047Z  * [new ref]         bd256a447c6264e4bace88c1edb3b7f0549e2d57 -> pull/7355/merge
+2026-09-02T23:13:35.2653862Z ##[endgroup]
+2026-09-02T23:13:35.2654789Z ##[group]Determining the checkout info
+2026-09-02T23:13:35.2655795Z ##[endgroup]
+2026-09-02T23:13:35.2659576Z [command]/usr/bin/git sparse-checkout disable
+2026-09-02T23:13:35.2847947Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-02T23:13:35.2878249Z ##[group]Checking out the ref
+2026-09-02T23:13:35.2882170Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/7355/merge
+2026-09-02T23:13:35.4384890Z Note: switching to 'refs/remotes/pull/7355/merge'.
+2026-09-02T23:13:35.4385853Z 
+2026-09-02T23:13:35.4386380Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-09-02T23:13:35.4387285Z changes and commit them, and you can discard any commits you make in this
+2026-09-02T23:13:35.4388178Z state without impacting any branches by switching back to a branch.
+2026-09-02T23:13:35.4388751Z 
+2026-09-02T23:13:35.4389151Z If you want to create a new branch to retain commits you create, you may
+2026-09-02T23:13:35.4390761Z do so (now or later) by using -c with the switch command. Example:
+2026-09-02T23:13:35.4391547Z 
+2026-09-02T23:13:35.4391955Z   git switch -c <new-branch-name>
+2026-09-02T23:13:35.4392589Z 
+2026-09-02T23:13:35.4392903Z Or undo this operation with:
+2026-09-02T23:13:35.4393389Z 
+2026-09-02T23:13:35.4393653Z   git switch -
+2026-09-02T23:13:35.4394028Z 
+2026-09-02T23:13:35.4394629Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-09-02T23:13:35.4395470Z 
+2026-09-02T23:13:35.4396675Z HEAD is now at bd256a4 Merge 63f99d72962ef7536e7d3fcc3d459f1276bc5f9a into 1ab80766d78e697fe7e335c38030c5b538d9c407
+2026-09-02T23:13:35.4399203Z ##[endgroup]
+2026-09-02T23:13:35.4445483Z [command]/usr/bin/git log -1 --format=%H
+2026-09-02T23:13:35.4471407Z bd256a447c6264e4bace88c1edb3b7f0549e2d57
+2026-09-02T23:13:35.4876745Z ##[group]Run ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b
+2026-09-02T23:13:35.4877270Z with:
+2026-09-02T23:13:35.4877537Z   ruby-version: 3.3
+2026-09-02T23:13:35.4877821Z   bundler-cache: true
+2026-09-02T23:13:35.4881165Z   token: ***
+2026-09-02T23:13:35.4881435Z env:
+2026-09-02T23:13:35.4881669Z   ruby: 3.3
+2026-09-02T23:13:35.4881948Z ##[endgroup]
+2026-09-02T23:13:35.6971953Z ##[group]Modifying PATH
+2026-09-02T23:13:35.6980896Z Entries added to PATH to use selected Ruby:
+2026-09-02T23:13:35.6981853Z   /opt/hostedtoolcache/Ruby/3.3.12/x64/bin
+2026-09-02T23:13:35.6983177Z ##[endgroup]
+2026-09-02T23:13:35.6985039Z ##[group]Print Ruby version
+2026-09-02T23:13:35.7066804Z [command]/opt/hostedtoolcache/Ruby/3.3.12/x64/bin/ruby --version
+2026-09-02T23:13:36.0078982Z ruby 3.3.12 (2026-07-16 revision 0581089df9) [x86_64-linux]
+2026-09-02T23:13:36.0120368Z Took   0.31 seconds
+2026-09-02T23:13:36.0121350Z ##[endgroup]
+2026-09-02T23:13:36.0122274Z ##[group]Installing Bundler
+2026-09-02T23:13:36.0131504Z Using Bundler 4.0.3 from Gemfile.lock BUNDLED WITH 4.0.3
+2026-09-02T23:13:36.0136590Z [command]/opt/hostedtoolcache/Ruby/3.3.12/x64/bin/gem install bundler -v 4.0.3
+2026-09-02T23:13:37.9279501Z Successfully installed bundler-4.0.3
+2026-09-02T23:13:37.9280440Z 1 gem installed
+2026-09-02T23:13:37.9330332Z Took   1.92 seconds
+2026-09-02T23:13:37.9331411Z ##[endgroup]
+2026-09-02T23:13:37.9333207Z > bundle install
+2026-09-02T23:13:37.9338063Z Setting BUNDLER_VERSION=4.0.3 for "bundle config|lock" commands below to ensure Bundler 4.0.3 is used
+2026-09-02T23:13:37.9364312Z [command]/opt/hostedtoolcache/Ruby/3.3.12/x64/bin/bundle config set --local path /home/runner/work/openstreetmap-website/openstreetmap-website/vendor/bundle
+2026-09-02T23:13:38.1088268Z [command]/opt/hostedtoolcache/Ruby/3.3.12/x64/bin/bundle config set --local deployment true
+2026-09-02T23:13:38.2621172Z ##[group]Print lockfile
+2026-09-02T23:13:38.2628669Z [command]/usr/bin/cat Gemfile.lock
+2026-09-02T23:13:38.2656000Z GIT
+2026-09-02T23:13:38.2656797Z   remote: https://github.com/commonlit/canonical-rails.git
+2026-09-02T23:13:38.2657540Z   revision: 97bcb28b910b08ce4dc0169eae55a8cd3d4f26ff
+2026-09-02T23:13:38.2658066Z   ref: bump-rails-8-1
+2026-09-02T23:13:38.2658412Z   specs:
+2026-09-02T23:13:38.2658713Z     canonical-rails (0.2.17)
+2026-09-02T23:13:38.2658965Z       actionview (>= 4.1, < 8.2)
+2026-09-02T23:13:38.2659131Z 
+2026-09-02T23:13:38.2659277Z GIT
+2026-09-02T23:13:38.2659642Z   remote: https://github.com/rkoeze/gd2-ffij.git
+2026-09-02T23:13:38.2660482Z   revision: a203a8d5ef004a4198950e86329228fe3f331d06
+2026-09-02T23:13:38.2661146Z   ref: a203a8d5ef004a4198950e86329228fe3f331d06
+2026-09-02T23:13:38.2661670Z   specs:
+2026-09-02T23:13:38.2662019Z     gd2-ffij (0.4.1.dev)
+2026-09-02T23:13:38.2662436Z       ffi (>= 1.0.0)
+2026-09-02T23:13:38.2662673Z 
+2026-09-02T23:13:38.2662823Z GEM
+2026-09-02T23:13:38.2663286Z   remote: https://rubygems.org/
+2026-09-02T23:13:38.2664023Z   specs:
+2026-09-02T23:13:38.2664335Z     aasm (6.0.0)
+2026-09-02T23:13:38.2664735Z       concurrent-ruby (~> 1.0)
+2026-09-02T23:13:38.2665220Z     action_text-trix (2.1.19)
+2026-09-02T23:13:38.2665635Z       railties
+2026-09-02T23:13:38.2666010Z     actioncable (8.1.3.1)
+2026-09-02T23:13:38.2666420Z       actionpack (= 8.1.3.1)
+2026-09-02T23:13:38.2666843Z       activesupport (= 8.1.3.1)
+2026-09-02T23:13:38.2667276Z       nio4r (~> 2.0)
+2026-09-02T23:13:38.2667687Z       websocket-driver (>= 0.6.1)
+2026-09-02T23:13:38.2668146Z       zeitwerk (~> 2.6)
+2026-09-02T23:13:38.2668541Z     actionmailbox (8.1.3.1)
+2026-09-02T23:13:38.2668944Z       actionpack (= 8.1.3.1)
+2026-09-02T23:13:38.2669353Z       activejob (= 8.1.3.1)
+2026-09-02T23:13:38.2670071Z       activerecord (= 8.1.3.1)
+2026-09-02T23:13:38.2670511Z       activestorage (= 8.1.3.1)
+2026-09-02T23:13:38.2670923Z       activesupport (= 8.1.3.1)
+2026-09-02T23:13:38.2671298Z       mail (>= 2.8.0)
+2026-09-02T23:13:38.2671646Z     actionmailer (8.1.3.1)
+2026-09-02T23:13:38.2672574Z       actionpack (= 8.1.3.1)
+2026-09-02T23:13:38.2673036Z       actionview (= 8.1.3.1)
+2026-09-02T23:13:38.2673455Z       activejob (= 8.1.3.1)
+2026-09-02T23:13:38.2673853Z       activesupport (= 8.1.3.1)
+2026-09-02T23:13:38.2674269Z       mail (>= 2.8.0)
+2026-09-02T23:13:38.2674649Z       rails-dom-testing (~> 2.2)
+2026-09-02T23:13:38.2675085Z     actionpack (8.1.3.1)
+2026-09-02T23:13:38.2675456Z       actionview (= 8.1.3.1)
+2026-09-02T23:13:38.2675848Z       activesupport (= 8.1.3.1)
+2026-09-02T23:13:38.2676229Z       nokogiri (>= 1.8.5)
+2026-09-02T23:13:38.2676582Z       rack (>= 2.2.4)
+2026-09-02T23:13:38.2676930Z       rack-session (>= 1.0.1)
+2026-09-02T23:13:38.2677312Z       rack-test (>= 0.6.3)
+2026-09-02T23:13:38.2677657Z       rails-dom-testing (~> 2.2)
+2026-09-02T23:13:38.2678024Z       rails-html-sanitizer (~> 1.6)
+2026-09-02T23:13:38.2678406Z       useragent (~> 0.16)
+2026-09-02T23:13:38.2678767Z     actionpack-page_caching (1.2.4)
+2026-09-02T23:13:38.2679153Z       actionpack (>= 4.0.0)
+2026-09-02T23:13:38.2679505Z     actiontext (8.1.3.1)
+2026-09-02T23:13:38.2680198Z       action_text-trix (~> 2.1.15)
+2026-09-02T23:13:38.2680822Z       actionpack (= 8.1.3.1)
+2026-09-02T23:13:38.2681182Z       activerecord (= 8.1.3.1)
+2026-09-02T23:13:38.2681556Z       activestorage (= 8.1.3.1)
+2026-09-02T23:13:38.2681930Z       activesupport (= 8.1.3.1)
+2026-09-02T23:13:38.2682299Z       globalid (>= 0.6.0)
+2026-09-02T23:13:38.2682643Z       nokogiri (>= 1.8.5)
+2026-09-02T23:13:38.2682993Z     actionview (8.1.3.1)
+2026-09-02T23:13:38.2683390Z       activesupport (= 8.1.3.1)
+2026-09-02T23:13:38.2683883Z       builder (~> 3.1)
+2026-09-02T23:13:38.2684254Z       erubi (~> 1.11)
+2026-09-02T23:13:38.2684613Z       rails-dom-testing (~> 2.2)
+2026-09-02T23:13:38.2685030Z       rails-html-sanitizer (~> 1.6)
+2026-09-02T23:13:38.2685461Z     active_record_union (1.4.0)
+2026-09-02T23:13:38.2685862Z       activerecord (>= 6.0)
+2026-09-02T23:13:38.2686270Z     activejob (8.1.3.1)
+2026-09-02T23:13:38.2686659Z       activesupport (= 8.1.3.1)
+2026-09-02T23:13:38.2687086Z       globalid (>= 0.3.6)
+2026-09-02T23:13:38.2687486Z     activemodel (8.1.3.1)
+2026-09-02T23:13:38.2687891Z       activesupport (= 8.1.3.1)
+2026-09-02T23:13:38.2688316Z     activerecord (8.1.3.1)
+2026-09-02T23:13:38.2688715Z       activemodel (= 8.1.3.1)
+2026-09-02T23:13:38.2689141Z       activesupport (= 8.1.3.1)
+2026-09-02T23:13:38.2689591Z       timeout (>= 0.4.0)
+2026-09-02T23:13:38.2690473Z     activerecord-import (2.3.0)
+2026-09-02T23:13:38.2690935Z       activerecord (>= 4.2)
+2026-09-02T23:13:38.2691369Z     activerecord-postgis (0.5.1)
+2026-09-02T23:13:38.2691842Z       activerecord (>= 8.1.0, < 8.2)
+2026-09-02T23:13:38.2692296Z       pg
+2026-09-02T23:13:38.2692644Z       rgeo-activerecord (>= 8.0)
+2026-09-02T23:13:38.2693086Z     activestorage (8.1.3.1)
+2026-09-02T23:13:38.2693493Z       actionpack (= 8.1.3.1)
+2026-09-02T23:13:38.2693893Z       activejob (= 8.1.3.1)
+2026-09-02T23:13:38.2694286Z       activerecord (= 8.1.3.1)
+2026-09-02T23:13:38.2694727Z       activesupport (= 8.1.3.1)
+2026-09-02T23:13:38.2695143Z       marcel (~> 1.0)
+2026-09-02T23:13:38.2695535Z     activesupport (8.1.3.1)
+2026-09-02T23:13:38.2695931Z       base64
+2026-09-02T23:13:38.2696257Z       bigdecimal
+2026-09-02T23:13:38.2696627Z       concurrent-ruby (~> 1.0, >= 1.3.1)
+2026-09-02T23:13:38.2697124Z       connection_pool (>= 2.2.5)
+2026-09-02T23:13:38.2697557Z       drb
+2026-09-02T23:13:38.2697880Z       i18n (>= 1.6, < 2)
+2026-09-02T23:13:38.2698247Z       json
+2026-09-02T23:13:38.2698558Z       logger (>= 1.4.2)
+2026-09-02T23:13:38.2698927Z       minitest (>= 5.1)
+2026-09-02T23:13:38.2699292Z       securerandom (>= 0.3)
+2026-09-02T23:13:38.2699953Z       tzinfo (~> 2.0, >= 2.0.5)
+2026-09-02T23:13:38.2700378Z       uri (>= 0.13.1)
+2026-09-02T23:13:38.2700752Z     addressable (2.9.0)
+2026-09-02T23:13:38.2701153Z       public_suffix (>= 2.0.2, < 8.0)
+2026-09-02T23:13:38.2701619Z     aes_key_wrap (1.1.0)
+2026-09-02T23:13:38.2702022Z     annotaterb (4.24.0)
+2026-09-02T23:13:38.2702677Z       activerecord (>= 6.0.0)
+2026-09-02T23:13:38.2703148Z       activesupport (>= 6.0.0)
+2026-09-02T23:13:38.2703598Z     anonymous_loader (0.1.3)
+2026-09-02T23:13:38.2704032Z       version_gem (~> 1.1, >= 1.1.14)
+2026-09-02T23:13:38.2704493Z     argon2 (2.3.3)
+2026-09-02T23:13:38.2704839Z       ffi (~> 1.15)
+2026-09-02T23:13:38.2705207Z       ffi-compiler (~> 1.0)
+2026-09-02T23:13:38.2705608Z     ast (2.4.3)
+2026-09-02T23:13:38.2705970Z     auth-sanitizer (0.2.3)
+2026-09-02T23:13:38.2706395Z       version_gem (~> 1.1, >= 1.1.14)
+2026-09-02T23:13:38.2706875Z     autoprefixer-rails (10.4.21.0)
+2026-09-02T23:13:38.2707324Z       execjs (~> 2)
+2026-09-02T23:13:38.2707703Z     aws-eventstream (1.4.0)
+2026-09-02T23:13:38.2708141Z     aws-partitions (1.1280.0)
+2026-09-02T23:13:38.2708571Z     aws-sdk-core (3.254.1)
+2026-09-02T23:13:38.2708999Z       aws-eventstream (~> 1, >= 1.3.0)
+2026-09-02T23:13:38.2709494Z       aws-partitions (~> 1, >= 1.992.0)
+2026-09-02T23:13:38.2710224Z       aws-sigv4 (~> 1.9)
+2026-09-02T23:13:38.2710621Z       base64
+2026-09-02T23:13:38.2710961Z       bigdecimal
+2026-09-02T23:13:38.2711712Z       jmespath (~> 1, >= 1.6.1)
+2026-09-02T23:13:38.2712127Z       logger
+2026-09-02T23:13:38.2712481Z     aws-sdk-kms (1.130.0)
+2026-09-02T23:13:38.2712895Z       aws-sdk-core (~> 3, >= 3.254.0)
+2026-09-02T23:13:38.2713332Z       aws-sigv4 (~> 1.5)
+2026-09-02T23:13:38.2713731Z     aws-sdk-s3 (1.229.0)
+2026-09-02T23:13:38.2714137Z       aws-sdk-core (~> 3, >= 3.254.1)
+2026-09-02T23:13:38.2714588Z       aws-sdk-kms (~> 1)
+2026-09-02T23:13:38.2714967Z       aws-sigv4 (~> 1.5)
+2026-09-02T23:13:38.2715359Z     aws-sigv4 (1.12.1)
+2026-09-02T23:13:38.2715750Z       aws-eventstream (~> 1, >= 1.0.2)
+2026-09-02T23:13:38.2716193Z     base64 (0.3.0)
+2026-09-02T23:13:38.2716513Z     benchmark (0.5.0)
+2026-09-02T23:13:38.2716912Z     better_errors (2.10.1)
+2026-09-02T23:13:38.2717397Z       erubi (>= 1.0.0)
+2026-09-02T23:13:38.2717806Z       rack (>= 0.9.0)
+2026-09-02T23:13:38.2718167Z       rouge (>= 1.0.0)
+2026-09-02T23:13:38.2718554Z     better_html (2.2.0)
+2026-09-02T23:13:38.2718953Z       actionview (>= 7.0)
+2026-09-02T23:13:38.2719379Z       activesupport (>= 7.0)
+2026-09-02T23:13:38.2720229Z       ast (~> 2.0)
+2026-09-02T23:13:38.2720599Z       erubi (~> 1.4)
+2026-09-02T23:13:38.2720974Z       parser (>= 2.4)
+2026-09-02T23:13:38.2721359Z       smart_properties
+2026-09-02T23:13:38.2721753Z     bigdecimal (4.1.2)
+2026-09-02T23:13:38.2722131Z     bindata (2.5.1)
+2026-09-02T23:13:38.2722503Z     binding_of_caller (2.0.0)
+2026-09-02T23:13:38.2722954Z       debug_inspector (>= 1.2.0)
+2026-09-02T23:13:38.2723399Z     bootsnap (1.25.0)
+2026-09-02T23:13:38.2723778Z       msgpack (~> 1.5)
+2026-09-02T23:13:38.2724156Z     bootstrap (5.3.8)
+2026-09-02T23:13:38.2724553Z       popper_js (>= 2.11.8, < 3)
+2026-09-02T23:13:38.2725012Z     bootstrap_form (5.6.1)
+2026-09-02T23:13:38.2725431Z       actionpack (>= 7.2)
+2026-09-02T23:13:38.2725841Z       activemodel (>= 7.2)
+2026-09-02T23:13:38.2726244Z     brakeman (8.0.6)
+2026-09-02T23:13:38.2726624Z       racc
+2026-09-02T23:13:38.2726948Z     brotli (0.8.0)
+2026-09-02T23:13:38.2727302Z     builder (3.3.0)
+2026-09-02T23:13:38.2727665Z     bzip2-ffi (1.1.1)
+2026-09-02T23:13:38.2728024Z       ffi (~> 1.0)
+2026-09-02T23:13:38.2728361Z     cancancan (3.6.1)
+2026-09-02T23:13:38.2728719Z     capybara (3.40.0)
+2026-09-02T23:13:38.2729080Z       addressable
+2026-09-02T23:13:38.2729431Z       matrix
+2026-09-02T23:13:38.2730066Z       mini_mime (>= 0.1.3)
+2026-09-02T23:13:38.2730469Z       nokogiri (~> 1.11)
+2026-09-02T23:13:38.2730854Z       rack (>= 1.6.0)
+2026-09-02T23:13:38.2731241Z       rack-test (>= 0.6.3)
+2026-09-02T23:13:38.2731663Z       regexp_parser (>= 1.5, < 3.0)
+2026-09-02T23:13:38.2732108Z       xpath (~> 3.2)
+2026-09-02T23:13:38.2732468Z     cgi (0.5.2)
+2026-09-02T23:13:38.2732822Z     childprocess (5.1.0)
+2026-09-02T23:13:38.2733220Z       logger (~> 1.5)
+2026-09-02T23:13:38.2733587Z     claide (1.1.0)
+2026-09-02T23:13:38.2733965Z     claide-plugins (0.9.2)
+2026-09-02T23:13:38.2734357Z       cork
+2026-09-02T23:13:38.2734908Z       nap
+2026-09-02T23:13:38.2735233Z       open4 (~> 1.3)
+2026-09-02T23:13:38.2735585Z     colored2 (3.1.2)
+2026-09-02T23:13:38.2735953Z     concurrent-ruby (1.3.8)
+2026-09-02T23:13:38.2736383Z     config (5.6.1)
+2026-09-02T23:13:38.2736762Z       deep_merge (~> 1.2, >= 1.2.1)
+2026-09-02T23:13:38.2737219Z       ostruct
+2026-09-02T23:13:38.2737552Z     connection_pool (3.0.2)
+2026-09-02T23:13:38.2737949Z     cork (0.3.0)
+2026-09-02T23:13:38.2738293Z       colored2 (~> 3.1)
+2026-09-02T23:13:38.2738656Z     crack (1.0.1)
+2026-09-02T23:13:38.2739004Z       bigdecimal
+2026-09-02T23:13:38.2739351Z       rexml
+2026-09-02T23:13:38.2739896Z     crass (1.0.7)
+2026-09-02T23:13:38.2740254Z     dalli (5.1.0)
+2026-09-02T23:13:38.2740567Z       logger
+2026-09-02T23:13:38.2740866Z     danger (9.6.1)
+2026-09-02T23:13:38.2741198Z       base64 (~> 0.2)
+2026-09-02T23:13:38.2741566Z       claide (~> 1.0)
+2026-09-02T23:13:38.2741947Z       claide-plugins (>= 0.9.2)
+2026-09-02T23:13:38.2742398Z       colored2 (>= 3.1, < 5)
+2026-09-02T23:13:38.2742800Z       cork (~> 0.1)
+2026-09-02T23:13:38.2743420Z       faraday (>= 0.9.0, < 3.0)
+2026-09-02T23:13:38.2743861Z       faraday-http-cache (~> 2.0)
+2026-09-02T23:13:38.2744300Z       git (>= 1.13)
+2026-09-02T23:13:38.2744644Z       kramdown (>= 2.5.1, < 3.0)
+2026-09-02T23:13:38.2745052Z       kramdown-parser-gfm (~> 1.0)
+2026-09-02T23:13:38.2745471Z       octokit (>= 4.0)
+2026-09-02T23:13:38.2745817Z       pstore (~> 0.1)
+2026-09-02T23:13:38.2746169Z       terminal-table (>= 1, < 5)
+2026-09-02T23:13:38.2746591Z     danger-auto_label (1.3.1)
+2026-09-02T23:13:38.2747031Z       danger-plugin-api (~> 1.0)
+2026-09-02T23:13:38.2747491Z     danger-plugin-api (1.0.0)
+2026-09-02T23:13:38.2747917Z       danger (> 2.0)
+2026-09-02T23:13:38.2748304Z     dartsass-ruby (3.0.2)
+2026-09-02T23:13:38.2748734Z       sass-embedded (~> 1.54, < 1.67)
+2026-09-02T23:13:38.2749214Z     dartsass-sprockets (3.0.0)
+2026-09-02T23:13:38.2749667Z       dartsass-ruby (~> 3.0)
+2026-09-02T23:13:38.2750333Z       railties (>= 4.0.0)
+2026-09-02T23:13:38.2750725Z       sprockets (> 3.0)
+2026-09-02T23:13:38.2751130Z       sprockets-rails
+2026-09-02T23:13:38.2751505Z       tilt
+2026-09-02T23:13:38.2751861Z     database_consistency (3.0.10)
+2026-09-02T23:13:38.2752312Z       activerecord (>= 3.2)
+2026-09-02T23:13:38.2752718Z     date (3.5.1)
+2026-09-02T23:13:38.2753075Z     debug (1.11.1)
+2026-09-02T23:13:38.2753434Z       irb (~> 1.10)
+2026-09-02T23:13:38.2753790Z       reline (>= 0.3.8)
+2026-09-02T23:13:38.2754184Z     debug_inspector (1.2.0)
+2026-09-02T23:13:38.2754612Z     deep_merge (1.2.2)
+2026-09-02T23:13:38.2754961Z     delayed_job (4.2.0)
+2026-09-02T23:13:38.2755411Z       activesupport (>= 3.0, < 9.0)
+2026-09-02T23:13:38.2755867Z       benchmark
+2026-09-02T23:13:38.2756253Z       logger
+2026-09-02T23:13:38.2756632Z     delayed_job_active_record (4.1.11)
+2026-09-02T23:13:38.2757132Z       activerecord (>= 3.0, < 9.0)
+2026-09-02T23:13:38.2757585Z       delayed_job (>= 3.0, < 5)
+2026-09-02T23:13:38.2758026Z     digest (3.2.1)
+2026-09-02T23:13:38.2758398Z     doorkeeper (5.9.6)
+2026-09-02T23:13:38.2758782Z       railties (>= 5)
+2026-09-02T23:13:38.2759175Z     doorkeeper-i18n (5.2.9)
+2026-09-02T23:13:38.2759607Z       doorkeeper (>= 5.2)
+2026-09-02T23:13:38.2760296Z     doorkeeper-openid_connect (1.10.5)
+2026-09-02T23:13:38.2760784Z       doorkeeper (>= 5.5, < 6.0)
+2026-09-02T23:13:38.2761213Z       jwt (>= 2.5)
+2026-09-02T23:13:38.2761438Z       ostruct (>= 0.5)
+2026-09-02T23:13:38.2761842Z     drb (2.2.3)
+2026-09-02T23:13:38.2762208Z     dry-configurable (1.3.0)
+2026-09-02T23:13:38.2762644Z       dry-core (~> 1.1)
+2026-09-02T23:13:38.2763019Z       zeitwerk (~> 2.6)
+2026-09-02T23:13:38.2763469Z     dry-core (1.2.0)
+2026-09-02T23:13:38.2763870Z       concurrent-ruby (~> 1.0)
+2026-09-02T23:13:38.2764296Z       logger
+2026-09-02T23:13:38.2764682Z       zeitwerk (~> 2.6)
+2026-09-02T23:13:38.2765085Z     dry-inflector (1.3.1)
+2026-09-02T23:13:38.2765507Z     dry-initializer (3.2.0)
+2026-09-02T23:13:38.2766171Z     dry-logic (1.6.0)
+2026-09-02T23:13:38.2766578Z       bigdecimal
+2026-09-02T23:13:38.2766958Z       concurrent-ruby (~> 1.0)
+2026-09-02T23:13:38.2767356Z       dry-core (~> 1.1)
+2026-09-02T23:13:38.2767707Z       zeitwerk (~> 2.6)
+2026-09-02T23:13:38.2768073Z     dry-schema (1.16.0)
+2026-09-02T23:13:38.2768450Z       concurrent-ruby (~> 1.0)
+2026-09-02T23:13:38.2768884Z       dry-configurable (~> 1.0, >= 1.0.1)
+2026-09-02T23:13:38.2769339Z       dry-core (~> 1.1)
+2026-09-02T23:13:38.2769952Z       dry-initializer (~> 3.2)
+2026-09-02T23:13:38.2770369Z       dry-logic (~> 1.6)
+2026-09-02T23:13:38.2770752Z       dry-types (~> 1.9, >= 1.9.1)
+2026-09-02T23:13:38.2771176Z       zeitwerk (~> 2.6)
+2026-09-02T23:13:38.2771538Z     dry-types (1.9.1)
+2026-09-02T23:13:38.2771889Z       bigdecimal (>= 3.0)
+2026-09-02T23:13:38.2772280Z       concurrent-ruby (~> 1.0)
+2026-09-02T23:13:38.2772693Z       dry-core (~> 1.0)
+2026-09-02T23:13:38.2773073Z       dry-inflector (~> 1.0)
+2026-09-02T23:13:38.2773463Z       dry-logic (~> 1.4)
+2026-09-02T23:13:38.2773821Z       zeitwerk (~> 2.6)
+2026-09-02T23:13:38.2774381Z     dry-validation (1.11.1)
+2026-09-02T23:13:38.2774750Z       concurrent-ruby (~> 1.0)
+2026-09-02T23:13:38.2775116Z       dry-core (~> 1.1)
+2026-09-02T23:13:38.2775467Z       dry-initializer (~> 3.2)
+2026-09-02T23:13:38.2775851Z       dry-schema (~> 1.14)
+2026-09-02T23:13:38.2776206Z       zeitwerk (~> 2.6)
+2026-09-02T23:13:38.2776538Z     erb (6.0.7)
+2026-09-02T23:13:38.2776845Z     erb_lint (0.9.0)
+2026-09-02T23:13:38.2777172Z       activesupport
+2026-09-02T23:13:38.2777482Z       better_html (>= 2.0.1)
+2026-09-02T23:13:38.2777842Z       parser (>= 2.7.1.4)
+2026-09-02T23:13:38.2778184Z       rainbow
+2026-09-02T23:13:38.2778490Z       rubocop (>= 1)
+2026-09-02T23:13:38.2778824Z       smart_properties
+2026-09-02T23:13:38.2779161Z     erubi (1.13.1)
+2026-09-02T23:13:38.2779555Z     execjs (2.10.1)
+2026-09-02T23:13:38.2780247Z     exifr (1.5.1)
+2026-09-02T23:13:38.2780602Z     factory_bot (6.5.6)
+2026-09-02T23:13:38.2780830Z       activesupport (>= 6.1.0)
+2026-09-02T23:13:38.2781072Z     factory_bot_rails (6.5.1)
+2026-09-02T23:13:38.2781303Z       factory_bot (~> 6.5)
+2026-09-02T23:13:38.2781517Z       railties (>= 6.1.0)
+2026-09-02T23:13:38.2781728Z     faraday (2.14.3)
+2026-09-02T23:13:38.2781946Z       faraday-net_http (>= 2.0, < 3.5)
+2026-09-02T23:13:38.2782190Z       json
+2026-09-02T23:13:38.2782361Z       logger
+2026-09-02T23:13:38.2782560Z     faraday-follow_redirects (0.5.0)
+2026-09-02T23:13:38.2782808Z       faraday (>= 1, < 3)
+2026-09-02T23:13:38.2783032Z     faraday-http-cache (2.7.0)
+2026-09-02T23:13:38.2783261Z       faraday (>= 0.8)
+2026-09-02T23:13:38.2783471Z     faraday-net_http (3.4.4)
+2026-09-02T23:13:38.2783701Z       net-http (~> 0.5)
+2026-09-02T23:13:38.2783901Z     ffi (1.17.4)
+2026-09-02T23:13:38.2784103Z     ffi-compiler (1.3.2)
+2026-09-02T23:13:38.2784312Z       ffi (>= 1.15.5)
+2026-09-02T23:13:38.2784512Z       rake
+2026-09-02T23:13:38.2784697Z     ffi-libarchive (1.1.14)
+2026-09-02T23:13:38.2784919Z       ffi (~> 1.0)
+2026-09-02T23:13:38.2785114Z     frozen_record (0.27.4)
+2026-09-02T23:13:38.2785335Z       activemodel
+2026-09-02T23:13:38.2785525Z     fspath (3.1.2)
+2026-09-02T23:13:38.2785708Z     git (5.0.0)
+2026-09-02T23:13:38.2785906Z       activesupport (>= 5.0)
+2026-09-02T23:13:38.2786129Z       addressable (~> 2.8)
+2026-09-02T23:13:38.2786347Z       process_executer (~> 4.0)
+2026-09-02T23:13:38.2786576Z       rchardet (~> 1.9)
+2026-09-02T23:13:38.2786774Z     glob (0.4.1)
+2026-09-02T23:13:38.2786965Z     globalid (1.4.0)
+2026-09-02T23:13:38.2787166Z       activesupport (>= 6.1)
+2026-09-02T23:13:38.2787394Z     google-protobuf (3.25.8)
+2026-09-02T23:13:38.2787647Z     googleapis-common-protos-types (1.20.0)
+2026-09-02T23:13:38.2787940Z       google-protobuf (>= 3.18, < 5.a)
+2026-09-02T23:13:38.2788192Z     hashdiff (1.2.1)
+2026-09-02T23:13:38.2788383Z     hashie (5.1.0)
+2026-09-02T23:13:38.2788565Z       logger
+2026-09-02T23:13:38.2788741Z     herb (0.10.3)
+2026-09-02T23:13:38.2789076Z     highline (3.1.2)
+2026-09-02T23:13:38.2789273Z       reline
+2026-09-02T23:13:38.2789465Z     htmlentities (4.4.2)
+2026-09-02T23:13:38.2789946Z     http_accept_language (2.1.1)
+2026-09-02T23:13:38.2790233Z     i18n (1.15.2)
+2026-09-02T23:13:38.2790434Z       concurrent-ruby (~> 1.0)
+2026-09-02T23:13:38.2790658Z     i18n-js (4.2.4)
+2026-09-02T23:13:38.2790848Z       glob (>= 0.4.0)
+2026-09-02T23:13:38.2791037Z       i18n
+2026-09-02T23:13:38.2791214Z     i18n-tasks (1.1.2)
+2026-09-02T23:13:38.2791428Z       activesupport (>= 4.0.2)
+2026-09-02T23:13:38.2791648Z       ast (>= 2.1.0)
+2026-09-02T23:13:38.2791840Z       erubi
+2026-09-02T23:13:38.2792020Z       highline (>= 3.0.0)
+2026-09-02T23:13:38.2792235Z       i18n
+2026-09-02T23:13:38.2792415Z       parser (>= 3.2.2.1)
+2026-09-02T23:13:38.2792619Z       prism
+2026-09-02T23:13:38.2792795Z       rails-i18n
+2026-09-02T23:13:38.2792985Z       rainbow (>= 2.2.2, < 4.0)
+2026-09-02T23:13:38.2793224Z       ruby-progressbar (~> 1.8, >= 1.8.1)
+2026-09-02T23:13:38.2793495Z       terminal-table (>= 1.5.1)
+2026-09-02T23:13:38.2793723Z     image_optim (0.32.0)
+2026-09-02T23:13:38.2794073Z       exifr (~> 1.2, >= 1.2.2)
+2026-09-02T23:13:38.2794287Z       fspath (~> 3.0)
+2026-09-02T23:13:38.2794489Z       image_size (>= 1.5, < 4)
+2026-09-02T23:13:38.2794712Z       in_threads (~> 1.3)
+2026-09-02T23:13:38.2794927Z       progress (~> 3.0, >= 3.0.1)
+2026-09-02T23:13:38.2795164Z     image_optim_rails (0.5.0)
+2026-09-02T23:13:38.2795388Z       image_optim (~> 0.24)
+2026-09-02T23:13:38.2795598Z       railties
+2026-09-02T23:13:38.2795777Z       sprockets
+2026-09-02T23:13:38.2795971Z     image_processing (2.0.3)
+2026-09-02T23:13:38.2796194Z     image_size (3.6.0)
+2026-09-02T23:13:38.2796390Z     in_threads (1.6.0)
+2026-09-02T23:13:38.2796589Z     iniparse (1.5.0)
+2026-09-02T23:13:38.2796786Z     inline_svg (1.10.0)
+2026-09-02T23:13:38.2796997Z       activesupport (>= 3.0)
+2026-09-02T23:13:38.2797221Z       nokogiri (>= 1.6)
+2026-09-02T23:13:38.2797423Z     io-console (0.9.2)
+2026-09-02T23:13:38.2797621Z     irb (1.18.0)
+2026-09-02T23:13:38.2797810Z       pp (>= 0.6.0)
+2026-09-02T23:13:38.2798009Z       prism (>= 1.3.0)
+2026-09-02T23:13:38.2798202Z       rdoc (>= 4.0.0)
+2026-09-02T23:13:38.2798393Z       reline (>= 0.4.2)
+2026-09-02T23:13:38.2798591Z     jbuilder (2.15.1)
+2026-09-02T23:13:38.2798787Z       actionview (>= 7.0.0)
+2026-09-02T23:13:38.2799008Z       activesupport (>= 7.0.0)
+2026-09-02T23:13:38.2799226Z     jmespath (1.6.2)
+2026-09-02T23:13:38.2799428Z     jquery-rails (4.6.1)
+2026-09-02T23:13:38.2799900Z       rails-dom-testing (>= 1, < 3)
+2026-09-02T23:13:38.2800167Z       railties (>= 4.2.0)
+2026-09-02T23:13:38.2800372Z       thor (>= 0.14, < 2.0)
+2026-09-02T23:13:38.2800578Z     json (2.21.2)
+2026-09-02T23:13:38.2800767Z     json-jwt (1.17.0)
+2026-09-02T23:13:38.2800971Z       activesupport (>= 4.2)
+2026-09-02T23:13:38.2801188Z       aes_key_wrap
+2026-09-02T23:13:38.2801370Z       base64
+2026-09-02T23:13:38.2801557Z       bindata
+2026-09-02T23:13:38.2801740Z       faraday (~> 2.0)
+2026-09-02T23:13:38.2801956Z       faraday-follow_redirects
+2026-09-02T23:13:38.2802189Z     jwt (2.10.3)
+2026-09-02T23:13:38.2802370Z       base64
+2026-09-02T23:13:38.2802553Z     kramdown (2.5.2)
+2026-09-02T23:13:38.2802743Z       rexml (>= 3.4.4)
+2026-09-02T23:13:38.2802954Z     kramdown-parser-gfm (1.1.0)
+2026-09-02T23:13:38.2803185Z       kramdown (~> 2.0)
+2026-09-02T23:13:38.2803401Z     language_server-protocol (3.17.0.6)
+2026-09-02T23:13:38.2803663Z     libv8-node (24.12.0.1)
+2026-09-02T23:13:38.2803877Z     libxml-ruby (6.0.0)
+2026-09-02T23:13:38.2804078Z     lint_roller (1.1.0)
+2026-09-02T23:13:38.2804279Z     listen (3.10.0)
+2026-09-02T23:13:38.2804467Z       logger
+2026-09-02T23:13:38.2804665Z       rb-fsevent (~> 0.10, >= 0.10.3)
+2026-09-02T23:13:38.2804912Z       rb-inotify (~> 0.9, >= 0.9.10)
+2026-09-02T23:13:38.2805145Z     logger (1.7.0)
+2026-09-02T23:13:38.2805334Z     loofah (2.25.2)
+2026-09-02T23:13:38.2805520Z       crass (~> 1.0.2)
+2026-09-02T23:13:38.2805720Z       nokogiri (>= 1.12.0)
+2026-09-02T23:13:38.2806051Z     mail (2.9.1)
+2026-09-02T23:13:38.2806242Z       logger
+2026-09-02T23:13:38.2806422Z       mini_mime (>= 0.1.1)
+2026-09-02T23:13:38.2806625Z       net-imap
+2026-09-02T23:13:38.2806804Z       net-pop
+2026-09-02T23:13:38.2806980Z       net-smtp
+2026-09-02T23:13:38.2807165Z     marcel (1.2.1)
+2026-09-02T23:13:38.2807351Z     matrix (0.4.3)
+2026-09-02T23:13:38.2807538Z     maxminddb (0.1.22)
+2026-09-02T23:13:38.2807739Z     mini_mime (1.1.5)
+2026-09-02T23:13:38.2807947Z     mini_portile2 (2.8.9)
+2026-09-02T23:13:38.2808167Z     mini_racer (0.21.0)
+2026-09-02T23:13:38.2808375Z       libv8-node (~> 24.12.0.1)
+2026-09-02T23:13:38.2808604Z     minitest (6.0.6)
+2026-09-02T23:13:38.2808805Z       drb (~> 2.0)
+2026-09-02T23:13:38.2808993Z       prism (~> 1.5)
+2026-09-02T23:13:38.2809197Z     minitest-focus (1.4.1)
+2026-09-02T23:13:38.2809414Z       minitest (> 5.0)
+2026-09-02T23:13:38.2809629Z     minitest-mock (5.27.0)
+2026-09-02T23:13:38.2810077Z     msgpack (1.8.4)
+2026-09-02T23:13:38.2810277Z     multi_xml (0.9.1)
+2026-09-02T23:13:38.2810479Z       bigdecimal (>= 3.1, < 5)
+2026-09-02T23:13:38.2810823Z     nap (1.1.0)
+2026-09-02T23:13:38.2811013Z     net-http (0.9.1)
+2026-09-02T23:13:38.2811207Z       uri (>= 0.11.1)
+2026-09-02T23:13:38.2811401Z     net-imap (0.6.6)
+2026-09-02T23:13:38.2811591Z       date
+2026-09-02T23:13:38.2811777Z       net-protocol
+2026-09-02T23:13:38.2811971Z     net-pop (0.1.2)
+2026-09-02T23:13:38.2812167Z       net-protocol
+2026-09-02T23:13:38.2812369Z     net-protocol (0.2.2)
+2026-09-02T23:13:38.2812570Z       timeout
+2026-09-02T23:13:38.2812771Z     net-smtp (0.5.1)
+2026-09-02T23:13:38.2812960Z       net-protocol
+2026-09-02T23:13:38.2813142Z     nio4r (2.7.5)
+2026-09-02T23:13:38.2813330Z     nokogiri (1.19.4)
+2026-09-02T23:13:38.2813533Z       mini_portile2 (~> 2.8.2)
+2026-09-02T23:13:38.2813750Z       racc (~> 1.4)
+2026-09-02T23:13:38.2813935Z     noticed (3.0.0)
+2026-09-02T23:13:38.2814122Z       rails (>= 6.1.0)
+2026-09-02T23:13:38.2814312Z     oauth (1.1.6)
+2026-09-02T23:13:38.2814521Z       auth-sanitizer (~> 0.2, >= 0.2.1)
+2026-09-02T23:13:38.2814773Z       base64 (~> 0.1)
+2026-09-02T23:13:38.2814955Z       cgi
+2026-09-02T23:13:38.2815133Z       oauth-tty (~> 1.0, >= 1.0.8)
+2026-09-02T23:13:38.2815372Z       snaky_hash (~> 2.0, >= 2.0.5)
+2026-09-02T23:13:38.2815613Z       version_gem (~> 1.1, >= 1.1.11)
+2026-09-02T23:13:38.2815852Z     oauth-tty (1.0.13)
+2026-09-02T23:13:38.2816066Z       anonymous_loader (~> 0.1, >= 0.1.3)
+2026-09-02T23:13:38.2816330Z       auth-sanitizer (~> 0.2, >= 0.2.3)
+2026-09-02T23:13:38.2816582Z       version_gem (~> 1.1, >= 1.1.14)
+2026-09-02T23:13:38.2816816Z     oauth2 (2.0.25)
+2026-09-02T23:13:38.2817027Z       anonymous_loader (~> 0.1, >= 0.1.3)
+2026-09-02T23:13:38.2817285Z       auth-sanitizer (~> 0.2, >= 0.2.3)
+2026-09-02T23:13:38.2817534Z       faraday (>= 0.17.3, < 4.0)
+2026-09-02T23:13:38.2817763Z       jwt (>= 1.0, < 4.0)
+2026-09-02T23:13:38.2817971Z       logger (~> 1.2)
+2026-09-02T23:13:38.2818180Z       multi_xml (~> 0.5)
+2026-09-02T23:13:38.2818391Z       rack (>= 1.2, < 4)
+2026-09-02T23:13:38.2818607Z       snaky_hash (~> 2.0, >= 2.0.7)
+2026-09-02T23:13:38.2818852Z       version_gem (~> 1.1, >= 1.1.14)
+2026-09-02T23:13:38.2819098Z     octokit (10.0.0)
+2026-09-02T23:13:38.2819304Z       faraday (>= 1, < 3)
+2026-09-02T23:13:38.2819519Z       sawyer (~> 0.9)
+2026-09-02T23:13:38.2819918Z     omniauth (2.1.4)
+2026-09-02T23:13:38.2820119Z       hashie (>= 3.4.6)
+2026-09-02T23:13:38.2820318Z       logger
+2026-09-02T23:13:38.2820498Z       rack (>= 2.2.3)
+2026-09-02T23:13:38.2820697Z       rack-protection
+2026-09-02T23:13:38.2820909Z     omniauth-apple (1.4.0)
+2026-09-02T23:13:38.2821126Z       json-jwt
+2026-09-02T23:13:38.2821312Z       omniauth-oauth2
+2026-09-02T23:13:38.2821521Z     omniauth-facebook (11.0.0)
+2026-09-02T23:13:38.2821745Z       bigdecimal
+2026-09-02T23:13:38.2821941Z       omniauth-oauth2 (>= 1.2, < 3)
+2026-09-02T23:13:38.2822193Z     omniauth-github (2.0.1)
+2026-09-02T23:13:38.2822421Z       omniauth (~> 2.0)
+2026-09-02T23:13:38.2822793Z       omniauth-oauth2 (~> 1.8)
+2026-09-02T23:13:38.2823049Z     omniauth-google-oauth2 (1.2.2)
+2026-09-02T23:13:38.2823293Z       jwt (>= 2.9.2)
+2026-09-02T23:13:38.2823482Z       oauth2 (~> 2.0)
+2026-09-02T23:13:38.2823676Z       omniauth (~> 2.0)
+2026-09-02T23:13:38.2823884Z       omniauth-oauth2 (~> 1.8)
+2026-09-02T23:13:38.2824113Z     omniauth-mediawiki (0.0.4)
+2026-09-02T23:13:38.2824336Z       jwt (~> 2.0)
+2026-09-02T23:13:38.2824534Z       omniauth-oauth (~> 1.0)
+2026-09-02T23:13:38.2824787Z     omniauth-microsoft_graph (2.2.0)
+2026-09-02T23:13:38.2825034Z       jwt (>= 2.0, < 4.0)
+2026-09-02T23:13:38.2825244Z       omniauth (~> 2.0)
+2026-09-02T23:13:38.2825455Z       omniauth-oauth2 (~> 1.8.0)
+2026-09-02T23:13:38.2825696Z     omniauth-oauth (1.2.1)
+2026-09-02T23:13:38.2825906Z       oauth
+2026-09-02T23:13:38.2826092Z       omniauth (>= 1.0, < 3)
+2026-09-02T23:13:38.2826308Z       rack (>= 1.6.2, < 4)
+2026-09-02T23:13:38.2826523Z     omniauth-oauth2 (1.8.0)
+2026-09-02T23:13:38.2826748Z       oauth2 (>= 1.4, < 3)
+2026-09-02T23:13:38.2826955Z       omniauth (~> 2.0)
+2026-09-02T23:13:38.2827301Z     omniauth-rails_csrf_protection (2.0.1)
+2026-09-02T23:13:38.2827571Z       actionpack (>= 4.2)
+2026-09-02T23:13:38.2827780Z       omniauth (~> 2.0)
+2026-09-02T23:13:38.2827978Z     open3 (0.2.1)
+2026-09-02T23:13:38.2828164Z     open4 (1.3.4)
+2026-09-02T23:13:38.2828373Z     openstreetmap-deadlock_retry (1.3.1)
+2026-09-02T23:13:38.2828641Z     opentelemetry-api (1.11.0)
+2026-09-02T23:13:38.2828860Z       logger
+2026-09-02T23:13:38.2829063Z     opentelemetry-common (0.25.1)
+2026-09-02T23:13:38.2829315Z       opentelemetry-api (~> 1.0)
+2026-09-02T23:13:38.2829572Z     opentelemetry-exporter-otlp (0.34.1)
+2026-09-02T23:13:38.2830128Z       google-protobuf (>= 3.18)
+2026-09-02T23:13:38.2830414Z       googleapis-common-protos-types (~> 1.3)
+2026-09-02T23:13:38.2830708Z       opentelemetry-api (~> 1.1)
+2026-09-02T23:13:38.2830953Z       opentelemetry-common (~> 0.20)
+2026-09-02T23:13:38.2831219Z       opentelemetry-sdk (~> 1.10)
+2026-09-02T23:13:38.2831478Z       opentelemetry-semantic_conventions
+2026-09-02T23:13:38.2831763Z     opentelemetry-helpers-mysql (0.6.0)
+2026-09-02T23:13:38.2832029Z       opentelemetry-api (~> 1.7)
+2026-09-02T23:13:38.2832269Z       opentelemetry-common (~> 0.21)
+2026-09-02T23:13:38.2832528Z     opentelemetry-helpers-sql (0.4.0)
+2026-09-02T23:13:38.2832785Z       opentelemetry-api (~> 1.7)
+2026-09-02T23:13:38.2833063Z     opentelemetry-helpers-sql-processor (0.5.0)
+2026-09-02T23:13:38.2833358Z       opentelemetry-api (~> 1.0)
+2026-09-02T23:13:38.2833595Z       opentelemetry-common (~> 0.21)
+2026-09-02T23:13:38.2833899Z     opentelemetry-instrumentation-action_mailer (0.8.1)
+2026-09-02T23:13:38.2834281Z       opentelemetry-instrumentation-active_support (~> 0.10)
+2026-09-02T23:13:38.2834656Z     opentelemetry-instrumentation-action_pack (0.18.1)
+2026-09-02T23:13:38.2835002Z       opentelemetry-instrumentation-rack (~> 0.29)
+2026-09-02T23:13:38.2835351Z     opentelemetry-instrumentation-action_view (0.13.0)
+2026-09-02T23:13:38.2835721Z       opentelemetry-instrumentation-active_support (~> 0.10)
+2026-09-02T23:13:38.2836095Z     opentelemetry-instrumentation-active_job (0.13.0)
+2026-09-02T23:13:38.2836438Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2836826Z     opentelemetry-instrumentation-active_model_serializers (0.25.0)
+2026-09-02T23:13:38.2837253Z       opentelemetry-instrumentation-active_support (>= 0.7.0)
+2026-09-02T23:13:38.2837640Z     opentelemetry-instrumentation-active_record (0.13.0)
+2026-09-02T23:13:38.2837988Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2838331Z     opentelemetry-instrumentation-active_storage (0.5.1)
+2026-09-02T23:13:38.2838707Z       opentelemetry-instrumentation-active_support (~> 0.10)
+2026-09-02T23:13:38.2839089Z     opentelemetry-instrumentation-active_support (0.12.1)
+2026-09-02T23:13:38.2839442Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2840151Z     opentelemetry-instrumentation-all (0.96.0)
+2026-09-02T23:13:38.2840566Z       opentelemetry-instrumentation-active_model_serializers (~> 0.25.0)
+2026-09-02T23:13:38.2841000Z       opentelemetry-instrumentation-anthropic (~> 0.5.0)
+2026-09-02T23:13:38.2841361Z       opentelemetry-instrumentation-aws_lambda (~> 0.7.0)
+2026-09-02T23:13:38.2841717Z       opentelemetry-instrumentation-aws_sdk (~> 0.13.0)
+2026-09-02T23:13:38.2842061Z       opentelemetry-instrumentation-bunny (~> 0.25.0)
+2026-09-02T23:13:38.2862223Z       opentelemetry-instrumentation-concurrent_ruby (~> 0.25.0)
+2026-09-02T23:13:38.2862665Z       opentelemetry-instrumentation-dalli (~> 0.30.0)
+2026-09-02T23:13:38.2863065Z       opentelemetry-instrumentation-delayed_job (~> 0.26.0)
+2026-09-02T23:13:38.2863480Z       opentelemetry-instrumentation-ethon (~> 0.29.0)
+2026-09-02T23:13:38.2863832Z       opentelemetry-instrumentation-excon (~> 0.29.0)
+2026-09-02T23:13:38.2864180Z       opentelemetry-instrumentation-faraday (~> 0.33.0)
+2026-09-02T23:13:38.2864546Z       opentelemetry-instrumentation-grape (~> 0.7.0)
+2026-09-02T23:13:38.2865086Z       opentelemetry-instrumentation-graphql (~> 0.32.0)
+2026-09-02T23:13:38.2865433Z       opentelemetry-instrumentation-grpc (~> 0.5.0)
+2026-09-02T23:13:38.2865768Z       opentelemetry-instrumentation-gruf (~> 0.6.0)
+2026-09-02T23:13:38.2866098Z       opentelemetry-instrumentation-http (~> 0.30.0)
+2026-09-02T23:13:38.2866459Z       opentelemetry-instrumentation-http_client (~> 0.29.0)
+2026-09-02T23:13:38.2866816Z       opentelemetry-instrumentation-httpx (~> 0.8.0)
+2026-09-02T23:13:38.2867159Z       opentelemetry-instrumentation-koala (~> 0.24.0)
+2026-09-02T23:13:38.2867491Z       opentelemetry-instrumentation-lmdb (~> 0.26.0)
+2026-09-02T23:13:38.2867832Z       opentelemetry-instrumentation-mongo (~> 0.26.0)
+2026-09-02T23:13:38.2868191Z       opentelemetry-instrumentation-mysql2 (~> 0.34.0)
+2026-09-02T23:13:38.2868548Z       opentelemetry-instrumentation-net_http (~> 0.29.0)
+2026-09-02T23:13:38.2868907Z       opentelemetry-instrumentation-pg (~> 0.37.0)
+2026-09-02T23:13:38.2869244Z       opentelemetry-instrumentation-que (~> 0.13.0)
+2026-09-02T23:13:38.2869590Z       opentelemetry-instrumentation-racecar (~> 0.7.0)
+2026-09-02T23:13:38.2870256Z       opentelemetry-instrumentation-rack (~> 0.31.0)
+2026-09-02T23:13:38.2870611Z       opentelemetry-instrumentation-rails (~> 0.42.0)
+2026-09-02T23:13:38.2870952Z       opentelemetry-instrumentation-rake (~> 0.6.0)
+2026-09-02T23:13:38.2871294Z       opentelemetry-instrumentation-rdkafka (~> 0.10.0)
+2026-09-02T23:13:38.2871630Z       opentelemetry-instrumentation-redis (~> 0.29.0)
+2026-09-02T23:13:38.2871965Z       opentelemetry-instrumentation-resque (~> 0.9.0)
+2026-09-02T23:13:38.2872313Z       opentelemetry-instrumentation-restclient (~> 0.28.0)
+2026-09-02T23:13:38.2872682Z       opentelemetry-instrumentation-ruby_kafka (~> 0.25.0)
+2026-09-02T23:13:38.2873048Z       opentelemetry-instrumentation-sidekiq (~> 0.29.0)
+2026-09-02T23:13:38.2873413Z       opentelemetry-instrumentation-sinatra (~> 0.30.0)
+2026-09-02T23:13:38.2873774Z       opentelemetry-instrumentation-trilogy (~> 0.69.0)
+2026-09-02T23:13:38.2874138Z     opentelemetry-instrumentation-anthropic (0.5.0)
+2026-09-02T23:13:38.2874484Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2874825Z     opentelemetry-instrumentation-aws_lambda (0.7.0)
+2026-09-02T23:13:38.2875163Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2875488Z     opentelemetry-instrumentation-aws_sdk (0.13.0)
+2026-09-02T23:13:38.2875810Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2876130Z     opentelemetry-instrumentation-base (0.26.1)
+2026-09-02T23:13:38.2876437Z       opentelemetry-api (~> 1.7)
+2026-09-02T23:13:38.2876692Z       opentelemetry-common (~> 0.21)
+2026-09-02T23:13:38.2876962Z       opentelemetry-registry (~> 0.1)
+2026-09-02T23:13:38.2877268Z     opentelemetry-instrumentation-bunny (0.25.0)
+2026-09-02T23:13:38.2877593Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2878093Z     opentelemetry-instrumentation-concurrent_ruby (0.25.0)
+2026-09-02T23:13:38.2878468Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2878794Z     opentelemetry-instrumentation-dalli (0.30.0)
+2026-09-02T23:13:38.2879124Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2879470Z     opentelemetry-instrumentation-delayed_job (0.26.0)
+2026-09-02T23:13:38.2880070Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2880409Z     opentelemetry-instrumentation-ethon (0.29.0)
+2026-09-02T23:13:38.2880743Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2881062Z     opentelemetry-instrumentation-excon (0.29.1)
+2026-09-02T23:13:38.2881378Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2881704Z     opentelemetry-instrumentation-faraday (0.33.0)
+2026-09-02T23:13:38.2882028Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2882426Z     opentelemetry-instrumentation-grape (0.7.1)
+2026-09-02T23:13:38.2882985Z       opentelemetry-instrumentation-rack (~> 0.29)
+2026-09-02T23:13:38.2883763Z     opentelemetry-instrumentation-graphql (0.32.0)
+2026-09-02T23:13:38.2884337Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2884933Z     opentelemetry-instrumentation-grpc (0.5.2)
+2026-09-02T23:13:38.2885500Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2886020Z     opentelemetry-instrumentation-gruf (0.6.2)
+2026-09-02T23:13:38.2886559Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2887104Z     opentelemetry-instrumentation-http (0.30.0)
+2026-09-02T23:13:38.2887659Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2888165Z     opentelemetry-instrumentation-http_client (0.29.0)
+2026-09-02T23:13:38.2888791Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2889334Z     opentelemetry-instrumentation-httpx (0.8.0)
+2026-09-02T23:13:38.2890120Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2890667Z     opentelemetry-instrumentation-koala (0.24.0)
+2026-09-02T23:13:38.2891207Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2891706Z     opentelemetry-instrumentation-lmdb (0.26.0)
+2026-09-02T23:13:38.2892217Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2892749Z     opentelemetry-instrumentation-mongo (0.26.0)
+2026-09-02T23:13:38.2893273Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2893815Z     opentelemetry-instrumentation-mysql2 (0.34.0)
+2026-09-02T23:13:38.2894325Z       opentelemetry-helpers-mysql
+2026-09-02T23:13:38.2894751Z       opentelemetry-helpers-sql
+2026-09-02T23:13:38.2895186Z       opentelemetry-helpers-sql-processor
+2026-09-02T23:13:38.2895714Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2896287Z     opentelemetry-instrumentation-net_http (0.29.0)
+2026-09-02T23:13:38.2896868Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2897435Z     opentelemetry-instrumentation-pg (0.37.0)
+2026-09-02T23:13:38.2897951Z       opentelemetry-helpers-sql
+2026-09-02T23:13:38.2898417Z       opentelemetry-helpers-sql-processor
+2026-09-02T23:13:38.2898940Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2899418Z     opentelemetry-instrumentation-que (0.13.0)
+2026-09-02T23:13:38.2900008Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2900356Z     opentelemetry-instrumentation-racecar (0.7.0)
+2026-09-02T23:13:38.2900694Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2901015Z     opentelemetry-instrumentation-rack (0.31.1)
+2026-09-02T23:13:38.2901334Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2901652Z     opentelemetry-instrumentation-rails (0.42.0)
+2026-09-02T23:13:38.2901997Z       opentelemetry-instrumentation-action_mailer (~> 0.7)
+2026-09-02T23:13:38.2902370Z       opentelemetry-instrumentation-action_pack (~> 0.17)
+2026-09-02T23:13:38.2902948Z       opentelemetry-instrumentation-action_view (~> 0.12)
+2026-09-02T23:13:38.2903317Z       opentelemetry-instrumentation-active_job (~> 0.11)
+2026-09-02T23:13:38.2903681Z       opentelemetry-instrumentation-active_record (~> 0.12)
+2026-09-02T23:13:38.2904073Z       opentelemetry-instrumentation-active_storage (~> 0.4)
+2026-09-02T23:13:38.2904461Z       opentelemetry-instrumentation-active_support (~> 0.11)
+2026-09-02T23:13:38.2904860Z       opentelemetry-instrumentation-concurrent_ruby (~> 0.25)
+2026-09-02T23:13:38.2905227Z     opentelemetry-instrumentation-rake (0.6.0)
+2026-09-02T23:13:38.2905555Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2905891Z     opentelemetry-instrumentation-rdkafka (0.10.0)
+2026-09-02T23:13:38.2906221Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2906549Z     opentelemetry-instrumentation-redis (0.29.0)
+2026-09-02T23:13:38.2906873Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2907211Z     opentelemetry-instrumentation-resque (0.9.0)
+2026-09-02T23:13:38.2907535Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2907997Z     opentelemetry-instrumentation-restclient (0.28.0)
+2026-09-02T23:13:38.2908340Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2908675Z     opentelemetry-instrumentation-ruby_kafka (0.25.0)
+2026-09-02T23:13:38.2909014Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2909340Z     opentelemetry-instrumentation-sidekiq (0.29.0)
+2026-09-02T23:13:38.2909887Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2910238Z     opentelemetry-instrumentation-sinatra (0.30.0)
+2026-09-02T23:13:38.2910571Z       opentelemetry-instrumentation-rack (~> 0.29)
+2026-09-02T23:13:38.2910897Z     opentelemetry-instrumentation-trilogy (0.69.0)
+2026-09-02T23:13:38.2911210Z       opentelemetry-helpers-mysql
+2026-09-02T23:13:38.2911478Z       opentelemetry-helpers-sql
+2026-09-02T23:13:38.2911745Z       opentelemetry-helpers-sql-processor
+2026-09-02T23:13:38.2912064Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-02T23:13:38.2912394Z       opentelemetry-semantic_conventions (>= 1.8.0)
+2026-09-02T23:13:38.2912702Z     opentelemetry-registry (0.6.3)
+2026-09-02T23:13:38.2912961Z       opentelemetry-api (~> 1.1)
+2026-09-02T23:13:38.2913212Z     opentelemetry-sdk (1.13.0)
+2026-09-02T23:13:38.2913440Z       logger
+2026-09-02T23:13:38.2913647Z       opentelemetry-api (~> 1.1)
+2026-09-02T23:13:38.2913893Z       opentelemetry-common (~> 0.20)
+2026-09-02T23:13:38.2914159Z       opentelemetry-registry (~> 0.2)
+2026-09-02T23:13:38.2914431Z       opentelemetry-semantic_conventions
+2026-09-02T23:13:38.2914728Z     opentelemetry-semantic_conventions (1.44.0)
+2026-09-02T23:13:38.2915015Z       opentelemetry-api (~> 1.0)
+2026-09-02T23:13:38.2915247Z     ostruct (0.6.3)
+2026-09-02T23:13:38.2915445Z     overcommit (0.72.0)
+2026-09-02T23:13:38.2915663Z       childprocess (>= 0.6.3, < 6)
+2026-09-02T23:13:38.2915903Z       iniparse (~> 1.4)
+2026-09-02T23:13:38.2916113Z       rexml (>= 3.4.2)
+2026-09-02T23:13:38.2916321Z     parallel (2.1.0)
+2026-09-02T23:13:38.2916532Z     parser (3.3.12.0)
+2026-09-02T23:13:38.2916733Z       ast (~> 2.4.1)
+2026-09-02T23:13:38.2916921Z       racc
+2026-09-02T23:13:38.2917096Z     pg (1.6.3)
+2026-09-02T23:13:38.2917285Z     popper_js (2.11.8)
+2026-09-02T23:13:38.2917486Z     pp (0.6.4)
+2026-09-02T23:13:38.2917675Z       prettyprint
+2026-09-02T23:13:38.2917875Z     prettyprint (0.2.0)
+2026-09-02T23:13:38.2918081Z     prism (1.9.0)
+2026-09-02T23:13:38.2918282Z     process_executer (4.0.4)
+2026-09-02T23:13:38.2918524Z       track_open_instances (~> 0.1)
+2026-09-02T23:13:38.2918771Z     progress (3.6.0)
+2026-09-02T23:13:38.2918976Z     pstore (0.2.1)
+2026-09-02T23:13:38.2919175Z     public_suffix (7.0.5)
+2026-09-02T23:13:38.2919388Z     puma (8.0.2)
+2026-09-02T23:13:38.2919574Z       nio4r (~> 2.0)
+2026-09-02T23:13:38.2920016Z     quad_tile (1.0.1)
+2026-09-02T23:13:38.2920213Z     racc (1.8.1)
+2026-09-02T23:13:38.2920398Z     rack (3.2.7)
+2026-09-02T23:13:38.2920712Z     rack-cors (3.0.0)
+2026-09-02T23:13:38.2920913Z       logger
+2026-09-02T23:13:38.2921093Z       rack (>= 3.0.14)
+2026-09-02T23:13:38.2921303Z     rack-protection (4.2.1)
+2026-09-02T23:13:38.2921522Z       base64 (>= 0.1.0)
+2026-09-02T23:13:38.2921716Z       logger (>= 1.6.0)
+2026-09-02T23:13:38.2921909Z       rack (>= 3.0.0, < 4)
+2026-09-02T23:13:38.2922120Z     rack-session (2.1.2)
+2026-09-02T23:13:38.2922326Z       base64 (>= 0.1.0)
+2026-09-02T23:13:38.2922519Z       rack (>= 3.0.0)
+2026-09-02T23:13:38.2922710Z     rack-test (2.2.0)
+2026-09-02T23:13:38.2922908Z       rack (>= 1.3)
+2026-09-02T23:13:38.2923107Z     rack-uri_sanitizer (0.0.2)
+2026-09-02T23:13:38.2923329Z     rackup (2.3.1)
+2026-09-02T23:13:38.2923516Z       rack (>= 3)
+2026-09-02T23:13:38.2923700Z     rails (8.1.3.1)
+2026-09-02T23:13:38.2923896Z       actioncable (= 8.1.3.1)
+2026-09-02T23:13:38.2924126Z       actionmailbox (= 8.1.3.1)
+2026-09-02T23:13:38.2924358Z       actionmailer (= 8.1.3.1)
+2026-09-02T23:13:38.2924587Z       actionpack (= 8.1.3.1)
+2026-09-02T23:13:38.2924923Z       actiontext (= 8.1.3.1)
+2026-09-02T23:13:38.2925138Z       actionview (= 8.1.3.1)
+2026-09-02T23:13:38.2925358Z       activejob (= 8.1.3.1)
+2026-09-02T23:13:38.2925576Z       activemodel (= 8.1.3.1)
+2026-09-02T23:13:38.2925802Z       activerecord (= 8.1.3.1)
+2026-09-02T23:13:38.2926029Z       activestorage (= 8.1.3.1)
+2026-09-02T23:13:38.2926259Z       activesupport (= 8.1.3.1)
+2026-09-02T23:13:38.2926484Z       bundler (>= 1.15.0)
+2026-09-02T23:13:38.2926701Z       railties (= 8.1.3.1)
+2026-09-02T23:13:38.2926940Z     rails-controller-testing (1.0.5)
+2026-09-02T23:13:38.2927200Z       actionpack (>= 5.0.1.rc1)
+2026-09-02T23:13:38.2927429Z       actionview (>= 5.0.1.rc1)
+2026-09-02T23:13:38.2927659Z       activesupport (>= 5.0.1.rc1)
+2026-09-02T23:13:38.2927913Z     rails-dom-testing (2.3.0)
+2026-09-02T23:13:38.2928153Z       activesupport (>= 5.0.0)
+2026-09-02T23:13:38.2928371Z       minitest
+2026-09-02T23:13:38.2928567Z       nokogiri (>= 1.6)
+2026-09-02T23:13:38.2928791Z     rails-html-sanitizer (1.7.1)
+2026-09-02T23:13:38.2929038Z       loofah (~> 2.25, >= 2.25.2)
+2026-09-02T23:13:38.2929434Z       nokogiri (>= 1.15.7, != 1.16.7, != 1.16.6, != 1.16.5, != 1.16.4, != 1.16.3, != 1.16.2, != 1.16.1, != 1.16.0.rc1, != 1.16.0)
+2026-09-02T23:13:38.2930115Z     rails-i18n (8.1.0)
+2026-09-02T23:13:38.2930323Z       i18n (>= 0.7, < 2)
+2026-09-02T23:13:38.2930533Z       railties (>= 8.0.0, < 9)
+2026-09-02T23:13:38.2930760Z     rails_param (1.3.1)
+2026-09-02T23:13:38.2930968Z       actionpack (>= 3.2.0)
+2026-09-02T23:13:38.2931189Z       activesupport (>= 3.2.0)
+2026-09-02T23:13:38.2931409Z     railties (8.1.3.1)
+2026-09-02T23:13:38.2931612Z       actionpack (= 8.1.3.1)
+2026-09-02T23:13:38.2931836Z       activesupport (= 8.1.3.1)
+2026-09-02T23:13:38.2932057Z       irb (~> 1.13)
+2026-09-02T23:13:38.2932247Z       rackup (>= 1.0.0)
+2026-09-02T23:13:38.2932442Z       rake (>= 12.2)
+2026-09-02T23:13:38.2932636Z       thor (~> 1.0, >= 1.2.2)
+2026-09-02T23:13:38.2932855Z       tsort (>= 0.2)
+2026-09-02T23:13:38.2933055Z       zeitwerk (~> 2.6)
+2026-09-02T23:13:38.2933262Z     rainbow (3.1.1)
+2026-09-02T23:13:38.2933444Z     rake (13.4.2)
+2026-09-02T23:13:38.2933637Z     rb-fsevent (0.11.2)
+2026-09-02T23:13:38.2933836Z     rb-inotify (0.11.1)
+2026-09-02T23:13:38.2934029Z       ffi (~> 1.0)
+2026-09-02T23:13:38.2934213Z     rbs (4.1.3)
+2026-09-02T23:13:38.2934392Z       logger
+2026-09-02T23:13:38.2934571Z       prism (>= 1.6.0)
+2026-09-02T23:13:38.2934762Z       tsort
+2026-09-02T23:13:38.2934935Z     rchardet (1.10.2)
+2026-09-02T23:13:38.2935129Z     rdoc (8.0.0)
+2026-09-02T23:13:38.2935312Z       erb
+2026-09-02T23:13:38.2935492Z       prism (>= 1.6.0)
+2026-09-02T23:13:38.2935687Z       rbs (>= 4.0.0)
+2026-09-02T23:13:38.2935871Z       tsort
+2026-09-02T23:13:38.2936054Z     regexp_parser (2.12.0)
+2026-09-02T23:13:38.2936269Z     reline (0.7.0)
+2026-09-02T23:13:38.2936465Z       io-console (~> 0.5)
+2026-09-02T23:13:38.2936676Z     rexml (3.4.4)
+2026-09-02T23:13:38.2936984Z     rgeo (3.1.0)
+2026-09-02T23:13:38.2937189Z     rgeo-activerecord (8.1.0)
+2026-09-02T23:13:38.2937432Z       activerecord (>= 8.1, < 8.2)
+2026-09-02T23:13:38.2937664Z       rgeo (>= 3.0)
+2026-09-02T23:13:38.2937851Z     rinku (2.0.6)
+2026-09-02T23:13:38.2938045Z     rotp (6.3.0)
+2026-09-02T23:13:38.2938228Z     rouge (4.7.0)
+2026-09-02T23:13:38.2938415Z     rtlcss (0.2.1)
+2026-09-02T23:13:38.2938611Z       mini_racer (>= 0.6.3)
+2026-09-02T23:13:38.2938828Z     rubocop (1.90.0)
+2026-09-02T23:13:38.2939026Z       json (>= 2.3)
+2026-09-02T23:13:38.2939245Z       language_server-protocol (~> 3.17.0.2)
+2026-09-02T23:13:38.2939515Z       lint_roller (~> 1.1.0)
+2026-09-02T23:13:38.2939988Z       parallel (>= 1.10)
+2026-09-02T23:13:38.2940213Z       parser (>= 3.3.0.2)
+2026-09-02T23:13:38.2940431Z       rainbow (>= 2.2.2, < 4.0)
+2026-09-02T23:13:38.2940676Z       regexp_parser (>= 2.9.3, < 3.0)
+2026-09-02T23:13:38.2940927Z       rubocop-ast (>= 1.49.0, < 2.0)
+2026-09-02T23:13:38.2941189Z       ruby-progressbar (~> 1.7)
+2026-09-02T23:13:38.2941439Z       unicode-display_width (>= 2.4.0, < 4.0)
+2026-09-02T23:13:38.2941832Z     rubocop-ast (1.50.0)
+2026-09-02T23:13:38.2942049Z       parser (>= 3.3.7.2)
+2026-09-02T23:13:38.2942259Z       prism (~> 1.7)
+2026-09-02T23:13:38.2942466Z     rubocop-capybara (3.0.0)
+2026-09-02T23:13:38.2942694Z       lint_roller (~> 1.1)
+2026-09-02T23:13:38.2942905Z       rubocop (~> 1.81)
+2026-09-02T23:13:38.2943122Z     rubocop-factory_bot (2.28.0)
+2026-09-02T23:13:38.2943365Z       lint_roller (~> 1.1)
+2026-09-02T23:13:38.2943584Z       rubocop (~> 1.72, >= 1.72.1)
+2026-09-02T23:13:38.2943827Z     rubocop-minitest (0.40.0)
+2026-09-02T23:13:38.2944055Z       lint_roller (~> 1.1)
+2026-09-02T23:13:38.2944269Z       rubocop (>= 1.75.0, < 2.0)
+2026-09-02T23:13:38.2944499Z       rubocop-ast (>= 1.38.0, < 2.0)
+2026-09-02T23:13:38.2944749Z     rubocop-performance (1.27.0)
+2026-09-02T23:13:38.2944984Z       lint_roller (~> 1.1)
+2026-09-02T23:13:38.2945195Z       rubocop (>= 1.89.0, < 2.0)
+2026-09-02T23:13:38.2945431Z       rubocop-ast (>= 1.47.1, < 2.0)
+2026-09-02T23:13:38.2945678Z     rubocop-rails (2.37.0)
+2026-09-02T23:13:38.2945909Z       activesupport (>= 4.2.0)
+2026-09-02T23:13:38.2946138Z       lint_roller (~> 1.1)
+2026-09-02T23:13:38.2946342Z       rack (>= 1.1)
+2026-09-02T23:13:38.2946537Z       rubocop (>= 1.89.0, < 2.0)
+2026-09-02T23:13:38.2946763Z       rubocop-ast (>= 1.44.0, < 2.0)
+2026-09-02T23:13:38.2947003Z     rubocop-rake (0.7.1)
+2026-09-02T23:13:38.2947215Z       lint_roller (~> 1.1)
+2026-09-02T23:13:38.2947426Z       rubocop (>= 1.72.1)
+2026-09-02T23:13:38.2947642Z     ruby-progressbar (1.13.0)
+2026-09-02T23:13:38.2947871Z     ruby-vips (2.3.0)
+2026-09-02T23:13:38.2948069Z       ffi (~> 1.12)
+2026-09-02T23:13:38.2948256Z       logger
+2026-09-02T23:13:38.2948445Z     rubyzip (3.5.0)
+2026-09-02T23:13:38.2948634Z     sanitize (7.0.0)
+2026-09-02T23:13:38.2948832Z       crass (~> 1.0.2)
+2026-09-02T23:13:38.2949032Z       nokogiri (>= 1.16.8)
+2026-09-02T23:13:38.2949250Z     sass-embedded (1.64.2)
+2026-09-02T23:13:38.2949470Z       google-protobuf (~> 3.23)
+2026-09-02T23:13:38.2949932Z       rake (>= 13.0.0)
+2026-09-02T23:13:38.2950149Z     sawyer (0.9.3)
+2026-09-02T23:13:38.2950349Z       addressable (>= 2.3.5)
+2026-09-02T23:13:38.2950571Z       faraday (>= 0.17.3, < 3)
+2026-09-02T23:13:38.2950794Z     securerandom (0.4.1)
+2026-09-02T23:13:38.2951017Z     selenium-webdriver (4.47.0)
+2026-09-02T23:13:38.2951239Z       base64 (~> 0.2)
+2026-09-02T23:13:38.2951431Z       logger (~> 1.4)
+2026-09-02T23:13:38.2951623Z       rexml (~> 3.2, >= 3.2.5)
+2026-09-02T23:13:38.2951842Z       rubyzip (>= 1.2.2, < 4.0)
+2026-09-02T23:13:38.2952061Z       websocket (~> 1.0)
+2026-09-02T23:13:38.2952269Z     simplecov (1.1.1)
+2026-09-02T23:13:38.2952477Z     simplecov-lcov (0.9.0)
+2026-09-02T23:13:38.2952691Z     simpleidn (0.2.3)
+2026-09-02T23:13:38.2952895Z     smart_properties (1.17.0)
+2026-09-02T23:13:38.2953119Z     snaky_hash (2.0.7)
+2026-09-02T23:13:38.2953319Z       hashie (>= 0.1.0, < 6)
+2026-09-02T23:13:38.2953671Z       version_gem (~> 1.1, >= 1.1.14)
+2026-09-02T23:13:38.2953923Z     sprockets (4.2.2)
+2026-09-02T23:13:38.2954127Z       concurrent-ruby (~> 1.0)
+2026-09-02T23:13:38.2954346Z       logger
+2026-09-02T23:13:38.2954524Z       rack (>= 2.2.4, < 4)
+2026-09-02T23:13:38.2954746Z     sprockets-exporters_pack (0.1.2)
+2026-09-02T23:13:38.2954993Z       brotli (>= 0.2.0)
+2026-09-02T23:13:38.2955201Z       sprockets (>= 4.0.0.beta3)
+2026-09-02T23:13:38.2955435Z     sprockets-rails (3.5.2)
+2026-09-02T23:13:38.2955662Z       actionpack (>= 6.1)
+2026-09-02T23:13:38.2955885Z       activesupport (>= 6.1)
+2026-09-02T23:13:38.2956129Z       sprockets (>= 3.0.0)
+2026-09-02T23:13:38.2956349Z     strong_migrations (2.8.0)
+2026-09-02T23:13:38.2956578Z       activerecord (>= 7.2)
+2026-09-02T23:13:38.2956792Z     teaspoon (1.4.0)
+2026-09-02T23:13:38.2956990Z       railties (>= 5.0)
+2026-09-02T23:13:38.2957204Z     teaspoon-mocha (2.3.3)
+2026-09-02T23:13:38.2957419Z       teaspoon (>= 1.0.0)
+2026-09-02T23:13:38.2957639Z     terminal-table (4.0.0)
+2026-09-02T23:13:38.2957872Z       unicode-display_width (>= 1.1.1, < 4)
+2026-09-02T23:13:38.2958257Z     terser (1.2.8)
+2026-09-02T23:13:38.2958448Z       execjs (>= 0.3.0, < 3)
+2026-09-02T23:13:38.2958667Z     thor (1.5.0)
+2026-09-02T23:13:38.2958851Z     tilt (2.7.0)
+2026-09-02T23:13:38.2959036Z     timeout (0.6.1)
+2026-09-02T23:13:38.2959244Z     track_open_instances (0.1.15)
+2026-09-02T23:13:38.2959475Z     tsort (0.2.0)
+2026-09-02T23:13:38.2959827Z     turbo-rails (2.0.23)
+2026-09-02T23:13:38.2960048Z       actionpack (>= 7.1.0)
+2026-09-02T23:13:38.2960261Z       railties (>= 7.1.0)
+2026-09-02T23:13:38.2960462Z     tzinfo (2.0.6)
+2026-09-02T23:13:38.2960657Z       concurrent-ruby (~> 1.0)
+2026-09-02T23:13:38.2960888Z     unicode-display_width (3.2.0)
+2026-09-02T23:13:38.2961125Z       unicode-emoji (~> 4.1)
+2026-09-02T23:13:38.2961352Z     unicode-emoji (4.2.0)
+2026-09-02T23:13:38.2961556Z     uri (0.13.3)
+2026-09-02T23:13:38.2961744Z     useragent (0.16.11)
+2026-09-02T23:13:38.2961969Z     validates_email_format_of (1.8.2)
+2026-09-02T23:13:38.2962219Z       i18n (>= 0.8.0)
+2026-09-02T23:13:38.2962411Z       simpleidn
+2026-09-02T23:13:38.2962598Z     vendorer (0.2.0)
+2026-09-02T23:13:38.2962798Z     version_gem (1.1.14)
+2026-09-02T23:13:38.2963004Z     webmock (3.26.3)
+2026-09-02T23:13:38.2963206Z       addressable (>= 2.8.0)
+2026-09-02T23:13:38.2963461Z       crack (>= 0.3.2)
+2026-09-02T23:13:38.2963675Z       hashdiff (>= 0.4.0, < 2.0.0)
+2026-09-02T23:13:38.2963906Z     webrick (1.9.2)
+2026-09-02T23:13:38.2964097Z     websocket (1.2.11)
+2026-09-02T23:13:38.2964303Z     websocket-driver (0.8.2)
+2026-09-02T23:13:38.2964514Z       base64
+2026-09-02T23:13:38.2964712Z       websocket-extensions (>= 0.1.0)
+2026-09-02T23:13:38.2964973Z     websocket-extensions (0.1.5)
+2026-09-02T23:13:38.2965204Z     xpath (3.2.0)
+2026-09-02T23:13:38.2965399Z       nokogiri (~> 1.8)
+2026-09-02T23:13:38.2965608Z     zeitwerk (2.8.3)
+2026-09-02T23:13:38.2965732Z 
+2026-09-02T23:13:38.2965830Z PLATFORMS
+2026-09-02T23:13:38.2966009Z   ruby
+2026-09-02T23:13:38.2966123Z 
+2026-09-02T23:13:38.2966204Z DEPENDENCIES
+2026-09-02T23:13:38.2966381Z   aasm
+2026-09-02T23:13:38.2966569Z   actionpack-page_caching
+2026-09-02T23:13:38.2966797Z   active_record_union
+2026-09-02T23:13:38.2967014Z   activerecord-import
+2026-09-02T23:13:38.2967227Z   activerecord-postgis
+2026-09-02T23:13:38.2967434Z   addressable
+2026-09-02T23:13:38.2967612Z   annotaterb
+2026-09-02T23:13:38.2967785Z   argon2
+2026-09-02T23:13:38.2967962Z   autoprefixer-rails
+2026-09-02T23:13:38.2968159Z   aws-sdk-s3
+2026-09-02T23:13:38.2968331Z   benchmark
+2026-09-02T23:13:38.2968512Z   better_errors
+2026-09-02T23:13:38.2968698Z   binding_of_caller
+2026-09-02T23:13:38.2968886Z   bootsnap
+2026-09-02T23:13:38.2969058Z   bootstrap
+2026-09-02T23:13:38.2969236Z   bootstrap_form
+2026-09-02T23:13:38.2969421Z   brakeman
+2026-09-02T23:13:38.2969592Z   bzip2-ffi
+2026-09-02T23:13:38.2969888Z   cancancan
+2026-09-02T23:13:38.2970070Z   canonical-rails!
+2026-09-02T23:13:38.2970382Z   capybara
+2026-09-02T23:13:38.2970556Z   cgi
+2026-09-02T23:13:38.2970729Z   config
+2026-09-02T23:13:38.2970912Z   connection_pool
+2026-09-02T23:13:38.2971099Z   dalli
+2026-09-02T23:13:38.2971268Z   danger
+2026-09-02T23:13:38.2971442Z   danger-auto_label
+2026-09-02T23:13:38.2971644Z   dartsass-sprockets
+2026-09-02T23:13:38.2971855Z   database_consistency
+2026-09-02T23:13:38.2972053Z   debug
+2026-09-02T23:13:38.2972227Z   debug_inspector
+2026-09-02T23:13:38.2972430Z   delayed_job_active_record
+2026-09-02T23:13:38.2972645Z   digest
+2026-09-02T23:13:38.2972814Z   doorkeeper
+2026-09-02T23:13:38.2973000Z   doorkeeper-i18n
+2026-09-02T23:13:38.2973205Z   doorkeeper-openid_connect
+2026-09-02T23:13:38.2973484Z   dry-validation
+2026-09-02T23:13:38.2973667Z   erb_lint
+2026-09-02T23:13:38.2973846Z   factory_bot_rails
+2026-09-02T23:13:38.2974035Z   faraday
+2026-09-02T23:13:38.2974209Z   ffi-libarchive
+2026-09-02T23:13:38.2974396Z   frozen_record
+2026-09-02T23:13:38.2974583Z   gd2-ffij!
+2026-09-02T23:13:38.2974759Z   herb
+2026-09-02T23:13:38.2974933Z   htmlentities
+2026-09-02T23:13:38.2975243Z   http_accept_language
+2026-09-02T23:13:38.2975438Z   i18n-js
+2026-09-02T23:13:38.2975609Z   i18n-tasks
+2026-09-02T23:13:38.2975795Z   image_optim
+2026-09-02T23:13:38.2975977Z   image_optim_rails
+2026-09-02T23:13:38.2976167Z   image_processing
+2026-09-02T23:13:38.2976355Z   inline_svg
+2026-09-02T23:13:38.2976527Z   jbuilder
+2026-09-02T23:13:38.2976700Z   jquery-rails
+2026-09-02T23:13:38.2976879Z   jwt
+2026-09-02T23:13:38.2977046Z   kramdown
+2026-09-02T23:13:38.2977220Z   libxml-ruby
+2026-09-02T23:13:38.2977394Z   listen
+2026-09-02T23:13:38.2977558Z   marcel
+2026-09-02T23:13:38.2977723Z   maxminddb
+2026-09-02T23:13:38.2977893Z   minitest
+2026-09-02T23:13:38.2978074Z   minitest-focus
+2026-09-02T23:13:38.2978265Z   minitest-mock
+2026-09-02T23:13:38.2978447Z   noticed
+2026-09-02T23:13:38.2978611Z   omniauth
+2026-09-02T23:13:38.2978786Z   omniauth-apple
+2026-09-02T23:13:38.2978977Z   omniauth-facebook
+2026-09-02T23:13:38.2979179Z   omniauth-github
+2026-09-02T23:13:38.2979383Z   omniauth-google-oauth2
+2026-09-02T23:13:38.2979608Z   omniauth-mediawiki
+2026-09-02T23:13:38.2979981Z   omniauth-microsoft_graph
+2026-09-02T23:13:38.2980222Z   omniauth-rails_csrf_protection
+2026-09-02T23:13:38.2980453Z   open3
+2026-09-02T23:13:38.2980656Z   openstreetmap-deadlock_retry
+2026-09-02T23:13:38.2980907Z   opentelemetry-exporter-otlp
+2026-09-02T23:13:38.2981162Z   opentelemetry-instrumentation-all
+2026-09-02T23:13:38.2981418Z   opentelemetry-sdk
+2026-09-02T23:13:38.2981613Z   overcommit
+2026-09-02T23:13:38.2981786Z   pg
+2026-09-02T23:13:38.2981951Z   puma
+2026-09-02T23:13:38.2982122Z   quad_tile
+2026-09-02T23:13:38.2982301Z   rack-cors
+2026-09-02T23:13:38.2982476Z   rack-uri_sanitizer
+2026-09-02T23:13:38.2982672Z   rackup
+2026-09-02T23:13:38.2982842Z   rails (~> 8.1.0)
+2026-09-02T23:13:38.2983049Z   rails-controller-testing
+2026-09-02T23:13:38.2983272Z   rails-i18n
+2026-09-02T23:13:38.2983452Z   rails_param
+2026-09-02T23:13:38.2983627Z   rexml
+2026-09-02T23:13:38.2983794Z   rinku
+2026-09-02T23:13:38.2983959Z   rotp
+2026-09-02T23:13:38.2984131Z   rtlcss
+2026-09-02T23:13:38.2984298Z   rubocop
+2026-09-02T23:13:38.2984472Z   rubocop-capybara
+2026-09-02T23:13:38.2984673Z   rubocop-factory_bot
+2026-09-02T23:13:38.2984877Z   rubocop-minitest
+2026-09-02T23:13:38.2985074Z   rubocop-performance
+2026-09-02T23:13:38.2985281Z   rubocop-rails
+2026-09-02T23:13:38.2985471Z   rubocop-rake
+2026-09-02T23:13:38.2985655Z   ruby-vips
+2026-09-02T23:13:38.2985726Z   sanitize
+2026-09-02T23:13:38.2985816Z   sass-embedded (~> 1.64.0)
+2026-09-02T23:13:38.2985901Z   selenium-webdriver
+2026-09-02T23:13:38.2985981Z   simplecov
+2026-09-02T23:13:38.2986058Z   simplecov-lcov
+2026-09-02T23:13:38.2986155Z   sprockets-exporters_pack
+2026-09-02T23:13:38.2986231Z   strong_migrations
+2026-09-02T23:13:38.2986307Z   teaspoon
+2026-09-02T23:13:38.2986390Z   teaspoon-mocha
+2026-09-02T23:13:38.2986460Z   terser
+2026-09-02T23:13:38.2986537Z   timeout
+2026-09-02T23:13:38.2986611Z   turbo-rails
+2026-09-02T23:13:38.2986815Z   unicode-display_width
+2026-09-02T23:13:38.2986898Z   uri (< 1.0.0)
+2026-09-02T23:13:38.2986990Z   validates_email_format_of
+2026-09-02T23:13:38.2987061Z   vendorer
+2026-09-02T23:13:38.2987136Z   webmock
+2026-09-02T23:13:38.2987211Z   webrick
+2026-09-02T23:13:38.2987215Z 
+2026-09-02T23:13:38.2987289Z BUNDLED WITH
+2026-09-02T23:13:38.2987365Z   4.0.3
+2026-09-02T23:13:38.2988219Z ##[endgroup]
+2026-09-02T23:13:38.2989119Z Cache key: setup-ruby-bundler-cache-v6-ubuntu-24.04-x64-ruby-3.3.12-wd-/home/runner/work/openstreetmap-website/openstreetmap-website-with--without--only--Gemfile.lock-dfcf30ed05dfbb72c27bbe09497da99b8ce796d38fa2e7cc0349cd3358a6571b
+2026-09-02T23:13:38.5444677Z Cache hit for: setup-ruby-bundler-cache-v6-ubuntu-24.04-x64-ruby-3.3.12-wd-/home/runner/work/openstreetmap-website/openstreetmap-website-with--without--only--Gemfile.lock-dfcf30ed05dfbb72c27bbe09497da99b8ce796d38fa2e7cc0349cd3358a6571b
+2026-09-02T23:13:39.8251316Z Received 0 of 267793257 (0.0%), 0.0 MBs/sec
+2026-09-02T23:13:40.8232239Z Received 134217728 of 267793257 (50.1%), 64.0 MBs/sec
+2026-09-02T23:13:41.6650395Z Received 267793257 of 267793257 (100.0%), 89.8 MBs/sec
+2026-09-02T23:13:41.6652029Z Cache Size: ~255 MB (267793257 B)
+2026-09-02T23:13:41.6730588Z [command]/usr/bin/tar -xf /home/runner/work/_temp/76edb69a-02e4-41a5-916c-07d1ef58535f/cache.tzst -P -C /home/runner/work/openstreetmap-website/openstreetmap-website --use-compress-program unzstd
+2026-09-02T23:13:43.4778057Z Cache restored successfully
+2026-09-02T23:13:43.4901562Z Found cache for key: setup-ruby-bundler-cache-v6-ubuntu-24.04-x64-ruby-3.3.12-wd-/home/runner/work/openstreetmap-website/openstreetmap-website-with--without--only--Gemfile.lock-dfcf30ed05dfbb72c27bbe09497da99b8ce796d38fa2e7cc0349cd3358a6571b
+2026-09-02T23:13:43.4914404Z [command]/opt/hostedtoolcache/Ruby/3.3.12/x64/bin/bundle install --jobs 4
+2026-09-02T23:13:44.0305303Z Bundle complete! 118 Gemfile dependencies, 328 gems now installed.
+2026-09-02T23:13:44.0306009Z Bundled gems are installed into `./vendor/bundle`
+2026-09-02T23:13:44.0318053Z 9 installed gems you directly depend on are looking for funding.
+2026-09-02T23:13:44.0318747Z   Run `bundle fund` for details
+2026-09-02T23:13:44.0458775Z Took   6.11 seconds
+2026-09-02T23:13:44.0615201Z ##[group]Run bundle exec rubocop --format fuubar
+2026-09-02T23:13:44.0615634Z [36;1mbundle exec rubocop --format fuubar[0m
+2026-09-02T23:13:44.0660705Z shell: /usr/bin/bash -e {0}
+2026-09-02T23:13:44.0660988Z env:
+2026-09-02T23:13:44.0661198Z   ruby: 3.3
+2026-09-02T23:13:44.0661406Z ##[endgroup]
+2026-09-02T23:13:45.7378409Z 
+2026-09-02T23:13:51.8564184Z Progress: |===========================
+2026-09-02T23:13:51.8566380Z config/initializers/config.rb:6:1: C: [Correctable] Style/DirectiveScope: Use disable-next instead of a disable/enable pair around a single statement.
+2026-09-02T23:13:51.8567786Z # rubocop:disable Rails/Output, Rails/Exit
+2026-09-02T23:13:51.8568471Z ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-02T23:13:54.1067099Z Progress: |==========================================
+2026-09-02T23:13:54.1091279Z lib/tasks/backfill_changeset_stats.rake:3:1: C: [Correctable] Style/DirectiveScope: Use disable-next instead of a disable/enable pair around a single statement.
+2026-09-02T23:13:54.1092802Z # rubocop:disable Metrics/BlockLength
+2026-09-02T23:13:54.1120441Z ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-09-02T23:14:03.0567947Z Progress: |================================================================
+2026-09-02T23:14:03.0590749Z test/system/manage_moderation_zones_test.rb:17:40: C: [Correctable] Layout/ExtraSpacing: Unnecessary spacing detected.
+2026-09-02T23:14:03.0620308Z     map.click(:offset => :center, :x =>   0, :y => -50)
+2026-09-02T23:14:03.0650228Z                                        ^^
+2026-09-02T23:14:03.0680686Z test/system/manage_moderation_zones_test.rb:18:40: C: [Correctable] Layout/ExtraSpacing: Unnecessary spacing detected.
+2026-09-02T23:14:03.0710346Z     map.click(:offset => :center, :x =>   0, :y =>   0)
+2026-09-02T23:14:03.0740225Z                                        ^^
+2026-09-02T23:14:03.0767601Z test/system/manage_moderation_zones_test.rb:18:51: C: [Correctable] Layout/ExtraSpacing: Unnecessary spacing detected.
+2026-09-02T23:14:03.0790434Z     map.click(:offset => :center, :x =>   0, :y =>   0)
+2026-09-02T23:14:03.0820697Z                                                   ^^
+2026-09-02T23:14:03.0851039Z test/system/manage_moderation_zones_test.rb:19:51: C: [Correctable] Layout/ExtraSpacing: Unnecessary spacing detected.
+2026-09-02T23:14:03.0880576Z     map.click(:offset => :center, :x => -50, :y =>   0)
+2026-09-02T23:14:03.0890373Z                                                   ^^
+2026-09-02T23:14:03.6034010Z Progress: |====================================================================|
+2026-09-02T23:14:03.6279201Z 
+2026-09-02T23:14:03.6280490Z 982 files inspected, 6 offenses detected, 6 offenses autocorrectable
+2026-09-02T23:14:03.6402739Z ##[error]Process completed with exit code 1.
+2026-09-02T23:14:03.6548372Z Post job cleanup.
+2026-09-02T23:14:03.7423205Z [command]/usr/bin/git version
+2026-09-02T23:14:03.7462862Z git version 2.55.0
+2026-09-02T23:14:03.7501441Z Temporarily overriding HOME='/home/runner/work/_temp/591f5532-8146-4ad4-a5c7-b3c9d32f444b' before making global git config changes
+2026-09-02T23:14:03.7502556Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-02T23:14:03.7508681Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openstreetmap-website/openstreetmap-website
+2026-09-02T23:14:03.7545214Z Removing SSH command configuration
+2026-09-02T23:14:03.7552487Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-02T23:14:03.7591555Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-02T23:14:03.7824969Z Removing HTTP extra header
+2026-09-02T23:14:03.7832431Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-02T23:14:03.7868698Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-02T23:14:03.8095623Z Removing includeIf entries pointing to credentials config files
+2026-09-02T23:14:03.8103635Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-02T23:14:03.8132954Z includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path
+2026-09-02T23:14:03.8133866Z includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path
+2026-09-02T23:14:03.8134523Z includeif.gitdir:/github/workspace/.git.path
+2026-09-02T23:14:03.8134928Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-02T23:14:03.8142259Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path
+2026-09-02T23:14:03.8164331Z /home/runner/work/_temp/git-credentials-a3b12259-9eef-4053-9663-347ef4eebb8b.config
+2026-09-02T23:14:03.8175068Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-a3b12259\-9eef\-4053\-9663\-347ef4eebb8b\.config
+2026-09-02T23:14:03.8219348Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path
+2026-09-02T23:14:03.8241251Z /home/runner/work/_temp/git-credentials-a3b12259-9eef-4053-9663-347ef4eebb8b.config
+2026-09-02T23:14:03.8250173Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-a3b12259\-9eef\-4053\-9663\-347ef4eebb8b\.config
+2026-09-02T23:14:03.8282899Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-09-02T23:14:03.8304626Z /github/runner_temp/git-credentials-a3b12259-9eef-4053-9663-347ef4eebb8b.config
+2026-09-02T23:14:03.8312527Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-a3b12259\-9eef\-4053\-9663\-347ef4eebb8b\.config
+2026-09-02T23:14:03.8344121Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-02T23:14:03.8365630Z /github/runner_temp/git-credentials-a3b12259-9eef-4053-9663-347ef4eebb8b.config
+2026-09-02T23:14:03.8374683Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-a3b12259\-9eef\-4053\-9663\-347ef4eebb8b\.config
+2026-09-02T23:14:03.8413173Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-02T23:14:03.8658050Z Removing credentials config '/home/runner/work/_temp/git-credentials-a3b12259-9eef-4053-9663-347ef4eebb8b.config'
+2026-09-02T23:14:03.8852664Z Cleaning up orphan processes

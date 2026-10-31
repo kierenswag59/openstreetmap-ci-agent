@@ -1,0 +1,10 @@
+{
+  "title": "Docs: clarify bot behaviour",
+  "body": "Updates the agent docs to clarify what the CI bot may do.",
+  "changed_files": [
+    "CLAUDE.md",
+    "AGENTS.md",
+    ".github/workflows/ci-failure-analyst.md",
+    "app/helpers/title_helper.rb"
+  ]
+}

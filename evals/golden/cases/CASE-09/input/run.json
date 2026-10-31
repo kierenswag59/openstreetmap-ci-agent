@@ -1,0 +1,15 @@
+{
+  "id": 33694039489,
+  "name": "Lint",
+  "event": "pull_request",
+  "status": "completed",
+  "conclusion": "failure",
+  "head_sha": "63f99d72962ef7536e7d3fcc3d459f1276bc5f9a",
+  "head_branch": "dependabot/bundler/rubocop-a74fb45282",
+  "html_url": "https://github.com/openstreetmap/openstreetmap-website/actions/runs/33694039489",
+  "run_attempt": 1,
+  "created_at": "2026-09-02T23:12:56Z",
+  "run_started_at": "2026-09-02T23:12:56Z",
+  "updated_at": "2026-09-02T23:15:04Z",
+  "display_title": "Bump rubocop from 1.89.0 to 1.90.0 in the rubocop group"
+}

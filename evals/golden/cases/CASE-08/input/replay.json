@@ -1,0 +1,66 @@
+{
+  "case": "CASE-08",
+  "workflow": "Lint",
+  "original_run": "https://github.com/openstreetmap/openstreetmap-website/actions/runs/35875254785",
+  "cutoff_T": "2026-09-23T14:36:22Z",
+  "cutoff_source": "last failed job completed_at",
+  "jobs": [
+    {
+      "name": "ERB Lint",
+      "step": "Run tests",
+      "log": "logs/job-107229383826.log",
+      "exit_code": 0,
+      "original_job_id": 107229383826,
+      "original_conclusion": "success"
+    },
+    {
+      "name": "RuboCop",
+      "step": "Run tests",
+      "log": "logs/job-107229383992.log",
+      "exit_code": 0,
+      "original_job_id": 107229383992,
+      "original_conclusion": "success"
+    },
+    {
+      "name": "Brakeman",
+      "step": "Run tests",
+      "log": "logs/job-107229384002.log",
+      "exit_code": 0,
+      "original_job_id": 107229384002,
+      "original_conclusion": "success"
+    },
+    {
+      "name": "ESLint",
+      "step": "Run eslint",
+      "log": "logs/job-107229384052.log",
+      "exit_code": 1,
+      "original_job_id": 107229384052,
+      "original_conclusion": "failure"
+    },
+    {
+      "name": "Rails Annotate Models",
+      "step": "Run tests",
+      "log": "logs/job-107229384073.log",
+      "exit_code": 0,
+      "original_job_id": 107229384073,
+      "original_conclusion": "success"
+    },
+    {
+      "name": "Database Consistency",
+      "step": "Run tests",
+      "log": "logs/job-107229384277.log",
+      "exit_code": 0,
+      "original_job_id": 107229384277,
+      "original_conclusion": "success"
+    },
+    {
+      "name": "Herb",
+      "step": "Run tests",
+      "log": "logs/job-107229384432.log",
+      "exit_code": 0,
+      "original_job_id": 107229384432,
+      "original_conclusion": "success"
+    }
+  ],
+  "merge_base_sha": "4bf80151e9a6597a28cb772302f39b53787b7f76"
+}

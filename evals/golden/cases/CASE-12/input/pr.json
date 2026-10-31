@@ -1,0 +1,14 @@
+{
+  "number": 7328,
+  "title": "Unify OAuth scope rendering",
+  "body": "We had many variations of the scopes being displayed, with or without mod star and with or without scope code.\r\nThere should be only one all-inclusive render path.\r\nThis fixes #7291 and closes #7306, which is where I snatched a test amendment from.",
+  "author": "hlfan",
+  "author_association": "COLLABORATOR",
+  "created_at": "2026-08-19T17:47:41Z",
+  "head_repo": "hlfan/openstreetmap-website",
+  "head_ref": "oauth-scope",
+  "tested_head_sha": "b9fe3eaf96a8902a722982b40226a9696444954e",
+  "tested_base_sha": "d681ff2e77ab15ec35632958015bcf125f909012",
+  "html_url": "https://github.com/openstreetmap/openstreetmap-website/pull/7328",
+  "note": "title and body are as fetched on 2026-10-31; they may have been edited after T"
+}

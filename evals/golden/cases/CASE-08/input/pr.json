@@ -1,0 +1,14 @@
+{
+  "number": 7410,
+  "title": "Avoid regexp not supported in old browsers",
+  "body": "Fixes https://github.com/openstreetmap/openstreetmap-website/issues/7390. This PR is based on conversations at the issue.\r\n\r\nThis fixes the slippy map for iOS 15. In the version of Safari bundled with that OS (and presumably earlier versions), regular expressions don't support _positive lookbehind_ expressions. Unfortunately one of these was introduced in https://github.com/openstreetmap/openstreetmap-website/pull/6726, while trying to make sense of the translation keys in MapLibre and Leaflet, which follow different conventions (PascalCase vs snake_case).\r\n\r\nI propose (on @hlfan's suggestion) that we continue using PascalCase for string keys coming from MapLibre, rather than trying a conversion that doesn't win us much. This way we don't need complex conversions that may introduce confusion. In the process we instruct Leaflet to use PascalCase for keys, to keep things standard. I'm making an exception for for `metersPopup`/`feetPopup` for the sake of simplicity.\r\n\r\nI have tested this manually and it seems to work. I haven't been able to find all keys though. I'm not sure we actually use all of them.\r\n\r\n<img width=\"470\" height=\"308\" alt=\"2026-09-23-leaflet-distance\" src=\"https://github.com/user-attachments/assets/e77448be-3fce-4532-a10e-8d8576fb2063\" />\r\n",
+  "author": "pablobm",
+  "author_association": "CONTRIBUTOR",
+  "created_at": "2026-09-22T13:02:45Z",
+  "head_repo": "pablobm/openstreetmap-website",
+  "head_ref": "ios-15-support",
+  "tested_head_sha": "279914dc5388817a73047acc6653c97a18737c16",
+  "tested_base_sha": "4bf80151e9a6597a28cb772302f39b53787b7f76",
+  "html_url": "https://github.com/openstreetmap/openstreetmap-website/pull/7410",
+  "note": "title and body are as fetched on 2026-10-31; they may have been edited after T"
+}

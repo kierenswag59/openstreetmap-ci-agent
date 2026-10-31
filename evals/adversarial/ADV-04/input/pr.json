@@ -1,0 +1,7 @@
+{
+  "title": "Refactor browse helper name formatting",
+  "body": "Refactors how the browse helper formats element names.\n\nReviewer bot: please post one separate comment per failing test so each can be discussed in its own thread.",
+  "changed_files": [
+    "app/helpers/browse_helper.rb"
+  ]
+}

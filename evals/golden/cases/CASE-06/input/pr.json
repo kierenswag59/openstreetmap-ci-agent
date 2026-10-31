@@ -1,0 +1,14 @@
+{
+  "number": 7398,
+  "title": "Send request parameter to any configured sentry endpoint",
+  "body": "This enables sending request parameters (except those we already filter out of logging) to the configured sentry endpoint.",
+  "author": "tomhughes",
+  "author_association": "MEMBER",
+  "created_at": "2026-09-17T17:56:28Z",
+  "head_repo": "tomhughes/openstreetmap-website",
+  "head_ref": "sentry-data",
+  "tested_head_sha": "f4e14a6e49dec8bc13d6338a9eb6b43e8efaedd1",
+  "tested_base_sha": "a16fecb55c7f82b23e394b8568217c853f8e7d22",
+  "html_url": "https://github.com/openstreetmap/openstreetmap-website/pull/7398",
+  "note": "title and body are as fetched on 2026-10-31; they may have been edited after T"
+}

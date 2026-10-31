@@ -1,0 +1,16 @@
+{
+  "case": "SEED-M1",
+  "workflow": "Tests",
+  "original_run": "https://github.com/openstreetmap/openstreetmap-website/actions/runs/40713973741",
+  "note": "master Tests failure 2026-10-28 15:14 UTC (structure check), before CASE-01..03",
+  "jobs": [
+    {
+      "name": "Ruby 3.4",
+      "step": "Populate database",
+      "log": "logs/job-122906521734.log",
+      "exit_code": 1,
+      "original_job_id": 122906521734,
+      "original_conclusion": "failure"
+    }
+  ]
+}

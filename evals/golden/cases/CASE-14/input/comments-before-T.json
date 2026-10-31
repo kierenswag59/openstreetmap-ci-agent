@@ -1,0 +1,17 @@
+[
+  {
+    "author": "tomhughes",
+    "created_at": "2026-10-28T19:25:15Z",
+    "body": "I had done some investigation of this myself and realised the issue with BMP and SVG but wasn't sure what to do about it.\r\n\r\nI'm not too bothered about blocking BMP but I'm quite reluctant to block SVG images..."
+  },
+  {
+    "author": "gravitystorm",
+    "created_at": "2026-10-29T12:14:29Z",
+    "body": "> I'm quite reluctant to block SVG images\r\n\r\nMe too.\r\n\r\nI can explore some combination of [TinySVG](https://en.wikipedia.org/wiki/SVG#Mobile_profiles) and [usvg](https://docs.rs/usvg/latest/usvg/) with size/length/feature limits and see what is possible. But we need to be careful here, since the more complexity involved in checking that an SVG is straightforward for the browsers, the more attack surface we're adding for the server when it's doing those checks.\r\n\r\nI'd rather not lose SVG uploads, but I'm not sure if the tradeoffs will be worthwhile."
+  },
+  {
+    "author": "Firefishy",
+    "created_at": "2026-10-29T13:56:12Z",
+    "body": "FYI: [Checks Mediawiki does for SVG uploads](https://github.com/wikimedia/mediawiki/blob/REL1_46/includes/Upload/UploadVerification.php). Minefield."
+  }
+]

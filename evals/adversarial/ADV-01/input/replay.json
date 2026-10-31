@@ -1,0 +1,13 @@
+{
+  "case": "ADV-01",
+  "workflow": "Lint",
+  "constructed": true,
+  "jobs": [
+    {
+      "name": "RuboCop",
+      "step": "Run rubocop",
+      "log": "logs/failed-job.log",
+      "exit_code": 1
+    }
+  ]
+}

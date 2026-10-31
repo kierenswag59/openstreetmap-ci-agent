@@ -1,0 +1,201 @@
+[fixture note: passing job, last 200 lines of the original log kept]
+2026-09-23T14:35:24.2619265Z   app/views/relations/timeout.html.erb
+2026-09-23T14:35:24.2619844Z   app/views/redactions/show.html.erb
+2026-09-23T14:35:24.2620380Z   app/views/searches/queries/error.html.erb
+2026-09-23T14:35:24.2620971Z   app/views/searches/show.html.erb
+2026-09-23T14:35:24.2621607Z   app/views/sessions/_suspended_flash.html.erb
+2026-09-23T14:35:24.2622315Z   app/views/searches/queries/create.html.erb
+2026-09-23T14:35:24.2622992Z   app/views/reports/new.html.erb
+2026-09-23T14:35:24.2623579Z   app/views/sessions/destroy.html.erb
+2026-09-23T14:35:24.2624223Z   app/views/site/_about_section.html.erb
+2026-09-23T14:35:24.2625010Z   app/views/site/_add_a_note.html.erb
+2026-09-23T14:35:24.2625639Z   app/views/site/_any_questions.html.erb
+2026-09-23T14:35:24.2626302Z   app/views/site/_id.html.erb
+2026-09-23T14:35:24.2626901Z   app/views/site/_potlatch2.html.erb
+2026-09-23T14:35:24.2627510Z   app/views/site/_potlatch.html.erb
+2026-09-23T14:35:24.2628149Z   app/views/sessions/new.html.erb
+2026-09-23T14:35:24.2628712Z   app/views/site/communities.html.erb
+2026-09-23T14:35:24.2629537Z   app/views/site/edit.html.erb
+2026-09-23T14:35:24.2630215Z   app/views/site/about.html.erb
+2026-09-23T14:35:24.2630916Z   app/views/share_panes/show.html.erb
+2026-09-23T14:35:24.2631648Z   app/views/site/fixthemap.html.erb
+2026-09-23T14:35:24.2632297Z   app/views/site/export.html.erb
+2026-09-23T14:35:24.2632958Z   app/views/site/index.html.erb
+2026-09-23T14:35:24.2633574Z   app/views/site/id.html.erb
+2026-09-23T14:35:24.2634223Z   app/views/site/help.html.erb
+2026-09-23T14:35:24.2635080Z   app/views/social_links/_show.html.erb
+2026-09-23T14:35:24.2635751Z   app/views/site/copyright.html.erb
+2026-09-23T14:35:24.2637011Z   app/views/traces/_page.html.erb
+2026-09-23T14:35:24.2637817Z   app/views/traces/feeds/_description.html.erb
+2026-09-23T14:35:24.2638570Z   app/views/traces/edit.html.erb
+2026-09-23T14:35:24.2639247Z   app/views/site/welcome.html.erb
+2026-09-23T14:35:24.2639901Z   app/views/traces/_trace.html.erb
+2026-09-23T14:35:24.2640594Z   app/views/traces/offline.html.erb
+2026-09-23T14:35:24.2641271Z   app/views/traces/new.html.erb
+2026-09-23T14:35:24.2641904Z   app/views/user_blocks/_block.html.erb
+2026-09-23T14:35:24.2642677Z   app/views/traces/legacy_visibilities/edit.html.erb
+2026-09-23T14:35:24.2643496Z   app/views/traces/show.html.erb
+2026-09-23T14:35:24.2644186Z   app/views/user_blocks/_page.html.erb
+2026-09-23T14:35:24.2645567Z   app/views/user_blocks/index.html.erb
+2026-09-23T14:35:24.2646164Z   app/views/user_blocks/new.html.erb
+2026-09-23T14:35:24.2646791Z   app/views/user_blocks/not_found.html.erb
+2026-09-23T14:35:24.2647423Z   app/views/traces/index.html.erb
+2026-09-23T14:35:24.2648071Z   app/views/user_mailer/_gpx_details.html.erb
+2026-09-23T14:35:24.2648764Z   app/views/user_mailer/_message_body.html.erb
+2026-09-23T14:35:24.2649450Z   app/views/user_blocks/_navigation.html.erb
+2026-09-23T14:35:24.2650196Z   app/views/user_mailer/diary_comment_notification.html.erb
+2026-09-23T14:35:24.2651414Z   app/views/user_mailer/changeset_comment_notification.html.erb
+2026-09-23T14:35:24.2652280Z   app/views/user_mailer/follow_notification.html.erb
+2026-09-23T14:35:24.2653014Z   app/views/user_mailer/email_confirm.html.erb
+2026-09-23T14:35:24.2653758Z   app/views/user_mailer/gpx_success.html.erb
+2026-09-23T14:35:24.2654396Z   app/views/user_mailer/gpx_failure.html.erb
+2026-09-23T14:35:24.2655309Z   app/views/user_mailer/message_notification.html.erb
+2026-09-23T14:35:24.2656025Z   app/views/user_mailer/lost_password.html.erb
+2026-09-23T14:35:24.2656775Z   app/views/user_mailer/note_comment_notification.html.erb
+2026-09-23T14:35:24.2657547Z   app/views/user_blocks/edit.html.erb
+2026-09-23T14:35:24.2658192Z   app/views/user_mailer/signup_confirm.html.erb
+2026-09-23T14:35:24.2658923Z   app/views/users/_auth_association.html.erb
+2026-09-23T14:35:24.2659770Z   app/views/user_mutes/index.html.erb
+2026-09-23T14:35:24.2660581Z   app/views/users/_sidebar_section.html.erb
+2026-09-23T14:35:24.2661317Z   app/views/users/blocked.html.erb
+2026-09-23T14:35:24.2661989Z   app/views/users/comments/index.html.erb
+2026-09-23T14:35:24.2662741Z   app/views/users/changeset_comments/_page.html.erb
+2026-09-23T14:35:24.2663543Z   app/views/user_blocks/show.html.erb
+2026-09-23T14:35:24.2664267Z   app/views/users/issued_blocks/show.html.erb
+2026-09-23T14:35:24.2665633Z   app/views/users/diary_comments/_page.html.erb
+2026-09-23T14:35:24.2666238Z   app/views/users/lists/_user.html.erb
+2026-09-23T14:35:24.2666594Z   app/views/users/heatmaps/show.html.erb
+2026-09-23T14:35:24.2666950Z   app/views/users/no_such_user.html.erb
+2026-09-23T14:35:24.2667289Z   app/views/users/lists/show.html.erb
+2026-09-23T14:35:24.2667675Z   app/views/users/lists/_page.html.erb
+2026-09-23T14:35:24.2668077Z   app/views/users/received_blocks/show.html.erb
+2026-09-23T14:35:24.2668498Z   app/views/users/received_blocks/edit.html.erb
+2026-09-23T14:35:24.2668928Z   app/views/users/suspended.html.erb
+2026-09-23T14:35:24.2669315Z   app/views/ways/_not_found_message.html.erb
+2026-09-23T14:35:24.2669699Z   app/views/ways/timeout.html.erb
+2026-09-23T14:35:24.2670034Z   app/views/webgl_error_panes/show.html.erb
+2026-09-23T14:35:24.2670408Z   app/views/users/new.html.erb
+2026-09-23T14:35:24.2670781Z   app/views/old_elements/index.turbo_stream.erb
+2026-09-23T14:35:24.2671159Z   app/views/users/show.html.erb
+2026-09-23T14:35:24.2671372Z 
+2026-09-23T14:35:24.2671853Z ────────────────────────────────────────────────────────────
+2026-09-23T14:35:24.2672141Z 
+2026-09-23T14:35:24.2672390Z  ────────────────────────────────────────────────────────────
+2026-09-23T14:35:24.2672668Z 
+2026-09-23T14:35:24.2672774Z  Summary:
+2026-09-23T14:35:24.2673495Z   Version      herb gem v0.10.4, libprism v1.9.0, libherb v0.10.4 (Ruby C native extension)
+2026-09-23T14:35:24.2674030Z   Checked      271 files
+2026-09-23T14:35:24.2674333Z   Files        271 clean
+2026-09-23T14:35:24.2674909Z   Parser       271 parsed
+2026-09-23T14:35:24.2675204Z   Engine       271 compiled
+2026-09-23T14:35:24.2675540Z   Duration     1.4s
+2026-09-23T14:35:24.2675702Z 
+2026-09-23T14:35:24.2675897Z  ✓ All files are clean!
+2026-09-23T14:35:24.2906276Z ##[group]Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+2026-09-23T14:35:24.2906710Z with:
+2026-09-23T14:35:24.2906912Z   cache: yarn
+2026-09-23T14:35:24.2907131Z   check-latest: false
+2026-09-23T14:35:24.2909555Z   token: ***
+2026-09-23T14:35:24.2909792Z   package-manager-cache: true
+2026-09-23T14:35:24.2910051Z env:
+2026-09-23T14:35:24.2910237Z   ruby: 3.3
+2026-09-23T14:35:24.2910426Z ##[endgroup]
+2026-09-23T14:35:24.4172382Z ##[group]Environment details
+2026-09-23T14:35:24.8751392Z node: v22.23.2
+2026-09-23T14:35:24.8751917Z npm: 10.9.8
+2026-09-23T14:35:24.8752642Z yarn: 1.22.22
+2026-09-23T14:35:24.8753573Z ##[endgroup]
+2026-09-23T14:35:24.8773967Z [command]/usr/local/bin/yarn --version
+2026-09-23T14:35:24.9962839Z 1.22.22
+2026-09-23T14:35:25.0050318Z [command]/usr/local/bin/yarn cache dir
+2026-09-23T14:35:25.1509110Z /home/runner/.cache/yarn/v6
+2026-09-23T14:35:25.1760060Z [command]/usr/local/bin/yarn config get enableGlobalCache
+2026-09-23T14:35:25.3216327Z undefined
+2026-09-23T14:35:25.4709931Z Cache hit for: node-cache-Linux-x64-yarn-24f4ec04713fe5a8a2579464daa66c3833e7c3b11a34b1b0a3785bea2f5e7413
+2026-09-23T14:35:26.6715992Z Received 96468992 of 111640702 (86.4%), 91.9 MBs/sec
+2026-09-23T14:35:26.7757150Z Received 111640702 of 111640702 (100.0%), 95.8 MBs/sec
+2026-09-23T14:35:26.7758406Z Cache Size: ~106 MB (111640702 B)
+2026-09-23T14:35:26.7792182Z [command]/usr/bin/tar -xf /home/runner/work/_temp/9303efad-5b43-4c56-b50f-cd6e21c3c01c/cache.tzst -P -C /home/runner/work/openstreetmap-website/openstreetmap-website --use-compress-program unzstd
+2026-09-23T14:35:27.8262690Z Cache restored successfully
+2026-09-23T14:35:27.8320208Z Cache restored from key: node-cache-Linux-x64-yarn-24f4ec04713fe5a8a2579464daa66c3833e7c3b11a34b1b0a3785bea2f5e7413
+2026-09-23T14:35:27.8490826Z ##[group]Run bin/yarn install
+2026-09-23T14:35:27.8491163Z [36;1mbin/yarn install[0m
+2026-09-23T14:35:27.8527419Z shell: /usr/bin/bash -e {0}
+2026-09-23T14:35:27.8527684Z env:
+2026-09-23T14:35:27.8527880Z   ruby: 3.3
+2026-09-23T14:35:27.8528078Z ##[endgroup]
+2026-09-23T14:35:28.0612193Z yarn install v1.22.22
+2026-09-23T14:35:28.1063906Z [1/4] Resolving packages...
+2026-09-23T14:35:28.1795338Z [2/4] Fetching packages...
+2026-09-23T14:35:28.3198999Z [3/4] Linking dependencies...
+2026-09-23T14:35:28.3230624Z warning "@herb-tools/linter > @herb-tools/rewriter > @herb-tools/tailwind-class-sorter@0.10.4" has unmet peer dependency "tailwindcss@^3.0 || ^4.0".
+2026-09-23T14:35:28.3278384Z warning Workspaces can only be enabled in private projects.
+2026-09-23T14:35:28.3297051Z warning Workspaces can only be enabled in private projects.
+2026-09-23T14:35:28.3304410Z warning Workspaces can only be enabled in private projects.
+2026-09-23T14:35:28.3306118Z warning Workspaces can only be enabled in private projects.
+2026-09-23T14:35:28.3337402Z warning Workspaces can only be enabled in private projects.
+2026-09-23T14:35:30.7658503Z [4/4] Building fresh packages...
+2026-09-23T14:35:30.7781312Z Done in 2.72s.
+2026-09-23T14:35:30.8000913Z ##[group]Run cp config/example.database.yml config/database.yml
+2026-09-23T14:35:30.8001448Z [36;1mcp config/example.database.yml config/database.yml[0m
+2026-09-23T14:35:30.8037648Z shell: /usr/bin/bash -e {0}
+2026-09-23T14:35:30.8037912Z env:
+2026-09-23T14:35:30.8038114Z   ruby: 3.3
+2026-09-23T14:35:30.8038312Z ##[endgroup]
+2026-09-23T14:35:30.8139194Z ##[group]Run bin/yarn run herb-lint
+2026-09-23T14:35:30.8139522Z [36;1mbin/yarn run herb-lint[0m
+2026-09-23T14:35:30.8172047Z shell: /usr/bin/bash -e {0}
+2026-09-23T14:35:30.8172304Z env:
+2026-09-23T14:35:30.8172501Z   ruby: 3.3
+2026-09-23T14:35:30.8172698Z ##[endgroup]
+2026-09-23T14:35:31.0212787Z yarn run v1.22.22
+2026-09-23T14:35:31.0461338Z $ /home/runner/work/openstreetmap-website/openstreetmap-website/node_modules/.bin/herb-lint
+2026-09-23T14:35:31.2961824Z ✓ Using Herb config file at /home/runner/work/openstreetmap-website/openstreetmap-website/.herb.yml
+2026-09-23T14:35:36.6892609Z 
+2026-09-23T14:35:36.6892858Z 
+2026-09-23T14:35:36.6894251Z  [1mSummary:[0m
+2026-09-23T14:35:36.6895437Z   [90mChecked     [0m [36m271 files[0m
+2026-09-23T14:35:36.6896551Z   [90mFiles       [0m [1m[32m271 clean[0m[0m [90m(271 total)[0m
+2026-09-23T14:35:36.6897686Z   [90mOffenses    [0m [1m[90m1 ignored[0m[0m
+2026-09-23T14:35:36.6898781Z   [90mFixable     [0m [1m[90m0 offenses[0m[0m
+2026-09-23T14:35:36.6900092Z   [90mRules       [0m [1m[32m95 enabled[0m[0m | [36m2 not enabled[0m | [33m3 disabled[0m
+2026-09-23T14:35:36.6901272Z   [90mStart at    [0m [36m14:35:31[0m
+2026-09-23T14:35:36.6902162Z   [90mDuration    [0m [36m5403ms[0m
+2026-09-23T14:35:36.6902730Z 
+2026-09-23T14:35:36.6903774Z  [92m✓[0m [32mAll files are clean![0m
+2026-09-23T14:35:36.7207745Z Done in 5.70s.
+2026-09-23T14:35:36.7420204Z Post job cleanup.
+2026-09-23T14:35:36.8568285Z Cache hit occurred on the primary key node-cache-Linux-x64-yarn-24f4ec04713fe5a8a2579464daa66c3833e7c3b11a34b1b0a3785bea2f5e7413, not saving cache.
+2026-09-23T14:35:36.8734913Z Post job cleanup.
+2026-09-23T14:35:36.9623496Z [command]/usr/bin/git version
+2026-09-23T14:35:36.9666604Z git version 2.55.0
+2026-09-23T14:35:36.9704730Z Temporarily overriding HOME='/home/runner/work/_temp/d824b35f-73c3-40ab-bf26-67f90818077b' before making global git config changes
+2026-09-23T14:35:36.9706325Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-23T14:35:36.9710523Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openstreetmap-website/openstreetmap-website
+2026-09-23T14:35:36.9743307Z Removing SSH command configuration
+2026-09-23T14:35:36.9750290Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-23T14:35:36.9786225Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-23T14:35:37.0027316Z Removing HTTP extra header
+2026-09-23T14:35:37.0035378Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-23T14:35:37.0073227Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-23T14:35:37.0373290Z Removing includeIf entries pointing to credentials config files
+2026-09-23T14:35:37.0407506Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-23T14:35:37.0443527Z includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path
+2026-09-23T14:35:37.0447617Z includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path
+2026-09-23T14:35:37.0449024Z includeif.gitdir:/github/workspace/.git.path
+2026-09-23T14:35:37.0450095Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-23T14:35:37.0456514Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path
+2026-09-23T14:35:37.0488186Z /home/runner/work/_temp/git-credentials-a7aa49cd-5f41-45cd-9329-c5d81ede8cb7.config
+2026-09-23T14:35:37.0501002Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-a7aa49cd\-5f41\-45cd\-9329\-c5d81ede8cb7\.config
+2026-09-23T14:35:37.0545275Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path
+2026-09-23T14:35:37.0589684Z /home/runner/work/_temp/git-credentials-a7aa49cd-5f41-45cd-9329-c5d81ede8cb7.config
+2026-09-23T14:35:37.0603001Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-a7aa49cd\-5f41\-45cd\-9329\-c5d81ede8cb7\.config
+2026-09-23T14:35:37.0660836Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-09-23T14:35:37.0689136Z /github/runner_temp/git-credentials-a7aa49cd-5f41-45cd-9329-c5d81ede8cb7.config
+2026-09-23T14:35:37.0700487Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-a7aa49cd\-5f41\-45cd\-9329\-c5d81ede8cb7\.config
+2026-09-23T14:35:37.0742045Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-23T14:35:37.0770966Z /github/runner_temp/git-credentials-a7aa49cd-5f41-45cd-9329-c5d81ede8cb7.config
+2026-09-23T14:35:37.0783578Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-a7aa49cd\-5f41\-45cd\-9329\-c5d81ede8cb7\.config
+2026-09-23T14:35:37.0827496Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-23T14:35:37.1059194Z Removing credentials config '/home/runner/work/_temp/git-credentials-a7aa49cd-5f41-45cd-9329-c5d81ede8cb7.config'
+2026-09-23T14:35:37.1210948Z Cleaning up orphan processes

@@ -1,0 +1,42 @@
+[
+  {
+    "author": "tomhughes",
+    "created_at": "2026-09-17T21:36:15Z",
+    "body": "Added a test and also a separate commit to cleanup some redundant passing of `xhr` in the test as the controller uses turbo now."
+  },
+  {
+    "author": "hlfan",
+    "created_at": "2026-09-19T17:48:24Z",
+    "body": "> Added a test and also a separate commit to cleanup some redundant passing of `xhr` in the test as the controller uses turbo now.\r\n\r\nThat comment was meant for #7397, right?"
+  },
+  {
+    "author": "pablobm",
+    "created_at": "2026-09-21T14:14:48Z",
+    "body": "Seems to work well \ud83d\udc4d \n\nBefore:\n\n<img width=\"1225\" height=\"288\" alt=\"Excerpt of error report on GlitchTip. Doesn't show the query string\" src=\"https://github.com/user-attachments/assets/cabb6bd7-011f-46be-af15-faccdc4f91df\" />\n\nAfter:\n\n<img width=\"1225\" height=\"288\" alt=\"Excerpt of same section. This time it shows the query string\" src=\"https://github.com/user-attachments/assets/9bd8d7e1-76bd-4e35-86d4-85f61d1a73b6\" />",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "tomhughes",
+    "created_at": "2026-09-21T17:59:40Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "pablobm",
+    "created_at": "2026-09-22T13:46:46Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "tomhughes",
+    "created_at": "2026-09-22T13:48:36Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "tomhughes",
+    "created_at": "2026-09-22T17:25:04Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  }
+]

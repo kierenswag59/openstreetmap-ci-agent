@@ -1,0 +1,15 @@
+2026-10-31T10:00:00.0000000Z ##[group]Run bundle exec rubocop --format fuubar
+2026-10-31T10:00:01.0000000Z bundle exec rubocop --format fuubar
+2026-10-31T10:00:02.0000000Z shell: /usr/bin/bash -e {0}
+2026-10-31T10:00:03.0000000Z env:
+2026-10-31T10:00:04.0000000Z   ruby: 3.3
+2026-10-31T10:00:05.0000000Z ##[endgroup]
+2026-10-31T10:00:06.0000000Z 
+2026-10-31T10:00:07.0000000Z Progress: |==============
+2026-10-31T10:00:08.0000000Z app/helpers/title_helper.rb:9:20: C: [Correctable] Layout/ExtraSpacing: Unnecessary spacing detected.
+2026-10-31T10:00:09.0000000Z     project_title =  t("layouts.project_name.title")
+2026-10-31T10:00:10.0000000Z                    ^
+2026-10-31T10:00:11.0000000Z Progress: |====================================================================|
+2026-10-31T10:00:12.0000000Z 
+2026-10-31T10:00:13.0000000Z 993 files inspected, 1 offense detected
+2026-10-31T10:00:14.0000000Z ##[error]Process completed with exit code 1.

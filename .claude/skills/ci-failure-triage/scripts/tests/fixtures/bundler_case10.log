@@ -1,0 +1,17 @@
+2026-10-07T23:57:42.2896638Z ##[group]Run ruby/setup-ruby@14594264cd68ce8a2345dd349bc3d138a4ef85c8
+2026-10-07T23:57:42.2897098Z with:
+2026-10-07T23:57:42.2897373Z   ruby-version: 3.3
+2026-10-07T23:57:42.2897689Z   rubygems: 3.4.10
+2026-10-07T23:57:51.8889499Z Fetching gem metadata from https://rubygems.org/.
+2026-10-07T23:57:51.9124051Z Fetching bundler 4.0.3
+2026-10-07T23:57:52.2489109Z Installing bundler 4.0.3
+2026-10-07T23:57:52.6239827Z The dependencies in your gemfile changed, but the lockfile can't be updated
+2026-10-07T23:57:52.6240678Z because frozen mode is set
+2026-10-07T23:57:52.6240987Z 
+2026-10-07T23:57:52.6241387Z Run `bundle install` elsewhere and add the updated Gemfile.lock to version
+2026-10-07T23:57:52.6242107Z control.
+2026-10-07T23:57:52.6242290Z 
+2026-10-07T23:57:52.6242364Z 
+2026-10-07T23:57:52.6242946Z If this is a development machine, remove the Gemfile.lock freeze by running
+2026-10-07T23:57:52.6243541Z `bundle config set frozen false`.
+2026-10-07T23:57:52.6328490Z ##[error]The process '/opt/hostedtoolcache/Ruby/3.3.12/x64/bin/bundle' failed with exit code 16

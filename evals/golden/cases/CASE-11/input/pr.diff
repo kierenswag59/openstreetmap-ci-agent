@@ -1,0 +1,1278 @@
+diff --git a/config/locales/be.yml b/config/locales/be.yml
+index 7fe553a451..f3c64237a1 100644
+--- a/config/locales/be.yml
++++ b/config/locales/be.yml
+@@ -31,13 +31,16 @@
+ be:
+   html:
+     dir: ltr
++  date:
++    formats:
++      contribution_calendar: '%-d %B'
+   time:
+     formats:
+       friendly: '%e %B %Y у %H:%M'
+       blog: '%e %B %Y'
+   helpers:
+     file:
+-      prompt: Абраць файл
++      prompt: Выбраць файл
+     submit:
+       diary_comment:
+         create: Каментаваць
+@@ -45,7 +48,7 @@ be:
+         create: Апублікаваць
+         update: Абнавіць
+       issue_comment:
+-        create: Дадаць каментар
++        create: Дадаць каментарый
+       message:
+         create: Даслаць
+       oauth2_application:
+@@ -55,8 +58,8 @@ be:
+         create: Стварыць рэдакцыю
+         update: Захаваць рэдакцыю
+       trace:
+-        create: Зацягнуць
+-        update: Запісаць змены
++        create: Запампаваць
++        update: Захаваць змяненні
+       user_block:
+         create: Стварыць блакіроўку
+         update: Абнавіць блакіроўку
+@@ -70,17 +73,18 @@ be:
+           is_already_muted: ужо заглушаны
+     models:
+       acl: Спіс правоў доступу
+-      changeset: Пакет правак
+-      changeset_tag: Тэг пакета правак
++      changeset: Набор змяненняў
++      changeset_tag: Тэг набору змяненняў
+       country: Краіна
+-      diary_comment: Каментар дзённіка
+-      diary_entry: Запіс дзённіка
++      diary_comment: Каментарый да дзённіка
++      diary_entry: Запіс у дзённіку
+       friend: Сябар
+       issue: Праблема
+       language: Мова
+       message: Паведамленне
+       node: Пункт
+       node_tag: Тэг пункта
++      note: Заўвага
+       old_node: Стары пункт
+       old_node_tag: Стары тэг пункта
+       old_relation: Старое дачыненне
+@@ -130,9 +134,14 @@ be:
+         longitude: Даўгата
+         public: Агульны
+         description: Апісанне
+-        gpx_file: 'Даслаць GPX-файл:'
++        gpx_file: Выберыце файл GPS-трасіроўкі
+         visibility: Бачнасць
+         tagstring: Тэгі
++      moderation_zone:
++        name: Назва
++        reason: Прычына
++        zone: Зона
++        period: Перыяд
+       message:
+         sender: Ад
+         title: Тэма
+@@ -152,6 +161,7 @@ be:
+         active: Актыўны
+         display_name: Бачнае імя
+         description: Апісанне
++        company: Кампанія
+         home_lat: Шырата
+         home_lon: Даўгата
+         languages: Пераважныя мовы
+@@ -238,6 +248,8 @@ be:
+         few: '%{count} гады таму'
+         many: '%{count} гадоў таму'
+         other: '%{count} гады(оў) таму'
++    distance_in_words_in:
++      half_a_minute: праз паўхвіліны
+   printable_name:
+     with_name_html: '%{name} (%{id})'
+     current_and_old_links_html: '%{current_link}, %{old_link}'
+@@ -253,6 +265,7 @@ be:
+     providers:
+       none: Няма
+       google: Google
++      apple: Apple
+       facebook: Facebook
+       microsoft: Microsoft
+       github: GitHub
+@@ -289,9 +302,11 @@ be:
+       external auth: Знешняя Аўтэнтыфікацыя
+       contributor_terms:
+         heading: Умовы ўдзелу
+-        agreed: Вы пагадзіліся на новыя ўмовы ўдзелу.
++        agreed: Вы пагадзіліся з Умовамі ўдзелу %{date}.
+         agreed_with_pd: Вы таксама заявілі, што лічыце, што змены павінны знаходзіцца
+           ў агульнай уласнасці.
++      terms_of_use:
++        heading: Умовы выкарыстання
+       save changes button: Запісаць змены
+       delete_account: Выдаліць уліковы запіс...
+     go_public:
+@@ -336,8 +351,8 @@ be:
+           будуць захаваныя, але схаваныя ад назірання.
+         retain_notes: Вашы нататкі на карце і каментарыі да іх, калі такія маюцца,
+           будуць захаваныя, але схаваныя ад назірання.
+-        retain_changeset_discussions: Вашыя абмеркаванні зменаў, калі такія маюцца,
+-          будуць захаваныя.
++        retain_changeset_discussions: Вашы існуючыя абмеркаванні да набору змяненняў
++          будуць захаваны.
+         retain_email: Ваш адрас электроннай пошты будзе захаваны.
+         recent_editing_html: Вы нядаўна рэдагавалі ваш уліковы запіс, таму зараз яго
+           нельга выдаліць. Выдаленне будзе магчымае праз %{time}.
+@@ -348,16 +363,17 @@ be:
+         title: Умовы
+         heading: Умовы
+         heading_ct: Умовы ўдзелу
+-        read and accept with tou: Калі ласка, азнаёмцеся з пагадненнем удзельнікаў
+-          і з умовамі карыстання, пасля чаго пастаўце абедзьве птушкі і націсніце
+-          кнопку "Працягнуць".
++        read and accept with tou: Калі ласка, азнаёмцеся з Умовамі ўдзелу і з Умовамі
++          выкарыстання, пасля чаго пастаўце абедзьве птушкі і націсніце кнопку "Працягнуць".
+         contributor_terms_explain: Гэтае пагадненне регулюе ўмовы вашага існага і
+           будучага ўкладу.
+         read_ct: Я прачытаў і пагаджаюся з пагадненнем удзельнікаў.
+         tou_explain:
+           html: '%{tou_link} кіруе сайтам і іншай інфраструктурай OSMF. Калі ласка,
+             прайдзіце па спасылцы і азнаёмцеся з тэкстам.'
++          tou: Умовы выкарыстання
+         read_tou: Я згаджаюся з Умовамі выкарыстання
++        informal_translations: нефармальныя пераклады
+         continue: Працягнуць
+         cancel: Скасаваць
+         you need to accept or decline: Калі ласка, прачытайце, а потым згадзіцеся
+@@ -381,7 +397,7 @@ be:
+     edited_ago_by_html: Адрэдагавана %{time_ago} карыстальнікам %{user}
+     version: Версія
+     redacted_version: Адрэдагаваная версія
+-    in_changeset: Пакет правак
++    in_changeset: Набор змяненняў
+     anonymous: ананімны
+     no_comment: (без каментароў)
+     part_of: Частка
+@@ -442,7 +458,7 @@ be:
+         node: пункт
+         way: лінія
+         relation: дачыненне
+-        changeset: набор змен
++        changeset: набор змяненняў
+         note: заўвага
+     redacted:
+       redaction: Рэдакцыя %{id}
+@@ -512,81 +528,82 @@ be:
+   changeset_comments:
+     feeds:
+       comment:
+-        comment: Новы каментар на пакет правак %{changeset_id} ад %{author}
++        comment: Новы каментарый да набору змяненняў №%{changeset_id} ад %{author}
+         commented_at_by_html: Абноўлена %{when} удзельнікам %{user}
+       show:
+-        title_all: Абмеркаванне пакета правак OpenStreetMap
+-        title_particular: 'Абмеркаванне пакета правак OpenStreetMap #%{changeset_id}'
++        title_all: Абмеркаванне набору змяненняў OpenStreetMap
++        title_particular: Абмеркаванне набору змяненняў OpenStreetMap №%{changeset_id}
+       timeout:
+-        sorry: Выбачайце, спіс набораў правак, што Вы запыталі, занадта вялікі для
+-          атрымання.
++        sorry: Выбачайце, для спіса каментарыяў да набору змяненняў, які вы запыталі,
++          скончыўся час атрымання.
+   changesets:
+     index:
+-      title: Пакет правак
+-      title_user: Пакет правак ад %{user}
+-      title_user_link_html: Змены ад %{user_link}
+-      title_nearby: Пакеты правак ад карыстальнікаў паблізу
+-      empty: Пакеты правак не знойдзены.
+-      empty_area: Няма пакетаў правак у гэтай вобласці.
+-      empty_user: Няма пакетаў правак ад гэтага карыстальніка.
+-      no_more: Больш ніякіх пакетаў правак не знойдзена.
+-      no_more_area: Больш няма пакетаў правак у гэтай вобласці.
+-      no_more_user: Больш няма пакетаў правак ад гэтага карыстальніка.
++      title: Наборы змяненняў
++      title_user: Наборы змяненняў ад %{user}
++      title_user_link_html: Наборы змяненняў ад %{user_link}
++      title_nearby: Наборы змяненняў ад карыстальнікаў паблізу
++      empty: Набораў змяненняў не знойдзена.
++      empty_area: У гэтай мясцовасці няма набораў змяненняў.
++      empty_user: Няма набораў змяненняў ад гэтага карыстальніка.
++      no_more: Набораў змяненняў больш не знойдзена.
++      no_more_area: У гэтай мясцовасці больш няма набораў змяненняў.
++      no_more_user: Больш няма набораў змяненняў ад гэтага карыстальніка.
+       feed:
+-        title: Набор змен %{id}
+-        title_comment: Набор змен %{id} - %{comment}
++        title: Набор змяненняў %{id}
++        title_comment: Набор змяненняў %{id} - %{comment}
+         created: Створаны
+-        closed: Зачынены
++        closed: Закрыты
+         belongs_to: Аўтар
+     show:
+-      title: 'Набор змен: %{id}'
+-      created: 'Створана: %{when}'
+-      closed: 'Закрыта: %{when}'
+-      created_ago_html: Створана %{time_ago}
+-      closed_ago_html: Закрыта %{time_ago}
+-      created_ago_by_html: Створана %{time_ago} удзельнікам %{user}
+-      closed_ago_by_html: Закрыта %{time_ago} карыстальнікам %{user}
++      title: 'Набор змяненняў: %{id}'
++      created: 'Створаны: %{when}'
++      closed: 'Закрыты: %{when}'
++      created_ago_html: Створаны %{time_ago}
++      closed_ago_html: Закрыты %{time_ago}
++      created_ago_by_html: Створаны %{time_ago} удзельнікам %{user}
++      closed_ago_by_html: Закрыты %{time_ago} удзельнікам %{user}
+       discussion: Абмеркаванне
+       join_discussion: Увайдзіце ў сістэму, каб далучыцца да абмеркавання
+-      still_open: Пакет правак яшчэ адкрыты. Абмеркаванне стане даступным, як толькі
+-        пакет правак закрыецца.
++      still_open: Набор змяненняў яшчэ адкрыты. Абмеркаванне стане даступным, як толькі
++        набор змяненняў стане закрытым.
+       subscribe: Падпісацца
+       unsubscribe: Адпісацца
+-      comment_by_html: Пракаментавана карыстальнікам %{user} %{time_ago} таму
+-      hidden_comment_by_html: Схаваны каментар ад %{user} %{time_ago} таму
++      comment_by_html: Пракаментавана карыстальнікам %{user} %{time_ago}
++      hidden_comment_by_html: Схаваны каментар ад %{user} %{time_ago}
+       hide_comment: схаваць
+       unhide_comment: паказаць
+       comment: Каментаваць
+-      changesetxml: XML пакета правак
++      changesetxml: XML набору змяненняў
+       osmchangexml: osmChange XML
+     paging_nav:
+       nodes_paginated: Пункты (%{x}-%{y} з %{count})
+       ways_paginated: Лініі (%{x}-%{y} з %{count})
+       relations_paginated: Дачыненні (%{x}-%{y} з %{count})
+     timeout:
+-      sorry: На жаль, запытаны спіс правак занадта доўгі, каб выцягнуць.
++      sorry: Выбачайце, для спіса набораў змяненняў, які вы запыталі, скончыўся час
++        атрымання.
+   changeset_subscriptions:
+     show:
+       subscribe:
+-        heading: Падпісацца на наступнае абмеркаванне зменаў?
++        heading: Падпісацца на наступнае абмеркаванне набору змяненняў?
+         button: Падпісацца на абмеркаванне
+       unsubscribe:
+-        heading: Скасаваць падпіску на наступнае абмеркаванне зменаў?
++        heading: Адпісацца ад наступнага абмеркавання набору змяненняў?
+         button: Адпісацца ад абмеркавання
+     heading:
+-      title: Набор змен %{id}
++      title: Набор змяненняў %{id}
+       created_by_html: Створана %{link_user} %{created}.
+     no_such_entry:
+-      heading: 'Няма запісу з нумарам: %{id}'
+-      body: На жаль, няма змяненняў з нумарам %{id}. Калі ласка, праверце, ці карэктна
+-        уведзены нумар, або магчыма вам далі няслушную спасылку.
++      heading: 'Няма запісу з ідэнтыфікатарам: %{id}'
++      body: На жаль, няма набору змяненняў з ідэнтыфікатарам %{id}. Праверце напісанне
++        ідэнтыфікатара, або магчыма вы націснулі на няправільную спасылку.
+   dashboards:
+     contact:
+       km away: '%{count} км ад вас'
+       m away: '%{count} м ад Вас'
+       latest_edit_html: 'Апошняе рэдагаванне (%{ago}):'
+       no_edits: (без змен)
+-      view_changeset_details: Падрабязней пра пакет правак
++      view_changeset_details: Паказаць падрабязныя звесткі пра набор змяненняў
+     popup:
+       your location: Ваша месцазнаходжанне
+       nearby mapper: Карыстальнік
+@@ -598,14 +615,14 @@ be:
+       nearby users: 'Карыстальнікі паблізу:'
+       no nearby users: Пакуль што няма карыстальнікаў, якія пазначылі сваё месцазнаходжанне
+         паблізу.
+-      nearby_changesets: наборы зменаў удзельнікаў паблізу
++      nearby_changesets: наборы змяненняў удзельнікаў паблізу
+       nearby_diaries: запісы дзённікаў карыстальнікаў паблізу
+   diary_entries:
+     new:
+       title: Новы запіс дзённіку
+     form:
+       location: Месца
+-      use_map_link: Карыстацца мапай
++      use_map_link: Карыстацца картай
+     index:
+       title: Дзённікі карыстальнікаў
+       title_nearby: Дзённікі карыстальнікаў паблізу
+@@ -1137,7 +1154,7 @@ be:
+           sports_centre: Спартыўны цэнтр
+           stadium: Стадыён
+           swimming_pool: Плавальны басейн
+-          track: Бегавая дарожка
++          track: Бегавая дарожка (не мотаспорт)
+           water_park: Аквапарк
+           "yes": Забавы
+         man_made:
+@@ -1500,16 +1517,16 @@ be:
+           weir: Плаціна
+           "yes": Водны маршрут
+       admin_levels:
+-        level2: Мяжа краіны
+-        level3: Мяжа рэгіёна
+-        level4: Мяжа сталіцы і абласцей
+-        level5: Мяжа рэгіёна
+-        level6: Мяжа райцэнтра і раёна
+-        level7: Мяжа муніцыпалітэта
+-        level8: Мяжа горада
+-        level9: Мяжа раёну н/п
+-        level10: Мяжа прыгараду
+-        level11: Мяжа суседства
++        level2: Міжнародная мяжа
++        level3: Адміністрацыйная мяжа (узровень 3)
++        level4: Адміністрацыйная мяжа (узровень 4)
++        level5: Адміністрацыйная мяжа (узровень 5)
++        level6: Адміністрацыйная мяжа (узровень 6)
++        level7: Адміністрацыйная мяжа (узровень 7)
++        level8: Адміністрацыйная мяжа (узровень 8)
++        level9: Адміністрацыйная мяжа (узровень 9)
++        level10: Адміністрацыйная мяжа (узровень 10)
++        level11: Адміністрацыйная мяжа (узровень 11)
+   searches:
+     show:
+       title:
+@@ -1628,7 +1645,7 @@ be:
+   layouts:
+     logo:
+       alt_text: Лагатып OpenStreetMap
+-    start_mapping: Пачаць маляваць карту
++    start_mapping: Пачаць рэдагаванне карты
+     intro_header: Вітаем у OpenStreetMap!
+     intro_text: OpenStreetMap - гэта карта свету, створаная людзьмі, як вы, і бясплатная
+       для выкарыстання на ўмовах адкрытай ліцэнзіі.
+@@ -1673,7 +1690,7 @@ be:
+         %{unsubscribeurl}
+     message_notification:
+       subject: '[OpenStreetMap] %{message_title}'
+-      hi: Прывітанне, %{to_user},
++      hi: Вітаем, %{to_user}!
+       header: '%{from_user} адправіў вам паведамленне з тэмай %{subject} праз OpenStreetMap:'
+       header_html: '%{from_user} адправіў вам паведамленне з тэмай %{subject} у OpenStreetMap:'
+       footer: Вы можаце таксама прачытаць паведамленне на %{readurl}, і вы можаце
+@@ -1681,18 +1698,18 @@ be:
+       footer_html: Вы можаце таксама прачытаць паведамленне на %{readurl}, і вы можаце
+         адказаць на %{replyurl}
+     follow_notification:
+-      hi: Прывітанне, %{to_user},
++      hi: Вітаем, %{to_user}!
+       see_their_profile: Вы можаце прагледзець профіль на %{userurl} і дадаць, як
+         сябра, у адказ, калі хочаце.
+       see_their_profile_html: Вы можаце прагледзець профіль на %{userurl}.
+     gpx_failure:
+-      hi: Прывітанне, %{to_user},
+-      failed_to_import: 'збой імпарту. Адбылася памылка:'
++      hi: Вітаем, %{to_user}!
++      failed_to_import: Здаецца, не ўдалося імпартаваць ваш файл у якасці GPS трасіроўкі.
+       more_info_html: Больш інфармацыі пра памылкі імпарту GPX і пра тое, як іх пазбегнуць,
+         можна знайсці на %{url}.
+       subject: '[OpenStreetMap] Збой імпарту GPX'
+     gpx_success:
+-      hi: Прывітанне %{to_user},
++      hi: Вітаем, %{to_user}!
+       all_your_traces_html: Усе паспяхова спампаваныя трэкі GPX можна знайсці ў %{url}
+       subject: '[OpenStreetMap] Паспяховы імпарт GPX'
+     signup_confirm:
+@@ -1721,7 +1738,7 @@ be:
+     note_comment_notification:
+       description: Нататка OpenStreetMap №%{id}
+       anonymous: Ананімны карыстальнік
+-      greeting: Прывітанне,
++      greeting: Вітаем!
+       commented:
+         subject_own: '[OpenStreetMap] %{commenter} пракаментаваў адну з вашых заўваг'
+         subject_other: '[OpenStreetMap] %{commenter} пракаментаваў заўвагу, што можа
+@@ -1759,30 +1776,30 @@ be:
+       details: Адказаць або здаведацца больш пра нататку праз %{url}.
+       details_html: Адказаць або здаведацца больш пра нататку праз %{url}
+     changeset_comment_notification:
+-      description: Набор зменаў OpenStreetMap №%{id}
+-      hi: Прывітанне, %{to_user},
++      description: Набор змяненняў OpenStreetMap №%{id}
++      hi: Вітаем, %{to_user}!
+       commented:
+-        subject_own: '[OpenStreetMap] %{commenter} пракаментаваў адзін з вашых набораў
+-          зменаў'
+-        subject_other: '[OpenStreetMap] %{commenter} пракаментаваў цікавы вам набор
+-          зменаў'
+-        your_changeset: '%{commenter} пакінуў каментарый на адзін з вашых набораў
+-          змен, створаных %{time}'
+-        your_changeset_html: '%{commenter} пакінуў каментар а %{time} да аднаго з
+-          вашых набораў зменаў'
+-        commented_changeset: '%{commenter}% у %{time} пакінуў каментарый да набору
+-          змен ад %{changeset_author}, за якім вы назіраеце'
+-        commented_changeset_html: '%{commenter} пакінуў каментар а %{time} на адзін
+-          з набораў зменаў, за якім вы сачыце, які створаны %{changeset_author}'
+-        partial_changeset_with_comment: з каментаром '%{changeset_comment}'
+-        partial_changeset_with_comment_html: з каментаром "%{changeset_comment}"
+-        partial_changeset_without_comment: без каментароў
+-      details: Адказаць або здаведацца больш пра набор зменаў праз %{url}.
+-      details_html: Адказаць або здаведацца больш пра набор зменаў праз %{url}.
++        subject_own: '[OpenStreetMap] %{commenter} пакінуў каментарый да аднаго з
++          вашых набораў змяненняў'
++        subject_other: '[OpenStreetMap] %{commenter} пакінуў каментарый да набору
++          змяненняў, цікавага вам'
++        your_changeset: '%{commenter} пакінуў у %{time} каментарый да аднаго з вашых
++          набораў змяненняў'
++        your_changeset_html: '%{commenter} пакінуў у %{time} каментарый да аднаго
++          з вашых набораў змяненняў'
++        commented_changeset: '%{commenter}% пакінуў у %{time} каментарый да набору
++          змяненняў ад %{changeset_author}, за якім вы назіраеце'
++        commented_changeset_html: '%{commenter} пакінуў у %{time} каментарый да аднаго
++          з набораў змяненняў, за якім вы назіраеце, створанага %{changeset_author}'
++        partial_changeset_with_comment: з каментарыем «%{changeset_comment}»
++        partial_changeset_with_comment_html: з каментарыем «%{changeset_comment}»
++        partial_changeset_without_comment: без каментарыя
++      details: Адказаць або даведацца больш пра набор змяненняў можна на %{url}.
++      details_html: Адказаць або даведацца больш пра набор змяненняў можна на %{url}.
+       unsubscribe: Вы можаце адпісацца ад атрымання апавяшчэнняў пра абнаўленні гэтага
+-        набору зменаў праз %{url}.
++        набору змяненняў на %{url}.
+       unsubscribe_html: Вы можаце адпісацца ад атрымання апавяшчэнняў пра абнаўленні
+-        гэтага набору зменаў праз %{url}.
++        гэтага набору змяненняў на %{url}.
+   confirmations:
+     confirm:
+       heading: Праверце вашу электронную пошту!
+@@ -1874,7 +1891,7 @@ be:
+           other: '%{count} старых паведамленняў'
+         no_messages_yet_html: У вас пакуль няма паведамленняў. Чаму б не зкаардынавацца
+           з  %{people_mapping_nearby_link}?
+-        people_mapping_nearby: людзьмі, што жывуць непадалёку
++        people_mapping_nearby: людзьмі, якія жывуць непадалёку
+     muted_inboxes:
+       show:
+         title: Прыглушаныя паведамленні
+@@ -1891,7 +1908,7 @@ be:
+           other: Вы адаслалі %{count} паведамленняў
+         no_sent_messages_html: У вас пакуль няма дасланых паведамленняў. Чаму б не
+           зкаардынавацца з %{people_mapping_nearby_link}?
+-        people_mapping_nearby: людзьмі, што жывуць непадалёку
++        people_mapping_nearby: людзьмі, якія жывуць непадалёку
+       message:
+         destroy_button: Выдаліць
+     replies:
+@@ -1954,7 +1971,8 @@ be:
+     locations:
+       show:
+         no home location: Вы не выбралі вашае асноўнае месцазнаходжанне.
+-        update home location on click: Абнавіць каардэнаты, калі я пстрыкну па карце?
++        update home location on click: Абнаўляць маё месцазнаходжанне, калі я націскаю
++          на карту?
+         show: Паказаць
+         delete: Выдаліць
+         undelete: Адмяніць выдаленне
+@@ -2033,7 +2051,7 @@ be:
+           вярнуцца да %{native_link} гэтай старонкі ці спыніць чытанне пра аўтарскія
+           правы і %{mapping_link}.
+         native_link: беларуская версія
+-        mapping_link: пачаць маляваць карту
++        mapping_link: пачаць рэдагаванне карты
+       legal_babble:
+         licensing_1_osm_foundation: Фонд OpenStreetMap
+         credit_title_html: Як спасылацца на OpenStreetMap
+@@ -2109,7 +2127,7 @@ be:
+           description: Дадатковыя крыніцы, пералічаныя на Вікі OpenStreetMap
+       export_button: Экспарт
+     fixthemap:
+-      title: Паведаміць аб праблеме / Выправіць карту
++      title: Паведаміць пра праблему / Паправіць карту
+       how_to_help:
+         title: Як дапамагчы
+         join_the_community:
+@@ -2176,14 +2194,14 @@ be:
+         карце свету. Зараз, калі вы ўвайшлі, усё гатова для пачатку рэдагавання. Вось
+         кароткае кіраўніцтва па найважнейшым рэчам, якія вы павінны ведаць.
+       whats_on_the_map:
+-        title: Што змяшчае карта
++        title: Што знаходзіцца на карце
+       basic_terms:
+         title: Невялікі слоўнік картографа
+         paragraph_1: OpenStreetMap мае свой ​​уласны жаргон. Вось некалькі ключавых
+           слоў, якія могуць быць карыснымі.
+       rules:
+         title: Правілы!
+-      start_mapping: Пачаць маляваць карту
++      start_mapping: Пачаць рэдагаванне карты
+     add_a_note:
+       title: Няма часу на рэдагаванне? Дадайце заўвагу!
+       para_1: Калі трэба ўнесці дробнае ўдакладненне, дзеля якога не варта марнаваць
+@@ -2212,7 +2230,7 @@ be:
+           яе. Больш падрабязна на старонцы %{communities_wiki_link}.
+   layers_panes:
+     show:
+-      map_notes_zoom_in_tooltip: Наблізце, каб убачыць заўвагі на карце
++      map_notes_zoom_in_tooltip: Павялічце, каб убачыць заўвагі на карце
+       map_data_zoom_in_tooltip: Павялічце, каб убачыць картаграфічныя даныя
+   legend_panes:
+     show:
+@@ -2336,12 +2354,12 @@ be:
+       start_coordinates: 'Каардынаты пачатку:'
+       coordinates_html: '%{latitude}; %{longitude}'
+       map: карта
+-      edit: правіць
++      edit: адкрыць у рэдактары
+       owner: 'Уладальнік:'
+       description: 'Апісанне:'
+       tags: 'Тэгі:'
+       none: Няма
+-      edit_trace: Рэдагаваць гэты след
++      edit_trace: Рэдагаваць звесткі следу
+       delete_trace: Выдаліць гэты след
+       trace_not_found: След не знойдзены!
+       visibility: 'Бачнасць:'
+@@ -2356,7 +2374,7 @@ be:
+       more: яшчэ
+       trace_details: Прагледзець уласцівасці следу
+       view_map: Прагледзець карту
+-      edit_map: Правіць карту
++      edit_map: Адкрыць у рэдактары
+       public: ПУБЛІЧНЫ
+       identifiable: ІДЭНТЫФІКУЕМЫ
+       private: ПРЫВАТНЫ
+@@ -2371,7 +2389,7 @@ be:
+       empty_upload_html: '%{upload_link} або даведайцеся больш пра адсочванне GPS
+         на %{wiki_link}.'
+       upload_trace: Адаслаць GPS-след
+-      my_traces: Мае GPS-сляды
++      my_traces: Мае сляды
+     destroy:
+       scheduled_for_deletion: След запланаваны на выдаленне
+     offline_warning:
+@@ -2407,19 +2425,19 @@ be:
+     auth_providers:
+       google:
+         title: Уваход праз Google
+-        alt: Уваход праз Google OpenID
++        alt: Лагатып Google
+       facebook:
+         title: Увайсці праз Facebook
+-        alt: Увайсці праз уліковы запіс Facebook
++        alt: Лагатып Facebook
+       microsoft:
+         title: Увайсці праз Microsoft
+-        alt: Увайсці праз уліковы запіс Microsoft
++        alt: Лагатып Microsoft
+       github:
+         title: Уваход праз GitHub
+-        alt: Увайсці праз уліковы запіс GitHub
++        alt: Лагатып GitHub
+       wikipedia:
+         title: Увайсці праз Вікіпедыю
+-        alt: Уваход з выкарыстаннем уліковага запісу Вікіпедыі
++        alt: Лагатып Вікіпедыі
+     markdown_help:
+       heading_html: Разабрана з %{kramdown_link}
+       headings: Загалоўкі
+@@ -2468,9 +2486,10 @@ be:
+       no_auto_account_create: На жаль, мы не можам стварыць для вас уліковы запіс
+         аўтаматычна.
+       about:
+-        header: Свабодная і даступная для рэдагавання
++        header: Свабодная і даступная для рэдагавання.
+         paragraph_1: У адрозненне ад іншых карт, OpenStreetMap цалкам створана такімі
+-          ж людзьмі як вы і кожны можа яе свабодна рэдагаваць і выкарыстоўваць.
++          ж людзьмі як вы і кожны можа яе свабодна выпраўляць, абнаўляць, спампоўваць
++          і выкарыстоўваць.
+         paragraph_2: Зарэгіструйцеся, каб зрабіць свой унёсак.
+         welcome: Вітаем у OpenStreetMap
+       display name description: Ваша імя, якое будзе бачнае ўсім. Вы можаце змяніць
+@@ -2510,7 +2529,7 @@ be:
+       edits: Змены
+       traces: Сляды
+       notes: Заўвагі на карце
+-      mapper since: 'Малюе карту з:'
++      mapper since: 'Картограф з:'
+       last map edit: 'Апошняе рэдагаванне карты:'
+       no activity yet: Актыўнасці пакуль няма
+       uid: 'ID карыстальніка:'
+@@ -2572,7 +2591,7 @@ be:
+     changeset_comments:
+       page:
+         when: Калі
+-        comment: Каментар
++        comment: Каментарый
+     diary_comments:
+       index:
+         title: Каментары да запісаў у дзённіку, дадазеныя карыстальнікам %{user}
+@@ -2753,15 +2772,15 @@ be:
+           many: Вы знаходзіцеся ў %{count} футах ад гэтага пункту
+           other: Вы знаходзіцеся ў %{count} футах ад гэтага пункту
+       base:
+-        standard: Звычайная карта
++        standard: Стандартная
+         cycle_map: Веласіпедная карта
+         transport_map: Транспартная карта
+-        hot: Гуманітарная карта
++        hot: Гуманітарная
+       layers:
+         header: Слаі карты
+         notes: Заўвагі на карце
+         data: Даныя карт
+-        gps: Агульныя GPS-сляды
++        gps: Публічныя GPS-сляды
+         overlays: Уключыць накладкі для ліквідацыі памылак карты
+         title: Слаі
+       make_a_donation: Зрабіць ахвяраванне
+@@ -2769,12 +2788,12 @@ be:
+       osm_france: OpenStreetMap Францыя
+     site:
+       edit_tooltip: Рэдагаваць карту
+-      edit_disabled_tooltip: Наблізце, каб рэдагаваць карту
++      edit_disabled_tooltip: Павялічце, каб рэдагаваць карту
+       createnote_tooltip: Дадаць заўвагу на карту
+-      createnote_disabled_tooltip: Наблізце, каб дадаць заўвагу на карту
++      createnote_disabled_tooltip: Павялічце, каб дадаць заўвагу на карту
+       queryfeature_tooltip: Пошук аб’ектаў
+       queryfeature_disabled_tooltip: Наблізіцеся для пошуку аб'ектаў
+-    edit_help: Перамясціце карту і наблізце месца, якое вы хочаце рэдагаваць, затым
++    edit_help: Перамясціце карту і павялічце месца, якое вы хочаце рэдагаваць, затым
+       націсніце тут.
+     directions:
+       distance_in_units:
+diff --git a/config/locales/da.yml b/config/locales/da.yml
+index b7b56ec9cc..23dc1d3910 100644
+--- a/config/locales/da.yml
++++ b/config/locales/da.yml
+@@ -533,6 +533,9 @@ da:
+       colour_preview: Forhåndsvisning af farve %{colour_value}
+       email_link: E-mail %{email}
+     versions_navigation:
++      node_versions: Punktversioner
++      way_versions: Linjestrengsversioner
++      relation_versions: Relationsversioner
+       node: Punkt
+       way: Linjestreng
+       relation: Relation
+@@ -549,10 +552,13 @@ da:
+     index:
+       node:
+         title_html: 'Punkthistorik: %{name}'
++        actions: Punkthandlinger
+       way:
+         title_html: 'Linjehistorik: %{name}'
++        actions: Linjestrengshandlinger
+       relation:
+         title_html: 'Relationshistorik: %{name}'
++        actions: Relationshandlinger
+       older_versions: Ældre versioner
+       newer_versions: Nyere versioner
+     actions:
+@@ -705,6 +711,7 @@ da:
+       latest_edit_html: 'Seneste ændring (%{ago}):'
+       no_edits: (ingen ændringer)
+       view_changeset_details: Vis detaljer for ændringssæt
++      actions: Brugerhandlinger
+     popup:
+       your location: Din position
+       nearby mapper: Bruger i nærheden
+@@ -719,8 +726,10 @@ da:
+       nearby users: 'Andre brugere i nærheden:'
+       no nearby users: Der er endnu ingen andre brugere, der har tilkendegivet, at
+         de kortlægger i nærheden.
++      followed_actions: Handlinger for brugere, du følger
+       followed_changesets: ændringssæt
+       followed_diaries: blogindlæg
++      nearby_actions: Handlinger for brugere i nærheden
+       nearby_changesets: ændringssæt af brugere i nærheden
+       nearby_diaries: blogindlæg af brugere i nærheden
+   notifications:
+@@ -804,6 +813,7 @@ da:
+       posted_by_html: Skrevet af %{link_user} den %{created} på %{language_link}
+       updated_at_html: Sidst opdateret den %{updated}.
+       full_entry: Se hele indlægget
++      actions: Handlinger for blogindlæg
+       comment_link: Kommentér dette indlæg
+       reply_link: Send en besked til forfatteren
+       comment_count:
+@@ -840,6 +850,7 @@ da:
+       heading: Vil du afmelde følgende blogindlægsdiskussion?
+       button: Afmeld diskussion
+     navigation:
++      actions: Bloghandlinger
+       in_language: Blogindlæg på %{language}
+       my_diary: Min blog
+       new: Nyt blogindlæg
+@@ -1823,6 +1834,7 @@ da:
+       report_created_at_html: Rapporteret første gang %{datetime}
+       last_resolved_at_html: Sidst løst %{datetime}
+       last_updated_at_html: Sidst opdateret %{datetime} af %{displayname}
++      actions: Handlinger for problem
+       resolve: Løs
+       ignore: Ignorér
+       reopen: Genåbn
+@@ -1977,6 +1989,7 @@ da:
+         be-Tarask: Hviderussisk (Tarašk.)
+         bg: bulgarsk
+         mk: Makedonsk
++        mt: Maltesisk
+         mo: Moldovisk
+         ce: Tjetjensk
+         ru: russisk
+@@ -2052,6 +2065,7 @@ da:
+       select_language: Vælg sprog
+       sign_up: Opret konto
+       user_diaries: Brugerblogs
++      navigation: Hovednavigation
+     meta:
+       openstreetmap_search: OpenStreetMap-søgning
+     select_language_button:
+@@ -3131,6 +3145,7 @@ da:
+         other: '%{count} punkter'
+       more: detaljer
+       trace_details: Vis spordetaljer
++      trace_actions: Sporhandlinger
+       view_map: Se placering på kort
+       edit_map: Åbn i editor
+       public: OFFENTLIG
+@@ -3144,6 +3159,7 @@ da:
+       my_gps_traces: Mine GPS-spor
+       public_traces_from: Offentlige GPS-spor fra %{user}
+       description: Gennemse de seneste overførsler af GPS-spor
++      actions: Handlinger for sporliste
+       tagged_with: ' med egenskaberne %{tags}'
+       empty_title: Ingenting her endnu
+       empty_upload_html: '%{upload_link} eller lær mere om kortlægning vha. GPS på
+@@ -3254,6 +3270,7 @@ da:
+       preview: Forhåndsvisning
+       help: Hjælp
+     pagination:
++      label: Sidenavigation
+       changeset_comments:
+         older: Ældre kommentarer
+         newer: Nyere kommentarer
+@@ -3412,6 +3429,8 @@ da:
+         ellers kan linket du trykkede på være forkert.
+       deleted: slettet
+     show:
++      actions: Handlinger
++      admin_actions: Administrative handlinger
+       my diary: Min blog
+       my edits: Mine redigeringer
+       my traces: Mine GPS-spor
+@@ -3795,6 +3814,7 @@ da:
+       warning: Nye bemærkninger kan ikke oprettes, fordi OpenStreetMap API'en i øjeblikket
+         er i skrivebeskyttet tilstand.
+     notes_paging_nav:
++      label: Sidenavigation
+       showing_page: Side %{page}
+       next: Næste
+       previous: Forrige
+@@ -4030,6 +4050,7 @@ da:
+     navigation:
+       new_title: Definer en ny moderationszone
+       new: Ny moderationszone
++      actions: Handlinger i moderationszonen
+     index:
+       title: Moderationszoner
+       heading: Moderationszoner
+diff --git a/config/locales/de.yml b/config/locales/de.yml
+index 4c3412b42b..a588c95d7e 100644
+--- a/config/locales/de.yml
++++ b/config/locales/de.yml
+@@ -2099,6 +2099,7 @@ de:
+         be-Tarask: Belarussisch (Taraschkewiza)
+         bg: Bulgarisch
+         mk: Mazedonisch
++        mt: Maltesisch
+         mo: Moldawisch
+         ce: Tschetschenisch
+         ru: Russisch
+diff --git a/config/locales/eo.yml b/config/locales/eo.yml
+index d6b2274d07..edf1ea9fcb 100644
+--- a/config/locales/eo.yml
++++ b/config/locales/eo.yml
+@@ -521,6 +521,9 @@ eo:
+       colour_preview: antaŭvido de koloro «%{colour_value}»
+       email_link: Sendi retleteron al %{email}
+     versions_navigation:
++      node_versions: Versioj de nodo
++      way_versions: Versioj de linio
++      relation_versions: Versioj de rilato
+       node: Nodo
+       way: Linio
+       relation: Rilato
+@@ -537,10 +540,13 @@ eo:
+     index:
+       node:
+         title_html: 'Historio de nodo: %{name}'
++        actions: Agoj pri nodo
+       way:
+         title_html: 'Historio de linio: %{name}'
++        actions: Agoj pri linio
+       relation:
+         title_html: 'Historio de rilato: %{name}'
++        actions: Agoj pri rilato
+       older_versions: Pli malnovaj versioj
+       newer_versions: Pli novaj versioj
+     actions:
+@@ -697,6 +703,7 @@ eo:
+       latest_edit_html: 'Lasta redakto (%{ago}):'
+       no_edits: (neniu redakto)
+       view_changeset_details: Vidi detalojn pri ŝanĝaro
++      actions: Agoj pri uzanto
+     popup:
+       your location: Via loko
+       nearby mapper: Proksima uzanto
+@@ -710,8 +717,10 @@ eo:
+       no followings: Vi ankoraŭ sekvas neniun uzanton.
+       nearby users: Plej proksimaj uzantoj
+       no nearby users: Neniu alia uzanto, kiu deklaris mapigadon en tiu ĉi areo.
++      followed_actions: Agoj pri uzantoj, kiujn vi sekvas
+       followed_changesets: ŝanĝaroj
+       followed_diaries: afiŝoj en taglibroj
++      nearby_actions: Agoj pri proksimaj uzantoj
+       nearby_changesets: ŝanĝaroj
+       nearby_diaries: afiŝoj en taglibroj
+   notifications:
+@@ -794,6 +803,7 @@ eo:
+       posted_by_html: Publikigita de %{link_user} je %{created} en %{language_link}.
+       updated_at_html: Antaŭe ĝisdatigita je %{updated}.
+       full_entry: Montri la plenan afiŝon
++      actions: Agoj pri taglibra afiŝo
+       comment_link: Komenti pri ĉi tiu afiŝo
+       reply_link: Sendi mesaĝon al la aŭtoro
+       comment_count:
+@@ -830,6 +840,7 @@ eo:
+       heading: Ĉu malaboni diskuton pri tiu ĉi taglibra afiŝo?
+       button: Malaboni diskuton
+     navigation:
++      actions: Agoj pri taglibroj
+       in_language: Taglibraj afiŝoj en %{language}
+       my_diary: Mia taglibro
+       new: Nova taglibra afiŝo
+@@ -1813,6 +1824,7 @@ eo:
+       report_created_at_html: Unue raportita je %{datetime}
+       last_resolved_at_html: Laste solvita je %{datetime}
+       last_updated_at_html: Laste aktualigita je %{datetime} de %{displayname}
++      actions: Agoj pri problemoj
+       resolve: Solvi
+       ignore: Ignori
+       reopen: Remalfermi
+@@ -1965,6 +1977,7 @@ eo:
+         be-Tarask: belorusa (taraŝkevica)
+         bg: bulgara
+         mk: makedona
++        mt: malta
+         mo: moldava
+         ce: ĉeĉena
+         ru: rusa
+@@ -2040,6 +2053,7 @@ eo:
+       select_language: Elekti lingvon
+       sign_up: Registriĝi
+       user_diaries: Taglibroj de uzantoj
++      navigation: Ĉefa navigo
+     meta:
+       openstreetmap_search: OpenStreetMap-serĉilo
+     select_language_button:
+@@ -3095,6 +3109,7 @@ eo:
+         other: '%{count} punktoj'
+       more: pli
+       trace_details: Vidi detalojn de spuro
++      trace_actions: Agoj pri spuro
+       view_map: montri lokon sur la mapo
+       edit_map: malfermi en redaktilo
+       public: PUBLIKA
+@@ -3108,6 +3123,7 @@ eo:
+       my_gps_traces: Miaj GPS-spuroj
+       public_traces_from: Publikaj GPS-spuroj de %{user}
+       description: Foliumi laste alŝutitajn GPS-spurojn
++      actions: Agoj pri listo de spuroj
+       tagged_with: etikedita kun %{tags}
+       empty_title: Nenio tie ĉi
+       empty_upload_html: '%{upload_link} aŭ sciiĝu pli pri GPS-spuroj ĉe la %{wiki_link}.'
+@@ -3216,6 +3232,7 @@ eo:
+       preview: Antaŭvidi
+       help: Helpo
+     pagination:
++      label: Navigado de paĝo
+       changeset_comments:
+         older: Pli malnovaj komentoj
+         newer: Pli novaj komentoj
+@@ -3376,6 +3393,8 @@ eo:
+         liter‑eraroj, aŭ eble vi alklakis eraran ligilon.
+       deleted: forigita
+     show:
++      actions: Agoj
++      admin_actions: Administraj agoj
+       my diary: Mia taglibro
+       my edits: Miaj redaktoj
+       my traces: Miaj spuroj
+@@ -3746,6 +3765,7 @@ eo:
+       warning: Ne eblas krei novajn rimarkojn, ĉar API OpenStreetMap estas nuntempe
+         en nurlega reĝimo.
+     notes_paging_nav:
++      label: Navigado de paĝo
+       showing_page: Paĝo %{page}
+       next: Sekva
+       previous: Antaŭa
+@@ -3987,6 +4007,7 @@ eo:
+     navigation:
+       new_title: Difini novan kontrol-zonon
+       new: Nova kontrol-zono
++      actions: Agoj pri kontrol-zono
+     index:
+       title: Kontrol-zonoj
+       heading: Kontrol-zonoj
+diff --git a/config/locales/fi.yml b/config/locales/fi.yml
+index d17ba0d5ab..0b232c1574 100644
+--- a/config/locales/fi.yml
++++ b/config/locales/fi.yml
+@@ -717,6 +717,7 @@ fi:
+       latest_edit_html: 'Viimeisin muutos (%{ago}):'
+       no_edits: (ei muokkauksia)
+       view_changeset_details: Näytä muutoskokoelman tarkemmat tiedot
++      actions: Käyttäjän toimenpiteet
+     popup:
+       your location: Oma sijaintisi
+       nearby mapper: Lähellä oleva kartoittaja
+@@ -852,6 +853,7 @@ fi:
+       heading: Lopetetaanko seuraavan päiväkirjamerkintäkeskustelun tilaaminen?
+       button: Lopeta keskustelun tilaus
+     navigation:
++      actions: Päiväkirjatoimenpiteet
+       in_language: Päiväkirjamerkinnät kielellä %{language}
+       my_diary: Päiväkirjani
+       new: Uusi päiväkirjamerkintä
+@@ -3124,6 +3126,7 @@ fi:
+         other: '%{count} pistettä'
+       more: tiedot
+       trace_details: Näytä jäljen tiedot
++      trace_actions: Seurantatoimenpiteet
+       view_map: Näytä sijainti kartalla
+       edit_map: Avaa editorissa
+       public: JULKINEN
+@@ -3405,6 +3408,8 @@ fi:
+       body: Käyttäjää %{user} ei löytynyt. Tarkista oikeikirjoitus.
+       deleted: poistettu
+     show:
++      actions: Toimenpiteet
++      admin_actions: Ylläpitotoimenpiteet
+       my diary: Oma päiväkirja
+       my edits: Omat muokkaukset
+       my traces: Omat jäljet
+@@ -4013,6 +4018,7 @@ fi:
+     navigation:
+       new_title: Määritä uusi moderointivyöhyke
+       new: Uusi moderointivyöhyke
++      actions: Moderointialueen toiminenpiteet
+     index:
+       title: Moderointivyöhykkeet
+       heading: Moderointivyöhykkeet
+diff --git a/config/locales/fr.yml b/config/locales/fr.yml
+index 6b797bd31c..f44ef20982 100644
+--- a/config/locales/fr.yml
++++ b/config/locales/fr.yml
+@@ -189,6 +189,10 @@ fr:
+           attributes:
+             url:
+               http_parse_error: L’URL doit commencer par http:// ou https://
++        trace:
++          attributes:
++            visibility:
++              cannot_change_to_legacy: ne peut pas être rétabli à une valeur antérieure
+     models:
+       acl: Liste de contrôle d’accès
+       changeset: Groupe de modifications
+@@ -344,6 +348,44 @@ fr:
+       x_years:
+         one: il y a %{count} an
+         other: il y a %{count} ans
++    distance_in_words_in:
++      about_x_hours:
++        one: il y a environ %{count} heure
++        other: il y a environ %{count} heures
++      about_x_months:
++        one: il y a environ %{count} mois
++        other: 'il y a environ %{count} mois '
++      about_x_years:
++        one: il y a environ %{count} an
++        other: il y a environ %{count} ans
++      almost_x_years:
++        one: il y a presque %{count} an
++        other: il y a presque %{count} ans
++      half_a_minute: en une demi-minute
++      less_than_x_seconds:
++        one: il y a moins de %{count} seconde
++        other: il y a moins de %{count} secondes
++      less_than_x_minutes:
++        one: il y a moins de %{count} minute
++        other: il y a moins de %{count} minutes
++      over_x_years:
++        one: il y a plus de %{count} an
++        other: il y a plus de %{count} ans
++      x_seconds:
++        one: il y a %{count} seconde
++        other: il y a %{count} secondes
++      x_minutes:
++        one: il y a %{count} minute
++        other: il y a %{count} minutes
++      x_days:
++        one: en %{count} jour
++        other: en %{count} jours
++      x_months:
++        one: en %{count} mois
++        other: 'en %{count} mois '
++      x_years:
++        one: en %{count} an
++        other: en %{count} ans
+   printable_name:
+     with_name_html: '%{name} (%{id})'
+     current_and_old_links_html: '%{current_link}, %{old_link}'
+@@ -610,6 +652,9 @@ fr:
+       colour_preview: Aperçu de la couleur %{colour_value}
+       email_link: Courriel %{email}
+     versions_navigation:
++      node_versions: Versions du nœud
++      way_versions: Versions du chemin
++      relation_versions: Versions de la relation
+       node: Nœud
+       way: Chemin
+       relation: Relation
+@@ -3924,7 +3969,7 @@ fr:
+       subscribe: S’abonner
+       unsubscribe: Se désabonner
+       hide: Masquer
+-      resolve: Marquer comme résolue
++      resolve: C'est résolu
+       reactivate: Réactiver
+       comment_and_resolve: Commenter et marquer comme résolue
+       comment: Commenter
+@@ -3970,6 +4015,7 @@ fr:
+       warning: De nouvelles notes ne peuvent pas être créées car l’API d’OpenStreetMap
+         est actuellement en mode lecture seule.
+     notes_paging_nav:
++      label: Navigation de la page
+       showing_page: Page %{page}
+       next: Suivante
+       previous: Précédente
+@@ -4208,6 +4254,7 @@ fr:
+     navigation:
+       new_title: Définir une nouvelle zone de modération
+       new: Nouvelle zone de modération
++      actions: Actions de la zone de modération
+     index:
+       title: Zones de modération
+       heading: Zones de modération
+diff --git a/config/locales/fur.yml b/config/locales/fur.yml
+index e87f859e0c..a37bf130a6 100644
+--- a/config/locales/fur.yml
++++ b/config/locales/fur.yml
+@@ -485,6 +485,14 @@ fur:
+       followed_diaries: vôs tal diari
+       nearby_changesets: grups di cambiaments dai utents dongje
+       nearby_diaries: vôs di diari dai utents dongje
++  notifications:
++    gpx_details:
++      description: Descrizion
++      tags: Etichetis
++      total_points: Numar totâl di ponts
++      imported_points: Numar di ponts impuartâts
++    gpx_import_failure:
++      error_message: Messaç di erôr
+   diary_entries:
+     new:
+       title: Gnove vôs dal diari
+@@ -1682,6 +1690,7 @@ fur:
+     richtext_field:
+       edit: Cambie
+       preview: Anteprime
++      help: Jutori
+     pagination:
+       changeset_comments:
+         newest: I coments plui gnûfs
+@@ -2179,4 +2188,8 @@ fur:
+   moderation_zones:
+     row:
+       edit: Cambie
++    helper:
++      short:
++        ended: finît
++        active: atîf
+ ...
+diff --git a/config/locales/hr.yml b/config/locales/hr.yml
+index f2fac7ad3a..c82183d3e6 100644
+--- a/config/locales/hr.yml
++++ b/config/locales/hr.yml
+@@ -1998,6 +1998,7 @@ hr:
+         be-Tarask: Bjeloruski (Taraškevica)
+         bg: Bugarski
+         mk: Makedonski
++        mt: Malteški
+         mo: Moldavski
+         ce: Čečenski
+         ru: Ruski
+diff --git a/config/locales/ja.yml b/config/locales/ja.yml
+index 2c1a9a9a72..5dc3c1b18a 100644
+--- a/config/locales/ja.yml
++++ b/config/locales/ja.yml
+@@ -57,6 +57,7 @@
+ # Author: Sudachi
+ # Author: Sujiniku
+ # Author: Surgical21
++# Author: TAKAHASHI Shuuji
+ # Author: Tamaki Wakita
+ # Author: Tensama0415
+ # Author: Tmv
+@@ -504,6 +505,9 @@ ja:
+       colour_preview: 色彩%{colour_value}プレビュー
+       email_link: メール %{email}
+     versions_navigation:
++      node_versions: ノードのバージョン
++      way_versions: ウェイバージョン
++      relation_versions: リレーションのバージョン
+       node: ノード
+       way: ウェイ
+       relation: リレーション
+@@ -520,10 +524,13 @@ ja:
+     index:
+       node:
+         title_html: 'ノード: %{name} の履歴'
++        actions: ノードの操作
+       way:
+         title_html: 'ウェイ: %{name} の履歴'
++        actions: ウェイの操作
+       relation:
+         title_html: 'リレーション: %{name} の履歴'
++        actions: リレーションの操作
+       older_versions: 古いバージョン
+       newer_versions: 新しいバージョン
+     actions:
+@@ -554,11 +561,21 @@ ja:
+       sorry: 'リレーション #%{id} は見つかりませんでした。'
+     timeout:
+       sorry: 申し訳ありませんが、リレーションのデータ（id %{id}）は時間がかかりすぎたため取得できませんでした。
++  relation_members:
++    not_found_message:
++      sorry: 'リレーション #%{id} は見つかりませんでした。'
++    timeout:
++      sorry: リレーションのデータ (id %{id}) は時間がかかりすぎたため取得できませんでした。
+   old_relations:
+     not_found_message:
+       sorry: 'リレーション #%{id} のバージョン %{version} が見つかりませんでした。'
+     timeout:
+       sorry: 申し訳ありませんが、リレーションの履歴データ（id %{id}）は時間がかかりすぎたため取得できませんでした。
++  old_relation_members:
++    not_found_message:
++      sorry: 'リレーション #%{id} のバージョン %{version} は見つかりませんでした。'
++    timeout:
++      sorry: リレーションのメンバー (id %{id}) は時間がかかりすぎたため取得できませんでした。
+   changeset_comments:
+     feeds:
+       comment:
+@@ -573,8 +590,14 @@ ja:
+     changeset_line:
+       comments:
+         other: '%{count} コメント'
++      changes:
++        other: '%{count} 個の変更'
+       n_elements_created:
+         other: '%{count} 個の要素が作成されました'
++      n_elements_modified:
++        other: '%{count} 個の変更要素'
++      n_elements_deleted:
++        other: '%{count} 個の削除要素'
+     index:
+       title: 変更セット
+       title_user: '%{user} による変更セット'
+@@ -622,6 +645,7 @@ ja:
+       ways_paginated: ウェイ (%{x}-%{y} / %{count})
+       relations_title: リレーション
+       relations_paginated: リレーション (%{x}-%{y} / %{count})
++      range: '%{x}-%{y} / %{count}'
+     not_found_message:
+       sorry: '変更セット #%{id} は見つかりませんでした。'
+     timeout:
+@@ -651,6 +675,7 @@ ja:
+     popup:
+       your location: 自分の位置
+       nearby mapper: 周辺のマッパー
++      following: フォロー中
+     show:
+       title: 私のダッシュボード
+       no_home_location_html: '%{edit_profile_link}そして、近くの利用者が表示されるように自宅の場所を設定します。'
+@@ -659,13 +684,28 @@ ja:
+       no followings: フォロー中のユーザーはいません。
+       nearby users: 周辺にいるその他の利用者
+       no nearby users: あなたの活動地域周辺に他のマッパーはいないようです。
++      followed_actions: フォロー中のユーザーの操作
+       followed_changesets: 変更セット
+       followed_diaries: 日記エントリ
++      nearby_actions: 近くのユーザーの操作
+       nearby_changesets: 周辺の利用者の変更セット
+       nearby_diaries: 周辺の利用者の日記エントリ
+   notifications:
+     index:
+       title: 通知
++      no_notifications: 現在通知はありません
++      point_to_preferences_html: 通知の受診方法は %{link} で調整できます。
++      link_text: 個人設定セクション
++    changeset_comment:
++      headline: 変更セットのコメント
++      description_with_summary_html: ユーザー %{commenter_name_with_link} が変更セット %{changeset_id_with_link}
++        (「%{changeset_summary}」) にコメントを残しました
++      description_without_summary_html: ユーザー %{commenter_name_with_link} が変更セット %{changeset_id_with_link}
++        にコメントを残しました
++    gpx_details:
++      filename: ファイル名
++      description: 説明
++      tags: タグ
+     gpx_import_failure:
+       error_message: エラーのメッセージ
+     new_follower:
+diff --git a/config/locales/mt.yml b/config/locales/mt.yml
+index 0254b13b36..b0a576be0f 100644
+--- a/config/locales/mt.yml
++++ b/config/locales/mt.yml
+@@ -1336,7 +1336,7 @@ mt:
+           country: Pajjiż
+           county: Kontea
+           farm: Razzett
+-          hamlet: Każal
++          hamlet: Irħajjel
+           house: Dar
+           houses: Djar
+           island: Gżira
+diff --git a/config/locales/ps.yml b/config/locales/ps.yml
+index c361a5f4c5..9618234eec 100644
+--- a/config/locales/ps.yml
++++ b/config/locales/ps.yml
+@@ -7,6 +7,7 @@
+ # Author: Amjad Khan
+ # Author: McDutchie
+ # Author: O.sediqi93
++# Author: باران
+ # Author: شاه زمان پټان
+ ---
+ ps:
+@@ -95,7 +96,7 @@ ps:
+         public: ټولواله
+         description: څرگنداوی
+         gpx_file: 'جي‌اېف‌اېکس څار دوتنه غوره‌کول:'
+-        visibility: ښکارېدنه
++        visibility: څرگندتيا
+         tagstring: نښلنونه
+       moderation_zone:
+         name: نوم
+diff --git a/config/locales/shn.yml b/config/locales/shn.yml
+index eb0733a679..c4087a1cc1 100644
+--- a/config/locales/shn.yml
++++ b/config/locales/shn.yml
+@@ -113,6 +113,8 @@ shn:
+         gpx_file: လိူၵ်ႈဢဝ် ၾၢႆႇႁွႆးတၢင်း GPS
+         visibility: လွင်ႈႁၼ်လႆႈ
+         tagstring: ထႅၵ်ႉ
++      moderation_zone:
++        reason: လွင်ႈတၢင်း
+       message:
+         sender: ၽူႈသူင်ႇ
+         title: လွင်ႈတၢင်း

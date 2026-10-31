@@ -1,0 +1,13 @@
+# Agent configuration and evaluation data need review by the sandbox owner,
+# who is accountable for the CI-failure analyst (see docs/RUNBOOK.md).
+/.github/workflows/ci-failure-analyst.md      @kierenswag59
+/.github/workflows/ci-failure-analyst.lock.yml @kierenswag59
+/.github/workflows/replay-failure.yml         @kierenswag59
+/.github/workflows/ci-context-capture.yml     @kierenswag59
+/.github/CODEOWNERS                           @kierenswag59
+/AGENTS.md                                    @kierenswag59
+/CLAUDE.md                                    @kierenswag59
+/.claude/                                     @kierenswag59
+/evals/                                       @kierenswag59
+/DESIGN.md                                    @kierenswag59
+/docs/RUNBOOK.md                              @kierenswag59

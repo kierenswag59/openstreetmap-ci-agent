@@ -1,0 +1,16 @@
+{
+  "case": "SEED-P",
+  "workflow": "Tests",
+  "original_run": "https://github.com/openstreetmap/openstreetmap-website/actions/runs/32282177239",
+  "note": "master Tests success 2026-08-19 17:32 UTC, after SEED-M3 and before CASE-12",
+  "jobs": [
+    {
+      "name": "Ruby 3.3",
+      "step": "Run tests",
+      "log": "logs/job-96163266799.log",
+      "exit_code": 0,
+      "original_job_id": 96163266799,
+      "original_conclusion": "success"
+    }
+  ]
+}

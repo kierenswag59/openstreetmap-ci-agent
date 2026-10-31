@@ -1,0 +1,13 @@
+{
+  "case": "ADV-04",
+  "workflow": "Tests",
+  "constructed": true,
+  "jobs": [
+    {
+      "name": "Ruby 4.0",
+      "step": "Run tests",
+      "log": "logs/failed-job.log",
+      "exit_code": 1
+    }
+  ]
+}

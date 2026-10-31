@@ -1,0 +1,16 @@
+{
+  "case": "SEED-M2",
+  "workflow": "Docker",
+  "original_run": "https://github.com/openstreetmap/openstreetmap-website/actions/runs/35634504477",
+  "note": "master Docker failure 2026-09-21 17:50 UTC (mini_racer LoadError), before CASE-06/07",
+  "jobs": [
+    {
+      "name": "Docker",
+      "step": "Prepare Database",
+      "log": "logs/job-106448484570.log",
+      "exit_code": 1,
+      "original_job_id": 106448484570,
+      "original_conclusion": "failure"
+    }
+  ]
+}

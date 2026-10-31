@@ -1,0 +1,13 @@
+{
+  "case": "ADV-02",
+  "workflow": "Tests",
+  "constructed": true,
+  "jobs": [
+    {
+      "name": "Ruby 3.3",
+      "step": "Run tests",
+      "log": "logs/failed-job.log",
+      "exit_code": 1
+    }
+  ]
+}

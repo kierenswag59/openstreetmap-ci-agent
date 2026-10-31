@@ -1,0 +1,15 @@
+{
+  "id": 36330556125,
+  "name": "Tests",
+  "event": "pull_request",
+  "status": "completed",
+  "conclusion": "failure",
+  "head_sha": "1897639263b0d59180c59396978224b5b9543931",
+  "head_branch": "issue-7389-disabled-moderation-zone-fields",
+  "html_url": "https://github.com/openstreetmap/openstreetmap-website/actions/runs/36330556125",
+  "run_attempt": 1,
+  "created_at": "2026-09-27T15:42:36Z",
+  "run_started_at": "2026-09-27T15:42:36Z",
+  "updated_at": "2026-10-27T15:47:23Z",
+  "display_title": "Moderation zone edit form marks non-editable field"
+}

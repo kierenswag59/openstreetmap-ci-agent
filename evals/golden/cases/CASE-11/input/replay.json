@@ -1,0 +1,34 @@
+{
+  "case": "CASE-11",
+  "workflow": "Tests",
+  "original_run": "https://github.com/openstreetmap/openstreetmap-website/actions/runs/33391131716",
+  "cutoff_T": "2026-08-31T12:27:07Z",
+  "cutoff_source": "last failed job completed_at",
+  "jobs": [
+    {
+      "name": "Ruby 4.0",
+      "step": "Run tests",
+      "log": "logs/job-99484768153.log",
+      "exit_code": 0,
+      "original_job_id": 99484768153,
+      "original_conclusion": "success"
+    },
+    {
+      "name": "Ruby 3.3",
+      "step": "Run tests",
+      "log": "logs/job-99484768390.log",
+      "exit_code": 1,
+      "original_job_id": 99484768390,
+      "original_conclusion": "failure"
+    },
+    {
+      "name": "Ruby 3.4",
+      "step": "Run tests",
+      "log": "logs/job-99484768565.log",
+      "exit_code": 0,
+      "original_job_id": 99484768565,
+      "original_conclusion": "success"
+    }
+  ],
+  "merge_base_sha": "8b4d89a5e98d43bbad95294b6892d1b7641a9900"
+}

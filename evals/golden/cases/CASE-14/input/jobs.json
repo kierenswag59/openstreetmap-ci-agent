@@ -1,0 +1,53 @@
+[
+  {
+    "id": 123598854621,
+    "name": "ERB Lint",
+    "conclusion": "success",
+    "completed_at": "2026-10-29T16:58:56Z",
+    "failed_steps": []
+  },
+  {
+    "id": 123598854752,
+    "name": "ESLint",
+    "conclusion": "success",
+    "completed_at": "2026-10-29T16:59:50Z",
+    "failed_steps": []
+  },
+  {
+    "id": 123598854865,
+    "name": "Brakeman",
+    "conclusion": "success",
+    "completed_at": "2026-10-29T16:58:27Z",
+    "failed_steps": []
+  },
+  {
+    "id": 123598854870,
+    "name": "Herb",
+    "conclusion": "success",
+    "completed_at": "2026-10-29T16:58:34Z",
+    "failed_steps": []
+  },
+  {
+    "id": 123598854904,
+    "name": "Database Consistency",
+    "conclusion": "success",
+    "completed_at": "2026-10-29T16:59:56Z",
+    "failed_steps": []
+  },
+  {
+    "id": 123598854947,
+    "name": "Rails Annotate Models",
+    "conclusion": "success",
+    "completed_at": "2026-10-29T16:59:25Z",
+    "failed_steps": []
+  },
+  {
+    "id": 123598855048,
+    "name": "RuboCop",
+    "conclusion": "failure",
+    "completed_at": "2026-10-29T16:58:41Z",
+    "failed_steps": [
+      "Run rubocop"
+    ]
+  }
+]

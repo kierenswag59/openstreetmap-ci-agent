@@ -1,0 +1,16 @@
+{
+  "case": "SEED-M3",
+  "workflow": "Tests",
+  "original_run": "https://github.com/openstreetmap/openstreetmap-website/actions/runs/32247269027",
+  "note": "master Tests failure 2026-08-19 11:22 UTC (SearchTest Nominatim), before CASE-12",
+  "jobs": [
+    {
+      "name": "Ruby 3.3",
+      "step": "Run tests",
+      "log": "logs/job-96050420386.log",
+      "exit_code": 1,
+      "original_job_id": 96050420386,
+      "original_conclusion": "failure"
+    }
+  ]
+}

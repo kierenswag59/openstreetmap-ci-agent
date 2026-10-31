@@ -1,0 +1,238 @@
+[
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-09T11:13:07Z",
+    "body": "@tomhughes @hlfan @pablobm  Hello Sir, can i have a review on this PR ?"
+  },
+  {
+    "author": "tomhughes",
+    "created_at": "2026-10-09T12:37:22Z",
+    "body": "You opened it 8 hours ago! Give us a chance - some of us have day jobs!"
+  },
+  {
+    "author": "pablobm",
+    "created_at": "2026-10-09T14:46:21Z",
+    "body": "In the meantime, could you please provide us with screenshots of the feature?"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-10T13:47:06Z",
+    "body": "hi @pablobm \r\n\r\nhttps://github.com/user-attachments/assets/75d03f2b-2ec9-4adc-b1c7-f4c4ce3b40e9\r\n\r\nThe first test shows expiry by duration (4 day), and the second shows setting an exact date and time. In the third, I edited the first zone, and you can see that its existing expiry (4 days from creation) is already filled in."
+  },
+  {
+    "author": "tomhughes",
+    "created_at": "2026-10-09T21:53:15Z",
+    "body": "I haven't reviewed everything yet but here's a few comments to be going on with...",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-10T11:06:20Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-10T11:07:14Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-10T11:08:05Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "hlfan",
+    "created_at": "2026-10-10T16:51:06Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-11T09:46:18Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "hlfan",
+    "created_at": "2026-10-11T10:45:21Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-11T13:45:44Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "tomhughes",
+    "created_at": "2026-10-11T17:32:52Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "tomhughes",
+    "created_at": "2026-10-11T17:33:55Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "tomhughes",
+    "created_at": "2026-10-11T17:34:35Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "hlfan",
+    "created_at": "2026-10-11T17:55:17Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-11T19:01:22Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-11T19:01:55Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-11T19:02:20Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-11T19:14:28Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "hlfan",
+    "created_at": "2026-10-11T21:28:48Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-11T22:08:28Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "hlfan",
+    "created_at": "2026-10-11T23:39:31Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "hlfan",
+    "created_at": "2026-10-11T23:40:49Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-12T07:03:05Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-12T07:11:17Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-12T07:11:54Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "pablobm",
+    "created_at": "2026-10-12T16:26:50Z",
+    "body": "In principle there should be some sort of validation to avoid setting a past date. However this causes an issue as there's always going to be a difference between `Time.zone.now` when the form is rendered and when the form is submitted and processed. Perhaps the solution is to set it to now if it receives a past date.\r\n\r\nExpiries should be rounded to the closest minute, at least when rendering the form. Otherwise the form doesn't work because the default [`step`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/datetime-local#step) is one minute, but we are setting times with seconds (well, 59 out of 60 times).\r\n\r\nAdd a test for the case when both relative and absolute are sent. Shouldn't happen, but just in case. Decide who should win.",
+    "review_state": "CHANGES_REQUESTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-13T10:22:51Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-13T10:23:29Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-13T10:24:01Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-13T10:24:11Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-13T10:24:24Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-13T10:24:37Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-13T10:26:23Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "hlfan",
+    "created_at": "2026-10-13T13:25:39Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-13T18:51:50Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "pablobm",
+    "created_at": "2026-10-14T09:42:06Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "sachin9058",
+    "created_at": "2026-10-14T11:05:14Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  },
+  {
+    "author": "pablobm",
+    "created_at": "2026-10-14T11:39:40Z",
+    "body": "",
+    "review_state": "COMMENTED"
+  }
+]

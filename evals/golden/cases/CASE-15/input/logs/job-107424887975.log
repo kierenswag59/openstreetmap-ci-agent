@@ -1,0 +1,2382 @@
+﻿2026-09-23T23:23:59.5056129Z Current runner version: '2.337.0'
+2026-09-23T23:23:59.5075167Z ##[group]Runner Image Provisioner
+2026-09-23T23:23:59.5075721Z Hosted Compute Agent
+2026-09-23T23:23:59.5076158Z Version: 20260828.587
+2026-09-23T23:23:59.5076582Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-23T23:23:59.5077017Z Build Date: 2026-08-28T16:44:25Z
+2026-09-23T23:23:59.5077485Z Worker ID: {02f3b4af-8a34-4e4f-a9d7-6b9f8ae72f9c}
+2026-09-23T23:23:59.5077921Z Azure Region: westus3
+2026-09-23T23:23:59.5078350Z ##[endgroup]
+2026-09-23T23:23:59.5079182Z ##[group]Operating System
+2026-09-23T23:23:59.5079543Z Ubuntu
+2026-09-23T23:23:59.5079923Z 24.04.5
+2026-09-23T23:23:59.5080241Z LTS
+2026-09-23T23:23:59.5080594Z ##[endgroup]
+2026-09-23T23:23:59.5080976Z ##[group]Runner Image
+2026-09-23T23:23:59.5081359Z Image: ubuntu-24.04
+2026-09-23T23:23:59.5081742Z Version: 20260920.314.1
+2026-09-23T23:23:59.5082535Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-23T23:23:59.5083618Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+2026-09-23T23:23:59.5084181Z ##[endgroup]
+2026-09-23T23:23:59.5085865Z ##[group]GITHUB_TOKEN Permissions
+2026-09-23T23:23:59.5087245Z Actions: read
+2026-09-23T23:23:59.5087698Z ArtifactMetadata: read
+2026-09-23T23:23:59.5088067Z Attestations: read
+2026-09-23T23:23:59.5088437Z Checks: read
+2026-09-23T23:23:59.5088793Z CodeQuality: read
+2026-09-23T23:23:59.5089140Z Contents: read
+2026-09-23T23:23:59.5089572Z Deployments: read
+2026-09-23T23:23:59.5089913Z Discussions: read
+2026-09-23T23:23:59.5090274Z Drives: read
+2026-09-23T23:23:59.5090616Z Issues: read
+2026-09-23T23:23:59.5090946Z Metadata: read
+2026-09-23T23:23:59.5091344Z Models: read
+2026-09-23T23:23:59.5091726Z Packages: read
+2026-09-23T23:23:59.5092050Z Pages: read
+2026-09-23T23:23:59.5092425Z PullRequests: read
+2026-09-23T23:23:59.5092808Z RepositoryProjects: read
+2026-09-23T23:23:59.5093344Z SecurityEvents: read
+2026-09-23T23:23:59.5093714Z Statuses: read
+2026-09-23T23:23:59.5094064Z VulnerabilityAlerts: read
+2026-09-23T23:23:59.5094479Z ##[endgroup]
+2026-09-23T23:23:59.5095851Z Secret source: Dependabot
+2026-09-23T23:23:59.5096504Z Cache mode: write
+2026-09-23T23:23:59.5096947Z Prepare workflow directory
+2026-09-23T23:23:59.5347957Z Prepare all required actions
+2026-09-23T23:23:59.5380390Z Getting action download info
+2026-09-23T23:23:59.8286486Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-09-23T23:23:59.9047868Z Download action repository 'ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b' (SHA:95ef2b042f9d7a56d8268cba8559e2842e2ad01b)
+2026-09-23T23:24:00.5042467Z Download action repository 'actions/setup-node@820762786026740c76f36085b0efc47a31fe5020' (SHA:820762786026740c76f36085b0efc47a31fe5020)
+2026-09-23T23:24:00.6531562Z Complete job name: Rails Annotate Models
+2026-09-23T23:24:00.7084036Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-09-23T23:24:00.7084653Z with:
+2026-09-23T23:24:00.7084961Z   repository: openstreetmap/openstreetmap-website
+2026-09-23T23:24:00.7087356Z   token: ***
+2026-09-23T23:24:00.7087613Z   ssh-strict: true
+2026-09-23T23:24:00.7087873Z   ssh-user: git
+2026-09-23T23:24:00.7088147Z   persist-credentials: true
+2026-09-23T23:24:00.7088438Z   clean: true
+2026-09-23T23:24:00.7088712Z   sparse-checkout-cone-mode: true
+2026-09-23T23:24:00.7089019Z   fetch-depth: 1
+2026-09-23T23:24:00.7089287Z   fetch-tags: false
+2026-09-23T23:24:00.7089557Z   show-progress: true
+2026-09-23T23:24:00.7089834Z   lfs: false
+2026-09-23T23:24:00.7090095Z   submodules: false
+2026-09-23T23:24:00.7090376Z   set-safe-directory: true
+2026-09-23T23:24:00.7090680Z   allow-unsafe-pr-checkout: false
+2026-09-23T23:24:00.7091058Z env:
+2026-09-23T23:24:00.7091302Z   ruby: 3.3
+2026-09-23T23:24:00.7091545Z   RAILS_ENV: test
+2026-09-23T23:24:00.7091834Z ##[endgroup]
+2026-09-23T23:24:00.7786909Z Syncing repository: openstreetmap/openstreetmap-website
+2026-09-23T23:24:00.7788527Z ##[group]Getting Git version info
+2026-09-23T23:24:00.7789033Z Working directory is '/home/runner/work/openstreetmap-website/openstreetmap-website'
+2026-09-23T23:24:00.7789789Z [command]/usr/bin/git version
+2026-09-23T23:24:00.7849735Z git version 2.55.0
+2026-09-23T23:24:00.7861259Z ##[endgroup]
+2026-09-23T23:24:00.7868429Z Temporarily overriding HOME='/home/runner/work/_temp/71a4e31d-1387-41c5-bdb2-568bbdefaa75' before making global git config changes
+2026-09-23T23:24:00.7869277Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-23T23:24:00.7872233Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openstreetmap-website/openstreetmap-website
+2026-09-23T23:24:00.7913520Z Deleting the contents of '/home/runner/work/openstreetmap-website/openstreetmap-website'
+2026-09-23T23:24:00.7915611Z ##[group]Determining repository object format
+2026-09-23T23:24:00.7916727Z ##[endgroup]
+2026-09-23T23:24:00.7917445Z ##[group]Initializing the repository
+2026-09-23T23:24:00.7920080Z [command]/usr/bin/git init /home/runner/work/openstreetmap-website/openstreetmap-website
+2026-09-23T23:24:00.8015582Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-23T23:24:00.8016368Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-23T23:24:00.8017210Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-23T23:24:00.8017809Z hint: call:
+2026-09-23T23:24:00.8018172Z hint:
+2026-09-23T23:24:00.8018636Z hint: 	git config --global init.defaultBranch <name>
+2026-09-23T23:24:00.8019146Z hint:
+2026-09-23T23:24:00.8019487Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-23T23:24:00.8020024Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-23T23:24:00.8020451Z hint:
+2026-09-23T23:24:00.8020727Z hint: 	git branch -m <name>
+2026-09-23T23:24:00.8021010Z hint:
+2026-09-23T23:24:00.8021474Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-23T23:24:00.8022149Z Initialized empty Git repository in /home/runner/work/openstreetmap-website/openstreetmap-website/.git/
+2026-09-23T23:24:00.8029961Z [command]/usr/bin/git remote add origin https://github.com/openstreetmap/openstreetmap-website
+2026-09-23T23:24:00.8068208Z ##[endgroup]
+2026-09-23T23:24:00.8068914Z ##[group]Disabling automatic garbage collection
+2026-09-23T23:24:00.8069737Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-23T23:24:00.8093708Z ##[endgroup]
+2026-09-23T23:24:00.8094391Z ##[group]Setting up auth
+2026-09-23T23:24:00.8094881Z Removing SSH command configuration
+2026-09-23T23:24:00.8097571Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-23T23:24:00.8121725Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-23T23:24:00.8413741Z Removing HTTP extra header
+2026-09-23T23:24:00.8417815Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-23T23:24:00.8443683Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-23T23:24:00.8608953Z Removing includeIf entries pointing to credentials config files
+2026-09-23T23:24:00.8612891Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-23T23:24:00.8637269Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-23T23:24:00.8809632Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-3b5f0b29-b8bd-4c69-87f8-c7923e5522ee.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-23T23:24:00.8838677Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path /home/runner/work/_temp/git-credentials-3b5f0b29-b8bd-4c69-87f8-c7923e5522ee.config
+2026-09-23T23:24:00.8862335Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-3b5f0b29-b8bd-4c69-87f8-c7923e5522ee.config
+2026-09-23T23:24:00.8889769Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-3b5f0b29-b8bd-4c69-87f8-c7923e5522ee.config
+2026-09-23T23:24:00.8913991Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-3b5f0b29-b8bd-4c69-87f8-c7923e5522ee.config
+2026-09-23T23:24:00.8935477Z ##[endgroup]
+2026-09-23T23:24:00.8935981Z ##[group]Fetching the repository
+2026-09-23T23:24:00.8940049Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fb81da4448cf067c3f5a773bea8df81e23feb2d9:refs/remotes/pull/7421/merge
+2026-09-23T23:24:02.0954899Z From https://github.com/openstreetmap/openstreetmap-website
+2026-09-23T23:24:02.0956164Z  * [new ref]         fb81da4448cf067c3f5a773bea8df81e23feb2d9 -> pull/7421/merge
+2026-09-23T23:24:02.0959845Z ##[endgroup]
+2026-09-23T23:24:02.0960873Z ##[group]Determining the checkout info
+2026-09-23T23:24:02.0961914Z ##[endgroup]
+2026-09-23T23:24:02.0965357Z [command]/usr/bin/git sparse-checkout disable
+2026-09-23T23:24:02.1009043Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-23T23:24:02.1031811Z ##[group]Checking out the ref
+2026-09-23T23:24:02.1033881Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/7421/merge
+2026-09-23T23:24:02.2125469Z Note: switching to 'refs/remotes/pull/7421/merge'.
+2026-09-23T23:24:02.2126302Z 
+2026-09-23T23:24:02.2126824Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-09-23T23:24:02.2128206Z changes and commit them, and you can discard any commits you make in this
+2026-09-23T23:24:02.2129592Z state without impacting any branches by switching back to a branch.
+2026-09-23T23:24:02.2130400Z 
+2026-09-23T23:24:02.2130933Z If you want to create a new branch to retain commits you create, you may
+2026-09-23T23:24:02.2132201Z do so (now or later) by using -c with the switch command. Example:
+2026-09-23T23:24:02.2133081Z 
+2026-09-23T23:24:02.2133409Z   git switch -c <new-branch-name>
+2026-09-23T23:24:02.2133901Z 
+2026-09-23T23:24:02.2134202Z Or undo this operation with:
+2026-09-23T23:24:02.2134660Z 
+2026-09-23T23:24:02.2134925Z   git switch -
+2026-09-23T23:24:02.2135294Z 
+2026-09-23T23:24:02.2145737Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-09-23T23:24:02.2146613Z 
+2026-09-23T23:24:02.2147908Z HEAD is now at fb81da4 Merge 98062c2abac4524b601065321e933f324caff954 into 77a69e1458018e197919c48187e13b71d60b66cd
+2026-09-23T23:24:02.2151090Z ##[endgroup]
+2026-09-23T23:24:02.2183775Z [command]/usr/bin/git log -1 --format=%H
+2026-09-23T23:24:02.2203180Z fb81da4448cf067c3f5a773bea8df81e23feb2d9
+2026-09-23T23:24:02.2494838Z ##[group]Run ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b
+2026-09-23T23:24:02.2495725Z with:
+2026-09-23T23:24:02.2496183Z   ruby-version: 3.3
+2026-09-23T23:24:02.2496691Z   bundler-cache: true
+2026-09-23T23:24:02.2502606Z   token: ***
+2026-09-23T23:24:02.2503200Z env:
+2026-09-23T23:24:02.2503621Z   ruby: 3.3
+2026-09-23T23:24:02.2504059Z   RAILS_ENV: test
+2026-09-23T23:24:02.2504529Z ##[endgroup]
+2026-09-23T23:24:02.3513340Z ##[group]Modifying PATH
+2026-09-23T23:24:02.3514238Z Entries added to PATH to use selected Ruby:
+2026-09-23T23:24:02.3523802Z   /opt/hostedtoolcache/Ruby/3.3.12/x64/bin
+2026-09-23T23:24:02.3524950Z ##[endgroup]
+2026-09-23T23:24:02.3525833Z ##[group]Print Ruby version
+2026-09-23T23:24:02.3570699Z [command]/opt/hostedtoolcache/Ruby/3.3.12/x64/bin/ruby --version
+2026-09-23T23:24:02.6944290Z ruby 3.3.12 (2026-07-16 revision 0581089df9) [x86_64-linux]
+2026-09-23T23:24:02.6975776Z Took   0.35 seconds
+2026-09-23T23:24:02.6976630Z ##[endgroup]
+2026-09-23T23:24:02.6977432Z ##[group]Installing Bundler
+2026-09-23T23:24:02.6985096Z Using Bundler 4.0.3 from Gemfile.lock BUNDLED WITH 4.0.3
+2026-09-23T23:24:02.6989029Z [command]/opt/hostedtoolcache/Ruby/3.3.12/x64/bin/gem install bundler -v 4.0.3
+2026-09-23T23:24:04.5206423Z Successfully installed bundler-4.0.3
+2026-09-23T23:24:04.5206802Z 1 gem installed
+2026-09-23T23:24:04.5252136Z Took   1.83 seconds
+2026-09-23T23:24:04.5253132Z ##[endgroup]
+2026-09-23T23:24:04.5260295Z > bundle install
+2026-09-23T23:24:04.5260944Z Setting BUNDLER_VERSION=4.0.3 for "bundle config|lock" commands below to ensure Bundler 4.0.3 is used
+2026-09-23T23:24:04.5269104Z [command]/opt/hostedtoolcache/Ruby/3.3.12/x64/bin/bundle config set --local path /home/runner/work/openstreetmap-website/openstreetmap-website/vendor/bundle
+2026-09-23T23:24:04.6325088Z [command]/opt/hostedtoolcache/Ruby/3.3.12/x64/bin/bundle config set --local deployment true
+2026-09-23T23:24:04.7250791Z ##[group]Print lockfile
+2026-09-23T23:24:04.7260255Z [command]/usr/bin/cat Gemfile.lock
+2026-09-23T23:24:04.7284542Z GIT
+2026-09-23T23:24:04.7285154Z   remote: https://github.com/commonlit/canonical-rails.git
+2026-09-23T23:24:04.7285743Z   revision: 97bcb28b910b08ce4dc0169eae55a8cd3d4f26ff
+2026-09-23T23:24:04.7286150Z   ref: bump-rails-8-1
+2026-09-23T23:24:04.7286535Z   specs:
+2026-09-23T23:24:04.7286901Z     canonical-rails (0.2.17)
+2026-09-23T23:24:04.7287136Z       actionview (>= 4.1, < 8.2)
+2026-09-23T23:24:04.7287311Z 
+2026-09-23T23:24:04.7287384Z GIT
+2026-09-23T23:24:04.7287610Z   remote: https://github.com/rkoeze/gd2-ffij.git
+2026-09-23T23:24:04.7288846Z   revision: a203a8d5ef004a4198950e86329228fe3f331d06
+2026-09-23T23:24:04.7289191Z   ref: a203a8d5ef004a4198950e86329228fe3f331d06
+2026-09-23T23:24:04.7289459Z   specs:
+2026-09-23T23:24:04.7289674Z     gd2-ffij (0.4.1.dev)
+2026-09-23T23:24:04.7289971Z       ffi (>= 1.0.0)
+2026-09-23T23:24:04.7290162Z 
+2026-09-23T23:24:04.7290238Z GEM
+2026-09-23T23:24:04.7290963Z   remote: https://rubygems.org/
+2026-09-23T23:24:04.7291219Z   specs:
+2026-09-23T23:24:04.7291431Z     aasm (6.0.0)
+2026-09-23T23:24:04.7291661Z       concurrent-ruby (~> 1.0)
+2026-09-23T23:24:04.7291883Z     action_text-trix (2.1.19)
+2026-09-23T23:24:04.7292082Z       railties
+2026-09-23T23:24:04.7292268Z     actioncable (8.1.3.1)
+2026-09-23T23:24:04.7292478Z       actionpack (= 8.1.3.1)
+2026-09-23T23:24:04.7292687Z       activesupport (= 8.1.3.1)
+2026-09-23T23:24:04.7292899Z       nio4r (~> 2.0)
+2026-09-23T23:24:04.7293345Z       websocket-driver (>= 0.6.1)
+2026-09-23T23:24:04.7293552Z       zeitwerk (~> 2.6)
+2026-09-23T23:24:04.7293739Z     actionmailbox (8.1.3.1)
+2026-09-23T23:24:04.7293948Z       actionpack (= 8.1.3.1)
+2026-09-23T23:24:04.7294146Z       activejob (= 8.1.3.1)
+2026-09-23T23:24:04.7294358Z       activerecord (= 8.1.3.1)
+2026-09-23T23:24:04.7294589Z       activestorage (= 8.1.3.1)
+2026-09-23T23:24:04.7294806Z       activesupport (= 8.1.3.1)
+2026-09-23T23:24:04.7295011Z       mail (>= 2.8.0)
+2026-09-23T23:24:04.7295207Z     actionmailer (8.1.3.1)
+2026-09-23T23:24:04.7295794Z       actionpack (= 8.1.3.1)
+2026-09-23T23:24:04.7296008Z       actionview (= 8.1.3.1)
+2026-09-23T23:24:04.7296221Z       activejob (= 8.1.3.1)
+2026-09-23T23:24:04.7296424Z       activesupport (= 8.1.3.1)
+2026-09-23T23:24:04.7296930Z       mail (>= 2.8.0)
+2026-09-23T23:24:04.7297143Z       rails-dom-testing (~> 2.2)
+2026-09-23T23:24:04.7297366Z     actionpack (8.1.3.1)
+2026-09-23T23:24:04.7297573Z       actionview (= 8.1.3.1)
+2026-09-23T23:24:04.7297773Z       activesupport (= 8.1.3.1)
+2026-09-23T23:24:04.7297988Z       nokogiri (>= 1.8.5)
+2026-09-23T23:24:04.7298182Z       rack (>= 2.2.4)
+2026-09-23T23:24:04.7298374Z       rack-session (>= 1.0.1)
+2026-09-23T23:24:04.7298619Z       rack-test (>= 0.6.3)
+2026-09-23T23:24:04.7298828Z       rails-dom-testing (~> 2.2)
+2026-09-23T23:24:04.7299198Z       rails-html-sanitizer (~> 1.6)
+2026-09-23T23:24:04.7299420Z       useragent (~> 0.16)
+2026-09-23T23:24:04.7299629Z     actionpack-page_caching (1.2.4)
+2026-09-23T23:24:04.7299831Z       actionpack (>= 4.0.0)
+2026-09-23T23:24:04.7299968Z     actiontext (8.1.3.1)
+2026-09-23T23:24:04.7300108Z       action_text-trix (~> 2.1.15)
+2026-09-23T23:24:04.7300269Z       actionpack (= 8.1.3.1)
+2026-09-23T23:24:04.7300481Z       activerecord (= 8.1.3.1)
+2026-09-23T23:24:04.7300640Z       activestorage (= 8.1.3.1)
+2026-09-23T23:24:04.7300779Z       activesupport (= 8.1.3.1)
+2026-09-23T23:24:04.7300915Z       globalid (>= 0.6.0)
+2026-09-23T23:24:04.7301044Z       nokogiri (>= 1.8.5)
+2026-09-23T23:24:04.7301179Z     actionview (8.1.3.1)
+2026-09-23T23:24:04.7301313Z       activesupport (= 8.1.3.1)
+2026-09-23T23:24:04.7301448Z       builder (~> 3.1)
+2026-09-23T23:24:04.7301572Z       erubi (~> 1.11)
+2026-09-23T23:24:04.7301695Z       rails-dom-testing (~> 2.2)
+2026-09-23T23:24:04.7301843Z       rails-html-sanitizer (~> 1.6)
+2026-09-23T23:24:04.7302003Z     active_record_union (1.4.0)
+2026-09-23T23:24:04.7302151Z       activerecord (>= 6.0)
+2026-09-23T23:24:04.7302288Z     activejob (8.1.3.1)
+2026-09-23T23:24:04.7302441Z       activesupport (= 8.1.3.1)
+2026-09-23T23:24:04.7302578Z       globalid (>= 0.3.6)
+2026-09-23T23:24:04.7302717Z     activemodel (8.1.3.1)
+2026-09-23T23:24:04.7302850Z       activesupport (= 8.1.3.1)
+2026-09-23T23:24:04.7303172Z     activerecord (8.1.3.1)
+2026-09-23T23:24:04.7303316Z       activemodel (= 8.1.3.1)
+2026-09-23T23:24:04.7303450Z       activesupport (= 8.1.3.1)
+2026-09-23T23:24:04.7303580Z       timeout (>= 0.4.0)
+2026-09-23T23:24:04.7303714Z     activerecord-import (2.3.0)
+2026-09-23T23:24:04.7303854Z       activerecord (>= 4.2)
+2026-09-23T23:24:04.7304005Z     activerecord-postgis (0.6.0)
+2026-09-23T23:24:04.7304158Z       activerecord (>= 8.1.0, < 8.3)
+2026-09-23T23:24:04.7304302Z       pg
+2026-09-23T23:24:04.7304408Z       rgeo (>= 3.1.0)
+2026-09-23T23:24:04.7304534Z       rgeo-activerecord (>= 8.0)
+2026-09-23T23:24:04.7304679Z     activestorage (8.1.3.1)
+2026-09-23T23:24:04.7304814Z       actionpack (= 8.1.3.1)
+2026-09-23T23:24:04.7304947Z       activejob (= 8.1.3.1)
+2026-09-23T23:24:04.7305082Z       activerecord (= 8.1.3.1)
+2026-09-23T23:24:04.7305223Z       activesupport (= 8.1.3.1)
+2026-09-23T23:24:04.7305364Z       marcel (~> 1.0)
+2026-09-23T23:24:04.7305488Z     activesupport (8.1.3.1)
+2026-09-23T23:24:04.7305613Z       base64
+2026-09-23T23:24:04.7305724Z       bigdecimal
+2026-09-23T23:24:04.7305853Z       concurrent-ruby (~> 1.0, >= 1.3.1)
+2026-09-23T23:24:04.7306014Z       connection_pool (>= 2.2.5)
+2026-09-23T23:24:04.7306158Z       drb
+2026-09-23T23:24:04.7306275Z       i18n (>= 1.6, < 2)
+2026-09-23T23:24:04.7306406Z       json
+2026-09-23T23:24:04.7306522Z       logger (>= 1.4.2)
+2026-09-23T23:24:04.7306661Z       minitest (>= 5.1)
+2026-09-23T23:24:04.7306798Z       securerandom (>= 0.3)
+2026-09-23T23:24:04.7306941Z       tzinfo (~> 2.0, >= 2.0.5)
+2026-09-23T23:24:04.7307078Z       uri (>= 0.13.1)
+2026-09-23T23:24:04.7307203Z     addressable (2.9.0)
+2026-09-23T23:24:04.7307341Z       public_suffix (>= 2.0.2, < 8.0)
+2026-09-23T23:24:04.7307496Z     aes_key_wrap (1.1.0)
+2026-09-23T23:24:04.7307814Z     annotaterb (4.25.0)
+2026-09-23T23:24:04.7307942Z       activerecord (>= 6.0.0)
+2026-09-23T23:24:04.7308084Z       activesupport (>= 6.0.0)
+2026-09-23T23:24:04.7308231Z     anonymous_loader (0.1.3)
+2026-09-23T23:24:04.7308375Z       version_gem (~> 1.1, >= 1.1.14)
+2026-09-23T23:24:04.7308524Z     argon2 (2.3.3)
+2026-09-23T23:24:04.7308653Z       ffi (~> 1.15)
+2026-09-23T23:24:04.7308778Z       ffi-compiler (~> 1.0)
+2026-09-23T23:24:04.7308911Z     ast (2.4.3)
+2026-09-23T23:24:04.7309033Z     auth-sanitizer (0.2.3)
+2026-09-23T23:24:04.7309167Z       version_gem (~> 1.1, >= 1.1.14)
+2026-09-23T23:24:04.7309321Z     autoprefixer-rails (10.4.21.0)
+2026-09-23T23:24:04.7309463Z       execjs (~> 2)
+2026-09-23T23:24:04.7309585Z     aws-eventstream (1.4.0)
+2026-09-23T23:24:04.7309723Z     aws-partitions (1.1289.0)
+2026-09-23T23:24:04.7309951Z     aws-sdk-core (3.257.0)
+2026-09-23T23:24:04.7310085Z       aws-eventstream (~> 1, >= 1.3.0)
+2026-09-23T23:24:04.7310246Z       aws-partitions (~> 1, >= 1.992.0)
+2026-09-23T23:24:04.7310393Z       aws-sigv4 (~> 1.9)
+2026-09-23T23:24:04.7310513Z       base64
+2026-09-23T23:24:04.7310620Z       bigdecimal
+2026-09-23T23:24:04.7310738Z       jmespath (~> 1, >= 1.6.1)
+2026-09-23T23:24:04.7310872Z       logger
+2026-09-23T23:24:04.7310993Z       rexml (~> 3.4, >= 3.4.2)
+2026-09-23T23:24:04.7311134Z     aws-sdk-kms (1.132.0)
+2026-09-23T23:24:04.7311270Z       aws-sdk-core (~> 3, >= 3.256.0)
+2026-09-23T23:24:04.7311409Z       aws-sigv4 (~> 1.5)
+2026-09-23T23:24:04.7311532Z     aws-sdk-s3 (1.232.1)
+2026-09-23T23:24:04.7311659Z       aws-sdk-core (~> 3, >= 3.256.0)
+2026-09-23T23:24:04.7311799Z       aws-sdk-kms (~> 1)
+2026-09-23T23:24:04.7311922Z       aws-sigv4 (~> 1.5)
+2026-09-23T23:24:04.7312044Z     aws-sigv4 (1.12.1)
+2026-09-23T23:24:04.7312172Z       aws-eventstream (~> 1, >= 1.0.2)
+2026-09-23T23:24:04.7312314Z     base64 (0.3.0)
+2026-09-23T23:24:04.7312431Z     benchmark (0.5.0)
+2026-09-23T23:24:04.7312561Z     better_errors (2.10.1)
+2026-09-23T23:24:04.7312693Z       erubi (>= 1.0.0)
+2026-09-23T23:24:04.7312809Z       rack (>= 0.9.0)
+2026-09-23T23:24:04.7313040Z       rouge (>= 1.0.0)
+2026-09-23T23:24:04.7313224Z     better_html (2.2.0)
+2026-09-23T23:24:04.7313379Z       actionview (>= 7.0)
+2026-09-23T23:24:04.7313512Z       activesupport (>= 7.0)
+2026-09-23T23:24:04.7313641Z       ast (~> 2.0)
+2026-09-23T23:24:04.7313752Z       erubi (~> 1.4)
+2026-09-23T23:24:04.7313873Z       parser (>= 2.4)
+2026-09-23T23:24:04.7313993Z       smart_properties
+2026-09-23T23:24:04.7314113Z     bigdecimal (4.1.3)
+2026-09-23T23:24:04.7314235Z     bindata (3.0.0)
+2026-09-23T23:24:04.7314358Z     binding_of_caller (2.0.0)
+2026-09-23T23:24:04.7314502Z       debug_inspector (>= 1.2.0)
+2026-09-23T23:24:04.7314638Z     bootsnap (1.26.0)
+2026-09-23T23:24:04.7314755Z       msgpack (~> 1.5)
+2026-09-23T23:24:04.7314877Z     bootstrap (5.3.8)
+2026-09-23T23:24:04.7315000Z       popper_js (>= 2.11.8, < 3)
+2026-09-23T23:24:04.7315200Z     bootstrap_form (5.6.1)
+2026-09-23T23:24:04.7315393Z       actionpack (>= 7.2)
+2026-09-23T23:24:04.7315521Z       activemodel (>= 7.2)
+2026-09-23T23:24:04.7315647Z     brakeman (8.0.6)
+2026-09-23T23:24:04.7315761Z       racc
+2026-09-23T23:24:04.7315867Z     brotli (0.8.0)
+2026-09-23T23:24:04.7315978Z     builder (3.3.0)
+2026-09-23T23:24:04.7316093Z     bzip2-ffi (1.1.1)
+2026-09-23T23:24:04.7316209Z       ffi (~> 1.0)
+2026-09-23T23:24:04.7316321Z     cancancan (3.6.1)
+2026-09-23T23:24:04.7316437Z     capybara (3.40.0)
+2026-09-23T23:24:04.7316554Z       addressable
+2026-09-23T23:24:04.7316663Z       matrix
+2026-09-23T23:24:04.7316771Z       mini_mime (>= 0.1.3)
+2026-09-23T23:24:04.7316896Z       nokogiri (~> 1.11)
+2026-09-23T23:24:04.7317016Z       rack (>= 1.6.0)
+2026-09-23T23:24:04.7317159Z       rack-test (>= 0.6.3)
+2026-09-23T23:24:04.7317373Z       regexp_parser (>= 1.5, < 3.0)
+2026-09-23T23:24:04.7317540Z       xpath (~> 3.2)
+2026-09-23T23:24:04.7317655Z     cgi (0.5.2)
+2026-09-23T23:24:04.7317769Z     childprocess (5.1.0)
+2026-09-23T23:24:04.7318017Z       logger (~> 1.5)
+2026-09-23T23:24:04.7318142Z     claide (1.1.0)
+2026-09-23T23:24:04.7318267Z     claide-plugins (0.9.2)
+2026-09-23T23:24:04.7318402Z       cork
+2026-09-23T23:24:04.7318510Z       nap
+2026-09-23T23:24:04.7318620Z       open4 (~> 1.3)
+2026-09-23T23:24:04.7318739Z     colored2 (3.1.2)
+2026-09-23T23:24:04.7318861Z     concurrent-ruby (1.3.8)
+2026-09-23T23:24:04.7318993Z     config (5.6.1)
+2026-09-23T23:24:04.7319115Z       deep_merge (~> 1.2, >= 1.2.1)
+2026-09-23T23:24:04.7319252Z       ostruct
+2026-09-23T23:24:04.7319367Z     connection_pool (3.0.2)
+2026-09-23T23:24:04.7319505Z     cork (0.3.0)
+2026-09-23T23:24:04.7319695Z       colored2 (~> 3.1)
+2026-09-23T23:24:04.7319847Z     crack (1.0.1)
+2026-09-23T23:24:04.7319963Z       bigdecimal
+2026-09-23T23:24:04.7320075Z       rexml
+2026-09-23T23:24:04.7320279Z     crass (1.0.7)
+2026-09-23T23:24:04.7320418Z     dalli (5.1.0)
+2026-09-23T23:24:04.7320590Z       logger
+2026-09-23T23:24:04.7320760Z     danger (9.6.1)
+2026-09-23T23:24:04.7320952Z       base64 (~> 0.2)
+2026-09-23T23:24:04.7321139Z       claide (~> 1.0)
+2026-09-23T23:24:04.7321312Z       claide-plugins (>= 0.9.2)
+2026-09-23T23:24:04.7321454Z       colored2 (>= 3.1, < 5)
+2026-09-23T23:24:04.7321591Z       cork (~> 0.1)
+2026-09-23T23:24:04.7321716Z       faraday (>= 0.9.0, < 3.0)
+2026-09-23T23:24:04.7321869Z       faraday-http-cache (~> 2.0)
+2026-09-23T23:24:04.7322011Z       git (>= 1.13)
+2026-09-23T23:24:04.7322128Z       kramdown (>= 2.5.1, < 3.0)
+2026-09-23T23:24:04.7346007Z       kramdown-parser-gfm (~> 1.0)
+2026-09-23T23:24:04.7346325Z       octokit (>= 4.0)
+2026-09-23T23:24:04.7346525Z       pstore (~> 0.1)
+2026-09-23T23:24:04.7346728Z       terminal-table (>= 1, < 5)
+2026-09-23T23:24:04.7346956Z     danger-auto_label (1.3.1)
+2026-09-23T23:24:04.7347179Z       danger-plugin-api (~> 1.0)
+2026-09-23T23:24:04.7347413Z     danger-plugin-api (1.0.0)
+2026-09-23T23:24:04.7347620Z       danger (> 2.0)
+2026-09-23T23:24:04.7347814Z     dartsass-ruby (3.0.2)
+2026-09-23T23:24:04.7348045Z       sass-embedded (~> 1.54, < 1.67)
+2026-09-23T23:24:04.7348287Z     dartsass-sprockets (3.0.0)
+2026-09-23T23:24:04.7348521Z       dartsass-ruby (~> 3.0)
+2026-09-23T23:24:04.7348729Z       railties (>= 4.0.0)
+2026-09-23T23:24:04.7348927Z       sprockets (> 3.0)
+2026-09-23T23:24:04.7349125Z       sprockets-rails
+2026-09-23T23:24:04.7349315Z       tilt
+2026-09-23T23:24:04.7349495Z     database_consistency (3.0.12)
+2026-09-23T23:24:04.7349723Z       activerecord (>= 3.2)
+2026-09-23T23:24:04.7349860Z     date (3.5.1)
+2026-09-23T23:24:04.7349977Z     debug (1.11.1)
+2026-09-23T23:24:04.7350093Z       irb (~> 1.10)
+2026-09-23T23:24:04.7350216Z       reline (>= 0.3.8)
+2026-09-23T23:24:04.7350347Z     debug_inspector (1.2.0)
+2026-09-23T23:24:04.7350485Z     deep_merge (1.2.2)
+2026-09-23T23:24:04.7350611Z     delayed_job (4.2.0)
+2026-09-23T23:24:04.7350746Z       activesupport (>= 3.0, < 9.0)
+2026-09-23T23:24:04.7350897Z       benchmark
+2026-09-23T23:24:04.7351010Z       logger
+2026-09-23T23:24:04.7351143Z     delayed_job_active_record (4.1.11)
+2026-09-23T23:24:04.7351308Z       activerecord (>= 3.0, < 9.0)
+2026-09-23T23:24:04.7351455Z       delayed_job (>= 3.0, < 5)
+2026-09-23T23:24:04.7351590Z     digest (3.2.1)
+2026-09-23T23:24:04.7351713Z     doorkeeper (5.9.7)
+2026-09-23T23:24:04.7351839Z       railties (>= 5)
+2026-09-23T23:24:04.7351970Z     doorkeeper-i18n (5.2.9)
+2026-09-23T23:24:04.7352104Z       doorkeeper (>= 5.2)
+2026-09-23T23:24:04.7352244Z     doorkeeper-openid_connect (1.10.5)
+2026-09-23T23:24:04.7352402Z       doorkeeper (>= 5.5, < 6.0)
+2026-09-23T23:24:04.7352538Z       jwt (>= 2.5)
+2026-09-23T23:24:04.7352655Z       ostruct (>= 0.5)
+2026-09-23T23:24:04.7352804Z     drb (2.2.3)
+2026-09-23T23:24:04.7353092Z     dry-configurable (1.4.0)
+2026-09-23T23:24:04.7353334Z       dry-core (~> 1.0)
+2026-09-23T23:24:04.7353588Z       zeitwerk (~> 2.6)
+2026-09-23T23:24:04.7353810Z     dry-core (1.2.0)
+2026-09-23T23:24:04.7354010Z       concurrent-ruby (~> 1.0)
+2026-09-23T23:24:04.7354220Z       logger
+2026-09-23T23:24:04.7354575Z       zeitwerk (~> 2.6)
+2026-09-23T23:24:04.7354776Z     dry-inflector (1.3.1)
+2026-09-23T23:24:04.7354978Z     dry-initializer (3.2.0)
+2026-09-23T23:24:04.7355169Z     dry-logic (1.6.0)
+2026-09-23T23:24:04.7355345Z       bigdecimal
+2026-09-23T23:24:04.7355517Z       concurrent-ruby (~> 1.0)
+2026-09-23T23:24:04.7355711Z       dry-core (~> 1.1)
+2026-09-23T23:24:04.7355889Z       zeitwerk (~> 2.6)
+2026-09-23T23:24:04.7356074Z     dry-schema (1.16.0)
+2026-09-23T23:24:04.7356261Z       concurrent-ruby (~> 1.0)
+2026-09-23T23:24:04.7356481Z       dry-configurable (~> 1.0, >= 1.0.1)
+2026-09-23T23:24:04.7356656Z       dry-core (~> 1.1)
+2026-09-23T23:24:04.7356786Z       dry-initializer (~> 3.2)
+2026-09-23T23:24:04.7356920Z       dry-logic (~> 1.6)
+2026-09-23T23:24:04.7357052Z       dry-types (~> 1.9, >= 1.9.1)
+2026-09-23T23:24:04.7357291Z       zeitwerk (~> 2.6)
+2026-09-23T23:24:04.7357410Z     dry-types (1.9.1)
+2026-09-23T23:24:04.7357534Z       bigdecimal (>= 3.0)
+2026-09-23T23:24:04.7357662Z       concurrent-ruby (~> 1.0)
+2026-09-23T23:24:04.7357798Z       dry-core (~> 1.0)
+2026-09-23T23:24:04.7357920Z       dry-inflector (~> 1.0)
+2026-09-23T23:24:04.7358050Z       dry-logic (~> 1.4)
+2026-09-23T23:24:04.7358173Z       zeitwerk (~> 2.6)
+2026-09-23T23:24:04.7358296Z     dry-validation (1.11.1)
+2026-09-23T23:24:04.7358493Z       concurrent-ruby (~> 1.0)
+2026-09-23T23:24:04.7358692Z       dry-core (~> 1.1)
+2026-09-23T23:24:04.7358885Z       dry-initializer (~> 3.2)
+2026-09-23T23:24:04.7359100Z       dry-schema (~> 1.14)
+2026-09-23T23:24:04.7359302Z       zeitwerk (~> 2.6)
+2026-09-23T23:24:04.7359487Z     erb (6.0.7)
+2026-09-23T23:24:04.7359661Z     erb_lint (0.9.0)
+2026-09-23T23:24:04.7359855Z       activesupport
+2026-09-23T23:24:04.7360039Z       better_html (>= 2.0.1)
+2026-09-23T23:24:04.7360247Z       parser (>= 2.7.1.4)
+2026-09-23T23:24:04.7360446Z       rainbow
+2026-09-23T23:24:04.7360618Z       rubocop (>= 1)
+2026-09-23T23:24:04.7360803Z       smart_properties
+2026-09-23T23:24:04.7360988Z     erubi (1.13.1)
+2026-09-23T23:24:04.7361168Z     execjs (2.10.2)
+2026-09-23T23:24:04.7361351Z       json (>= 2)
+2026-09-23T23:24:04.7361522Z     exifr (1.5.1)
+2026-09-23T23:24:04.7361700Z     factory_bot (6.6.0)
+2026-09-23T23:24:04.7361894Z       activesupport (>= 6.1.0)
+2026-09-23T23:24:04.7362141Z     factory_bot_rails (6.5.1)
+2026-09-23T23:24:04.7362348Z       factory_bot (~> 6.5)
+2026-09-23T23:24:04.7362554Z       railties (>= 6.1.0)
+2026-09-23T23:24:04.7362747Z     faraday (2.14.4)
+2026-09-23T23:24:04.7363057Z       faraday-net_http (>= 2.0, < 3.5)
+2026-09-23T23:24:04.7363277Z       json
+2026-09-23T23:24:04.7363438Z       logger
+2026-09-23T23:24:04.7363626Z     faraday-follow_redirects (0.5.0)
+2026-09-23T23:24:04.7363853Z       faraday (>= 1, < 3)
+2026-09-23T23:24:04.7364056Z     faraday-http-cache (2.8.0)
+2026-09-23T23:24:04.7364275Z       faraday (>= 0.8)
+2026-09-23T23:24:04.7364480Z     faraday-net_http (3.4.4)
+2026-09-23T23:24:04.7364690Z       net-http (~> 0.5)
+2026-09-23T23:24:04.7364831Z     ffi (1.17.4)
+2026-09-23T23:24:04.7364953Z     ffi-compiler (1.4.2)
+2026-09-23T23:24:04.7365078Z       ffi (>= 1.15.5)
+2026-09-23T23:24:04.7365192Z       rake
+2026-09-23T23:24:04.7365308Z     ffi-libarchive (1.1.14)
+2026-09-23T23:24:04.7365449Z       ffi (~> 1.0)
+2026-09-23T23:24:04.7365585Z     frozen_record (0.27.4)
+2026-09-23T23:24:04.7365710Z       activemodel
+2026-09-23T23:24:04.7365826Z     fspath (3.1.2)
+2026-09-23T23:24:04.7365936Z     git (5.6.0)
+2026-09-23T23:24:04.7366053Z       activesupport (>= 5.0)
+2026-09-23T23:24:04.7366187Z       addressable (~> 2.8)
+2026-09-23T23:24:04.7366322Z       process_executer (~> 4.1)
+2026-09-23T23:24:04.7366457Z       rchardet (~> 1.9)
+2026-09-23T23:24:04.7366579Z     glob (0.5.0)
+2026-09-23T23:24:04.7366690Z     globalid (1.4.0)
+2026-09-23T23:24:04.7366813Z       activesupport (>= 6.1)
+2026-09-23T23:24:04.7366962Z     google-protobuf (3.25.8)
+2026-09-23T23:24:04.7367142Z     googleapis-common-protos-types (1.20.0)
+2026-09-23T23:24:04.7367312Z       google-protobuf (>= 3.18, < 5.a)
+2026-09-23T23:24:04.7367572Z     hashdiff (1.2.1)
+2026-09-23T23:24:04.7367763Z     hashie (5.1.0)
+2026-09-23T23:24:04.7367934Z       logger
+2026-09-23T23:24:04.7368102Z     herb (0.10.4)
+2026-09-23T23:24:04.7368276Z     highline (3.1.2)
+2026-09-23T23:24:04.7368451Z       reline
+2026-09-23T23:24:04.7368654Z     htmlentities (4.4.2)
+2026-09-23T23:24:04.7368975Z     http_accept_language (2.1.1)
+2026-09-23T23:24:04.7369189Z     i18n (1.15.2)
+2026-09-23T23:24:04.7369392Z       concurrent-ruby (~> 1.0)
+2026-09-23T23:24:04.7369607Z     i18n-js (4.2.4)
+2026-09-23T23:24:04.7369789Z       glob (>= 0.4.0)
+2026-09-23T23:24:04.7369981Z       i18n
+2026-09-23T23:24:04.7370163Z     i18n-tasks (1.1.2)
+2026-09-23T23:24:04.7370370Z       activesupport (>= 4.0.2)
+2026-09-23T23:24:04.7370573Z       ast (>= 2.1.0)
+2026-09-23T23:24:04.7370745Z       erubi
+2026-09-23T23:24:04.7371049Z       highline (>= 3.0.0)
+2026-09-23T23:24:04.7371253Z       i18n
+2026-09-23T23:24:04.7371423Z       parser (>= 3.2.2.1)
+2026-09-23T23:24:04.7371622Z       prism
+2026-09-23T23:24:04.7371817Z       rails-i18n
+2026-09-23T23:24:04.7372008Z       rainbow (>= 2.2.2, < 4.0)
+2026-09-23T23:24:04.7372258Z       ruby-progressbar (~> 1.8, >= 1.8.1)
+2026-09-23T23:24:04.7372512Z       terminal-table (>= 1.5.1)
+2026-09-23T23:24:04.7372736Z     image_optim (0.32.0)
+2026-09-23T23:24:04.7373070Z       exifr (~> 1.2, >= 1.2.2)
+2026-09-23T23:24:04.7373278Z       fspath (~> 3.0)
+2026-09-23T23:24:04.7373470Z       image_size (>= 1.5, < 4)
+2026-09-23T23:24:04.7373680Z       in_threads (~> 1.3)
+2026-09-23T23:24:04.7373889Z       progress (~> 3.0, >= 3.0.1)
+2026-09-23T23:24:04.7374116Z     image_optim_rails (0.5.0)
+2026-09-23T23:24:04.7374333Z       image_optim (~> 0.24)
+2026-09-23T23:24:04.7374535Z       railties
+2026-09-23T23:24:04.7374707Z       sprockets
+2026-09-23T23:24:04.7374890Z     image_processing (2.1.0)
+2026-09-23T23:24:04.7375102Z     image_size (3.6.0)
+2026-09-23T23:24:04.7375292Z     in_threads (1.6.0)
+2026-09-23T23:24:04.7375476Z     iniparse (1.5.0)
+2026-09-23T23:24:04.7375668Z     inline_svg (1.10.0)
+2026-09-23T23:24:04.7375865Z       activesupport (>= 3.0)
+2026-09-23T23:24:04.7376073Z       nokogiri (>= 1.6)
+2026-09-23T23:24:04.7376261Z     io-console (0.9.4)
+2026-09-23T23:24:04.7376452Z     irb (1.18.0)
+2026-09-23T23:24:04.7376633Z       pp (>= 0.6.0)
+2026-09-23T23:24:04.7376814Z       prism (>= 1.3.0)
+2026-09-23T23:24:04.7377000Z       rdoc (>= 4.0.0)
+2026-09-23T23:24:04.7377188Z       reline (>= 0.4.2)
+2026-09-23T23:24:04.7377393Z     jbuilder (2.15.1)
+2026-09-23T23:24:04.7377588Z       actionview (>= 7.0.0)
+2026-09-23T23:24:04.7377800Z       activesupport (>= 7.0.0)
+2026-09-23T23:24:04.7378006Z     jmespath (1.6.2)
+2026-09-23T23:24:04.7378197Z     jquery-rails (4.6.1)
+2026-09-23T23:24:04.7378409Z       rails-dom-testing (>= 1, < 3)
+2026-09-23T23:24:04.7378635Z       railties (>= 4.2.0)
+2026-09-23T23:24:04.7378836Z       thor (>= 0.14, < 2.0)
+2026-09-23T23:24:04.7379035Z     json (2.21.2)
+2026-09-23T23:24:04.7379203Z     json-jwt (1.17.2)
+2026-09-23T23:24:04.7379396Z       activesupport (>= 4.2)
+2026-09-23T23:24:04.7379597Z       aes_key_wrap
+2026-09-23T23:24:04.7379769Z       base64
+2026-09-23T23:24:04.7379935Z       bindata
+2026-09-23T23:24:04.7380104Z       faraday (~> 2.0)
+2026-09-23T23:24:04.7380307Z       faraday-follow_redirects
+2026-09-23T23:24:04.7380518Z     jwt (2.10.3)
+2026-09-23T23:24:04.7380688Z       base64
+2026-09-23T23:24:04.7380852Z     kramdown (2.5.2)
+2026-09-23T23:24:04.7381034Z       rexml (>= 3.4.4)
+2026-09-23T23:24:04.7381231Z     kramdown-parser-gfm (1.1.0)
+2026-09-23T23:24:04.7381443Z       kramdown (~> 2.0)
+2026-09-23T23:24:04.7381651Z     language_server-protocol (3.17.0.6)
+2026-09-23T23:24:04.7381885Z     libv8-node (24.12.0.1)
+2026-09-23T23:24:04.7382080Z     libxml-ruby (6.0.0)
+2026-09-23T23:24:04.7382267Z     lint_roller (1.1.0)
+2026-09-23T23:24:04.7382461Z     listen (3.10.0)
+2026-09-23T23:24:04.7382627Z       logger
+2026-09-23T23:24:04.7382798Z       rb-fsevent (~> 0.10, >= 0.10.3)
+2026-09-23T23:24:04.7383171Z       rb-inotify (~> 0.9, >= 0.9.10)
+2026-09-23T23:24:04.7383493Z     logger (1.7.0)
+2026-09-23T23:24:04.7383610Z     loofah (2.25.2)
+2026-09-23T23:24:04.7383728Z       crass (~> 1.0.2)
+2026-09-23T23:24:04.7383851Z       nokogiri (>= 1.12.0)
+2026-09-23T23:24:04.7383972Z     mail (2.9.1)
+2026-09-23T23:24:04.7384083Z       logger
+2026-09-23T23:24:04.7384191Z       mini_mime (>= 0.1.1)
+2026-09-23T23:24:04.7384314Z       net-imap
+2026-09-23T23:24:04.7384425Z       net-pop
+2026-09-23T23:24:04.7384532Z       net-smtp
+2026-09-23T23:24:04.7384640Z     marcel (1.2.1)
+2026-09-23T23:24:04.7384751Z     matrix (0.4.3)
+2026-09-23T23:24:04.7384864Z     maxminddb (0.1.22)
+2026-09-23T23:24:04.7384984Z     mini_mime (1.1.5)
+2026-09-23T23:24:04.7385104Z     mini_portile2 (2.8.9)
+2026-09-23T23:24:04.7385233Z     mini_racer (0.22.1)
+2026-09-23T23:24:04.7385355Z       libv8-node (~> 24.12.0.1)
+2026-09-23T23:24:04.7385575Z     minitest (6.0.6)
+2026-09-23T23:24:04.7385737Z       drb (~> 2.0)
+2026-09-23T23:24:04.7385909Z       prism (~> 1.5)
+2026-09-23T23:24:04.7386108Z     minitest-focus (1.4.1)
+2026-09-23T23:24:04.7386286Z       minitest (> 5.0)
+2026-09-23T23:24:04.7386409Z     minitest-mock (5.27.0)
+2026-09-23T23:24:04.7386536Z     msgpack (1.8.5)
+2026-09-23T23:24:04.7386648Z     multi_xml (0.9.1)
+2026-09-23T23:24:04.7386769Z       bigdecimal (>= 3.1, < 5)
+2026-09-23T23:24:04.7386920Z     nap (1.1.0)
+2026-09-23T23:24:04.7387035Z     net-http (0.9.1)
+2026-09-23T23:24:04.7387151Z       uri (>= 0.11.1)
+2026-09-23T23:24:04.7387266Z     net-imap (0.6.7)
+2026-09-23T23:24:04.7387380Z       date
+2026-09-23T23:24:04.7387487Z       net-protocol
+2026-09-23T23:24:04.7387598Z     net-pop (0.1.2)
+2026-09-23T23:24:04.7387711Z       net-protocol
+2026-09-23T23:24:04.7387827Z     net-protocol (0.4.0)
+2026-09-23T23:24:04.7387949Z       timeout
+2026-09-23T23:24:04.7388056Z     net-smtp (0.5.1)
+2026-09-23T23:24:04.7388175Z       net-protocol
+2026-09-23T23:24:04.7388285Z     nio4r (2.7.5)
+2026-09-23T23:24:04.7388403Z     nokogiri (1.19.4)
+2026-09-23T23:24:04.7388525Z       mini_portile2 (~> 2.8.2)
+2026-09-23T23:24:04.7388658Z       racc (~> 1.4)
+2026-09-23T23:24:04.7388823Z     noticed (3.0.0)
+2026-09-23T23:24:04.7389000Z       rails (>= 6.1.0)
+2026-09-23T23:24:04.7389157Z     oauth (1.1.8)
+2026-09-23T23:24:04.7389279Z       anonymous_loader (~> 0.1, >= 0.1.3)
+2026-09-23T23:24:04.7389433Z       auth-sanitizer (~> 0.2, >= 0.2.3)
+2026-09-23T23:24:04.7389573Z       base64 (~> 0.1)
+2026-09-23T23:24:04.7389696Z       oauth-tty (~> 1.0, >= 1.0.13)
+2026-09-23T23:24:04.7389838Z       snaky_hash (~> 2.0, >= 2.0.7)
+2026-09-23T23:24:04.7389982Z       version_gem (~> 1.1, >= 1.1.14)
+2026-09-23T23:24:04.7390123Z     oauth-tty (1.0.13)
+2026-09-23T23:24:04.7390250Z       anonymous_loader (~> 0.1, >= 0.1.3)
+2026-09-23T23:24:04.7390400Z       auth-sanitizer (~> 0.2, >= 0.2.3)
+2026-09-23T23:24:04.7390544Z       version_gem (~> 1.1, >= 1.1.14)
+2026-09-23T23:24:04.7390684Z     oauth2 (2.0.25)
+2026-09-23T23:24:04.7390803Z       anonymous_loader (~> 0.1, >= 0.1.3)
+2026-09-23T23:24:04.7390953Z       auth-sanitizer (~> 0.2, >= 0.2.3)
+2026-09-23T23:24:04.7391098Z       faraday (>= 0.17.3, < 4.0)
+2026-09-23T23:24:04.7391229Z       jwt (>= 1.0, < 4.0)
+2026-09-23T23:24:04.7391351Z       logger (~> 1.2)
+2026-09-23T23:24:04.7391511Z       multi_xml (~> 0.5)
+2026-09-23T23:24:04.7391695Z       rack (>= 1.2, < 4)
+2026-09-23T23:24:04.7391885Z       snaky_hash (~> 2.0, >= 2.0.7)
+2026-09-23T23:24:04.7392105Z       version_gem (~> 1.1, >= 1.1.14)
+2026-09-23T23:24:04.7392324Z     octokit (10.0.0)
+2026-09-23T23:24:04.7392509Z       faraday (>= 1, < 3)
+2026-09-23T23:24:04.7392698Z       sawyer (~> 0.9)
+2026-09-23T23:24:04.7392877Z     omniauth (2.1.4)
+2026-09-23T23:24:04.7393170Z       hashie (>= 3.4.6)
+2026-09-23T23:24:04.7393365Z       logger
+2026-09-23T23:24:04.7393528Z       rack (>= 2.2.3)
+2026-09-23T23:24:04.7393648Z       rack-protection
+2026-09-23T23:24:04.7393780Z     omniauth-apple (1.4.0)
+2026-09-23T23:24:04.7393907Z       json-jwt
+2026-09-23T23:24:04.7394017Z       omniauth-oauth2
+2026-09-23T23:24:04.7394248Z     omniauth-facebook (11.0.0)
+2026-09-23T23:24:04.7394382Z       bigdecimal
+2026-09-23T23:24:04.7394501Z       omniauth-oauth2 (>= 1.2, < 3)
+2026-09-23T23:24:04.7394645Z     omniauth-github (2.0.1)
+2026-09-23T23:24:04.7394775Z       omniauth (~> 2.0)
+2026-09-23T23:24:04.7394901Z       omniauth-oauth2 (~> 1.8)
+2026-09-23T23:24:04.7395043Z     omniauth-google-oauth2 (1.2.3)
+2026-09-23T23:24:04.7395185Z       jwt (>= 2.9.2, < 4)
+2026-09-23T23:24:04.7395309Z       oauth2 (~> 2.0)
+2026-09-23T23:24:04.7395461Z       omniauth (~> 2.0)
+2026-09-23T23:24:04.7395658Z       omniauth-oauth2 (~> 1.8)
+2026-09-23T23:24:04.7395847Z     omniauth-mediawiki (0.0.4)
+2026-09-23T23:24:04.7396031Z       jwt (~> 2.0)
+2026-09-23T23:24:04.7396186Z       omniauth-oauth (~> 1.0)
+2026-09-23T23:24:04.7396345Z     omniauth-microsoft_graph (2.2.0)
+2026-09-23T23:24:04.7396582Z       jwt (>= 2.0, < 4.0)
+2026-09-23T23:24:04.7396706Z       omniauth (~> 2.0)
+2026-09-23T23:24:04.7396833Z       omniauth-oauth2 (~> 1.8.0)
+2026-09-23T23:24:04.7396982Z     omniauth-oauth (1.2.1)
+2026-09-23T23:24:04.7397112Z       oauth
+2026-09-23T23:24:04.7397221Z       omniauth (>= 1.0, < 3)
+2026-09-23T23:24:04.7397401Z       rack (>= 1.6.2, < 4)
+2026-09-23T23:24:04.7397588Z     omniauth-oauth2 (1.8.0)
+2026-09-23T23:24:04.7397758Z       oauth2 (>= 1.4, < 3)
+2026-09-23T23:24:04.7397883Z       omniauth (~> 2.0)
+2026-09-23T23:24:04.7398024Z     omniauth-rails_csrf_protection (2.0.1)
+2026-09-23T23:24:04.7398183Z       actionpack (>= 4.2)
+2026-09-23T23:24:04.7398312Z       omniauth (~> 2.0)
+2026-09-23T23:24:04.7398429Z     open3 (0.2.1)
+2026-09-23T23:24:04.7398545Z     open4 (1.3.4)
+2026-09-23T23:24:04.7398673Z     openstreetmap-deadlock_retry (1.3.1)
+2026-09-23T23:24:04.7398832Z     opentelemetry-api (1.11.1)
+2026-09-23T23:24:04.7398973Z       logger
+2026-09-23T23:24:04.7399095Z     opentelemetry-common (0.25.1)
+2026-09-23T23:24:04.7399259Z       opentelemetry-api (~> 1.0)
+2026-09-23T23:24:04.7399424Z     opentelemetry-exporter-otlp (0.36.0)
+2026-09-23T23:24:04.7399598Z       google-protobuf (>= 3.18)
+2026-09-23T23:24:04.7399762Z       googleapis-common-protos-types (~> 1.3)
+2026-09-23T23:24:04.7399930Z       opentelemetry-api (~> 1.1)
+2026-09-23T23:24:04.7400073Z       opentelemetry-common (~> 0.20)
+2026-09-23T23:24:04.7400233Z       opentelemetry-exporter-otlp-common
+2026-09-23T23:24:04.7400390Z       opentelemetry-sdk (~> 1.10)
+2026-09-23T23:24:04.7400544Z       opentelemetry-semantic_conventions
+2026-09-23T23:24:04.7400724Z     opentelemetry-exporter-otlp-common (0.2.0)
+2026-09-23T23:24:04.7400890Z       google-protobuf (>= 3.18)
+2026-09-23T23:24:04.7401045Z       googleapis-common-protos-types (~> 1.3)
+2026-09-23T23:24:04.7401208Z       opentelemetry-api (~> 1.1)
+2026-09-23T23:24:04.7401360Z     opentelemetry-helpers-mysql (0.6.0)
+2026-09-23T23:24:04.7401515Z       opentelemetry-api (~> 1.7)
+2026-09-23T23:24:04.7401666Z       opentelemetry-common (~> 0.21)
+2026-09-23T23:24:04.7401822Z     opentelemetry-helpers-sql (0.4.0)
+2026-09-23T23:24:04.7401974Z       opentelemetry-api (~> 1.7)
+2026-09-23T23:24:04.7402202Z     opentelemetry-helpers-sql-processor (0.5.0)
+2026-09-23T23:24:04.7402568Z       opentelemetry-api (~> 1.0)
+2026-09-23T23:24:04.7402774Z       opentelemetry-common (~> 0.21)
+2026-09-23T23:24:04.7403147Z     opentelemetry-instrumentation-action_mailer (0.8.1)
+2026-09-23T23:24:04.7403434Z       opentelemetry-instrumentation-active_support (~> 0.10)
+2026-09-23T23:24:04.7403659Z     opentelemetry-instrumentation-action_pack (0.18.1)
+2026-09-23T23:24:04.7403864Z       opentelemetry-instrumentation-rack (~> 0.29)
+2026-09-23T23:24:04.7404069Z     opentelemetry-instrumentation-action_view (0.13.0)
+2026-09-23T23:24:04.7404292Z       opentelemetry-instrumentation-active_support (~> 0.10)
+2026-09-23T23:24:04.7404514Z     opentelemetry-instrumentation-active_job (0.13.0)
+2026-09-23T23:24:04.7404713Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7404943Z     opentelemetry-instrumentation-active_model_serializers (0.25.0)
+2026-09-23T23:24:04.7405300Z       opentelemetry-instrumentation-active_support (>= 0.7.0)
+2026-09-23T23:24:04.7405530Z     opentelemetry-instrumentation-active_record (0.13.0)
+2026-09-23T23:24:04.7405737Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7405939Z     opentelemetry-instrumentation-active_storage (0.5.1)
+2026-09-23T23:24:04.7406158Z       opentelemetry-instrumentation-active_support (~> 0.10)
+2026-09-23T23:24:04.7406372Z     opentelemetry-instrumentation-active_support (0.12.1)
+2026-09-23T23:24:04.7406574Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7406759Z     opentelemetry-instrumentation-all (0.96.0)
+2026-09-23T23:24:04.7406984Z       opentelemetry-instrumentation-active_model_serializers (~> 0.25.0)
+2026-09-23T23:24:04.7407228Z       opentelemetry-instrumentation-anthropic (~> 0.5.0)
+2026-09-23T23:24:04.7407517Z       opentelemetry-instrumentation-aws_lambda (~> 0.7.0)
+2026-09-23T23:24:04.7407737Z       opentelemetry-instrumentation-aws_sdk (~> 0.13.0)
+2026-09-23T23:24:04.7407945Z       opentelemetry-instrumentation-bunny (~> 0.25.0)
+2026-09-23T23:24:04.7408161Z       opentelemetry-instrumentation-concurrent_ruby (~> 0.25.0)
+2026-09-23T23:24:04.7408387Z       opentelemetry-instrumentation-dalli (~> 0.30.0)
+2026-09-23T23:24:04.7408596Z       opentelemetry-instrumentation-delayed_job (~> 0.26.0)
+2026-09-23T23:24:04.7408814Z       opentelemetry-instrumentation-ethon (~> 0.29.0)
+2026-09-23T23:24:04.7409018Z       opentelemetry-instrumentation-excon (~> 0.29.0)
+2026-09-23T23:24:04.7409214Z       opentelemetry-instrumentation-faraday (~> 0.33.0)
+2026-09-23T23:24:04.7409417Z       opentelemetry-instrumentation-grape (~> 0.7.0)
+2026-09-23T23:24:04.7409621Z       opentelemetry-instrumentation-graphql (~> 0.32.0)
+2026-09-23T23:24:04.7409817Z       opentelemetry-instrumentation-grpc (~> 0.5.0)
+2026-09-23T23:24:04.7410022Z       opentelemetry-instrumentation-gruf (~> 0.6.0)
+2026-09-23T23:24:04.7410223Z       opentelemetry-instrumentation-http (~> 0.30.0)
+2026-09-23T23:24:04.7410436Z       opentelemetry-instrumentation-http_client (~> 0.29.0)
+2026-09-23T23:24:04.7410640Z       opentelemetry-instrumentation-httpx (~> 0.8.0)
+2026-09-23T23:24:04.7410832Z       opentelemetry-instrumentation-koala (~> 0.24.0)
+2026-09-23T23:24:04.7411026Z       opentelemetry-instrumentation-lmdb (~> 0.26.0)
+2026-09-23T23:24:04.7411218Z       opentelemetry-instrumentation-mongo (~> 0.26.0)
+2026-09-23T23:24:04.7411413Z       opentelemetry-instrumentation-mysql2 (~> 0.34.0)
+2026-09-23T23:24:04.7411618Z       opentelemetry-instrumentation-net_http (~> 0.29.0)
+2026-09-23T23:24:04.7411813Z       opentelemetry-instrumentation-pg (~> 0.37.0)
+2026-09-23T23:24:04.7411999Z       opentelemetry-instrumentation-que (~> 0.13.0)
+2026-09-23T23:24:04.7412194Z       opentelemetry-instrumentation-racecar (~> 0.7.0)
+2026-09-23T23:24:04.7412389Z       opentelemetry-instrumentation-rack (~> 0.31.0)
+2026-09-23T23:24:04.7412584Z       opentelemetry-instrumentation-rails (~> 0.42.0)
+2026-09-23T23:24:04.7412772Z       opentelemetry-instrumentation-rake (~> 0.6.0)
+2026-09-23T23:24:04.7413121Z       opentelemetry-instrumentation-rdkafka (~> 0.10.0)
+2026-09-23T23:24:04.7413327Z       opentelemetry-instrumentation-redis (~> 0.29.0)
+2026-09-23T23:24:04.7413522Z       opentelemetry-instrumentation-resque (~> 0.9.0)
+2026-09-23T23:24:04.7413727Z       opentelemetry-instrumentation-restclient (~> 0.28.0)
+2026-09-23T23:24:04.7413942Z       opentelemetry-instrumentation-ruby_kafka (~> 0.25.0)
+2026-09-23T23:24:04.7414149Z       opentelemetry-instrumentation-sidekiq (~> 0.29.0)
+2026-09-23T23:24:04.7414348Z       opentelemetry-instrumentation-sinatra (~> 0.30.0)
+2026-09-23T23:24:04.7414545Z       opentelemetry-instrumentation-trilogy (~> 0.69.0)
+2026-09-23T23:24:04.7414743Z     opentelemetry-instrumentation-anthropic (0.5.0)
+2026-09-23T23:24:04.7414935Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7415133Z     opentelemetry-instrumentation-aws_lambda (0.7.0)
+2026-09-23T23:24:04.7415328Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7415620Z     opentelemetry-instrumentation-aws_sdk (0.13.0)
+2026-09-23T23:24:04.7415820Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7416010Z     opentelemetry-instrumentation-base (0.26.1)
+2026-09-23T23:24:04.7416182Z       opentelemetry-api (~> 1.7)
+2026-09-23T23:24:04.7416329Z       opentelemetry-common (~> 0.21)
+2026-09-23T23:24:04.7416485Z       opentelemetry-registry (~> 0.1)
+2026-09-23T23:24:04.7416655Z     opentelemetry-instrumentation-bunny (0.25.0)
+2026-09-23T23:24:04.7416851Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7417058Z     opentelemetry-instrumentation-concurrent_ruby (0.25.0)
+2026-09-23T23:24:04.7417263Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7417452Z     opentelemetry-instrumentation-dalli (0.30.0)
+2026-09-23T23:24:04.7417733Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7417931Z     opentelemetry-instrumentation-delayed_job (0.26.0)
+2026-09-23T23:24:04.7418130Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7418318Z     opentelemetry-instrumentation-ethon (0.29.0)
+2026-09-23T23:24:04.7418502Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7418687Z     opentelemetry-instrumentation-excon (0.29.1)
+2026-09-23T23:24:04.7418879Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7419071Z     opentelemetry-instrumentation-faraday (0.33.0)
+2026-09-23T23:24:04.7419261Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7419454Z     opentelemetry-instrumentation-grape (0.7.1)
+2026-09-23T23:24:04.7419645Z       opentelemetry-instrumentation-rack (~> 0.29)
+2026-09-23T23:24:04.7419835Z     opentelemetry-instrumentation-graphql (0.32.0)
+2026-09-23T23:24:04.7420025Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7420213Z     opentelemetry-instrumentation-grpc (0.5.3)
+2026-09-23T23:24:04.7420396Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7420585Z     opentelemetry-instrumentation-gruf (0.6.3)
+2026-09-23T23:24:04.7420769Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7420960Z     opentelemetry-instrumentation-http (0.30.0)
+2026-09-23T23:24:04.7421144Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7421337Z     opentelemetry-instrumentation-http_client (0.29.1)
+2026-09-23T23:24:04.7421536Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7421724Z     opentelemetry-instrumentation-httpx (0.8.0)
+2026-09-23T23:24:04.7421910Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7422094Z     opentelemetry-instrumentation-koala (0.24.0)
+2026-09-23T23:24:04.7422278Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7422462Z     opentelemetry-instrumentation-lmdb (0.26.1)
+2026-09-23T23:24:04.7422650Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7422836Z     opentelemetry-instrumentation-mongo (0.26.0)
+2026-09-23T23:24:04.7423192Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7423429Z     opentelemetry-instrumentation-mysql2 (0.34.0)
+2026-09-23T23:24:04.7423610Z       opentelemetry-helpers-mysql
+2026-09-23T23:24:04.7423764Z       opentelemetry-helpers-sql
+2026-09-23T23:24:04.7423924Z       opentelemetry-helpers-sql-processor
+2026-09-23T23:24:04.7424104Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7424302Z     opentelemetry-instrumentation-net_http (0.29.1)
+2026-09-23T23:24:04.7424499Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7424692Z     opentelemetry-instrumentation-pg (0.37.0)
+2026-09-23T23:24:04.7424864Z       opentelemetry-helpers-sql
+2026-09-23T23:24:04.7425020Z       opentelemetry-helpers-sql-processor
+2026-09-23T23:24:04.7425196Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7425391Z     opentelemetry-instrumentation-que (0.13.0)
+2026-09-23T23:24:04.7425573Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7425866Z     opentelemetry-instrumentation-racecar (0.7.0)
+2026-09-23T23:24:04.7426056Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7426241Z     opentelemetry-instrumentation-rack (0.31.1)
+2026-09-23T23:24:04.7426426Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7426618Z     opentelemetry-instrumentation-rails (0.42.0)
+2026-09-23T23:24:04.7426819Z       opentelemetry-instrumentation-action_mailer (~> 0.7)
+2026-09-23T23:24:04.7427028Z       opentelemetry-instrumentation-action_pack (~> 0.17)
+2026-09-23T23:24:04.7427234Z       opentelemetry-instrumentation-action_view (~> 0.12)
+2026-09-23T23:24:04.7427440Z       opentelemetry-instrumentation-active_job (~> 0.11)
+2026-09-23T23:24:04.7427649Z       opentelemetry-instrumentation-active_record (~> 0.12)
+2026-09-23T23:24:04.7427945Z       opentelemetry-instrumentation-active_storage (~> 0.4)
+2026-09-23T23:24:04.7428164Z       opentelemetry-instrumentation-active_support (~> 0.11)
+2026-09-23T23:24:04.7428391Z       opentelemetry-instrumentation-concurrent_ruby (~> 0.25)
+2026-09-23T23:24:04.7428602Z     opentelemetry-instrumentation-rake (0.6.0)
+2026-09-23T23:24:04.7428785Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7428973Z     opentelemetry-instrumentation-rdkafka (0.10.0)
+2026-09-23T23:24:04.7429163Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7429348Z     opentelemetry-instrumentation-redis (0.29.0)
+2026-09-23T23:24:04.7429533Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7429716Z     opentelemetry-instrumentation-resque (0.9.0)
+2026-09-23T23:24:04.7429898Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7430093Z     opentelemetry-instrumentation-restclient (0.28.0)
+2026-09-23T23:24:04.7430291Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7430488Z     opentelemetry-instrumentation-ruby_kafka (0.25.0)
+2026-09-23T23:24:04.7430678Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7430868Z     opentelemetry-instrumentation-sidekiq (0.29.0)
+2026-09-23T23:24:04.7431056Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7431241Z     opentelemetry-instrumentation-sinatra (0.30.0)
+2026-09-23T23:24:04.7431427Z       opentelemetry-instrumentation-rack (~> 0.29)
+2026-09-23T23:24:04.7431612Z     opentelemetry-instrumentation-trilogy (0.69.0)
+2026-09-23T23:24:04.7431789Z       opentelemetry-helpers-mysql
+2026-09-23T23:24:04.7431942Z       opentelemetry-helpers-sql
+2026-09-23T23:24:04.7432101Z       opentelemetry-helpers-sql-processor
+2026-09-23T23:24:04.7432276Z       opentelemetry-instrumentation-base (~> 0.25)
+2026-09-23T23:24:04.7432460Z       opentelemetry-semantic_conventions (>= 1.8.0)
+2026-09-23T23:24:04.7432634Z     opentelemetry-registry (0.6.3)
+2026-09-23T23:24:04.7432792Z       opentelemetry-api (~> 1.1)
+2026-09-23T23:24:04.7433064Z     opentelemetry-sdk (1.13.1)
+2026-09-23T23:24:04.7433204Z       logger
+2026-09-23T23:24:04.7433324Z       opentelemetry-api (~> 1.1)
+2026-09-23T23:24:04.7433469Z       opentelemetry-common (~> 0.20)
+2026-09-23T23:24:04.7433624Z       opentelemetry-registry (~> 0.2)
+2026-09-23T23:24:04.7433783Z       opentelemetry-semantic_conventions
+2026-09-23T23:24:04.7433956Z     opentelemetry-semantic_conventions (1.44.0)
+2026-09-23T23:24:04.7434127Z       opentelemetry-api (~> 1.0)
+2026-09-23T23:24:04.7434266Z     ostruct (0.6.3)
+2026-09-23T23:24:04.7434384Z     overcommit (0.73.0)
+2026-09-23T23:24:04.7434520Z       childprocess (>= 0.6.3, < 6)
+2026-09-23T23:24:04.7434659Z       iniparse (~> 1.4)
+2026-09-23T23:24:04.7434784Z       rexml (>= 3.4.2)
+2026-09-23T23:24:04.7434906Z     parallel (2.2.0)
+2026-09-23T23:24:04.7435027Z     parser (3.3.12.0)
+2026-09-23T23:24:04.7435145Z       ast (~> 2.4.1)
+2026-09-23T23:24:04.7435261Z       racc
+2026-09-23T23:24:04.7435376Z     pg (1.6.3)
+2026-09-23T23:24:04.7435489Z     popper_js (2.11.8)
+2026-09-23T23:24:04.7435608Z     pp (0.6.4)
+2026-09-23T23:24:04.7435716Z       prettyprint
+2026-09-23T23:24:04.7435932Z     prettyprint (0.2.0)
+2026-09-23T23:24:04.7436067Z     prism (1.9.0)
+2026-09-23T23:24:04.7436190Z     process_executer (4.1.1)
+2026-09-23T23:24:04.7436333Z       track_open_instances (~> 0.1)
+2026-09-23T23:24:04.7436473Z     progress (3.6.0)
+2026-09-23T23:24:04.7436592Z     pstore (0.2.1)
+2026-09-23T23:24:04.7436712Z     public_suffix (7.0.5)
+2026-09-23T23:24:04.7436846Z     puma (8.0.2)
+2026-09-23T23:24:04.7436960Z       nio4r (~> 2.0)
+2026-09-23T23:24:04.7437074Z     quad_tile (1.0.1)
+2026-09-23T23:24:04.7437190Z     racc (1.8.1)
+2026-09-23T23:24:04.7437298Z     rack (3.2.7)
+2026-09-23T23:24:04.7437412Z     rack-cors (3.0.0)
+2026-09-23T23:24:04.7437528Z       logger
+2026-09-23T23:24:04.7437636Z       rack (>= 3.0.14)
+2026-09-23T23:24:04.7437761Z     rack-protection (4.2.1)
+2026-09-23T23:24:04.7437983Z       base64 (>= 0.1.0)
+2026-09-23T23:24:04.7438103Z       logger (>= 1.6.0)
+2026-09-23T23:24:04.7438226Z       rack (>= 3.0.0, < 4)
+2026-09-23T23:24:04.7438359Z     rack-session (2.1.2)
+2026-09-23T23:24:04.7438490Z       base64 (>= 0.1.0)
+2026-09-23T23:24:04.7438607Z       rack (>= 3.0.0)
+2026-09-23T23:24:04.7438723Z     rack-test (2.2.0)
+2026-09-23T23:24:04.7438839Z       rack (>= 1.3)
+2026-09-23T23:24:04.7438961Z     rack-uri_sanitizer (0.0.2)
+2026-09-23T23:24:04.7439094Z     rackup (2.3.1)
+2026-09-23T23:24:04.7439204Z       rack (>= 3)
+2026-09-23T23:24:04.7439316Z     rails (8.1.3.1)
+2026-09-23T23:24:04.7439436Z       actioncable (= 8.1.3.1)
+2026-09-23T23:24:04.7439571Z       actionmailbox (= 8.1.3.1)
+2026-09-23T23:24:04.7439710Z       actionmailer (= 8.1.3.1)
+2026-09-23T23:24:04.7439854Z       actionpack (= 8.1.3.1)
+2026-09-23T23:24:04.7439988Z       actiontext (= 8.1.3.1)
+2026-09-23T23:24:04.7440119Z       actionview (= 8.1.3.1)
+2026-09-23T23:24:04.7440247Z       activejob (= 8.1.3.1)
+2026-09-23T23:24:04.7440385Z       activemodel (= 8.1.3.1)
+2026-09-23T23:24:04.7440521Z       activerecord (= 8.1.3.1)
+2026-09-23T23:24:04.7440656Z       activestorage (= 8.1.3.1)
+2026-09-23T23:24:04.7440799Z       activesupport (= 8.1.3.1)
+2026-09-23T23:24:04.7440930Z       bundler (>= 1.15.0)
+2026-09-23T23:24:04.7441059Z       railties (= 8.1.3.1)
+2026-09-23T23:24:04.7441198Z     rails-controller-testing (1.0.5)
+2026-09-23T23:24:04.7441353Z       actionpack (>= 5.0.1.rc1)
+2026-09-23T23:24:04.7441487Z       actionview (>= 5.0.1.rc1)
+2026-09-23T23:24:04.7441621Z       activesupport (>= 5.0.1.rc1)
+2026-09-23T23:24:04.7441767Z     rails-dom-testing (2.3.0)
+2026-09-23T23:24:04.7441903Z       activesupport (>= 5.0.0)
+2026-09-23T23:24:04.7442032Z       minitest
+2026-09-23T23:24:04.7442142Z       nokogiri (>= 1.6)
+2026-09-23T23:24:04.7442272Z     rails-html-sanitizer (1.7.1)
+2026-09-23T23:24:04.7442414Z       loofah (~> 2.25, >= 2.25.2)
+2026-09-23T23:24:04.7442649Z       nokogiri (>= 1.15.7, != 1.16.7, != 1.16.6, != 1.16.5, != 1.16.4, != 1.16.3, != 1.16.2, != 1.16.1, != 1.16.0.rc1, != 1.16.0)
+2026-09-23T23:24:04.7442892Z     rails-i18n (8.1.0)
+2026-09-23T23:24:04.7443150Z       i18n (>= 0.7, < 2)
+2026-09-23T23:24:04.7443282Z       railties (>= 8.0.0, < 9)
+2026-09-23T23:24:04.7443415Z     rails_param (1.3.1)
+2026-09-23T23:24:04.7443540Z       actionpack (>= 3.2.0)
+2026-09-23T23:24:04.7443673Z       activesupport (>= 3.2.0)
+2026-09-23T23:24:04.7443803Z     railties (8.1.3.1)
+2026-09-23T23:24:04.7443927Z       actionpack (= 8.1.3.1)
+2026-09-23T23:24:04.7444061Z       activesupport (= 8.1.3.1)
+2026-09-23T23:24:04.7444193Z       irb (~> 1.13)
+2026-09-23T23:24:04.7444307Z       rackup (>= 1.0.0)
+2026-09-23T23:24:04.7444425Z       rake (>= 12.2)
+2026-09-23T23:24:04.7444548Z       thor (~> 1.0, >= 1.2.2)
+2026-09-23T23:24:04.7444675Z       tsort (>= 0.2)
+2026-09-23T23:24:04.7444793Z       zeitwerk (~> 2.6)
+2026-09-23T23:24:04.7444913Z     rainbow (3.1.1)
+2026-09-23T23:24:04.7445029Z     rake (13.4.2)
+2026-09-23T23:24:04.7445145Z     rb-fsevent (0.11.2)
+2026-09-23T23:24:04.7445273Z     rb-inotify (0.11.1)
+2026-09-23T23:24:04.7445392Z       ffi (~> 1.0)
+2026-09-23T23:24:04.7445501Z     rbs (4.2.0)
+2026-09-23T23:24:04.7445609Z       logger
+2026-09-23T23:24:04.7445816Z       prism (>= 1.6.0)
+2026-09-23T23:24:04.7445939Z       tsort
+2026-09-23T23:24:04.7446048Z     rchardet (1.10.2)
+2026-09-23T23:24:04.7446169Z     rdoc (8.0.0)
+2026-09-23T23:24:04.7446286Z       erb
+2026-09-23T23:24:04.7446398Z       prism (>= 1.6.0)
+2026-09-23T23:24:04.7446514Z       rbs (>= 4.0.0)
+2026-09-23T23:24:04.7446626Z       tsort
+2026-09-23T23:24:04.7446735Z     regexp_parser (2.12.0)
+2026-09-23T23:24:04.7446866Z     reline (0.7.0)
+2026-09-23T23:24:04.7446984Z       io-console (~> 0.5)
+2026-09-23T23:24:04.7447110Z     rexml (3.4.4)
+2026-09-23T23:24:04.7447221Z     rgeo (3.1.0)
+2026-09-23T23:24:04.7447339Z     rgeo-activerecord (8.1.0)
+2026-09-23T23:24:04.7447484Z       activerecord (>= 8.1, < 8.2)
+2026-09-23T23:24:04.7447625Z       rgeo (>= 3.0)
+2026-09-23T23:24:04.7447737Z     rinku (2.0.6)
+2026-09-23T23:24:04.7447935Z     rotp (6.3.0)
+2026-09-23T23:24:04.7448043Z     rouge (5.1.0)
+2026-09-23T23:24:04.7448155Z       strscan (~> 3.1)
+2026-09-23T23:24:04.7448275Z     rtlcss (0.2.1)
+2026-09-23T23:24:04.7448392Z       mini_racer (>= 0.6.3)
+2026-09-23T23:24:04.7448520Z     rubocop (1.91.0)
+2026-09-23T23:24:04.7448635Z       json (>= 2.3)
+2026-09-23T23:24:04.7448762Z       language_server-protocol (~> 3.17.0.2)
+2026-09-23T23:24:04.7448920Z       lint_roller (~> 1.1.0)
+2026-09-23T23:24:04.7449053Z       parallel (>= 1.10)
+2026-09-23T23:24:04.7449180Z       parser (>= 3.3.0.2)
+2026-09-23T23:24:04.7449307Z       rainbow (>= 2.2.2, < 4.0)
+2026-09-23T23:24:04.7449445Z       regexp_parser (>= 2.9.3, < 3.0)
+2026-09-23T23:24:04.7449594Z       rubocop-ast (>= 1.49.0, < 2.0)
+2026-09-23T23:24:04.7449738Z       ruby-progressbar (~> 1.7)
+2026-09-23T23:24:04.7449890Z       unicode-display_width (>= 2.4.0, < 4.0)
+2026-09-23T23:24:04.7450048Z     rubocop-ast (1.50.0)
+2026-09-23T23:24:04.7450176Z       parser (>= 3.3.7.2)
+2026-09-23T23:24:04.7450302Z       prism (~> 1.7)
+2026-09-23T23:24:04.7450433Z     rubocop-capybara (3.0.0)
+2026-09-23T23:24:04.7450571Z       lint_roller (~> 1.1)
+2026-09-23T23:24:04.7450704Z       rubocop (~> 1.81)
+2026-09-23T23:24:04.7450835Z     rubocop-factory_bot (2.28.0)
+2026-09-23T23:24:04.7450983Z       lint_roller (~> 1.1)
+2026-09-23T23:24:04.7451116Z       rubocop (~> 1.72, >= 1.72.1)
+2026-09-23T23:24:04.7451261Z     rubocop-minitest (0.40.0)
+2026-09-23T23:24:04.7451398Z       lint_roller (~> 1.1)
+2026-09-23T23:24:04.7451526Z       rubocop (>= 1.75.0, < 2.0)
+2026-09-23T23:24:04.7451667Z       rubocop-ast (>= 1.38.0, < 2.0)
+2026-09-23T23:24:04.7451815Z     rubocop-performance (1.27.0)
+2026-09-23T23:24:04.7451953Z       lint_roller (~> 1.1)
+2026-09-23T23:24:04.7452085Z       rubocop (>= 1.89.0, < 2.0)
+2026-09-23T23:24:04.7452223Z       rubocop-ast (>= 1.47.1, < 2.0)
+2026-09-23T23:24:04.7452366Z     rubocop-rails (2.37.0)
+2026-09-23T23:24:04.7452500Z       activesupport (>= 4.2.0)
+2026-09-23T23:24:04.7452641Z       lint_roller (~> 1.1)
+2026-09-23T23:24:04.7452769Z       rack (>= 1.1)
+2026-09-23T23:24:04.7452886Z       rubocop (>= 1.89.0, < 2.0)
+2026-09-23T23:24:04.7453214Z       rubocop-ast (>= 1.44.0, < 2.0)
+2026-09-23T23:24:04.7453370Z     rubocop-rake (0.7.1)
+2026-09-23T23:24:04.7453500Z       lint_roller (~> 1.1)
+2026-09-23T23:24:04.7453625Z       rubocop (>= 1.72.1)
+2026-09-23T23:24:04.7453761Z     ruby-progressbar (1.13.0)
+2026-09-23T23:24:04.7453896Z     ruby-vips (2.3.0)
+2026-09-23T23:24:04.7454017Z       ffi (~> 1.12)
+2026-09-23T23:24:04.7454127Z       logger
+2026-09-23T23:24:04.7454239Z     rubyzip (3.7.0)
+2026-09-23T23:24:04.7454358Z     sanitize (7.0.0)
+2026-09-23T23:24:04.7454507Z       crass (~> 1.0.2)
+2026-09-23T23:24:04.7454822Z       nokogiri (>= 1.16.8)
+2026-09-23T23:24:04.7455030Z     sass-embedded (1.64.2)
+2026-09-23T23:24:04.7455234Z       google-protobuf (~> 3.23)
+2026-09-23T23:24:04.7455475Z       rake (>= 13.0.0)
+2026-09-23T23:24:04.7455666Z     sawyer (0.9.3)
+2026-09-23T23:24:04.7455881Z       addressable (>= 2.3.5)
+2026-09-23T23:24:04.7456137Z       faraday (>= 0.17.3, < 3)
+2026-09-23T23:24:04.7456343Z     securerandom (0.4.1)
+2026-09-23T23:24:04.7456692Z     selenium-webdriver (4.49.0)
+2026-09-23T23:24:04.7456963Z       base64 (~> 0.2)
+2026-09-23T23:24:04.7457140Z       logger (~> 1.4)
+2026-09-23T23:24:04.7457378Z       rexml (~> 3.2, >= 3.2.5)
+2026-09-23T23:24:04.7457586Z       rubyzip (>= 1.2.2, < 4.0)
+2026-09-23T23:24:04.7457811Z       websocket (~> 1.0)
+2026-09-23T23:24:04.7458024Z     sentry-delayed_job (7.0.0)
+2026-09-23T23:24:04.7458271Z       delayed_job (>= 4.0)
+2026-09-23T23:24:04.7458508Z       sentry-ruby (~> 7.0.0)
+2026-09-23T23:24:04.7458717Z     sentry-rails (7.0.0)
+2026-09-23T23:24:04.7472764Z       railties (>= 5.2.0)
+2026-09-23T23:24:04.7473171Z       sentry-ruby (~> 7.0.0)
+2026-09-23T23:24:04.7473402Z     sentry-ruby (7.0.0)
+2026-09-23T23:24:04.7473623Z       bigdecimal
+2026-09-23T23:24:04.7473829Z       concurrent-ruby (~> 1.0, >= 1.0.2)
+2026-09-23T23:24:04.7474227Z       logger
+2026-09-23T23:24:04.7474393Z     simplecov (1.3.0)
+2026-09-23T23:24:04.7474606Z     simplecov-lcov (0.9.0)
+2026-09-23T23:24:04.7474799Z     simpleidn (0.3.0)
+2026-09-23T23:24:04.7474981Z     smart_properties (1.17.0)
+2026-09-23T23:24:04.7475118Z     snaky_hash (2.0.7)
+2026-09-23T23:24:04.7475245Z       hashie (>= 0.1.0, < 6)
+2026-09-23T23:24:04.7475385Z       version_gem (~> 1.1, >= 1.1.14)
+2026-09-23T23:24:04.7475532Z     sprockets (4.4.1)
+2026-09-23T23:24:04.7475661Z       concurrent-ruby (~> 1.1)
+2026-09-23T23:24:04.7475796Z       logger
+2026-09-23T23:24:04.7475910Z       rack (>= 2.2.4, < 4)
+2026-09-23T23:24:04.7476047Z     sprockets-exporters_pack (0.1.2)
+2026-09-23T23:24:04.7476200Z       brotli (>= 0.2.0)
+2026-09-23T23:24:04.7476328Z       sprockets (>= 4.0.0.beta3)
+2026-09-23T23:24:04.7476469Z     sprockets-rails (3.5.2)
+2026-09-23T23:24:04.7476605Z       actionpack (>= 6.1)
+2026-09-23T23:24:04.7476739Z       activesupport (>= 6.1)
+2026-09-23T23:24:04.7476884Z       sprockets (>= 3.0.0)
+2026-09-23T23:24:04.7477026Z     strong_migrations (2.8.0)
+2026-09-23T23:24:04.7477166Z       activerecord (>= 7.2)
+2026-09-23T23:24:04.7477295Z     strscan (3.1.8)
+2026-09-23T23:24:04.7477421Z     teaspoon (1.4.0)
+2026-09-23T23:24:04.7477546Z       railties (>= 5.0)
+2026-09-23T23:24:04.7477685Z     teaspoon-mocha (2.3.3)
+2026-09-23T23:24:04.7477819Z       teaspoon (>= 1.0.0)
+2026-09-23T23:24:04.7477955Z     terminal-table (4.0.0)
+2026-09-23T23:24:04.7478096Z       unicode-display_width (>= 1.1.1, < 4)
+2026-09-23T23:24:04.7478253Z     terser (1.2.8)
+2026-09-23T23:24:04.7478372Z       execjs (>= 0.3.0, < 3)
+2026-09-23T23:24:04.7478504Z     thor (1.5.0)
+2026-09-23T23:24:04.7478622Z     tilt (2.9.0)
+2026-09-23T23:24:04.7478741Z     timeout (0.6.1)
+2026-09-23T23:24:04.7478870Z     track_open_instances (0.1.15)
+2026-09-23T23:24:04.7479009Z     tsort (0.2.0)
+2026-09-23T23:24:04.7479127Z     turbo-rails (2.0.23)
+2026-09-23T23:24:04.7479257Z       actionpack (>= 7.1.0)
+2026-09-23T23:24:04.7479393Z       railties (>= 7.1.0)
+2026-09-23T23:24:04.7479516Z     tzinfo (2.0.6)
+2026-09-23T23:24:04.7479637Z       concurrent-ruby (~> 1.0)
+2026-09-23T23:24:04.7479779Z     unicode-display_width (3.3.0)
+2026-09-23T23:24:04.7479923Z       unicode-emoji (~> 4.3)
+2026-09-23T23:24:04.7480056Z     unicode-emoji (4.3.0)
+2026-09-23T23:24:04.7480179Z     uri (0.13.3)
+2026-09-23T23:24:04.7480294Z     useragent (0.16.11)
+2026-09-23T23:24:04.7480428Z     validates_email_format_of (1.8.2)
+2026-09-23T23:24:04.7480574Z       i18n (>= 0.8.0)
+2026-09-23T23:24:04.7480696Z       simpleidn
+2026-09-23T23:24:04.7480810Z     vendorer (0.2.0)
+2026-09-23T23:24:04.7480937Z     version_gem (1.1.15)
+2026-09-23T23:24:04.7481062Z     webmock (3.26.4)
+2026-09-23T23:24:04.7481186Z       addressable (>= 2.8.0)
+2026-09-23T23:24:04.7481317Z       crack (>= 0.3.2)
+2026-09-23T23:24:04.7481443Z       hashdiff (>= 0.4.0, < 2.0.0)
+2026-09-23T23:24:04.7481582Z     webrick (1.9.2)
+2026-09-23T23:24:04.7481700Z     websocket (1.2.11)
+2026-09-23T23:24:04.7481833Z     websocket-driver (0.8.2)
+2026-09-23T23:24:04.7481960Z       base64
+2026-09-23T23:24:04.7482079Z       websocket-extensions (>= 0.1.0)
+2026-09-23T23:24:04.7482334Z     websocket-extensions (0.1.5)
+2026-09-23T23:24:04.7482472Z     xpath (3.2.0)
+2026-09-23T23:24:04.7482586Z       nokogiri (~> 1.8)
+2026-09-23T23:24:04.7482705Z     zeitwerk (2.8.3)
+2026-09-23T23:24:04.7482782Z 
+2026-09-23T23:24:04.7482832Z PLATFORMS
+2026-09-23T23:24:04.7483082Z   ruby
+2026-09-23T23:24:04.7483149Z 
+2026-09-23T23:24:04.7483200Z DEPENDENCIES
+2026-09-23T23:24:04.7483303Z   aasm
+2026-09-23T23:24:04.7483412Z   actionpack-page_caching
+2026-09-23T23:24:04.7483541Z   active_record_union
+2026-09-23T23:24:04.7483664Z   activerecord-import
+2026-09-23T23:24:04.7483789Z   activerecord-postgis
+2026-09-23T23:24:04.7483910Z   addressable
+2026-09-23T23:24:04.7484017Z   annotaterb
+2026-09-23T23:24:04.7484122Z   argon2
+2026-09-23T23:24:04.7484230Z   autoprefixer-rails
+2026-09-23T23:24:04.7484370Z   aws-sdk-s3
+2026-09-23T23:24:04.7484572Z   benchmark
+2026-09-23T23:24:04.7484677Z   better_errors
+2026-09-23T23:24:04.7484790Z   binding_of_caller
+2026-09-23T23:24:04.7484903Z   bootsnap
+2026-09-23T23:24:04.7485007Z   bootstrap
+2026-09-23T23:24:04.7485119Z   bootstrap_form
+2026-09-23T23:24:04.7485230Z   brakeman
+2026-09-23T23:24:04.7485333Z   bzip2-ffi
+2026-09-23T23:24:04.7485434Z   cancancan
+2026-09-23T23:24:04.7485546Z   canonical-rails!
+2026-09-23T23:24:04.7485661Z   capybara
+2026-09-23T23:24:04.7485763Z   cgi
+2026-09-23T23:24:04.7485866Z   config
+2026-09-23T23:24:04.7485971Z   connection_pool
+2026-09-23T23:24:04.7486083Z   dalli
+2026-09-23T23:24:04.7486180Z   danger
+2026-09-23T23:24:04.7486285Z   danger-auto_label
+2026-09-23T23:24:04.7486403Z   dartsass-sprockets
+2026-09-23T23:24:04.7486525Z   database_consistency
+2026-09-23T23:24:04.7486639Z   debug
+2026-09-23T23:24:04.7486741Z   debug_inspector
+2026-09-23T23:24:04.7486859Z   delayed_job_active_record
+2026-09-23T23:24:04.7486985Z   digest
+2026-09-23T23:24:04.7487088Z   doorkeeper
+2026-09-23T23:24:04.7487205Z   doorkeeper-i18n
+2026-09-23T23:24:04.7487328Z   doorkeeper-openid_connect
+2026-09-23T23:24:04.7487461Z   dry-validation
+2026-09-23T23:24:04.7487569Z   erb_lint
+2026-09-23T23:24:04.7487679Z   factory_bot_rails
+2026-09-23T23:24:04.7487790Z   faraday
+2026-09-23T23:24:04.7487893Z   ffi-libarchive
+2026-09-23T23:24:04.7488004Z   frozen_record
+2026-09-23T23:24:04.7488115Z   gd2-ffij!
+2026-09-23T23:24:04.7488216Z   herb
+2026-09-23T23:24:04.7488317Z   htmlentities
+2026-09-23T23:24:04.7488430Z   http_accept_language
+2026-09-23T23:24:04.7488547Z   i18n-js
+2026-09-23T23:24:04.7488651Z   i18n-tasks
+2026-09-23T23:24:04.7488757Z   image_optim
+2026-09-23T23:24:04.7488867Z   image_optim_rails
+2026-09-23T23:24:04.7488982Z   image_processing
+2026-09-23T23:24:04.7489094Z   inline_svg
+2026-09-23T23:24:04.7489197Z   jbuilder
+2026-09-23T23:24:04.7489302Z   jquery-rails
+2026-09-23T23:24:04.7489409Z   json (< 3.0.0)
+2026-09-23T23:24:04.7489515Z   jwt
+2026-09-23T23:24:04.7489616Z   kramdown
+2026-09-23T23:24:04.7489725Z   libxml-ruby
+2026-09-23T23:24:04.7489831Z   listen
+2026-09-23T23:24:04.7489931Z   marcel
+2026-09-23T23:24:04.7490078Z   maxminddb
+2026-09-23T23:24:04.7490180Z   minitest
+2026-09-23T23:24:04.7490288Z   minitest-focus
+2026-09-23T23:24:04.7490401Z   minitest-mock
+2026-09-23T23:24:04.7490509Z   noticed
+2026-09-23T23:24:04.7490609Z   omniauth
+2026-09-23T23:24:04.7490713Z   omniauth-apple
+2026-09-23T23:24:04.7490828Z   omniauth-facebook
+2026-09-23T23:24:04.7490944Z   omniauth-github
+2026-09-23T23:24:04.7491065Z   omniauth-google-oauth2
+2026-09-23T23:24:04.7491195Z   omniauth-mediawiki
+2026-09-23T23:24:04.7491322Z   omniauth-microsoft_graph
+2026-09-23T23:24:04.7491465Z   omniauth-rails_csrf_protection
+2026-09-23T23:24:04.7491510Z   open3
+2026-09-23T23:24:04.7491573Z   openstreetmap-deadlock_retry
+2026-09-23T23:24:04.7491633Z   opentelemetry-exporter-otlp
+2026-09-23T23:24:04.7491700Z   opentelemetry-instrumentation-all
+2026-09-23T23:24:04.7491749Z   opentelemetry-sdk
+2026-09-23T23:24:04.7491798Z   overcommit
+2026-09-23T23:24:04.7491845Z   pg
+2026-09-23T23:24:04.7491891Z   puma
+2026-09-23T23:24:04.7491937Z   quad_tile
+2026-09-23T23:24:04.7491983Z   rack-cors
+2026-09-23T23:24:04.7492034Z   rack-uri_sanitizer
+2026-09-23T23:24:04.7492176Z   rackup
+2026-09-23T23:24:04.7492226Z   rails (~> 8.1.0)
+2026-09-23T23:24:04.7492280Z   rails-controller-testing
+2026-09-23T23:24:04.7492328Z   rails-i18n
+2026-09-23T23:24:04.7492373Z   rails_param
+2026-09-23T23:24:04.7492419Z   rexml
+2026-09-23T23:24:04.7492462Z   rinku
+2026-09-23T23:24:04.7492508Z   rotp
+2026-09-23T23:24:04.7492556Z   rtlcss
+2026-09-23T23:24:04.7492600Z   rubocop
+2026-09-23T23:24:04.7492651Z   rubocop-capybara
+2026-09-23T23:24:04.7492701Z   rubocop-factory_bot
+2026-09-23T23:24:04.7492752Z   rubocop-minitest
+2026-09-23T23:24:04.7492804Z   rubocop-performance
+2026-09-23T23:24:04.7492855Z   rubocop-rails
+2026-09-23T23:24:04.7492902Z   rubocop-rake
+2026-09-23T23:24:04.7493095Z   ruby-vips
+2026-09-23T23:24:04.7493166Z   sanitize
+2026-09-23T23:24:04.7493219Z   sass-embedded (~> 1.64.0)
+2026-09-23T23:24:04.7493356Z   selenium-webdriver
+2026-09-23T23:24:04.7493405Z   sentry-delayed_job
+2026-09-23T23:24:04.7493453Z   sentry-rails
+2026-09-23T23:24:04.7493498Z   sentry-ruby
+2026-09-23T23:24:04.7493552Z   simplecov
+2026-09-23T23:24:04.7493600Z   simplecov-lcov
+2026-09-23T23:24:04.7493658Z   sprockets-exporters_pack
+2026-09-23T23:24:04.7493707Z   strong_migrations
+2026-09-23T23:24:04.7493752Z   teaspoon
+2026-09-23T23:24:04.7493801Z   teaspoon-mocha
+2026-09-23T23:24:04.7493845Z   terser
+2026-09-23T23:24:04.7493891Z   timeout
+2026-09-23T23:24:04.7493936Z   turbo-rails
+2026-09-23T23:24:04.7493992Z   unicode-display_width
+2026-09-23T23:24:04.7494036Z   uri (< 1.0.0)
+2026-09-23T23:24:04.7494090Z   validates_email_format_of
+2026-09-23T23:24:04.7494136Z   vendorer
+2026-09-23T23:24:04.7494180Z   webmock
+2026-09-23T23:24:04.7494226Z   webrick
+2026-09-23T23:24:04.7494231Z 
+2026-09-23T23:24:04.7494276Z BUNDLED WITH
+2026-09-23T23:24:04.7494321Z   4.0.3
+2026-09-23T23:24:04.7494848Z ##[endgroup]
+2026-09-23T23:24:04.7495426Z Cache key: setup-ruby-bundler-cache-v6-ubuntu-24.04-x64-ruby-3.3.12-wd-/home/runner/work/openstreetmap-website/openstreetmap-website-with--without--only--Gemfile.lock-3b5296698cc816d058dbf1abeba876360812d212b8ce198e9a3c40c00a2a889a
+2026-09-23T23:24:04.9293783Z Cache hit for restore-key: setup-ruby-bundler-cache-v6-ubuntu-24.04-x64-ruby-3.3.12-wd-/home/runner/work/openstreetmap-website/openstreetmap-website-with--without--only--Gemfile.lock-68f0cca05439d5cb4333188f9b6e4907562dad392e771fdd3a02ccb9bef63720
+2026-09-23T23:24:06.1752294Z Received 29360128 of 272727982 (10.8%), 28.0 MBs/sec
+2026-09-23T23:24:07.1785451Z Received 130023424 of 272727982 (47.7%), 62.0 MBs/sec
+2026-09-23T23:24:08.1774502Z Received 255852544 of 272727982 (93.8%), 81.3 MBs/sec
+2026-09-23T23:24:09.0653985Z Received 272727982 of 272727982 (100.0%), 66.8 MBs/sec
+2026-09-23T23:24:09.0654586Z Cache Size: ~260 MB (272727982 B)
+2026-09-23T23:24:09.0729875Z [command]/usr/bin/tar -xf /home/runner/work/_temp/2dc56985-f5f6-4955-a189-4da68fa32d9c/cache.tzst -P -C /home/runner/work/openstreetmap-website/openstreetmap-website --use-compress-program unzstd
+2026-09-23T23:24:10.2090498Z Cache restored successfully
+2026-09-23T23:24:10.2206158Z Found cache for key: setup-ruby-bundler-cache-v6-ubuntu-24.04-x64-ruby-3.3.12-wd-/home/runner/work/openstreetmap-website/openstreetmap-website-with--without--only--Gemfile.lock-68f0cca05439d5cb4333188f9b6e4907562dad392e771fdd3a02ccb9bef63720
+2026-09-23T23:24:10.2216508Z [command]/opt/hostedtoolcache/Ruby/3.3.12/x64/bin/bundle install --jobs 4
+2026-09-23T23:24:13.2579952Z Fetching gem metadata from https://rubygems.org/........
+2026-09-23T23:24:13.3164044Z Fetching io-console 0.9.4
+2026-09-23T23:24:13.3305595Z Fetching aws-partitions 1.1289.0
+2026-09-23T23:24:13.3335899Z Fetching unicode-emoji 4.3.0
+2026-09-23T23:24:13.3376156Z Fetching rubyzip 3.7.0
+2026-09-23T23:24:13.3838755Z Installing io-console 0.9.4 with native extensions
+2026-09-23T23:24:13.3871552Z Installing aws-partitions 1.1289.0
+2026-09-23T23:24:13.4711836Z Fetching net-protocol 0.4.0
+2026-09-23T23:24:13.4771562Z Installing rubyzip 3.7.0
+2026-09-23T23:24:13.4793645Z Installing unicode-emoji 4.3.0
+2026-09-23T23:24:13.4848394Z Installing net-protocol 0.4.0
+2026-09-23T23:24:13.5072637Z Fetching opentelemetry-sdk 1.13.1
+2026-09-23T23:24:13.5227618Z Fetching faraday 2.14.4
+2026-09-23T23:24:13.5236697Z Installing opentelemetry-sdk 1.13.1
+2026-09-23T23:24:13.5329838Z Fetching opentelemetry-instrumentation-net_http 0.29.1
+2026-09-23T23:24:13.5399152Z Installing faraday 2.14.4
+2026-09-23T23:24:13.5465368Z Installing opentelemetry-instrumentation-net_http 0.29.1
+2026-09-23T23:24:13.5544670Z Fetching unicode-display_width 3.3.0
+2026-09-23T23:24:13.5598310Z Fetching aws-sdk-s3 1.232.1
+2026-09-23T23:24:13.5671385Z Installing unicode-display_width 3.3.0
+2026-09-23T23:24:13.5724287Z Fetching annotaterb 4.25.0
+2026-09-23T23:24:13.5736127Z Fetching database_consistency 3.0.12
+2026-09-23T23:24:13.6174058Z Installing annotaterb 4.25.0
+2026-09-23T23:24:13.6271157Z Installing aws-sdk-s3 1.232.1
+2026-09-23T23:24:13.6288564Z Installing database_consistency 3.0.12
+2026-09-23T23:24:13.7264662Z Fetching faraday-http-cache 2.8.0
+2026-09-23T23:24:13.7755891Z Installing faraday-http-cache 2.8.0
+2026-09-23T23:24:16.2011980Z Bundle complete! 122 Gemfile dependencies, 333 gems now installed.
+2026-09-23T23:24:16.2012400Z Bundled gems are installed into `./vendor/bundle`
+2026-09-23T23:24:16.2012704Z Post-install message from database_consistency:
+2026-09-23T23:24:16.2012908Z 
+2026-09-23T23:24:16.2013172Z Thank you for using the gem!
+2026-09-23T23:24:16.2013315Z 
+2026-09-23T23:24:16.2013565Z If the project helps you or your organization, I would be very grateful if you contribute or donate.
+2026-09-23T23:24:16.2014091Z Your support is an incredible motivation and the biggest reward for my hard work.
+2026-09-23T23:24:16.2014402Z 
+2026-09-23T23:24:16.2014564Z https://github.com/djezzzl/database_consistency#contributing
+2026-09-23T23:24:16.2014938Z https://opencollective.com/database_consistency#support
+2026-09-23T23:24:16.2015347Z 
+2026-09-23T23:24:16.2015439Z Thank you for your attention,
+2026-09-23T23:24:16.2015668Z Evgeniy Demin
+2026-09-23T23:24:16.2015783Z 
+2026-09-23T23:24:16.2019742Z 9 installed gems you directly depend on are looking for funding.
+2026-09-23T23:24:16.2020026Z   Run `bundle fund` for details
+2026-09-23T23:24:16.2673709Z [command]/opt/hostedtoolcache/Ruby/3.3.12/x64/bin/bundle clean
+2026-09-23T23:24:16.4883859Z Removing annotaterb (4.24.0)
+2026-09-23T23:24:16.4920846Z Removing aws-partitions (1.1287.0)
+2026-09-23T23:24:16.4927326Z Removing aws-sdk-s3 (1.232.0)
+2026-09-23T23:24:16.4969848Z Removing database_consistency (3.0.11)
+2026-09-23T23:24:16.5000525Z Removing faraday (2.14.3)
+2026-09-23T23:24:16.5023718Z Removing faraday-http-cache (2.7.0)
+2026-09-23T23:24:16.5033125Z Removing io-console (0.9.3)
+2026-09-23T23:24:16.5040649Z Removing net-protocol (0.3.0)
+2026-09-23T23:24:16.5042730Z Removing opentelemetry-instrumentation-net_http (0.29.0)
+2026-09-23T23:24:16.5049530Z Removing opentelemetry-sdk (1.13.0)
+2026-09-23T23:24:16.5060017Z Removing rubyzip (3.6.0)
+2026-09-23T23:24:16.5077615Z Removing unicode-display_width (3.2.0)
+2026-09-23T23:24:16.5081803Z Removing unicode-emoji (4.2.0)
+2026-09-23T23:24:16.5183278Z Saving cache
+2026-09-23T23:24:16.5284513Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/openstreetmap-website/openstreetmap-website --files-from manifest.txt --use-compress-program zstdmt
+2026-09-23T23:24:18.8604031Z Sent 4375897 of 272811353 (1.6%), 4.2 MBs/sec
+2026-09-23T23:24:19.8567677Z Sent 205702489 of 272811353 (75.4%), 98.1 MBs/sec
+2026-09-23T23:24:19.9810862Z Sent 272811353 of 272811353 (100.0%), 122.5 MBs/sec
+2026-09-23T23:24:20.2567415Z Took  15.73 seconds
+2026-09-23T23:24:20.2706390Z ##[group]Run cp config/github.database.yml config/database.yml
+2026-09-23T23:24:20.2706713Z [36;1mcp config/github.database.yml config/database.yml[0m
+2026-09-23T23:24:20.2706947Z [36;1mcp config/example.storage.yml config/storage.yml[0m
+2026-09-23T23:24:20.2950930Z shell: /usr/bin/bash -e {0}
+2026-09-23T23:24:20.2951108Z env:
+2026-09-23T23:24:20.2951225Z   ruby: 3.3
+2026-09-23T23:24:20.2951341Z   RAILS_ENV: test
+2026-09-23T23:24:20.2951465Z ##[endgroup]
+2026-09-23T23:24:20.3114630Z ##[group]Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+2026-09-23T23:24:20.3114859Z with:
+2026-09-23T23:24:20.3114974Z   cache: yarn
+2026-09-23T23:24:20.3115095Z   check-latest: false
+2026-09-23T23:24:20.3116660Z   token: ***
+2026-09-23T23:24:20.3116787Z   package-manager-cache: true
+2026-09-23T23:24:20.3116935Z env:
+2026-09-23T23:24:20.3117043Z   ruby: 3.3
+2026-09-23T23:24:20.3117158Z   RAILS_ENV: test
+2026-09-23T23:24:20.3117282Z ##[endgroup]
+2026-09-23T23:24:20.3913615Z ##[group]Environment details
+2026-09-23T23:24:20.7100778Z node: v22.23.2
+2026-09-23T23:24:20.7100984Z npm: 10.9.8
+2026-09-23T23:24:20.7101101Z yarn: 1.22.22
+2026-09-23T23:24:20.7101596Z ##[endgroup]
+2026-09-23T23:24:20.7115557Z [command]/usr/local/bin/yarn --version
+2026-09-23T23:24:20.7920131Z 1.22.22
+2026-09-23T23:24:20.7992445Z [command]/usr/local/bin/yarn cache dir
+2026-09-23T23:24:20.8945624Z /home/runner/.cache/yarn/v6
+2026-09-23T23:24:20.9104500Z [command]/usr/local/bin/yarn config get enableGlobalCache
+2026-09-23T23:24:21.0014978Z undefined
+2026-09-23T23:24:21.1978045Z Cache hit for: node-cache-Linux-x64-yarn-24f4ec04713fe5a8a2579464daa66c3833e7c3b11a34b1b0a3785bea2f5e7413
+2026-09-23T23:24:22.4320727Z Received 33554432 of 111640702 (30.1%), 32.0 MBs/sec
+2026-09-23T23:24:22.9419998Z Received 111640702 of 111640702 (100.0%), 70.5 MBs/sec
+2026-09-23T23:24:22.9420547Z Cache Size: ~106 MB (111640702 B)
+2026-09-23T23:24:22.9467473Z [command]/usr/bin/tar -xf /home/runner/work/_temp/18db12ff-e009-4a79-8356-3e5445de6301/cache.tzst -P -C /home/runner/work/openstreetmap-website/openstreetmap-website --use-compress-program unzstd
+2026-09-23T23:24:23.6112057Z Cache restored successfully
+2026-09-23T23:24:23.6164933Z Cache restored from key: node-cache-Linux-x64-yarn-24f4ec04713fe5a8a2579464daa66c3833e7c3b11a34b1b0a3785bea2f5e7413
+2026-09-23T23:24:23.6320382Z ##[group]Run bin/yarn install
+2026-09-23T23:24:23.6320577Z [36;1mbin/yarn install[0m
+2026-09-23T23:24:23.6373964Z shell: /usr/bin/bash -e {0}
+2026-09-23T23:24:23.6374125Z env:
+2026-09-23T23:24:23.6374252Z   ruby: 3.3
+2026-09-23T23:24:23.6374371Z   RAILS_ENV: test
+2026-09-23T23:24:23.6374503Z ##[endgroup]
+2026-09-23T23:24:23.7785704Z yarn install v1.22.22
+2026-09-23T23:24:23.8036018Z [1/4] Resolving packages...
+2026-09-23T23:24:23.8395123Z [2/4] Fetching packages...
+2026-09-23T23:24:23.9138184Z [3/4] Linking dependencies...
+2026-09-23T23:24:23.9156127Z warning "@herb-tools/linter > @herb-tools/rewriter > @herb-tools/tailwind-class-sorter@0.10.4" has unmet peer dependency "tailwindcss@^3.0 || ^4.0".
+2026-09-23T23:24:23.9182306Z warning Workspaces can only be enabled in private projects.
+2026-09-23T23:24:23.9194624Z warning Workspaces can only be enabled in private projects.
+2026-09-23T23:24:23.9199689Z warning Workspaces can only be enabled in private projects.
+2026-09-23T23:24:23.9200510Z warning Workspaces can only be enabled in private projects.
+2026-09-23T23:24:23.9214132Z warning Workspaces can only be enabled in private projects.
+2026-09-23T23:24:26.7474248Z [4/4] Building fresh packages...
+2026-09-23T23:24:26.7555958Z Done in 2.98s.
+2026-09-23T23:24:26.7784991Z ##[group]Run sudo apt-get -yqq update
+2026-09-23T23:24:26.7785218Z [36;1msudo apt-get -yqq update[0m
+2026-09-23T23:24:26.7785423Z [36;1msudo apt-get -yqq install postgresql-postgis libvips-dev[0m
+2026-09-23T23:24:26.7836654Z shell: /usr/bin/bash -e {0}
+2026-09-23T23:24:26.7836810Z env:
+2026-09-23T23:24:26.7836932Z   ruby: 3.3
+2026-09-23T23:24:26.7837050Z   RAILS_ENV: test
+2026-09-23T23:24:26.7837177Z ##[endgroup]
+2026-09-23T23:24:47.5707706Z Selecting previously unselected package libmagickcore-6-headers.
+2026-09-23T23:24:47.5963308Z (Reading database ... 
+2026-09-23T23:24:47.5963553Z (Reading database ... 5%
+2026-09-23T23:24:47.5963714Z (Reading database ... 10%
+2026-09-23T23:24:47.5963900Z (Reading database ... 15%
+2026-09-23T23:24:47.5964083Z (Reading database ... 20%
+2026-09-23T23:24:47.5964225Z (Reading database ... 25%
+2026-09-23T23:24:47.5964376Z (Reading database ... 30%
+2026-09-23T23:24:47.5964524Z (Reading database ... 35%
+2026-09-23T23:24:47.5964717Z (Reading database ... 40%
+2026-09-23T23:24:47.5964958Z (Reading database ... 45%
+2026-09-23T23:24:47.5965230Z (Reading database ... 50%
+2026-09-23T23:24:47.6043463Z (Reading database ... 55%
+2026-09-23T23:24:47.9266519Z (Reading database ... 60%
+2026-09-23T23:24:48.1214250Z (Reading database ... 65%
+2026-09-23T23:24:48.3326926Z (Reading database ... 70%
+2026-09-23T23:24:48.5433864Z (Reading database ... 75%
+2026-09-23T23:24:48.9523979Z (Reading database ... 80%
+2026-09-23T23:24:49.3872522Z (Reading database ... 85%
+2026-09-23T23:24:49.8277322Z (Reading database ... 90%
+2026-09-23T23:24:50.2365048Z (Reading database ... 95%
+2026-09-23T23:24:50.2365359Z (Reading database ... 100%
+2026-09-23T23:24:50.2366287Z (Reading database ... 202190 files and directories currently installed.)
+2026-09-23T23:24:50.2403870Z Preparing to unpack .../000-libmagickcore-6-headers_8%3a6.9.12.98+dfsg1-5.2build2_all.deb ...
+2026-09-23T23:24:50.2420179Z Unpacking libmagickcore-6-headers (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:24:50.2685911Z Selecting previously unselected package libmagickcore-6-arch-config:amd64.
+2026-09-23T23:24:50.2784617Z Preparing to unpack .../001-libmagickcore-6-arch-config_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+2026-09-23T23:24:50.2790855Z Unpacking libmagickcore-6-arch-config:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:24:50.2964322Z Selecting previously unselected package libdjvulibre-text.
+2026-09-23T23:24:50.3064118Z Preparing to unpack .../002-libdjvulibre-text_3.5.28-2ubuntu0.24.04.2_all.deb ...
+2026-09-23T23:24:50.3070092Z Unpacking libdjvulibre-text (3.5.28-2ubuntu0.24.04.2) ...
+2026-09-23T23:24:50.4356261Z Selecting previously unselected package libdjvulibre21:amd64.
+2026-09-23T23:24:50.4456512Z Preparing to unpack .../003-libdjvulibre21_3.5.28-2ubuntu0.24.04.2_amd64.deb ...
+2026-09-23T23:24:50.4470024Z Unpacking libdjvulibre21:amd64 (3.5.28-2ubuntu0.24.04.2) ...
+2026-09-23T23:24:50.4818119Z Preparing to unpack .../004-gir1.2-glib-2.0_2.80.0-6ubuntu3.9_amd64.deb ...
+2026-09-23T23:24:50.4837674Z Unpacking gir1.2-glib-2.0:amd64 (2.80.0-6ubuntu3.9) over (2.80.0-6ubuntu3.8) ...
+2026-09-23T23:24:50.5155403Z Preparing to unpack .../005-libglib2.0-data_2.80.0-6ubuntu3.9_all.deb ...
+2026-09-23T23:24:50.5170540Z Unpacking libglib2.0-data (2.80.0-6ubuntu3.9) over (2.80.0-6ubuntu3.8) ...
+2026-09-23T23:24:50.5448984Z Preparing to unpack .../006-libglib2.0-bin_2.80.0-6ubuntu3.9_amd64.deb ...
+2026-09-23T23:24:50.5465936Z Unpacking libglib2.0-bin (2.80.0-6ubuntu3.9) over (2.80.0-6ubuntu3.8) ...
+2026-09-23T23:24:50.5951446Z Preparing to unpack .../007-libglib2.0-0t64_2.80.0-6ubuntu3.9_amd64.deb ...
+2026-09-23T23:24:50.6041327Z Unpacking libglib2.0-0t64:amd64 (2.80.0-6ubuntu3.9) over (2.80.0-6ubuntu3.8) ...
+2026-09-23T23:24:50.6522228Z Selecting previously unselected package libimath-3-1-29t64:amd64.
+2026-09-23T23:24:50.6624317Z Preparing to unpack .../008-libimath-3-1-29t64_3.1.9-3.1ubuntu2_amd64.deb ...
+2026-09-23T23:24:50.6630692Z Unpacking libimath-3-1-29t64:amd64 (3.1.9-3.1ubuntu2) ...
+2026-09-23T23:24:50.6830979Z Selecting previously unselected package libopenexr-3-1-30:amd64.
+2026-09-23T23:24:50.6928352Z Preparing to unpack .../009-libopenexr-3-1-30_3.1.5-5.1build3_amd64.deb ...
+2026-09-23T23:24:50.6936521Z Unpacking libopenexr-3-1-30:amd64 (3.1.5-5.1build3) ...
+2026-09-23T23:24:50.7286567Z Selecting previously unselected package libwmflite-0.2-7:amd64.
+2026-09-23T23:24:50.7386634Z Preparing to unpack .../010-libwmflite-0.2-7_0.2.13-1.1build3_amd64.deb ...
+2026-09-23T23:24:50.7392216Z Unpacking libwmflite-0.2-7:amd64 (0.2.13-1.1build3) ...
+2026-09-23T23:24:50.7572327Z Selecting previously unselected package libmagickcore-6.q16-7-extra:amd64.
+2026-09-23T23:24:50.7668406Z Preparing to unpack .../011-libmagickcore-6.q16-7-extra_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+2026-09-23T23:24:50.7674475Z Unpacking libmagickcore-6.q16-7-extra:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:24:50.7868442Z Selecting previously unselected package libbz2-dev:amd64.
+2026-09-23T23:24:50.7966818Z Preparing to unpack .../012-libbz2-dev_1.0.8-5.1ubuntu0.1_amd64.deb ...
+2026-09-23T23:24:50.7976246Z Unpacking libbz2-dev:amd64 (1.0.8-5.1ubuntu0.1) ...
+2026-09-23T23:24:50.8143413Z Selecting previously unselected package libjpeg-turbo8-dev:amd64.
+2026-09-23T23:24:50.8240894Z Preparing to unpack .../013-libjpeg-turbo8-dev_2.1.5-2ubuntu2_amd64.deb ...
+2026-09-23T23:24:50.8247629Z Unpacking libjpeg-turbo8-dev:amd64 (2.1.5-2ubuntu2) ...
+2026-09-23T23:24:50.8454503Z Selecting previously unselected package libjpeg8-dev:amd64.
+2026-09-23T23:24:50.8551557Z Preparing to unpack .../014-libjpeg8-dev_8c-2ubuntu11_amd64.deb ...
+2026-09-23T23:24:50.8557371Z Unpacking libjpeg8-dev:amd64 (8c-2ubuntu11) ...
+2026-09-23T23:24:50.8710083Z Selecting previously unselected package libjpeg-dev:amd64.
+2026-09-23T23:24:50.8805496Z Preparing to unpack .../015-libjpeg-dev_8c-2ubuntu11_amd64.deb ...
+2026-09-23T23:24:50.8811398Z Unpacking libjpeg-dev:amd64 (8c-2ubuntu11) ...
+2026-09-23T23:24:50.8962831Z Selecting previously unselected package libdjvulibre-dev:amd64.
+2026-09-23T23:24:50.9057381Z Preparing to unpack .../016-libdjvulibre-dev_3.5.28-2ubuntu0.24.04.2_amd64.deb ...
+2026-09-23T23:24:50.9063006Z Unpacking libdjvulibre-dev:amd64 (3.5.28-2ubuntu0.24.04.2) ...
+2026-09-23T23:24:50.9589750Z Selecting previously unselected package libexif12:amd64.
+2026-09-23T23:24:50.9687135Z Preparing to unpack .../017-libexif12_0.6.24-1ubuntu0.24.04.1_amd64.deb ...
+2026-09-23T23:24:50.9694111Z Unpacking libexif12:amd64 (0.6.24-1ubuntu0.24.04.1) ...
+2026-09-23T23:24:50.9896378Z Selecting previously unselected package libexif-dev:amd64.
+2026-09-23T23:24:50.9992655Z Preparing to unpack .../018-libexif-dev_0.6.24-1ubuntu0.24.04.1_amd64.deb ...
+2026-09-23T23:24:50.9998976Z Unpacking libexif-dev:amd64 (0.6.24-1ubuntu0.24.04.1) ...
+2026-09-23T23:24:51.0183855Z Selecting previously unselected package libbrotli-dev:amd64.
+2026-09-23T23:24:51.0280204Z Preparing to unpack .../019-libbrotli-dev_1.1.0-2build2_amd64.deb ...
+2026-09-23T23:24:51.0286197Z Unpacking libbrotli-dev:amd64 (1.1.0-2build2) ...
+2026-09-23T23:24:51.0482192Z Selecting previously unselected package libpng-dev:amd64.
+2026-09-23T23:24:51.0578069Z Preparing to unpack .../020-libpng-dev_1.6.43-5ubuntu0.6_amd64.deb ...
+2026-09-23T23:24:51.0585421Z Unpacking libpng-dev:amd64 (1.6.43-5ubuntu0.6) ...
+2026-09-23T23:24:51.0811619Z Selecting previously unselected package libfreetype-dev:amd64.
+2026-09-23T23:24:51.0908983Z Preparing to unpack .../021-libfreetype-dev_2.13.2+dfsg-1ubuntu0.1_amd64.deb ...
+2026-09-23T23:24:51.0914389Z Unpacking libfreetype-dev:amd64 (2.13.2+dfsg-1ubuntu0.1) ...
+2026-09-23T23:24:51.1173193Z Selecting previously unselected package libopenjp2-7-dev:amd64.
+2026-09-23T23:24:51.1268031Z Preparing to unpack .../022-libopenjp2-7-dev_2.5.0-2ubuntu0.5_amd64.deb ...
+2026-09-23T23:24:51.1274535Z Unpacking libopenjp2-7-dev:amd64 (2.5.0-2ubuntu0.5) ...
+2026-09-23T23:24:51.1478396Z Selecting previously unselected package liblcms2-dev:amd64.
+2026-09-23T23:24:51.1573677Z Preparing to unpack .../023-liblcms2-dev_2.14-2ubuntu0.1_amd64.deb ...
+2026-09-23T23:24:51.1578444Z Unpacking liblcms2-dev:amd64 (2.14-2ubuntu0.1) ...
+2026-09-23T23:24:51.1828388Z Selecting previously unselected package liblqr-1-0-dev:amd64.
+2026-09-23T23:24:51.1923387Z Preparing to unpack .../024-liblqr-1-0-dev_0.4.2-2.1build2_amd64.deb ...
+2026-09-23T23:24:51.1929076Z Unpacking liblqr-1-0-dev:amd64 (0.4.2-2.1build2) ...
+2026-09-23T23:24:51.2205397Z Selecting previously unselected package libltdl-dev:amd64.
+2026-09-23T23:24:51.2303335Z Preparing to unpack .../025-libltdl-dev_2.4.7-7build1_amd64.deb ...
+2026-09-23T23:24:51.2308867Z Unpacking libltdl-dev:amd64 (2.4.7-7build1) ...
+2026-09-23T23:24:51.2638211Z Selecting previously unselected package libimath-dev:amd64.
+2026-09-23T23:24:51.2735350Z Preparing to unpack .../026-libimath-dev_3.1.9-3.1ubuntu2_amd64.deb ...
+2026-09-23T23:24:51.2741694Z Unpacking libimath-dev:amd64 (3.1.9-3.1ubuntu2) ...
+2026-09-23T23:24:51.2997004Z Selecting previously unselected package libopenexr-dev.
+2026-09-23T23:24:51.3096870Z Preparing to unpack .../027-libopenexr-dev_3.1.5-5.1build3_amd64.deb ...
+2026-09-23T23:24:51.3103776Z Unpacking libopenexr-dev (3.1.5-5.1build3) ...
+2026-09-23T23:24:51.3408495Z Selecting previously unselected package gir1.2-freedesktop:amd64.
+2026-09-23T23:24:51.3505247Z Preparing to unpack .../028-gir1.2-freedesktop_1.80.1-1_amd64.deb ...
+2026-09-23T23:24:51.3510892Z Unpacking gir1.2-freedesktop:amd64 (1.80.1-1) ...
+2026-09-23T23:24:51.3681426Z Selecting previously unselected package gir1.2-gdkpixbuf-2.0:amd64.
+2026-09-23T23:24:51.3779321Z Preparing to unpack .../029-gir1.2-gdkpixbuf-2.0_2.42.10+dfsg-3ubuntu3.3_amd64.deb ...
+2026-09-23T23:24:51.3785008Z Unpacking gir1.2-gdkpixbuf-2.0:amd64 (2.42.10+dfsg-3ubuntu3.3) ...
+2026-09-23T23:24:51.3949739Z Selecting previously unselected package librsvg2-2:amd64.
+2026-09-23T23:24:51.4046308Z Preparing to unpack .../030-librsvg2-2_2.58.0+dfsg-1build1_amd64.deb ...
+2026-09-23T23:24:51.4052672Z Unpacking librsvg2-2:amd64 (2.58.0+dfsg-1build1) ...
+2026-09-23T23:24:51.4696337Z Selecting previously unselected package gir1.2-rsvg-2.0:amd64.
+2026-09-23T23:24:51.4794030Z Preparing to unpack .../031-gir1.2-rsvg-2.0_2.58.0+dfsg-1build1_amd64.deb ...
+2026-09-23T23:24:51.4800258Z Unpacking gir1.2-rsvg-2.0:amd64 (2.58.0+dfsg-1build1) ...
+2026-09-23T23:24:51.4967275Z Selecting previously unselected package libcairo-script-interpreter2:amd64.
+2026-09-23T23:24:51.5063955Z Preparing to unpack .../032-libcairo-script-interpreter2_1.18.0-3build1_amd64.deb ...
+2026-09-23T23:24:51.5071428Z Unpacking libcairo-script-interpreter2:amd64 (1.18.0-3build1) ...
+2026-09-23T23:24:51.5415966Z Selecting previously unselected package uuid-dev:amd64.
+2026-09-23T23:24:51.5529037Z Preparing to unpack .../033-uuid-dev_2.39.3-9ubuntu6.6_amd64.deb ...
+2026-09-23T23:24:51.5535486Z Unpacking uuid-dev:amd64 (2.39.3-9ubuntu6.6) ...
+2026-09-23T23:24:51.5736787Z Selecting previously unselected package libfontconfig-dev:amd64.
+2026-09-23T23:24:51.5833632Z Preparing to unpack .../034-libfontconfig-dev_2.15.0-1.1ubuntu2_amd64.deb ...
+2026-09-23T23:24:51.5839644Z Unpacking libfontconfig-dev:amd64 (2.15.0-1.1ubuntu2) ...
+2026-09-23T23:24:51.6034392Z Selecting previously unselected package libglib2.0-dev-bin.
+2026-09-23T23:24:51.6131427Z Preparing to unpack .../035-libglib2.0-dev-bin_2.80.0-6ubuntu3.9_amd64.deb ...
+2026-09-23T23:24:51.6137405Z Unpacking libglib2.0-dev-bin (2.80.0-6ubuntu3.9) ...
+2026-09-23T23:24:51.6361074Z Selecting previously unselected package libblkid-dev:amd64.
+2026-09-23T23:24:51.6458488Z Preparing to unpack .../036-libblkid-dev_2.39.3-9ubuntu6.6_amd64.deb ...
+2026-09-23T23:24:51.6465362Z Unpacking libblkid-dev:amd64 (2.39.3-9ubuntu6.6) ...
+2026-09-23T23:24:51.8268945Z Selecting previously unselected package libsepol-dev:amd64.
+2026-09-23T23:24:51.8364452Z Preparing to unpack .../037-libsepol-dev_3.5-2build1_amd64.deb ...
+2026-09-23T23:24:51.8372208Z Unpacking libsepol-dev:amd64 (3.5-2build1) ...
+2026-09-23T23:24:51.8597172Z Selecting previously unselected package libselinux1-dev:amd64.
+2026-09-23T23:24:51.8692331Z Preparing to unpack .../038-libselinux1-dev_3.5-2ubuntu2.1_amd64.deb ...
+2026-09-23T23:24:51.8698056Z Unpacking libselinux1-dev:amd64 (3.5-2ubuntu2.1) ...
+2026-09-23T23:24:51.9017790Z Selecting previously unselected package libmount-dev:amd64.
+2026-09-23T23:24:51.9116042Z Preparing to unpack .../039-libmount-dev_2.39.3-9ubuntu6.6_amd64.deb ...
+2026-09-23T23:24:51.9121674Z Unpacking libmount-dev:amd64 (2.39.3-9ubuntu6.6) ...
+2026-09-23T23:24:51.9297591Z Selecting previously unselected package libgirepository-2.0-0:amd64.
+2026-09-23T23:24:51.9394953Z Preparing to unpack .../040-libgirepository-2.0-0_2.80.0-6ubuntu3.9_amd64.deb ...
+2026-09-23T23:24:51.9401475Z Unpacking libgirepository-2.0-0:amd64 (2.80.0-6ubuntu3.9) ...
+2026-09-23T23:24:51.9568314Z Selecting previously unselected package libglib2.0-dev:amd64.
+2026-09-23T23:24:51.9665955Z Preparing to unpack .../041-libglib2.0-dev_2.80.0-6ubuntu3.9_amd64.deb ...
+2026-09-23T23:24:51.9671867Z Unpacking libglib2.0-dev:amd64 (2.80.0-6ubuntu3.9) ...
+2026-09-23T23:24:52.0600816Z Selecting previously unselected package libpixman-1-dev:amd64.
+2026-09-23T23:24:52.0699251Z Preparing to unpack .../042-libpixman-1-dev_0.42.2-1build1_amd64.deb ...
+2026-09-23T23:24:52.0706548Z Unpacking libpixman-1-dev:amd64 (0.42.2-1build1) ...
+2026-09-23T23:24:52.0930104Z Selecting previously unselected package xorg-sgml-doctools.
+2026-09-23T23:24:52.1026932Z Preparing to unpack .../043-xorg-sgml-doctools_1%3a1.11-1.1_all.deb ...
+2026-09-23T23:24:52.1032315Z Unpacking xorg-sgml-doctools (1:1.11-1.1) ...
+2026-09-23T23:24:52.1252733Z Selecting previously unselected package x11proto-dev.
+2026-09-23T23:24:52.1348451Z Preparing to unpack .../044-x11proto-dev_2023.2-1_all.deb ...
+2026-09-23T23:24:52.1354011Z Unpacking x11proto-dev (2023.2-1) ...
+2026-09-23T23:24:52.1737542Z Selecting previously unselected package x11proto-core-dev.
+2026-09-23T23:24:52.1833694Z Preparing to unpack .../045-x11proto-core-dev_2023.2-1_all.deb ...
+2026-09-23T23:24:52.1840450Z Unpacking x11proto-core-dev (2023.2-1) ...
+2026-09-23T23:24:52.2002032Z Selecting previously unselected package libice-dev:amd64.
+2026-09-23T23:24:52.2099239Z Preparing to unpack .../046-libice-dev_2%3a1.0.10-1build3_amd64.deb ...
+2026-09-23T23:24:52.2104874Z Unpacking libice-dev:amd64 (2:1.0.10-1build3) ...
+2026-09-23T23:24:52.2270989Z Selecting previously unselected package libsm-dev:amd64.
+2026-09-23T23:24:52.2367672Z Preparing to unpack .../047-libsm-dev_2%3a1.2.3-1build3_amd64.deb ...
+2026-09-23T23:24:52.2373428Z Unpacking libsm-dev:amd64 (2:1.2.3-1build3) ...
+2026-09-23T23:24:52.2533924Z Selecting previously unselected package libxau-dev:amd64.
+2026-09-23T23:24:52.2629585Z Preparing to unpack .../048-libxau-dev_1%3a1.0.9-1build6_amd64.deb ...
+2026-09-23T23:24:52.2636274Z Unpacking libxau-dev:amd64 (1:1.0.9-1build6) ...
+2026-09-23T23:24:52.2805378Z Selecting previously unselected package libxdmcp-dev:amd64.
+2026-09-23T23:24:52.2900597Z Preparing to unpack .../049-libxdmcp-dev_1%3a1.1.3-0ubuntu6_amd64.deb ...
+2026-09-23T23:24:52.2905905Z Unpacking libxdmcp-dev:amd64 (1:1.1.3-0ubuntu6) ...
+2026-09-23T23:24:52.3102597Z Selecting previously unselected package xtrans-dev.
+2026-09-23T23:24:52.3198090Z Preparing to unpack .../050-xtrans-dev_1.4.0-1_all.deb ...
+2026-09-23T23:24:52.3204405Z Unpacking xtrans-dev (1.4.0-1) ...
+2026-09-23T23:24:52.3391833Z Selecting previously unselected package libpthread-stubs0-dev:amd64.
+2026-09-23T23:24:52.3488304Z Preparing to unpack .../051-libpthread-stubs0-dev_0.4-1build3_amd64.deb ...
+2026-09-23T23:24:52.3493717Z Unpacking libpthread-stubs0-dev:amd64 (0.4-1build3) ...
+2026-09-23T23:24:52.3645444Z Selecting previously unselected package libxcb1-dev:amd64.
+2026-09-23T23:24:52.3743102Z Preparing to unpack .../052-libxcb1-dev_1.15-1ubuntu2_amd64.deb ...
+2026-09-23T23:24:52.3748128Z Unpacking libxcb1-dev:amd64 (1.15-1ubuntu2) ...
+2026-09-23T23:24:52.3925685Z Selecting previously unselected package libx11-dev:amd64.
+2026-09-23T23:24:52.4021847Z Preparing to unpack .../053-libx11-dev_2%3a1.8.7-1build1_amd64.deb ...
+2026-09-23T23:24:52.4028338Z Unpacking libx11-dev:amd64 (2:1.8.7-1build1) ...
+2026-09-23T23:24:52.4356847Z Selecting previously unselected package libxcb-render0-dev:amd64.
+2026-09-23T23:24:52.4453835Z Preparing to unpack .../054-libxcb-render0-dev_1.15-1ubuntu2_amd64.deb ...
+2026-09-23T23:24:52.4459062Z Unpacking libxcb-render0-dev:amd64 (1.15-1ubuntu2) ...
+2026-09-23T23:24:52.4623707Z Selecting previously unselected package libxcb-shm0-dev:amd64.
+2026-09-23T23:24:52.4721931Z Preparing to unpack .../055-libxcb-shm0-dev_1.15-1ubuntu2_amd64.deb ...
+2026-09-23T23:24:52.4727508Z Unpacking libxcb-shm0-dev:amd64 (1.15-1ubuntu2) ...
+2026-09-23T23:24:52.4888414Z Selecting previously unselected package libxext-dev:amd64.
+2026-09-23T23:24:52.4985586Z Preparing to unpack .../056-libxext-dev_2%3a1.3.4-1build2_amd64.deb ...
+2026-09-23T23:24:52.4991927Z Unpacking libxext-dev:amd64 (2:1.3.4-1build2) ...
+2026-09-23T23:24:52.5217816Z Selecting previously unselected package libxrender-dev:amd64.
+2026-09-23T23:24:52.5314907Z Preparing to unpack .../057-libxrender-dev_1%3a0.9.10-1.1build1_amd64.deb ...
+2026-09-23T23:24:52.5320579Z Unpacking libxrender-dev:amd64 (1:0.9.10-1.1build1) ...
+2026-09-23T23:24:52.5479838Z Selecting previously unselected package libcairo2-dev:amd64.
+2026-09-23T23:24:52.5576376Z Preparing to unpack .../058-libcairo2-dev_1.18.0-3build1_amd64.deb ...
+2026-09-23T23:24:52.5583226Z Unpacking libcairo2-dev:amd64 (1.18.0-3build1) ...
+2026-09-23T23:24:52.5772884Z Selecting previously unselected package libgdk-pixbuf2.0-bin.
+2026-09-23T23:24:52.5870726Z Preparing to unpack .../059-libgdk-pixbuf2.0-bin_2.42.10+dfsg-3ubuntu3.3_amd64.deb ...
+2026-09-23T23:24:52.5877246Z Unpacking libgdk-pixbuf2.0-bin (2.42.10+dfsg-3ubuntu3.3) ...
+2026-09-23T23:24:52.6041383Z Selecting previously unselected package libjbig-dev:amd64.
+2026-09-23T23:24:52.6137378Z Preparing to unpack .../060-libjbig-dev_2.1-6.1ubuntu2_amd64.deb ...
+2026-09-23T23:24:52.6143296Z Unpacking libjbig-dev:amd64 (2.1-6.1ubuntu2) ...
+2026-09-23T23:24:52.6303768Z Selecting previously unselected package liblzma-dev:amd64.
+2026-09-23T23:24:52.6399531Z Preparing to unpack .../061-liblzma-dev_5.6.1+really5.4.5-1ubuntu0.3_amd64.deb ...
+2026-09-23T23:24:52.6405776Z Unpacking liblzma-dev:amd64 (5.6.1+really5.4.5-1ubuntu0.3) ...
+2026-09-23T23:24:52.6608591Z Selecting previously unselected package libwebpdecoder3:amd64.
+2026-09-23T23:24:52.6705360Z Preparing to unpack .../062-libwebpdecoder3_1.3.2-0.4build3_amd64.deb ...
+2026-09-23T23:24:52.6712070Z Unpacking libwebpdecoder3:amd64 (1.3.2-0.4build3) ...
+2026-09-23T23:24:52.6886002Z Selecting previously unselected package libsharpyuv-dev:amd64.
+2026-09-23T23:24:52.6983322Z Preparing to unpack .../063-libsharpyuv-dev_1.3.2-0.4build3_amd64.deb ...
+2026-09-23T23:24:52.6989114Z Unpacking libsharpyuv-dev:amd64 (1.3.2-0.4build3) ...
+2026-09-23T23:24:52.7157120Z Selecting previously unselected package libwebp-dev:amd64.
+2026-09-23T23:24:52.7254417Z Preparing to unpack .../064-libwebp-dev_1.3.2-0.4build3_amd64.deb ...
+2026-09-23T23:24:52.7261178Z Unpacking libwebp-dev:amd64 (1.3.2-0.4build3) ...
+2026-09-23T23:24:52.7523932Z Selecting previously unselected package libtiffxx6:amd64.
+2026-09-23T23:24:52.7621568Z Preparing to unpack .../065-libtiffxx6_4.5.1+git230720-4ubuntu2.5_amd64.deb ...
+2026-09-23T23:24:52.7628100Z Unpacking libtiffxx6:amd64 (4.5.1+git230720-4ubuntu2.5) ...
+2026-09-23T23:24:52.7815052Z Selecting previously unselected package libdeflate-dev:amd64.
+2026-09-23T23:24:52.7915119Z Preparing to unpack .../066-libdeflate-dev_1.19-1build1.1_amd64.deb ...
+2026-09-23T23:24:52.7921621Z Unpacking libdeflate-dev:amd64 (1.19-1build1.1) ...
+2026-09-23T23:24:52.8109383Z Selecting previously unselected package liblerc-dev:amd64.
+2026-09-23T23:24:52.8210240Z Preparing to unpack .../067-liblerc-dev_4.0.0+ds-4ubuntu2_amd64.deb ...
+2026-09-23T23:24:52.8216162Z Unpacking liblerc-dev:amd64 (4.0.0+ds-4ubuntu2) ...
+2026-09-23T23:24:52.8409339Z Selecting previously unselected package libtiff-dev:amd64.
+2026-09-23T23:24:52.8508173Z Preparing to unpack .../068-libtiff-dev_4.5.1+git230720-4ubuntu2.5_amd64.deb ...
+2026-09-23T23:24:52.8590385Z Unpacking libtiff-dev:amd64 (4.5.1+git230720-4ubuntu2.5) ...
+2026-09-23T23:24:52.8843718Z Selecting previously unselected package gir1.2-glib-2.0-dev:amd64.
+2026-09-23T23:24:52.8940659Z Preparing to unpack .../069-gir1.2-glib-2.0-dev_2.80.0-6ubuntu3.9_amd64.deb ...
+2026-09-23T23:24:52.8952891Z Unpacking gir1.2-glib-2.0-dev:amd64 (2.80.0-6ubuntu3.9) ...
+2026-09-23T23:24:52.9674815Z Selecting previously unselected package libgdk-pixbuf-2.0-dev:amd64.
+2026-09-23T23:24:52.9770705Z Preparing to unpack .../070-libgdk-pixbuf-2.0-dev_2.42.10+dfsg-3ubuntu3.3_amd64.deb ...
+2026-09-23T23:24:52.9777284Z Unpacking libgdk-pixbuf-2.0-dev:amd64 (2.42.10+dfsg-3ubuntu3.3) ...
+2026-09-23T23:24:52.9974232Z Selecting previously unselected package librsvg2-common:amd64.
+2026-09-23T23:24:53.0073123Z Preparing to unpack .../071-librsvg2-common_2.58.0+dfsg-1build1_amd64.deb ...
+2026-09-23T23:24:53.0079153Z Unpacking librsvg2-common:amd64 (2.58.0+dfsg-1build1) ...
+2026-09-23T23:24:53.0263867Z Selecting previously unselected package gir1.2-freedesktop-dev:amd64.
+2026-09-23T23:24:53.0361245Z Preparing to unpack .../072-gir1.2-freedesktop-dev_1.80.1-1_amd64.deb ...
+2026-09-23T23:24:53.0367268Z Unpacking gir1.2-freedesktop-dev:amd64 (1.80.1-1) ...
+2026-09-23T23:24:53.0549703Z Selecting previously unselected package gir1.2-girepository-2.0-dev:amd64.
+2026-09-23T23:24:53.0649013Z Preparing to unpack .../073-gir1.2-girepository-2.0-dev_1.80.1-1_amd64.deb ...
+2026-09-23T23:24:53.0657414Z Unpacking gir1.2-girepository-2.0-dev:amd64 (1.80.1-1) ...
+2026-09-23T23:24:53.0836354Z Selecting previously unselected package build-essential.
+2026-09-23T23:24:53.0934070Z Preparing to unpack .../074-build-essential_12.10ubuntu1_amd64.deb ...
+2026-09-23T23:24:53.0940601Z Unpacking build-essential (12.10ubuntu1) ...
+2026-09-23T23:24:53.1172649Z Selecting previously unselected package python3-mako.
+2026-09-23T23:24:53.1271781Z Preparing to unpack .../075-python3-mako_1.3.2-1ubuntu0.1_all.deb ...
+2026-09-23T23:24:53.1277915Z Unpacking python3-mako (1.3.2-1ubuntu0.1) ...
+2026-09-23T23:24:53.1489532Z Selecting previously unselected package python3-markdown.
+2026-09-23T23:24:53.1588195Z Preparing to unpack .../076-python3-markdown_3.5.2-1_all.deb ...
+2026-09-23T23:24:53.1594561Z Unpacking python3-markdown (3.5.2-1) ...
+2026-09-23T23:24:53.1807655Z Selecting previously unselected package gobject-introspection-bin.
+2026-09-23T23:24:53.1906498Z Preparing to unpack .../077-gobject-introspection-bin_1.80.1-1_amd64.deb ...
+2026-09-23T23:24:53.1913223Z Unpacking gobject-introspection-bin (1.80.1-1) ...
+2026-09-23T23:24:53.2589140Z Selecting previously unselected package gobject-introspection:amd64.
+2026-09-23T23:24:53.2685943Z Preparing to unpack .../078-gobject-introspection_1.80.1-1_amd64.deb ...
+2026-09-23T23:24:53.2691293Z Unpacking gobject-introspection:amd64 (1.80.1-1) ...
+2026-09-23T23:24:53.2879353Z Selecting previously unselected package libgirepository-1.0-dev:amd64.
+2026-09-23T23:24:53.2976771Z Preparing to unpack .../079-libgirepository-1.0-dev_1.80.1-1_amd64.deb ...
+2026-09-23T23:24:53.2984036Z Unpacking libgirepository-1.0-dev:amd64 (1.80.1-1) ...
+2026-09-23T23:24:53.3166011Z Selecting previously unselected package libgirepository1.0-dev.
+2026-09-23T23:24:53.3264252Z Preparing to unpack .../080-libgirepository1.0-dev_1.80.1-1_amd64.deb ...
+2026-09-23T23:24:53.3270088Z Unpacking libgirepository1.0-dev (1.80.1-1) ...
+2026-09-23T23:24:53.3435173Z Selecting previously unselected package librsvg2-dev:amd64.
+2026-09-23T23:24:53.3532425Z Preparing to unpack .../081-librsvg2-dev_2.58.0+dfsg-1build1_amd64.deb ...
+2026-09-23T23:24:53.3538314Z Unpacking librsvg2-dev:amd64 (2.58.0+dfsg-1build1) ...
+2026-09-23T23:24:53.3721310Z Selecting previously unselected package libwmf-0.2-7:amd64.
+2026-09-23T23:24:53.3818955Z Preparing to unpack .../082-libwmf-0.2-7_0.2.13-1.1build3_amd64.deb ...
+2026-09-23T23:24:53.3825119Z Unpacking libwmf-0.2-7:amd64 (0.2.13-1.1build3) ...
+2026-09-23T23:24:53.4062306Z Selecting previously unselected package libwmf-dev.
+2026-09-23T23:24:53.4160392Z Preparing to unpack .../083-libwmf-dev_0.2.13-1.1build3_amd64.deb ...
+2026-09-23T23:24:53.4186286Z Unpacking libwmf-dev (0.2.13-1.1build3) ...
+2026-09-23T23:24:53.4393577Z Selecting previously unselected package libxt-dev:amd64.
+2026-09-23T23:24:53.4491334Z Preparing to unpack .../084-libxt-dev_1%3a1.2.1-1.2build1_amd64.deb ...
+2026-09-23T23:24:53.4497040Z Unpacking libxt-dev:amd64 (1:1.2.1-1.2build1) ...
+2026-09-23T23:24:53.4977168Z Selecting previously unselected package libmagickcore-6.q16-dev:amd64.
+2026-09-23T23:24:53.5075681Z Preparing to unpack .../085-libmagickcore-6.q16-dev_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+2026-09-23T23:24:53.5081427Z Unpacking libmagickcore-6.q16-dev:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:24:53.5516586Z Selecting previously unselected package libmagickcore-dev.
+2026-09-23T23:24:53.5614089Z Preparing to unpack .../086-libmagickcore-dev_8%3a6.9.12.98+dfsg1-5.2build2_all.deb ...
+2026-09-23T23:24:53.5619546Z Unpacking libmagickcore-dev (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:24:53.5785117Z Selecting previously unselected package libmagickwand-6-headers.
+2026-09-23T23:24:53.5883493Z Preparing to unpack .../087-libmagickwand-6-headers_8%3a6.9.12.98+dfsg1-5.2build2_all.deb ...
+2026-09-23T23:24:53.5889436Z Unpacking libmagickwand-6-headers (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:24:53.6068535Z Selecting previously unselected package libmagickwand-6.q16-dev:amd64.
+2026-09-23T23:24:53.6165026Z Preparing to unpack .../088-libmagickwand-6.q16-dev_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+2026-09-23T23:24:53.6170624Z Unpacking libmagickwand-6.q16-dev:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:24:53.6478505Z Selecting previously unselected package libmagickwand-dev.
+2026-09-23T23:24:53.6574237Z Preparing to unpack .../089-libmagickwand-dev_8%3a6.9.12.98+dfsg1-5.2build2_all.deb ...
+2026-09-23T23:24:53.6581898Z Unpacking libmagickwand-dev (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:24:53.6750392Z Selecting previously unselected package poppler-data.
+2026-09-23T23:24:53.6844950Z Preparing to unpack .../090-poppler-data_0.4.12-1_all.deb ...
+2026-09-23T23:24:53.6851219Z Unpacking poppler-data (0.4.12-1) ...
+2026-09-23T23:24:53.8005689Z Selecting previously unselected package bzip2-doc.
+2026-09-23T23:24:53.8104538Z Preparing to unpack .../091-bzip2-doc_1.0.8-5.1ubuntu0.1_all.deb ...
+2026-09-23T23:24:53.8109493Z Unpacking bzip2-doc (1.0.8-5.1ubuntu0.1) ...
+2026-09-23T23:24:53.8308023Z Selecting previously unselected package fonts-roboto-unhinted.
+2026-09-23T23:24:53.8404619Z Preparing to unpack .../092-fonts-roboto-unhinted_2%3a0~20170802-3_all.deb ...
+2026-09-23T23:24:53.8410885Z Unpacking fonts-roboto-unhinted (2:0~20170802-3) ...
+2026-09-23T23:24:53.9756839Z Selecting previously unselected package fonts-roboto.
+2026-09-23T23:24:53.9855821Z Preparing to unpack .../093-fonts-roboto_2%3a0~20170802-3_all.deb ...
+2026-09-23T23:24:53.9862104Z Unpacking fonts-roboto (2:0~20170802-3) ...
+2026-09-23T23:24:54.0035517Z Selecting previously unselected package xfonts-encodings.
+2026-09-23T23:24:54.0135034Z Preparing to unpack .../094-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+2026-09-23T23:24:54.0141489Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-09-23T23:24:54.0367055Z Selecting previously unselected package xfonts-utils.
+2026-09-23T23:24:54.0466174Z Preparing to unpack .../095-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+2026-09-23T23:24:54.0471757Z Unpacking xfonts-utils (1:7.7+6build3) ...
+2026-09-23T23:24:54.0731745Z Selecting previously unselected package fonts-urw-base35.
+2026-09-23T23:24:54.0829970Z Preparing to unpack .../096-fonts-urw-base35_20200910-8_all.deb ...
+2026-09-23T23:24:54.1317499Z Unpacking fonts-urw-base35 (20200910-8) ...
+2026-09-23T23:24:54.2433156Z Selecting previously unselected package gdal-data.
+2026-09-23T23:24:54.2531385Z Preparing to unpack .../097-gdal-data_3.8.4+dfsg-3ubuntu3_all.deb ...
+2026-09-23T23:24:54.2537011Z Unpacking gdal-data (3.8.4+dfsg-3ubuntu3) ...
+2026-09-23T23:24:54.2932827Z Selecting previously unselected package gdal-plugins:amd64.
+2026-09-23T23:24:54.3034379Z Preparing to unpack .../098-gdal-plugins_3.8.4+dfsg-3ubuntu3_amd64.deb ...
+2026-09-23T23:24:54.3039095Z Unpacking gdal-plugins:amd64 (3.8.4+dfsg-3ubuntu3) ...
+2026-09-23T23:24:54.3227250Z Selecting previously unselected package gettext.
+2026-09-23T23:24:54.3325254Z Preparing to unpack .../099-gettext_0.21-14ubuntu2_amd64.deb ...
+2026-09-23T23:24:54.3330568Z Unpacking gettext (0.21-14ubuntu2) ...
+2026-09-23T23:24:54.3738606Z Selecting previously unselected package libharfbuzz-gobject0:amd64.
+2026-09-23T23:24:54.3837992Z Preparing to unpack .../100-libharfbuzz-gobject0_8.3.0-2build2_amd64.deb ...
+2026-09-23T23:24:54.3844368Z Unpacking libharfbuzz-gobject0:amd64 (8.3.0-2build2) ...
+2026-09-23T23:24:54.4015375Z Selecting previously unselected package gir1.2-harfbuzz-0.0:amd64.
+2026-09-23T23:24:54.4113564Z Preparing to unpack .../101-gir1.2-harfbuzz-0.0_8.3.0-2build2_amd64.deb ...
+2026-09-23T23:24:54.4124583Z Unpacking gir1.2-harfbuzz-0.0:amd64 (8.3.0-2build2) ...
+2026-09-23T23:24:54.4308336Z Selecting previously unselected package libpangoxft-1.0-0:amd64.
+2026-09-23T23:24:54.4406363Z Preparing to unpack .../102-libpangoxft-1.0-0_1.52.1+ds-1build1_amd64.deb ...
+2026-09-23T23:24:54.4411822Z Unpacking libpangoxft-1.0-0:amd64 (1.52.1+ds-1build1) ...
+2026-09-23T23:24:54.4574179Z Selecting previously unselected package gir1.2-pango-1.0:amd64.
+2026-09-23T23:24:54.4672468Z Preparing to unpack .../103-gir1.2-pango-1.0_1.52.1+ds-1build1_amd64.deb ...
+2026-09-23T23:24:54.4677668Z Unpacking gir1.2-pango-1.0:amd64 (1.52.1+ds-1build1) ...
+2026-09-23T23:24:54.4857038Z Selecting previously unselected package libpoppler134:amd64.
+2026-09-23T23:24:54.4956577Z Preparing to unpack .../104-libpoppler134_24.02.0-1ubuntu9.9_amd64.deb ...
+2026-09-23T23:24:54.4964757Z Unpacking libpoppler134:amd64 (24.02.0-1ubuntu9.9) ...
+2026-09-23T23:24:54.5316665Z Selecting previously unselected package libpoppler-glib8t64:amd64.
+2026-09-23T23:24:54.5415235Z Preparing to unpack .../105-libpoppler-glib8t64_24.02.0-1ubuntu9.9_amd64.deb ...
+2026-09-23T23:24:54.5421372Z Unpacking libpoppler-glib8t64:amd64 (24.02.0-1ubuntu9.9) ...
+2026-09-23T23:24:54.5603515Z Selecting previously unselected package gir1.2-poppler-0.18:amd64.
+2026-09-23T23:24:54.5703200Z Preparing to unpack .../106-gir1.2-poppler-0.18_24.02.0-1ubuntu9.9_amd64.deb ...
+2026-09-23T23:24:54.5708864Z Unpacking gir1.2-poppler-0.18:amd64 (24.02.0-1ubuntu9.9) ...
+2026-09-23T23:24:54.5883943Z Selecting previously unselected package libcfitsio10t64:amd64.
+2026-09-23T23:24:54.5985533Z Preparing to unpack .../107-libcfitsio10t64_4.3.1-1.1build2_amd64.deb ...
+2026-09-23T23:24:54.5993385Z Unpacking libcfitsio10t64:amd64 (4.3.1-1.1build2) ...
+2026-09-23T23:24:54.6210089Z Selecting previously unselected package libcgif0:amd64.
+2026-09-23T23:24:54.6310625Z Preparing to unpack .../108-libcgif0_0.3.2-1build1_amd64.deb ...
+2026-09-23T23:24:54.6316285Z Unpacking libcgif0:amd64 (0.3.2-1build1) ...
+2026-09-23T23:24:54.6501620Z Selecting previously unselected package libhwy1t64:amd64.
+2026-09-23T23:24:54.6601701Z Preparing to unpack .../109-libhwy1t64_1.0.7-8.1build1_amd64.deb ...
+2026-09-23T23:24:54.6607757Z Unpacking libhwy1t64:amd64 (1.0.7-8.1build1) ...
+2026-09-23T23:24:54.6946257Z Selecting previously unselected package libimagequant0:amd64.
+2026-09-23T23:24:54.7047582Z Preparing to unpack .../110-libimagequant0_2.18.0-1build1_amd64.deb ...
+2026-09-23T23:24:54.7057711Z Unpacking libimagequant0:amd64 (2.18.0-1build1) ...
+2026-09-23T23:24:54.7235265Z Selecting previously unselected package libjxl0.7:amd64.
+2026-09-23T23:24:54.7334422Z Preparing to unpack .../111-libjxl0.7_0.7.0-10.2ubuntu6.1_amd64.deb ...
+2026-09-23T23:24:54.7341408Z Unpacking libjxl0.7:amd64 (0.7.0-10.2ubuntu6.1) ...
+2026-09-23T23:24:54.7644498Z Selecting previously unselected package libaec0:amd64.
+2026-09-23T23:24:54.7744673Z Preparing to unpack .../112-libaec0_1.1.2-1build1_amd64.deb ...
+2026-09-23T23:24:54.7752418Z Unpacking libaec0:amd64 (1.1.2-1build1) ...
+2026-09-23T23:24:54.7927628Z Selecting previously unselected package libsz2:amd64.
+2026-09-23T23:24:54.8027477Z Preparing to unpack .../113-libsz2_1.1.2-1build1_amd64.deb ...
+2026-09-23T23:24:54.8483389Z Unpacking libsz2:amd64 (1.1.2-1build1) ...
+2026-09-23T23:24:54.8682897Z Selecting previously unselected package libhdf5-103-1t64:amd64.
+2026-09-23T23:24:54.8782885Z Preparing to unpack .../114-libhdf5-103-1t64_1.10.10+repack-3.1ubuntu4_amd64.deb ...
+2026-09-23T23:24:54.8789113Z Unpacking libhdf5-103-1t64:amd64 (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:24:54.9162594Z Selecting previously unselected package libmatio11:amd64.
+2026-09-23T23:24:54.9261060Z Preparing to unpack .../115-libmatio11_1.5.26-1build3_amd64.deb ...
+2026-09-23T23:24:54.9270934Z Unpacking libmatio11:amd64 (1.5.26-1build3) ...
+2026-09-23T23:24:54.9465863Z Selecting previously unselected package libopenslide0.
+2026-09-23T23:24:54.9564576Z Preparing to unpack .../116-libopenslide0_3.4.1+dfsg-7build2_amd64.deb ...
+2026-09-23T23:24:54.9571927Z Unpacking libopenslide0 (3.4.1+dfsg-7build2) ...
+2026-09-23T23:24:54.9772203Z Selecting previously unselected package libspng0:amd64.
+2026-09-23T23:24:54.9871171Z Preparing to unpack .../117-libspng0_0.7.4-1build1_amd64.deb ...
+2026-09-23T23:24:54.9877341Z Unpacking libspng0:amd64 (0.7.4-1build1) ...
+2026-09-23T23:24:55.0085365Z Selecting previously unselected package libvips42t64:amd64.
+2026-09-23T23:24:55.0184041Z Preparing to unpack .../118-libvips42t64_8.15.1-1.1build4_amd64.deb ...
+2026-09-23T23:24:55.0192270Z Unpacking libvips42t64:amd64 (8.15.1-1.1build4) ...
+2026-09-23T23:24:55.0563650Z Selecting previously unselected package gir1.2-vips-8.0.
+2026-09-23T23:24:55.0689306Z Preparing to unpack .../119-gir1.2-vips-8.0_8.15.1-1.1build4_amd64.deb ...
+2026-09-23T23:24:55.0695218Z Unpacking gir1.2-vips-8.0 (8.15.1-1.1build4) ...
+2026-09-23T23:24:55.0859519Z Selecting previously unselected package hdf5-helpers.
+2026-09-23T23:24:55.0956636Z Preparing to unpack .../120-hdf5-helpers_1.10.10+repack-3.1ubuntu4_amd64.deb ...
+2026-09-23T23:24:55.1017143Z Unpacking hdf5-helpers (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:24:55.1182295Z Selecting previously unselected package libaom-dev:amd64.
+2026-09-23T23:24:55.1279497Z Preparing to unpack .../121-libaom-dev_3.8.2-2ubuntu0.2_amd64.deb ...
+2026-09-23T23:24:55.1286881Z Unpacking libaom-dev:amd64 (3.8.2-2ubuntu0.2) ...
+2026-09-23T23:24:55.2191829Z Selecting previously unselected package libattr1-dev:amd64.
+2026-09-23T23:24:55.2295486Z Preparing to unpack .../122-libattr1-dev_1%3a2.5.2-1ubuntu0.1_amd64.deb ...
+2026-09-23T23:24:55.2304928Z Unpacking libattr1-dev:amd64 (1:2.5.2-1ubuntu0.1) ...
+2026-09-23T23:24:55.2485409Z Selecting previously unselected package libacl1-dev:amd64.
+2026-09-23T23:24:55.2587487Z Preparing to unpack .../123-libacl1-dev_2.3.2-1build1.1_amd64.deb ...
+2026-09-23T23:24:55.2594008Z Unpacking libacl1-dev:amd64 (2.3.2-1build1.1) ...
+2026-09-23T23:24:55.2815414Z Selecting previously unselected package comerr-dev:amd64.
+2026-09-23T23:24:55.2918808Z Preparing to unpack .../124-comerr-dev_2.1-1.47.0-2.4~exp1ubuntu4.1_amd64.deb ...
+2026-09-23T23:24:55.2947024Z Unpacking comerr-dev:amd64 (2.1-1.47.0-2.4~exp1ubuntu4.1) ...
+2026-09-23T23:24:55.3138029Z Selecting previously unselected package libext2fs-dev.
+2026-09-23T23:24:55.3237801Z Preparing to unpack .../125-libext2fs-dev_1.47.0-2.4~exp1ubuntu4.1_amd64.deb ...
+2026-09-23T23:24:55.3245111Z Unpacking libext2fs-dev (1.47.0-2.4~exp1ubuntu4.1) ...
+2026-09-23T23:24:55.3448903Z Selecting previously unselected package nettle-dev:amd64.
+2026-09-23T23:24:55.3546956Z Preparing to unpack .../126-nettle-dev_3.9.1-2.2build1.1_amd64.deb ...
+2026-09-23T23:24:55.3552462Z Unpacking nettle-dev:amd64 (3.9.1-2.2build1.1) ...
+2026-09-23T23:24:55.3941493Z Selecting previously unselected package libarchive-dev:amd64.
+2026-09-23T23:24:55.4040589Z Preparing to unpack .../127-libarchive-dev_3.7.2-2ubuntu0.8_amd64.deb ...
+2026-09-23T23:24:55.4045847Z Unpacking libarchive-dev:amd64 (3.7.2-2ubuntu0.8) ...
+2026-09-23T23:24:55.4378846Z Selecting previously unselected package libblas3:amd64.
+2026-09-23T23:24:55.4477637Z Preparing to unpack .../128-libblas3_3.12.0-3build1.1_amd64.deb ...
+2026-09-23T23:24:55.4502274Z Unpacking libblas3:amd64 (3.12.0-3build1.1) ...
+2026-09-23T23:24:55.4699534Z Selecting previously unselected package liblapack3:amd64.
+2026-09-23T23:24:55.4797376Z Preparing to unpack .../129-liblapack3_3.12.0-3build1.1_amd64.deb ...
+2026-09-23T23:24:55.4823522Z Unpacking liblapack3:amd64 (3.12.0-3build1.1) ...
+2026-09-23T23:24:55.5762236Z Selecting previously unselected package libarpack2t64:amd64.
+2026-09-23T23:24:55.5861706Z Preparing to unpack .../130-libarpack2t64_3.9.1-1.1build2_amd64.deb ...
+2026-09-23T23:24:55.5868004Z Unpacking libarpack2t64:amd64 (3.9.1-1.1build2) ...
+2026-09-23T23:24:55.6045361Z Selecting previously unselected package libsuperlu6:amd64.
+2026-09-23T23:24:55.6143249Z Preparing to unpack .../131-libsuperlu6_6.0.1+dfsg1-1build1_amd64.deb ...
+2026-09-23T23:24:55.6149106Z Unpacking libsuperlu6:amd64 (6.0.1+dfsg1-1build1) ...
+2026-09-23T23:24:55.6328733Z Selecting previously unselected package libarmadillo12.
+2026-09-23T23:24:55.6426375Z Preparing to unpack .../132-libarmadillo12_1%3a12.6.7+dfsg-1build2_amd64.deb ...
+2026-09-23T23:24:55.6432174Z Unpacking libarmadillo12 (1:12.6.7+dfsg-1build2) ...
+2026-09-23T23:24:55.6622480Z Selecting previously unselected package libblosc1:amd64.
+2026-09-23T23:24:55.6720094Z Preparing to unpack .../133-libblosc1_1.21.5+ds-1build1_amd64.deb ...
+2026-09-23T23:24:55.6726505Z Unpacking libblosc1:amd64 (1.21.5+ds-1build1) ...
+2026-09-23T23:24:55.6893662Z Selecting previously unselected package libboost-serialization1.83.0:amd64.
+2026-09-23T23:24:55.6991291Z Preparing to unpack .../134-libboost-serialization1.83.0_1.83.0-2.1ubuntu3.2_amd64.deb ...
+2026-09-23T23:24:55.6997812Z Unpacking libboost-serialization1.83.0:amd64 (1.83.0-2.1ubuntu3.2) ...
+2026-09-23T23:24:55.7309164Z Selecting previously unselected package libcfitsio-dev:amd64.
+2026-09-23T23:24:55.7407842Z Preparing to unpack .../135-libcfitsio-dev_4.3.1-1.1build2_amd64.deb ...
+2026-09-23T23:24:55.7413717Z Unpacking libcfitsio-dev:amd64 (4.3.1-1.1build2) ...
+2026-09-23T23:24:55.7712548Z Selecting previously unselected package libcfitsio-doc.
+2026-09-23T23:24:55.7809431Z Preparing to unpack .../136-libcfitsio-doc_4.3.1-1.1build2_all.deb ...
+2026-09-23T23:24:55.7814915Z Unpacking libcfitsio-doc (4.3.1-1.1build2) ...
+2026-09-23T23:24:55.8143634Z Selecting previously unselected package libcgif-dev:amd64.
+2026-09-23T23:24:55.8243269Z Preparing to unpack .../137-libcgif-dev_0.3.2-1build1_amd64.deb ...
+2026-09-23T23:24:55.8249910Z Unpacking libcgif-dev:amd64 (0.3.2-1build1) ...
+2026-09-23T23:24:55.8446115Z Selecting previously unselected package libcurl4-openssl-dev:amd64.
+2026-09-23T23:24:55.8545838Z Preparing to unpack .../138-libcurl4-openssl-dev_8.5.0-2ubuntu10.13_amd64.deb ...
+2026-09-23T23:24:55.8551331Z Unpacking libcurl4-openssl-dev:amd64 (8.5.0-2ubuntu10.13) ...
+2026-09-23T23:24:55.8809050Z Selecting previously unselected package libdatrie-dev:amd64.
+2026-09-23T23:24:55.8909384Z Preparing to unpack .../139-libdatrie-dev_0.2.13-3build1_amd64.deb ...
+2026-09-23T23:24:55.8914801Z Unpacking libdatrie-dev:amd64 (0.2.13-3build1) ...
+2026-09-23T23:24:55.9092335Z Selecting previously unselected package libdav1d7:amd64.
+2026-09-23T23:24:55.9192718Z Preparing to unpack .../140-libdav1d7_1.4.1-1build1_amd64.deb ...
+2026-09-23T23:24:55.9199320Z Unpacking libdav1d7:amd64 (1.4.1-1build1) ...
+2026-09-23T23:24:55.9410843Z Selecting previously unselected package libdav1d-dev:amd64.
+2026-09-23T23:24:55.9507058Z Preparing to unpack .../141-libdav1d-dev_1.4.1-1build1_amd64.deb ...
+2026-09-23T23:24:55.9514918Z Unpacking libdav1d-dev:amd64 (1.4.1-1build1) ...
+2026-09-23T23:24:55.9697524Z Selecting previously unselected package libde265-0:amd64.
+2026-09-23T23:24:55.9796480Z Preparing to unpack .../142-libde265-0_1.0.15-1ubuntu0.1_amd64.deb ...
+2026-09-23T23:24:55.9803612Z Unpacking libde265-0:amd64 (1.0.15-1ubuntu0.1) ...
+2026-09-23T23:24:55.9978747Z Selecting previously unselected package libde265-dev:amd64.
+2026-09-23T23:24:56.0077848Z Preparing to unpack .../143-libde265-dev_1.0.15-1ubuntu0.1_amd64.deb ...
+2026-09-23T23:24:56.0084862Z Unpacking libde265-dev:amd64 (1.0.15-1ubuntu0.1) ...
+2026-09-23T23:24:56.0249685Z Selecting previously unselected package libexif-doc.
+2026-09-23T23:24:56.0347760Z Preparing to unpack .../144-libexif-doc_0.6.24-1ubuntu0.24.04.1_all.deb ...
+2026-09-23T23:24:56.0353554Z Unpacking libexif-doc (0.6.24-1ubuntu0.24.04.1) ...
+2026-09-23T23:24:56.0757126Z Selecting previously unselected package libfftw3-long3:amd64.
+2026-09-23T23:24:56.0857816Z Preparing to unpack .../145-libfftw3-long3_3.3.10-1ubuntu3_amd64.deb ...
+2026-09-23T23:24:56.0863599Z Unpacking libfftw3-long3:amd64 (3.3.10-1ubuntu3) ...
+2026-09-23T23:24:56.1067425Z Selecting previously unselected package libfftw3-quad3:amd64.
+2026-09-23T23:24:56.1166939Z Preparing to unpack .../146-libfftw3-quad3_3.3.10-1ubuntu3_amd64.deb ...
+2026-09-23T23:24:56.1173160Z Unpacking libfftw3-quad3:amd64 (3.3.10-1ubuntu3) ...
+2026-09-23T23:24:56.1457398Z Selecting previously unselected package libfftw3-single3:amd64.
+2026-09-23T23:24:56.1555483Z Preparing to unpack .../147-libfftw3-single3_3.3.10-1ubuntu3_amd64.deb ...
+2026-09-23T23:24:56.1562109Z Unpacking libfftw3-single3:amd64 (3.3.10-1ubuntu3) ...
+2026-09-23T23:24:56.1852773Z Selecting previously unselected package libfftw3-bin.
+2026-09-23T23:24:56.1951212Z Preparing to unpack .../148-libfftw3-bin_3.3.10-1ubuntu3_amd64.deb ...
+2026-09-23T23:24:56.1957035Z Unpacking libfftw3-bin (3.3.10-1ubuntu3) ...
+2026-09-23T23:24:56.2132871Z Selecting previously unselected package libfftw3-dev:amd64.
+2026-09-23T23:24:56.2231950Z Preparing to unpack .../149-libfftw3-dev_3.3.10-1ubuntu3_amd64.deb ...
+2026-09-23T23:24:56.2237960Z Unpacking libfftw3-dev:amd64 (3.3.10-1ubuntu3) ...
+2026-09-23T23:24:56.3257575Z Selecting previously unselected package libfribidi-dev:amd64.
+2026-09-23T23:24:56.3357289Z Preparing to unpack .../150-libfribidi-dev_1.0.13-3build1_amd64.deb ...
+2026-09-23T23:24:56.3363282Z Unpacking libfribidi-dev:amd64 (1.0.13-3build1) ...
+2026-09-23T23:24:56.3585996Z Selecting previously unselected package libfyba0t64:amd64.
+2026-09-23T23:24:56.3686167Z Preparing to unpack .../151-libfyba0t64_4.1.1-11build1_amd64.deb ...
+2026-09-23T23:24:56.3691280Z Unpacking libfyba0t64:amd64 (4.1.1-11build1) ...
+2026-09-23T23:24:56.3879784Z Selecting previously unselected package libminizip1t64:amd64.
+2026-09-23T23:24:56.3979054Z Preparing to unpack .../152-libminizip1t64_1%3a1.3.dfsg-3.1ubuntu2.2_amd64.deb ...
+2026-09-23T23:24:56.3986355Z Unpacking libminizip1t64:amd64 (1:1.3.dfsg-3.1ubuntu2.2) ...
+2026-09-23T23:24:56.4159141Z Selecting previously unselected package libfreexl1:amd64.
+2026-09-23T23:24:56.4259119Z Preparing to unpack .../153-libfreexl1_2.0.0-1build2_amd64.deb ...
+2026-09-23T23:24:56.4264975Z Unpacking libfreexl1:amd64 (2.0.0-1build2) ...
+2026-09-23T23:24:56.4448834Z Selecting previously unselected package libgeos3.12.1t64:amd64.
+2026-09-23T23:24:56.4547636Z Preparing to unpack .../154-libgeos3.12.1t64_3.12.1-3build1_amd64.deb ...
+2026-09-23T23:24:56.4552731Z Unpacking libgeos3.12.1t64:amd64 (3.12.1-3build1) ...
+2026-09-23T23:24:56.4864572Z Selecting previously unselected package libgeos-c1t64:amd64.
+2026-09-23T23:24:56.4964491Z Preparing to unpack .../155-libgeos-c1t64_3.12.1-3build1_amd64.deb ...
+2026-09-23T23:24:56.4970836Z Unpacking libgeos-c1t64:amd64 (3.12.1-3build1) ...
+2026-09-23T23:24:56.5151320Z Selecting previously unselected package proj-data.
+2026-09-23T23:24:56.5249958Z Preparing to unpack .../156-proj-data_9.4.0-1build2_all.deb ...
+2026-09-23T23:24:56.5256194Z Unpacking proj-data (9.4.0-1build2) ...
+2026-09-23T23:24:56.6583571Z Selecting previously unselected package libproj25:amd64.
+2026-09-23T23:24:56.6683507Z Preparing to unpack .../157-libproj25_9.4.0-1build2_amd64.deb ...
+2026-09-23T23:24:56.6690388Z Unpacking libproj25:amd64 (9.4.0-1build2) ...
+2026-09-23T23:24:56.7149079Z Selecting previously unselected package libgeotiff5:amd64.
+2026-09-23T23:24:56.7249643Z Preparing to unpack .../158-libgeotiff5_1.7.1-5build1_amd64.deb ...
+2026-09-23T23:24:56.7256160Z Unpacking libgeotiff5:amd64 (1.7.1-5build1) ...
+2026-09-23T23:24:56.7443901Z Selecting previously unselected package libgif7:amd64.
+2026-09-23T23:24:56.7542392Z Preparing to unpack .../159-libgif7_5.2.2-1ubuntu1.2_amd64.deb ...
+2026-09-23T23:24:56.7548442Z Unpacking libgif7:amd64 (5.2.2-1ubuntu1.2) ...
+2026-09-23T23:24:56.7734293Z Selecting previously unselected package libhdf4-0-alt:amd64.
+2026-09-23T23:24:56.7833015Z Preparing to unpack .../160-libhdf4-0-alt_4.2.16-4build1_amd64.deb ...
+2026-09-23T23:24:56.7839509Z Unpacking libhdf4-0-alt:amd64 (4.2.16-4build1) ...
+2026-09-23T23:24:56.8514205Z Selecting previously unselected package liburiparser1:amd64.
+2026-09-23T23:24:56.8615080Z Preparing to unpack .../161-liburiparser1_0.9.7+dfsg-2build1_amd64.deb ...
+2026-09-23T23:24:56.8621442Z Unpacking liburiparser1:amd64 (0.9.7+dfsg-2build1) ...
+2026-09-23T23:24:56.8806844Z Selecting previously unselected package libkmlbase1t64:amd64.
+2026-09-23T23:24:56.8907290Z Preparing to unpack .../162-libkmlbase1t64_1.3.0-12build1_amd64.deb ...
+2026-09-23T23:24:56.8914238Z Unpacking libkmlbase1t64:amd64 (1.3.0-12build1) ...
+2026-09-23T23:24:56.9099168Z Selecting previously unselected package libkmldom1t64:amd64.
+2026-09-23T23:24:56.9199968Z Preparing to unpack .../163-libkmldom1t64_1.3.0-12build1_amd64.deb ...
+2026-09-23T23:24:56.9207740Z Unpacking libkmldom1t64:amd64 (1.3.0-12build1) ...
+2026-09-23T23:24:56.9411200Z Selecting previously unselected package libkmlengine1t64:amd64.
+2026-09-23T23:24:56.9514281Z Preparing to unpack .../164-libkmlengine1t64_1.3.0-12build1_amd64.deb ...
+2026-09-23T23:24:56.9519888Z Unpacking libkmlengine1t64:amd64 (1.3.0-12build1) ...
+2026-09-23T23:24:56.9708497Z Selecting previously unselected package libhdf5-hl-100t64:amd64.
+2026-09-23T23:24:56.9808542Z Preparing to unpack .../165-libhdf5-hl-100t64_1.10.10+repack-3.1ubuntu4_amd64.deb ...
+2026-09-23T23:24:56.9813998Z Unpacking libhdf5-hl-100t64:amd64 (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:24:57.0000811Z Selecting previously unselected package libnetcdf19t64:amd64.
+2026-09-23T23:24:57.0098763Z Preparing to unpack .../166-libnetcdf19t64_1%3a4.9.2-5ubuntu4_amd64.deb ...
+2026-09-23T23:24:57.0104534Z Unpacking libnetcdf19t64:amd64 (1:4.9.2-5ubuntu4) ...
+2026-09-23T23:24:57.0432619Z Selecting previously unselected package unixodbc-common.
+2026-09-23T23:24:57.0533567Z Preparing to unpack .../167-unixodbc-common_2.3.12-1ubuntu0.24.04.1_all.deb ...
+2026-09-23T23:24:57.0541929Z Unpacking unixodbc-common (2.3.12-1ubuntu0.24.04.1) ...
+2026-09-23T23:24:57.1434203Z Selecting previously unselected package libodbcinst2:amd64.
+2026-09-23T23:24:57.1542310Z Preparing to unpack .../168-libodbcinst2_2.3.12-1ubuntu0.24.04.1_amd64.deb ...
+2026-09-23T23:24:57.1636812Z Unpacking libodbcinst2:amd64 (2.3.12-1ubuntu0.24.04.1) ...
+2026-09-23T23:24:57.2036352Z Selecting previously unselected package libogdi4.1:amd64.
+2026-09-23T23:24:57.2140877Z Preparing to unpack .../169-libogdi4.1_4.1.1+ds-3build1_amd64.deb ...
+2026-09-23T23:24:57.2237240Z Unpacking libogdi4.1:amd64 (4.1.1+ds-3build1) ...
+2026-09-23T23:24:57.5147056Z Selecting previously unselected package libqhull-r8.0:amd64.
+2026-09-23T23:24:57.5256763Z Preparing to unpack .../170-libqhull-r8.0_2020.2-6build1_amd64.deb ...
+2026-09-23T23:24:57.5267685Z Unpacking libqhull-r8.0:amd64 (2020.2-6build1) ...
+2026-09-23T23:24:57.5666183Z Selecting previously unselected package librttopo1:amd64.
+2026-09-23T23:24:57.5768306Z Preparing to unpack .../171-librttopo1_1.1.0-3build2_amd64.deb ...
+2026-09-23T23:24:57.6043621Z Unpacking librttopo1:amd64 (1.1.0-3build2) ...
+2026-09-23T23:24:57.9257550Z Selecting previously unselected package libspatialite8t64:amd64.
+2026-09-23T23:24:57.9356391Z Preparing to unpack .../172-libspatialite8t64_5.1.0-3build1_amd64.deb ...
+2026-09-23T23:24:57.9461209Z Unpacking libspatialite8t64:amd64 (5.1.0-3build1) ...
+2026-09-23T23:24:58.1759651Z Selecting previously unselected package libxerces-c3.2t64:amd64.
+2026-09-23T23:24:58.1863401Z Preparing to unpack .../173-libxerces-c3.2t64_3.2.4+debian-1.2ubuntu2_amd64.deb ...
+2026-09-23T23:24:58.2870607Z Unpacking libxerces-c3.2t64:amd64 (3.2.4+debian-1.2ubuntu2) ...
+2026-09-23T23:24:58.4858725Z Selecting previously unselected package libgdal34t64:amd64.
+2026-09-23T23:24:58.4964772Z Preparing to unpack .../174-libgdal34t64_3.8.4+dfsg-3ubuntu3_amd64.deb ...
+2026-09-23T23:24:58.4973540Z Unpacking libgdal34t64:amd64 (3.8.4+dfsg-3ubuntu3) ...
+2026-09-23T23:24:59.0462619Z Selecting previously unselected package libgraphite2-dev:amd64.
+2026-09-23T23:24:59.0565026Z Preparing to unpack .../175-libgraphite2-dev_1.3.14-2ubuntu0.24.04.1_amd64.deb ...
+2026-09-23T23:24:59.2169542Z Unpacking libgraphite2-dev:amd64 (1.3.14-2ubuntu0.24.04.1) ...
+2026-09-23T23:24:59.9764253Z Selecting previously unselected package libharfbuzz-cairo0:amd64.
+2026-09-23T23:24:59.9853813Z Preparing to unpack .../176-libharfbuzz-cairo0_8.3.0-2build2_amd64.deb ...
+2026-09-23T23:25:00.1976224Z Unpacking libharfbuzz-cairo0:amd64 (8.3.0-2build2) ...
+2026-09-23T23:25:01.0203898Z Selecting previously unselected package libharfbuzz-icu0:amd64.
+2026-09-23T23:25:01.0305033Z Preparing to unpack .../177-libharfbuzz-icu0_8.3.0-2build2_amd64.deb ...
+2026-09-23T23:25:01.0312888Z Unpacking libharfbuzz-icu0:amd64 (8.3.0-2build2) ...
+2026-09-23T23:25:01.0496257Z Selecting previously unselected package libharfbuzz-subset0:amd64.
+2026-09-23T23:25:01.0594462Z Preparing to unpack .../178-libharfbuzz-subset0_8.3.0-2build2_amd64.deb ...
+2026-09-23T23:25:01.0602227Z Unpacking libharfbuzz-subset0:amd64 (8.3.0-2build2) ...
+2026-09-23T23:25:01.0805317Z Selecting previously unselected package libharfbuzz-dev:amd64.
+2026-09-23T23:25:01.0904443Z Preparing to unpack .../179-libharfbuzz-dev_8.3.0-2build2_amd64.deb ...
+2026-09-23T23:25:01.0909920Z Unpacking libharfbuzz-dev:amd64 (8.3.0-2build2) ...
+2026-09-23T23:25:01.1204546Z Selecting previously unselected package libhdf5-cpp-103-1t64:amd64.
+2026-09-23T23:25:01.1304630Z Preparing to unpack .../180-libhdf5-cpp-103-1t64_1.10.10+repack-3.1ubuntu4_amd64.deb ...
+2026-09-23T23:25:01.1311404Z Unpacking libhdf5-cpp-103-1t64:amd64 (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:25:01.1507910Z Selecting previously unselected package libhdf5-fortran-102t64:amd64.
+2026-09-23T23:25:01.1608640Z Preparing to unpack .../181-libhdf5-fortran-102t64_1.10.10+repack-3.1ubuntu4_amd64.deb ...
+2026-09-23T23:25:01.1614823Z Unpacking libhdf5-fortran-102t64:amd64 (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:25:01.1805288Z Selecting previously unselected package libhdf5-hl-fortran-100t64:amd64.
+2026-09-23T23:25:01.1905012Z Preparing to unpack .../182-libhdf5-hl-fortran-100t64_1.10.10+repack-3.1ubuntu4_amd64.deb ...
+2026-09-23T23:25:01.1910996Z Unpacking libhdf5-hl-fortran-100t64:amd64 (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:25:01.2098982Z Selecting previously unselected package libhdf5-hl-cpp-100t64:amd64.
+2026-09-23T23:25:01.2199594Z Preparing to unpack .../183-libhdf5-hl-cpp-100t64_1.10.10+repack-3.1ubuntu4_amd64.deb ...
+2026-09-23T23:25:01.2206257Z Unpacking libhdf5-hl-cpp-100t64:amd64 (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:25:01.2375751Z Selecting previously unselected package libaec-dev:amd64.
+2026-09-23T23:25:01.2474889Z Preparing to unpack .../184-libaec-dev_1.1.2-1build1_amd64.deb ...
+2026-09-23T23:25:01.2480816Z Unpacking libaec-dev:amd64 (1.1.2-1build1) ...
+2026-09-23T23:25:01.2662166Z Selecting previously unselected package libhdf5-dev.
+2026-09-23T23:25:01.2762647Z Preparing to unpack .../185-libhdf5-dev_1.10.10+repack-3.1ubuntu4_amd64.deb ...
+2026-09-23T23:25:01.2768050Z Unpacking libhdf5-dev (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:25:01.3753102Z Selecting previously unselected package libx265-199:amd64.
+2026-09-23T23:25:01.3854004Z Preparing to unpack .../186-libx265-199_3.5-2build1_amd64.deb ...
+2026-09-23T23:25:01.3861172Z Unpacking libx265-199:amd64 (3.5-2build1) ...
+2026-09-23T23:25:01.5075900Z Selecting previously unselected package libx265-dev:amd64.
+2026-09-23T23:25:01.5175564Z Preparing to unpack .../187-libx265-dev_3.5-2build1_amd64.deb ...
+2026-09-23T23:25:01.5182085Z Unpacking libx265-dev:amd64 (3.5-2build1) ...
+2026-09-23T23:25:01.6732741Z Selecting previously unselected package libheif-dev:amd64.
+2026-09-23T23:25:01.6831307Z Preparing to unpack .../188-libheif-dev_1.17.6-1ubuntu4.8_amd64.deb ...
+2026-09-23T23:25:01.6837543Z Unpacking libheif-dev:amd64 (1.17.6-1ubuntu4.8) ...
+2026-09-23T23:25:01.7017584Z Selecting previously unselected package libhwy-dev:amd64.
+2026-09-23T23:25:01.7116847Z Preparing to unpack .../189-libhwy-dev_1.0.7-8.1build1_amd64.deb ...
+2026-09-23T23:25:01.7123884Z Unpacking libhwy-dev:amd64 (1.0.7-8.1build1) ...
+2026-09-23T23:25:01.7435200Z Selecting previously unselected package libimagequant-dev:amd64.
+2026-09-23T23:25:01.7535049Z Preparing to unpack .../190-libimagequant-dev_2.18.0-1build1_amd64.deb ...
+2026-09-23T23:25:01.7541603Z Unpacking libimagequant-dev:amd64 (2.18.0-1build1) ...
+2026-09-23T23:25:01.7714750Z Selecting previously unselected package libjxl-dev:amd64.
+2026-09-23T23:25:01.7815773Z Preparing to unpack .../191-libjxl-dev_0.7.0-10.2ubuntu6.1_amd64.deb ...
+2026-09-23T23:25:01.7822115Z Unpacking libjxl-dev:amd64 (0.7.0-10.2ubuntu6.1) ...
+2026-09-23T23:25:01.8021286Z Selecting previously unselected package libjxr0t64:amd64.
+2026-09-23T23:25:01.8120673Z Preparing to unpack .../192-libjxr0t64_1.2~git20170615.f752187-5.1ubuntu2_amd64.deb ...
+2026-09-23T23:25:01.8126889Z Unpacking libjxr0t64:amd64 (1.2~git20170615.f752187-5.1ubuntu2) ...
+2026-09-23T23:25:01.8310702Z Selecting previously unselected package libjxr-tools.
+2026-09-23T23:25:01.8408282Z Preparing to unpack .../193-libjxr-tools_1.2~git20170615.f752187-5.1ubuntu2_amd64.deb ...
+2026-09-23T23:25:01.8414316Z Unpacking libjxr-tools (1.2~git20170615.f752187-5.1ubuntu2) ...
+2026-09-23T23:25:01.8580791Z Selecting previously unselected package libmatio-dev:amd64.
+2026-09-23T23:25:01.8679592Z Preparing to unpack .../194-libmatio-dev_1.5.26-1build3_amd64.deb ...
+2026-09-23T23:25:01.8686338Z Unpacking libmatio-dev:amd64 (1.5.26-1build3) ...
+2026-09-23T23:25:01.8872561Z Selecting previously unselected package libopenslide-dev.
+2026-09-23T23:25:01.8973473Z Preparing to unpack .../195-libopenslide-dev_3.4.1+dfsg-7build2_amd64.deb ...
+2026-09-23T23:25:01.8979531Z Unpacking libopenslide-dev (3.4.1+dfsg-7build2) ...
+2026-09-23T23:25:01.9149905Z Selecting previously unselected package libthai-dev:amd64.
+2026-09-23T23:25:01.9249351Z Preparing to unpack .../196-libthai-dev_0.1.29-2build1_amd64.deb ...
+2026-09-23T23:25:01.9255387Z Unpacking libthai-dev:amd64 (0.1.29-2build1) ...
+2026-09-23T23:25:01.9435078Z Selecting previously unselected package libxft-dev:amd64.
+2026-09-23T23:25:01.9534845Z Preparing to unpack .../197-libxft-dev_2.3.6-1build1_amd64.deb ...
+2026-09-23T23:25:01.9541016Z Unpacking libxft-dev:amd64 (2.3.6-1build1) ...
+2026-09-23T23:25:01.9768247Z Selecting previously unselected package pango1.0-tools.
+2026-09-23T23:25:01.9868343Z Preparing to unpack .../198-pango1.0-tools_1.52.1+ds-1build1_amd64.deb ...
+2026-09-23T23:25:01.9873801Z Unpacking pango1.0-tools (1.52.1+ds-1build1) ...
+2026-09-23T23:25:02.0048132Z Selecting previously unselected package libpango1.0-dev:amd64.
+2026-09-23T23:25:02.0148367Z Preparing to unpack .../199-libpango1.0-dev_1.52.1+ds-1build1_amd64.deb ...
+2026-09-23T23:25:02.0154745Z Unpacking libpango1.0-dev:amd64 (1.52.1+ds-1build1) ...
+2026-09-23T23:25:02.0417313Z Selecting previously unselected package libpng-tools.
+2026-09-23T23:25:02.0518002Z Preparing to unpack .../200-libpng-tools_1.6.43-5ubuntu0.6_amd64.deb ...
+2026-09-23T23:25:02.0524364Z Unpacking libpng-tools (1.6.43-5ubuntu0.6) ...
+2026-09-23T23:25:02.0703699Z Selecting previously unselected package libpoppler-dev:amd64.
+2026-09-23T23:25:02.0804284Z Preparing to unpack .../201-libpoppler-dev_24.02.0-1ubuntu9.9_amd64.deb ...
+2026-09-23T23:25:02.0813297Z Unpacking libpoppler-dev:amd64 (24.02.0-1ubuntu9.9) ...
+2026-09-23T23:25:02.0980626Z Selecting previously unselected package libpoppler-glib-dev.
+2026-09-23T23:25:02.1082063Z Preparing to unpack .../202-libpoppler-glib-dev_24.02.0-1ubuntu9.9_amd64.deb ...
+2026-09-23T23:25:02.1087566Z Unpacking libpoppler-glib-dev (24.02.0-1ubuntu9.9) ...
+2026-09-23T23:25:02.1527004Z Selecting previously unselected package libsfcgal1t64.
+2026-09-23T23:25:02.1629535Z Preparing to unpack .../203-libsfcgal1t64_1.5.1-3build1_amd64.deb ...
+2026-09-23T23:25:02.1636187Z Unpacking libsfcgal1t64 (1.5.1-3build1) ...
+2026-09-23T23:25:02.2625015Z Selecting previously unselected package libspng-dev:amd64.
+2026-09-23T23:25:02.2727879Z Preparing to unpack .../204-libspng-dev_0.7.4-1build1_amd64.deb ...
+2026-09-23T23:25:02.2733845Z Unpacking libspng-dev:amd64 (0.7.4-1build1) ...
+2026-09-23T23:25:02.2913641Z Selecting previously unselected package libspng-doc.
+2026-09-23T23:25:02.3014207Z Preparing to unpack .../205-libspng-doc_0.7.4-1build1_all.deb ...
+2026-09-23T23:25:02.3020977Z Unpacking libspng-doc (0.7.4-1build1) ...
+2026-09-23T23:25:02.3321791Z Selecting previously unselected package libvips-dev.
+2026-09-23T23:25:02.3422653Z Preparing to unpack .../206-libvips-dev_8.15.1-1.1build4_amd64.deb ...
+2026-09-23T23:25:02.3428955Z Unpacking libvips-dev (8.15.1-1.1build4) ...
+2026-09-23T23:25:02.3765610Z Selecting previously unselected package libvips-doc.
+2026-09-23T23:25:02.3868195Z Preparing to unpack .../207-libvips-doc_8.15.1-1.1build4_all.deb ...
+2026-09-23T23:25:02.3924614Z Unpacking libvips-doc (8.15.1-1.1build4) ...
+2026-09-23T23:25:02.4874668Z Selecting previously unselected package libvips-tools.
+2026-09-23T23:25:02.4977193Z Preparing to unpack .../208-libvips-tools_8.15.1-1.1build4_amd64.deb ...
+2026-09-23T23:25:02.4982758Z Unpacking libvips-tools (8.15.1-1.1build4) ...
+2026-09-23T23:25:02.5176763Z Selecting previously unselected package postgresql-16-postgis-3-scripts.
+2026-09-23T23:25:02.5278219Z Preparing to unpack .../209-postgresql-16-postgis-3-scripts_3.4.2+dfsg-1ubuntu3_all.deb ...
+2026-09-23T23:25:02.5283632Z Unpacking postgresql-16-postgis-3-scripts (3.4.2+dfsg-1ubuntu3) ...
+2026-09-23T23:25:02.7997896Z Selecting previously unselected package postgresql-16-postgis-3.
+2026-09-23T23:25:02.8096651Z Preparing to unpack .../210-postgresql-16-postgis-3_3.4.2+dfsg-1ubuntu3_amd64.deb ...
+2026-09-23T23:25:02.8102365Z Unpacking postgresql-16-postgis-3 (3.4.2+dfsg-1ubuntu3) ...
+2026-09-23T23:25:02.8858644Z Selecting previously unselected package postgresql-postgis-scripts.
+2026-09-23T23:25:02.8956886Z Preparing to unpack .../211-postgresql-postgis-scripts_3.4.2+dfsg-1ubuntu3_all.deb ...
+2026-09-23T23:25:02.8962570Z Unpacking postgresql-postgis-scripts (3.4.2+dfsg-1ubuntu3) ...
+2026-09-23T23:25:02.9131213Z Selecting previously unselected package postgresql-postgis.
+2026-09-23T23:25:02.9228433Z Preparing to unpack .../212-postgresql-postgis_3.4.2+dfsg-1ubuntu3_amd64.deb ...
+2026-09-23T23:25:02.9233670Z Unpacking postgresql-postgis (3.4.2+dfsg-1ubuntu3) ...
+2026-09-23T23:25:02.9402370Z Selecting previously unselected package proj-bin.
+2026-09-23T23:25:02.9499230Z Preparing to unpack .../213-proj-bin_9.4.0-1build2_amd64.deb ...
+2026-09-23T23:25:02.9504946Z Unpacking proj-bin (9.4.0-1build2) ...
+2026-09-23T23:25:03.0066662Z Setting up libhwy1t64:amd64 (1.0.7-8.1build1) ...
+2026-09-23T23:25:03.0084453Z Setting up libcairo-script-interpreter2:amd64 (1.18.0-3build1) ...
+2026-09-23T23:25:03.0101632Z Setting up bzip2-doc (1.0.8-5.1ubuntu0.1) ...
+2026-09-23T23:25:03.0121264Z Setting up libjpeg-turbo8-dev:amd64 (2.1.5-2ubuntu2) ...
+2026-09-23T23:25:03.0139617Z Setting up gettext (0.21-14ubuntu2) ...
+2026-09-23T23:25:03.0154227Z Setting up libharfbuzz-icu0:amd64 (8.3.0-2build2) ...
+2026-09-23T23:25:03.0168925Z Setting up libcgif0:amd64 (0.3.2-1build1) ...
+2026-09-23T23:25:03.0186153Z Setting up libfftw3-single3:amd64 (3.3.10-1ubuntu3) ...
+2026-09-23T23:25:03.0205728Z Setting up libpixman-1-dev:amd64 (0.42.2-1build1) ...
+2026-09-23T23:25:03.0224121Z Setting up proj-data (9.4.0-1build2) ...
+2026-09-23T23:25:03.0238982Z Setting up hdf5-helpers (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:25:03.0254470Z Setting up libwmflite-0.2-7:amd64 (0.2.13-1.1build3) ...
+2026-09-23T23:25:03.0270749Z Setting up libattr1-dev:amd64 (1:2.5.2-1ubuntu0.1) ...
+2026-09-23T23:25:03.0287951Z Setting up nettle-dev:amd64 (3.9.1-2.2build1.1) ...
+2026-09-23T23:25:03.0303149Z Setting up libproj25:amd64 (9.4.0-1build2) ...
+2026-09-23T23:25:03.0321446Z Setting up libpng-tools (1.6.43-5ubuntu0.6) ...
+2026-09-23T23:25:03.0335408Z Setting up libogdi4.1:amd64 (4.1.1+ds-3build1) ...
+2026-09-23T23:25:03.0349977Z Setting up libpoppler134:amd64 (24.02.0-1ubuntu9.9) ...
+2026-09-23T23:25:03.0366726Z Setting up libgeos3.12.1t64:amd64 (3.12.1-3build1) ...
+2026-09-23T23:25:03.0382583Z Setting up libgeos-c1t64:amd64 (3.12.1-3build1) ...
+2026-09-23T23:25:03.0400107Z Setting up libfribidi-dev:amd64 (1.0.13-3build1) ...
+2026-09-23T23:25:03.0417548Z Setting up libpng-dev:amd64 (1.6.43-5ubuntu0.6) ...
+2026-09-23T23:25:03.0433214Z Setting up libjbig-dev:amd64 (2.1-6.1ubuntu2) ...
+2026-09-23T23:25:03.0450017Z Setting up libwebpdecoder3:amd64 (1.3.2-0.4build3) ...
+2026-09-23T23:25:03.0465698Z Setting up libfftw3-long3:amd64 (3.3.10-1ubuntu3) ...
+2026-09-23T23:25:03.0483335Z Setting up liblqr-1-0-dev:amd64 (0.4.2-2.1build2) ...
+2026-09-23T23:25:03.0501536Z Setting up proj-bin (9.4.0-1build2) ...
+2026-09-23T23:25:03.0519205Z Setting up libqhull-r8.0:amd64 (2020.2-6build1) ...
+2026-09-23T23:25:03.0535897Z Setting up fonts-roboto-unhinted (2:0~20170802-3) ...
+2026-09-23T23:25:03.0549689Z Setting up libxerces-c3.2t64:amd64 (3.2.4+debian-1.2ubuntu2) ...
+2026-09-23T23:25:03.0566254Z Setting up libpthread-stubs0-dev:amd64 (0.4-1build3) ...
+2026-09-23T23:25:03.0581632Z Setting up libaec0:amd64 (1.1.2-1build1) ...
+2026-09-23T23:25:03.0597495Z Setting up gdal-data (3.8.4+dfsg-3ubuntu3) ...
+2026-09-23T23:25:03.0619800Z Setting up libgeotiff5:amd64 (1.7.1-5build1) ...
+2026-09-23T23:25:03.0635718Z Setting up poppler-data (0.4.12-1) ...
+2026-09-23T23:25:03.0694421Z Setting up libaom-dev:amd64 (3.8.2-2ubuntu0.2) ...
+2026-09-23T23:25:03.0711235Z Setting up libboost-serialization1.83.0:amd64 (1.83.0-2.1ubuntu3.2) ...
+2026-09-23T23:25:03.0728391Z Setting up libltdl-dev:amd64 (2.4.7-7build1) ...
+2026-09-23T23:25:03.0747456Z Setting up libcgif-dev:amd64 (0.3.2-1build1) ...
+2026-09-23T23:25:03.0762105Z Setting up xtrans-dev (1.4.0-1) ...
+2026-09-23T23:25:03.0778831Z Setting up libgraphite2-dev:amd64 (1.3.14-2ubuntu0.24.04.1) ...
+2026-09-23T23:25:03.0794017Z Setting up libglib2.0-0t64:amd64 (2.80.0-6ubuntu3.9) ...
+2026-09-23T23:25:03.0931671Z Setting up libblas3:amd64 (3.12.0-3build1.1) ...
+2026-09-23T23:25:03.0977052Z update-alternatives: using /usr/lib/x86_64-linux-gnu/blas/libblas.so.3 to provide /usr/lib/x86_64-linux-gnu/libblas.so.3 (libblas.so.3-x86_64-linux-gnu) in auto mode
+2026-09-23T23:25:03.0993144Z Setting up libglib2.0-data (2.80.0-6ubuntu3.9) ...
+2026-09-23T23:25:03.1010020Z Setting up libcfitsio10t64:amd64 (4.3.1-1.1build2) ...
+2026-09-23T23:25:03.1028434Z Setting up libjxr0t64:amd64 (1.2~git20170615.f752187-5.1ubuntu2) ...
+2026-09-23T23:25:03.1044656Z Setting up libharfbuzz-cairo0:amd64 (8.3.0-2build2) ...
+2026-09-23T23:25:03.1063976Z Setting up libwmf-0.2-7:amd64 (0.2.13-1.1build3) ...
+2026-09-23T23:25:03.1078710Z Setting up libopenjp2-7-dev:amd64 (2.5.0-2ubuntu0.5) ...
+2026-09-23T23:25:03.1095782Z Setting up libcurl4-openssl-dev:amd64 (8.5.0-2ubuntu10.13) ...
+2026-09-23T23:25:03.1109906Z Setting up uuid-dev:amd64 (2.39.3-9ubuntu6.6) ...
+2026-09-23T23:25:03.1128669Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-09-23T23:25:03.1147171Z Setting up libfftw3-quad3:amd64 (3.3.10-1ubuntu3) ...
+2026-09-23T23:25:03.1169306Z Setting up libexif12:amd64 (0.6.24-1ubuntu0.24.04.1) ...
+2026-09-23T23:25:03.1184378Z Setting up libimagequant0:amd64 (2.18.0-1build1) ...
+2026-09-23T23:25:03.1204323Z Setting up comerr-dev:amd64 (2.1-1.47.0-2.4~exp1ubuntu4.1) ...
+2026-09-23T23:25:03.1236556Z Setting up libimath-3-1-29t64:amd64 (3.1.9-3.1ubuntu2) ...
+2026-09-23T23:25:03.1253280Z Setting up python3-markdown (3.5.2-1) ...
+2026-09-23T23:25:03.2672827Z Setting up unixodbc-common (2.3.12-1ubuntu0.24.04.1) ...
+2026-09-23T23:25:03.2718847Z Setting up libsepol-dev:amd64 (3.5-2build1) ...
+2026-09-23T23:25:03.2737267Z Setting up gir1.2-glib-2.0:amd64 (2.80.0-6ubuntu3.9) ...
+2026-09-23T23:25:03.2753389Z Setting up liblerc-dev:amd64 (4.0.0+ds-4ubuntu2) ...
+2026-09-23T23:25:03.2768260Z Setting up libjxl0.7:amd64 (0.7.0-10.2ubuntu6.1) ...
+2026-09-23T23:25:03.2788773Z Setting up libhdf4-0-alt:amd64 (4.2.16-4build1) ...
+2026-09-23T23:25:03.2806992Z Setting up libx265-199:amd64 (3.5-2build1) ...
+2026-09-23T23:25:03.2825782Z Setting up liblcms2-dev:amd64 (2.14-2ubuntu0.1) ...
+2026-09-23T23:25:03.2845617Z Setting up liblzma-dev:amd64 (5.6.1+really5.4.5-1ubuntu0.3) ...
+2026-09-23T23:25:03.2863784Z Setting up libhwy-dev:amd64 (1.0.7-8.1build1) ...
+2026-09-23T23:25:03.2882094Z Setting up libgif7:amd64 (5.2.2-1ubuntu1.2) ...
+2026-09-23T23:25:03.2896773Z Setting up liburiparser1:amd64 (0.9.7+dfsg-2build1) ...
+2026-09-23T23:25:03.2918714Z Setting up libfyba0t64:amd64 (4.1.1-11build1) ...
+2026-09-23T23:25:03.2935318Z Setting up librttopo1:amd64 (1.1.0-3build2) ...
+2026-09-23T23:25:03.2952075Z Setting up libdav1d7:amd64 (1.4.1-1build1) ...
+2026-09-23T23:25:03.2969242Z Setting up libdatrie-dev:amd64 (0.2.13-3build1) ...
+2026-09-23T23:25:03.2987659Z Setting up libminizip1t64:amd64 (1:1.3.dfsg-3.1ubuntu2.2) ...
+2026-09-23T23:25:03.3008256Z Setting up gir1.2-glib-2.0-dev:amd64 (2.80.0-6ubuntu3.9) ...
+2026-09-23T23:25:03.3028715Z Setting up libexif-doc (0.6.24-1ubuntu0.24.04.1) ...
+2026-09-23T23:25:03.3045931Z Setting up libgdk-pixbuf2.0-bin (2.42.10+dfsg-3ubuntu3.3) ...
+2026-09-23T23:25:03.3064150Z Setting up libblosc1:amd64 (1.21.5+ds-1build1) ...
+2026-09-23T23:25:03.3084017Z Setting up libharfbuzz-subset0:amd64 (8.3.0-2build2) ...
+2026-09-23T23:25:03.3103985Z Setting up libspng0:amd64 (0.7.4-1build1) ...
+2026-09-23T23:25:03.3123401Z Setting up build-essential (12.10ubuntu1) ...
+2026-09-23T23:25:03.3557474Z Setting up xorg-sgml-doctools (1:1.11-1.1) ...
+2026-09-23T23:25:03.3574412Z Setting up libmagickcore-6-headers (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:25:03.3591465Z Setting up libdjvulibre-text (3.5.28-2ubuntu0.24.04.2) ...
+2026-09-23T23:25:03.3610152Z Setting up libjpeg8-dev:amd64 (8c-2ubuntu11) ...
+2026-09-23T23:25:03.3631535Z Setting up libvips-doc (8.15.1-1.1build4) ...
+2026-09-23T23:25:03.3686591Z Setting up libopenslide0 (3.4.1+dfsg-7build2) ...
+2026-09-23T23:25:03.3704900Z Setting up libde265-0:amd64 (1.0.15-1ubuntu0.1) ...
+2026-09-23T23:25:03.3725489Z Setting up libsharpyuv-dev:amd64 (1.3.2-0.4build3) ...
+2026-09-23T23:25:03.3749312Z Setting up libkmlbase1t64:amd64 (1.3.0-12build1) ...
+2026-09-23T23:25:03.3763629Z Setting up libext2fs-dev (1.47.0-2.4~exp1ubuntu4.1) ...
+2026-09-23T23:25:03.3777183Z Setting up libtiffxx6:amd64 (4.5.1+git230720-4ubuntu2.5) ...
+2026-09-23T23:25:03.3794600Z Setting up libdeflate-dev:amd64 (1.19-1build1.1) ...
+2026-09-23T23:25:03.3811272Z Setting up libcfitsio-doc (4.3.1-1.1build2) ...
+2026-09-23T23:25:03.3832341Z Setting up libbrotli-dev:amd64 (1.1.0-2build2) ...
+2026-09-23T23:25:03.3845683Z Setting up libsfcgal1t64 (1.5.1-3build1) ...
+2026-09-23T23:25:03.3865012Z Setting up libsz2:amd64 (1.1.2-1build1) ...
+2026-09-23T23:25:03.3883110Z Setting up python3-mako (1.3.2-1ubuntu0.1) ...
+2026-09-23T23:25:03.4904139Z Setting up libacl1-dev:amd64 (2.3.2-1build1.1) ...
+2026-09-23T23:25:03.4921542Z Setting up gdal-plugins:amd64 (3.8.4+dfsg-3ubuntu3) ...
+2026-09-23T23:25:03.4940507Z Setting up postgresql-16-postgis-3-scripts (3.4.2+dfsg-1ubuntu3) ...
+2026-09-23T23:25:03.4990211Z update-alternatives: using /usr/share/postgresql/16/extension/postgis-3.control to provide /usr/share/postgresql/16/extension/postgis.control (postgresql-16-postgis.control) in auto mode
+2026-09-23T23:25:03.5018347Z Setting up libbz2-dev:amd64 (1.0.8-5.1ubuntu0.1) ...
+2026-09-23T23:25:03.5036236Z Setting up libpoppler-dev:amd64 (24.02.0-1ubuntu9.9) ...
+2026-09-23T23:25:03.5054086Z Setting up libglib2.0-dev-bin (2.80.0-6ubuntu3.9) ...
+2026-09-23T23:25:03.6004402Z Setting up libblkid-dev:amd64 (2.39.3-9ubuntu6.6) ...
+2026-09-23T23:25:03.6019074Z Setting up libimath-dev:amd64 (3.1.9-3.1ubuntu2) ...
+2026-09-23T23:25:03.6040278Z Setting up libodbcinst2:amd64 (2.3.12-1ubuntu0.24.04.1) ...
+2026-09-23T23:25:03.6060982Z Setting up libmagickcore-6-arch-config:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:25:03.6079639Z Setting up libexif-dev:amd64 (0.6.24-1ubuntu0.24.04.1) ...
+2026-09-23T23:25:03.6097046Z Setting up liblapack3:amd64 (3.12.0-3build1.1) ...
+2026-09-23T23:25:03.6147146Z update-alternatives: using /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3 to provide /usr/lib/x86_64-linux-gnu/liblapack.so.3 (liblapack.so.3-x86_64-linux-gnu) in auto mode
+2026-09-23T23:25:03.6161293Z Setting up gir1.2-freedesktop:amd64 (1.80.1-1) ...
+2026-09-23T23:25:03.6182166Z Setting up libarpack2t64:amd64 (3.9.1-1.1build2) ...
+2026-09-23T23:25:03.6199487Z Setting up libcfitsio-dev:amd64 (4.3.1-1.1build2) ...
+2026-09-23T23:25:03.6218326Z Setting up libspng-dev:amd64 (0.7.4-1build1) ...
+2026-09-23T23:25:03.6242377Z Setting up libjxr-tools (1.2~git20170615.f752187-5.1ubuntu2) ...
+2026-09-23T23:25:03.6261588Z Setting up libpangoxft-1.0-0:amd64 (1.52.1+ds-1build1) ...
+2026-09-23T23:25:03.6282147Z Setting up libimagequant-dev:amd64 (2.18.0-1build1) ...
+2026-09-23T23:25:03.6303040Z Setting up gir1.2-gdkpixbuf-2.0:amd64 (2.42.10+dfsg-3ubuntu3.3) ...
+2026-09-23T23:25:03.6320861Z Setting up fonts-roboto (2:0~20170802-3) ...
+2026-09-23T23:25:03.6339132Z Setting up libgirepository-2.0-0:amd64 (2.80.0-6ubuntu3.9) ...
+2026-09-23T23:25:03.6357521Z Setting up libfftw3-bin (3.3.10-1ubuntu3) ...
+2026-09-23T23:25:03.6372867Z Setting up libselinux1-dev:amd64 (3.5-2ubuntu2.1) ...
+2026-09-23T23:25:03.6389607Z Setting up libmagickwand-6-headers (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:25:03.6404739Z Setting up gobject-introspection-bin (1.80.1-1) ...
+2026-09-23T23:25:03.7636539Z Setting up pango1.0-tools (1.52.1+ds-1build1) ...
+2026-09-23T23:25:03.7656082Z Setting up libaec-dev:amd64 (1.1.2-1build1) ...
+2026-09-23T23:25:03.7671706Z Setting up libdjvulibre21:amd64 (3.5.28-2ubuntu0.24.04.2) ...
+2026-09-23T23:25:03.7688348Z Setting up libjpeg-dev:amd64 (8c-2ubuntu11) ...
+2026-09-23T23:25:03.7704784Z Setting up libglib2.0-bin (2.80.0-6ubuntu3.9) ...
+2026-09-23T23:25:03.7719434Z Setting up libharfbuzz-gobject0:amd64 (8.3.0-2build2) ...
+2026-09-23T23:25:03.7745235Z Setting up gir1.2-girepository-2.0-dev:amd64 (1.80.1-1) ...
+2026-09-23T23:25:03.7761981Z Setting up libsuperlu6:amd64 (6.0.1+dfsg1-1build1) ...
+2026-09-23T23:25:03.7777865Z Setting up xfonts-utils (1:7.7+6build3) ...
+2026-09-23T23:25:03.7814414Z Setting up libdjvulibre-dev:amd64 (3.5.28-2ubuntu0.24.04.2) ...
+2026-09-23T23:25:03.7832721Z Setting up gir1.2-harfbuzz-0.0:amd64 (8.3.0-2build2) ...
+2026-09-23T23:25:03.7849471Z Setting up libspng-doc (0.7.4-1build1) ...
+2026-09-23T23:25:03.7867180Z Setting up libfreetype-dev:amd64 (2.13.2+dfsg-1ubuntu0.1) ...
+2026-09-23T23:25:03.7883403Z Setting up librsvg2-2:amd64 (2.58.0+dfsg-1build1) ...
+2026-09-23T23:25:03.7900939Z Setting up libpoppler-glib8t64:amd64 (24.02.0-1ubuntu9.9) ...
+2026-09-23T23:25:03.7916295Z Setting up libkmldom1t64:amd64 (1.3.0-12build1) ...
+2026-09-23T23:25:03.7940568Z Setting up libopenslide-dev (3.4.1+dfsg-7build2) ...
+2026-09-23T23:25:03.7959854Z Setting up gir1.2-pango-1.0:amd64 (1.52.1+ds-1build1) ...
+2026-09-23T23:25:03.7974748Z Setting up libwebp-dev:amd64 (1.3.2-0.4build3) ...
+2026-09-23T23:25:03.7991873Z Setting up libtiff-dev:amd64 (4.5.1+git230720-4ubuntu2.5) ...
+2026-09-23T23:25:03.8009207Z Setting up libde265-dev:amd64 (1.0.15-1ubuntu0.1) ...
+2026-09-23T23:25:03.8028207Z Setting up libdav1d-dev:amd64 (1.4.1-1build1) ...
+2026-09-23T23:25:03.8047479Z Setting up libopenexr-3-1-30:amd64 (3.1.5-5.1build3) ...
+2026-09-23T23:25:03.8064923Z Setting up gir1.2-freedesktop-dev:amd64 (1.80.1-1) ...
+2026-09-23T23:25:03.8082819Z Setting up libx265-dev:amd64 (3.5-2build1) ...
+2026-09-23T23:25:03.8097373Z Setting up libjxl-dev:amd64 (0.7.0-10.2ubuntu6.1) ...
+2026-09-23T23:25:03.8111617Z Setting up librsvg2-common:amd64 (2.58.0+dfsg-1build1) ...
+2026-09-23T23:25:03.8203084Z Setting up libthai-dev:amd64 (0.1.29-2build1) ...
+2026-09-23T23:25:03.8217618Z Setting up libfreexl1:amd64 (2.0.0-1build2) ...
+2026-09-23T23:25:03.8239633Z Setting up libarchive-dev:amd64 (3.7.2-2ubuntu0.8) ...
+2026-09-23T23:25:03.8254322Z Setting up libmagickcore-6.q16-7-extra:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:25:03.8270716Z Setting up postgresql-postgis-scripts (3.4.2+dfsg-1ubuntu3) ...
+2026-09-23T23:25:03.8290205Z Setting up gir1.2-poppler-0.18:amd64 (24.02.0-1ubuntu9.9) ...
+2026-09-23T23:25:03.8305352Z Setting up libhdf5-103-1t64:amd64 (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:25:03.8322333Z Setting up gir1.2-rsvg-2.0:amd64 (2.58.0+dfsg-1build1) ...
+2026-09-23T23:25:03.8344252Z Setting up libfftw3-dev:amd64 (3.3.10-1ubuntu3) ...
+2026-09-23T23:25:03.8359147Z Setting up libmount-dev:amd64 (2.39.3-9ubuntu6.6) ...
+2026-09-23T23:25:03.8378736Z Setting up libarmadillo12 (1:12.6.7+dfsg-1build2) ...
+2026-09-23T23:25:03.8394474Z Setting up libspatialite8t64:amd64 (5.1.0-3build1) ...
+2026-09-23T23:25:03.8412129Z Setting up libhdf5-hl-100t64:amd64 (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:25:03.8431455Z Setting up libnetcdf19t64:amd64 (1:4.9.2-5ubuntu4) ...
+2026-09-23T23:25:03.8795112Z Setting up libfontconfig-dev:amd64 (2.15.0-1.1ubuntu2) ...
+2026-09-23T23:25:03.8812426Z Setting up libhdf5-cpp-103-1t64:amd64 (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:25:03.8829349Z Setting up libheif-dev:amd64 (1.17.6-1ubuntu4.8) ...
+2026-09-23T23:25:03.8848575Z Setting up libhdf5-fortran-102t64:amd64 (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:25:03.8864693Z Setting up libkmlengine1t64:amd64 (1.3.0-12build1) ...
+2026-09-23T23:25:03.8878901Z Setting up fonts-urw-base35 (20200910-8) ...
+2026-09-23T23:25:03.9896583Z Setting up libgdal34t64:amd64 (3.8.4+dfsg-3ubuntu3) ...
+2026-09-23T23:25:03.9914660Z Setting up libopenexr-dev (3.1.5-5.1build3) ...
+2026-09-23T23:25:03.9936605Z Setting up libglib2.0-dev:amd64 (2.80.0-6ubuntu3.9) ...
+2026-09-23T23:25:03.9952541Z Setting up libmatio11:amd64 (1.5.26-1build3) ...
+2026-09-23T23:25:03.9971615Z Setting up libvips42t64:amd64 (8.15.1-1.1build4) ...
+2026-09-23T23:25:03.9986601Z Setting up libvips-tools (8.15.1-1.1build4) ...
+2026-09-23T23:25:04.0004188Z Setting up libhdf5-hl-cpp-100t64:amd64 (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:25:04.0018231Z Setting up libgdk-pixbuf-2.0-dev:amd64 (2.42.10+dfsg-3ubuntu3.3) ...
+2026-09-23T23:25:04.0036939Z Setting up libharfbuzz-dev:amd64 (8.3.0-2build2) ...
+2026-09-23T23:25:04.0054963Z Setting up gobject-introspection:amd64 (1.80.1-1) ...
+2026-09-23T23:25:04.0072043Z Setting up libhdf5-hl-fortran-100t64:amd64 (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:25:04.0090935Z Setting up postgresql-16-postgis-3 (3.4.2+dfsg-1ubuntu3) ...
+2026-09-23T23:25:04.0104932Z Setting up gir1.2-vips-8.0 (8.15.1-1.1build4) ...
+2026-09-23T23:25:04.0120035Z Setting up libhdf5-dev (1.10.10+repack-3.1ubuntu4) ...
+2026-09-23T23:25:04.0178017Z update-alternatives: using /usr/lib/x86_64-linux-gnu/pkgconfig/hdf5-serial.pc to provide /usr/lib/x86_64-linux-gnu/pkgconfig/hdf5.pc (hdf5.pc) in auto mode
+2026-09-23T23:25:04.0192757Z Setting up libgirepository-1.0-dev:amd64 (1.80.1-1) ...
+2026-09-23T23:25:04.0211535Z Setting up postgresql-postgis (3.4.2+dfsg-1ubuntu3) ...
+2026-09-23T23:25:04.0230194Z Setting up libmatio-dev:amd64 (1.5.26-1build3) ...
+2026-09-23T23:25:04.0244418Z Setting up libgirepository1.0-dev (1.80.1-1) ...
+2026-09-23T23:25:04.0445378Z Processing triggers for libgdk-pixbuf-2.0-0:amd64 (2.42.10+dfsg-3ubuntu3.3) ...
+2026-09-23T23:25:04.1175119Z Processing triggers for sgml-base (1.31) ...
+2026-09-23T23:25:04.1344839Z Processing triggers for install-info (7.1-3build2) ...
+2026-09-23T23:25:04.3684464Z Setting up x11proto-dev (2023.2-1) ...
+2026-09-23T23:25:04.3839706Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-09-23T23:25:04.5789658Z Setting up libxau-dev:amd64 (1:1.0.9-1build6) ...
+2026-09-23T23:25:04.5806763Z Setting up libice-dev:amd64 (2:1.0.10-1build3) ...
+2026-09-23T23:25:04.5825909Z Setting up libsm-dev:amd64 (2:1.2.3-1build3) ...
+2026-09-23T23:25:04.5855548Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+2026-09-23T23:25:05.6617719Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-09-23T23:25:05.6638240Z Not building database; man-db/auto-update is not 'true'.
+2026-09-23T23:25:05.6663063Z Setting up libxdmcp-dev:amd64 (1:1.1.3-0ubuntu6) ...
+2026-09-23T23:25:05.6684722Z Setting up x11proto-core-dev (2023.2-1) ...
+2026-09-23T23:25:05.6714490Z Processing triggers for postgresql-common (293.pgdg24.04+1) ...
+2026-09-23T23:25:05.7574399Z Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+2026-09-23T23:25:05.7646440Z   en_us
+2026-09-23T23:25:05.7981801Z Removing obsolete dictionary files:
+2026-09-23T23:25:05.8259164Z Setting up libxcb1-dev:amd64 (1.15-1ubuntu2) ...
+2026-09-23T23:25:05.8285720Z Setting up libx11-dev:amd64 (2:1.8.7-1build1) ...
+2026-09-23T23:25:05.8309315Z Setting up libxcb-shm0-dev:amd64 (1.15-1ubuntu2) ...
+2026-09-23T23:25:05.8328062Z Setting up libwmf-dev (0.2.13-1.1build3) ...
+2026-09-23T23:25:05.8345488Z Setting up libxt-dev:amd64 (1:1.2.1-1.2build1) ...
+2026-09-23T23:25:05.8365610Z Setting up libxcb-render0-dev:amd64 (1.15-1ubuntu2) ...
+2026-09-23T23:25:05.8393242Z Setting up libxext-dev:amd64 (2:1.3.4-1build2) ...
+2026-09-23T23:25:05.8429894Z Setting up libxrender-dev:amd64 (1:0.9.10-1.1build1) ...
+2026-09-23T23:25:05.8447491Z Setting up libxft-dev:amd64 (2.3.6-1build1) ...
+2026-09-23T23:25:05.8523430Z Setting up libcairo2-dev:amd64 (1.18.0-3build1) ...
+2026-09-23T23:25:05.8551800Z Setting up libpoppler-glib-dev (24.02.0-1ubuntu9.9) ...
+2026-09-23T23:25:05.8586672Z Setting up libpango1.0-dev:amd64 (1.52.1+ds-1build1) ...
+2026-09-23T23:25:05.8626625Z Setting up librsvg2-dev:amd64 (2.58.0+dfsg-1build1) ...
+2026-09-23T23:25:05.8665349Z Setting up libmagickcore-6.q16-dev:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:25:05.8706915Z Setting up libmagickwand-6.q16-dev:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:25:05.8732216Z Setting up libmagickcore-dev (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:25:05.8758433Z Setting up libvips-dev (8.15.1-1.1build4) ...
+2026-09-23T23:25:05.8781809Z Setting up libmagickwand-dev (8:6.9.12.98+dfsg1-5.2build2) ...
+2026-09-23T23:25:07.0222848Z 
+2026-09-23T23:25:07.0223571Z Running kernel seems to be up-to-date.
+2026-09-23T23:25:07.0223812Z 
+2026-09-23T23:25:07.0223934Z Restarting services...
+2026-09-23T23:25:07.0552212Z  systemctl restart packagekit.service php8.3-fpm.service polkit.service udisks2.service
+2026-09-23T23:25:07.1537631Z 
+2026-09-23T23:25:07.1564234Z Service restarts being deferred:
+2026-09-23T23:25:07.1564662Z  systemctl restart ModemManager.service
+2026-09-23T23:25:07.1579050Z  systemctl restart networkd-dispatcher.service
+2026-09-23T23:25:07.1579270Z 
+2026-09-23T23:25:07.1579409Z No containers need to be restarted.
+2026-09-23T23:25:07.1579569Z 
+2026-09-23T23:25:07.1579728Z No user sessions are running outdated binaries.
+2026-09-23T23:25:07.1579919Z 
+2026-09-23T23:25:07.1580175Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-09-23T23:25:07.9392858Z ##[group]Run sudo systemctl start postgresql
+2026-09-23T23:25:07.9393276Z [36;1msudo systemctl start postgresql[0m
+2026-09-23T23:25:07.9393458Z [36;1msudo -u postgres createuser -s $(id -un)[0m
+2026-09-23T23:25:07.9393637Z [36;1mcreatedb openstreetmap[0m
+2026-09-23T23:25:07.9393792Z [36;1mbundle exec rails db:schema:load[0m
+2026-09-23T23:25:07.9446482Z shell: /usr/bin/bash -e {0}
+2026-09-23T23:25:07.9446633Z env:
+2026-09-23T23:25:07.9446748Z   ruby: 3.3
+2026-09-23T23:25:07.9446862Z   RAILS_ENV: test
+2026-09-23T23:25:07.9446981Z ##[endgroup]
+2026-09-23T23:25:18.9949707Z ##[group]Run bundle exec annotaterb models
+2026-09-23T23:25:18.9949948Z [36;1mbundle exec annotaterb models[0m
+2026-09-23T23:25:19.0002763Z shell: /usr/bin/bash -e {0}
+2026-09-23T23:25:19.0003041Z env:
+2026-09-23T23:25:19.0003209Z   ruby: 3.3
+2026-09-23T23:25:19.0003325Z   RAILS_ENV: test
+2026-09-23T23:25:19.0003448Z ##[endgroup]
+2026-09-23T23:25:22.2434645Z Annotating models
+2026-09-23T23:25:22.2435082Z Annotated (2): app/models/acl.rb, app/models/user.rb
+2026-09-23T23:25:22.2732362Z ##[group]Run git diff --exit-code
+2026-09-23T23:25:22.2732602Z [36;1mgit diff --exit-code[0m
+2026-09-23T23:25:22.2788787Z shell: /usr/bin/bash -e {0}
+2026-09-23T23:25:22.2788947Z env:
+2026-09-23T23:25:22.2789064Z   ruby: 3.3
+2026-09-23T23:25:22.2789179Z   RAILS_ENV: test
+2026-09-23T23:25:22.2789306Z ##[endgroup]
+2026-09-23T23:25:22.4098465Z diff --git a/app/models/acl.rb b/app/models/acl.rb
+2026-09-23T23:25:22.4098866Z index 9b13ba0..4af209b 100644
+2026-09-23T23:25:22.4099123Z --- a/app/models/acl.rb
+2026-09-23T23:25:22.4099382Z +++ b/app/models/acl.rb
+2026-09-23T23:25:22.4099645Z @@ -14,7 +14,7 @@
+2026-09-23T23:25:22.4099840Z  # Indexes
+2026-09-23T23:25:22.4100022Z  #
+2026-09-23T23:25:22.4100224Z  #  acls_k_idx             (k)
+2026-09-23T23:25:22.4100549Z -#  index_acls_on_address  (address) USING gist
+2026-09-23T23:25:22.4100951Z +#  index_acls_on_address  (address inet_ops) USING gist
+2026-09-23T23:25:22.4101278Z  #  index_acls_on_domain   (domain)
+2026-09-23T23:25:22.4101586Z  #  index_acls_on_mx       (mx)
+2026-09-23T23:25:22.4101798Z  #
+2026-09-23T23:25:22.4102069Z diff --git a/app/models/user.rb b/app/models/user.rb
+2026-09-23T23:25:22.4102293Z index 74323bd..bb03eb0 100644
+2026-09-23T23:25:22.4102451Z --- a/app/models/user.rb
+2026-09-23T23:25:22.4102599Z +++ b/app/models/user.rb
+2026-09-23T23:25:22.4102740Z @@ -41,7 +41,7 @@
+2026-09-23T23:25:22.4102860Z  #
+2026-09-23T23:25:22.4103160Z  # Indexes
+2026-09-23T23:25:22.4103272Z  #
+2026-09-23T23:25:22.4103470Z -#  index_users_on_creation_address   (creation_address) USING gist
+2026-09-23T23:25:22.4104056Z +#  index_users_on_creation_address   (creation_address inet_ops) USING gist
+2026-09-23T23:25:22.4104365Z  #  users_auth_idx                    (auth_provider,auth_uid) UNIQUE
+2026-09-23T23:25:22.4104646Z  #  users_display_name_canonical_idx  (lower(NORMALIZE(display_name, NFKC)))
+2026-09-23T23:25:22.4105040Z  #  users_display_name_idx            (display_name) UNIQUE
+2026-09-23T23:25:22.4115963Z ##[error]Process completed with exit code 1.
+2026-09-23T23:25:22.4192784Z Post job cleanup.
+2026-09-23T23:25:22.4768011Z [command]/usr/bin/git version
+2026-09-23T23:25:22.4797259Z git version 2.55.0
+2026-09-23T23:25:22.4819632Z Temporarily overriding HOME='/home/runner/work/_temp/9e6b0efd-f6aa-4495-85bc-5df60267b43b' before making global git config changes
+2026-09-23T23:25:22.4820453Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-23T23:25:22.4822607Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openstreetmap-website/openstreetmap-website
+2026-09-23T23:25:22.4848737Z Removing SSH command configuration
+2026-09-23T23:25:22.4852867Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-23T23:25:22.4881039Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-23T23:25:22.5060589Z Removing HTTP extra header
+2026-09-23T23:25:22.5064780Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-23T23:25:22.5090722Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-23T23:25:22.5261117Z Removing includeIf entries pointing to credentials config files
+2026-09-23T23:25:22.5266192Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-23T23:25:22.5289985Z includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path
+2026-09-23T23:25:22.5290578Z includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path
+2026-09-23T23:25:22.5290901Z includeif.gitdir:/github/workspace/.git.path
+2026-09-23T23:25:22.5291148Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-23T23:25:22.5296673Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path
+2026-09-23T23:25:22.5313917Z /home/runner/work/_temp/git-credentials-3b5f0b29-b8bd-4c69-87f8-c7923e5522ee.config
+2026-09-23T23:25:22.5321110Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-3b5f0b29\-b8bd\-4c69\-87f8\-c7923e5522ee\.config
+2026-09-23T23:25:22.5354528Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path
+2026-09-23T23:25:22.5371048Z /home/runner/work/_temp/git-credentials-3b5f0b29-b8bd-4c69-87f8-c7923e5522ee.config
+2026-09-23T23:25:22.5377330Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-3b5f0b29\-b8bd\-4c69\-87f8\-c7923e5522ee\.config
+2026-09-23T23:25:22.5427363Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-09-23T23:25:22.5444112Z /github/runner_temp/git-credentials-3b5f0b29-b8bd-4c69-87f8-c7923e5522ee.config
+2026-09-23T23:25:22.5448691Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-3b5f0b29\-b8bd\-4c69\-87f8\-c7923e5522ee\.config
+2026-09-23T23:25:22.5472379Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-23T23:25:22.5488615Z /github/runner_temp/git-credentials-3b5f0b29-b8bd-4c69-87f8-c7923e5522ee.config
+2026-09-23T23:25:22.5493588Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-3b5f0b29\-b8bd\-4c69\-87f8\-c7923e5522ee\.config
+2026-09-23T23:25:22.5519371Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-23T23:25:22.5687908Z Removing credentials config '/home/runner/work/_temp/git-credentials-3b5f0b29-b8bd-4c69-87f8-c7923e5522ee.config'
+2026-09-23T23:25:22.5808995Z Cleaning up orphan processes

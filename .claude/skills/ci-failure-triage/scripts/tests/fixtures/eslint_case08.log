@@ -1,0 +1,21 @@
+2026-09-23T14:36:05.6872178Z ##[group]Run bundle exec rails eslint
+2026-09-23T14:36:05.6872773Z [36;1mbundle exec rails eslint[0m
+2026-09-23T14:36:05.6919164Z shell: /usr/bin/bash -e {0}
+2026-09-23T14:36:05.6919678Z env:
+2026-09-23T14:36:05.6920053Z   ruby: 3.3
+2026-09-23T14:36:05.6920437Z ##[endgroup]
+2026-09-23T14:36:10.1550760Z To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+2026-09-23T14:36:18.5659653Z yarn run v1.22.22
+2026-09-23T14:36:18.5911975Z $ /home/runner/work/openstreetmap-website/openstreetmap-website/node_modules/.bin/eslint -c /home/runner/work/openstreetmap-website/openstreetmap-website/config/eslint.config.mjs --no-warn-ignored /home/runner/work/openstreetmap-website/openstreetmap-website
+2026-09-23T14:36:20.8496886Z 
+2026-09-23T14:36:20.8498099Z /home/runner/work/openstreetmap-website/openstreetmap-website/app/assets/javascripts/leaflet.locate.js
+2026-09-23T14:36:20.8529090Z ##[error]  13:13  error  'unit' is never reassigned. Use 'const' instead                prefer-const
+2026-09-23T14:36:20.8537079Z ##[error]  14:13  error  'unitTranslationKey' is never reassigned. Use 'const' instead  prefer-const
+2026-09-23T14:36:20.8538031Z 
+2026-09-23T14:36:20.8538448Z ✖ 2 problems (2 errors, 0 warnings)
+2026-09-23T14:36:20.8538952Z   2 errors and 0 warnings potentially fixable with the `--fix` option.
+2026-09-23T14:36:20.8539274Z 
+2026-09-23T14:36:20.9174972Z error Command failed with exit code 1.
+2026-09-23T14:36:20.9176169Z info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+2026-09-23T14:36:21.0255340Z ##[error]Process completed with exit code 1.
+2026-09-23T14:36:21.0374942Z Post job cleanup.

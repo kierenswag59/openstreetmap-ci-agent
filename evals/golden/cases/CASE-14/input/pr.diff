@@ -1,0 +1,289 @@
+diff --git a/.rubocop_todo.yml b/.rubocop_todo.yml
+index 48254c6cbe..e430b3fa37 100644
+--- a/.rubocop_todo.yml
++++ b/.rubocop_todo.yml
+@@ -57,7 +57,7 @@ Metrics/BlockNesting:
+ # Offense count: 23
+ # Configuration parameters: CountComments, CountAsOne.
+ Metrics/ClassLength:
+-  Max: 353
++  Max: 356
+ 
+ # Offense count: 72
+ # Configuration parameters: AllowedMethods, AllowedPatterns.
+diff --git a/app/mailers/user_mailer.rb b/app/mailers/user_mailer.rb
+index 2d9a9e9458..fa20191cfc 100644
+--- a/app/mailers/user_mailer.rb
++++ b/app/mailers/user_mailer.rb
+@@ -249,37 +249,15 @@ def attach_project_logo
+   end
+ 
+   def attach_user_avatar(user)
+-    @avatar = user_avatar_filename(user)
+-    attachments.inline[@avatar] = user_avatar_file(user)
+-  end
+-
+-  def user_avatar_filename(user)
+     avatar = user&.avatar
+-    if avatar&.attached?
+-      case avatar.content_type
+-      when "image/png" then "avatar.png"
+-      when "image/jpeg" then "avatar.jpg"
+-      when "image/gif" then "avatar.gif"
+-      when "image/bmp" then "avatar.bmp"
+-      when "image/tiff" then "avatar.tif"
+-      when "image/svg+xml" then "avatar.svg"
+-      else "avatar"
+-      end
+-    else
+-      "avatar.png"
+-    end
+-  end
+ 
+-  def user_avatar_file(user)
+-    avatar = user&.avatar
+     if avatar&.attached?
+-      if avatar.variable?
+-        avatar.variant(:resize_to_limit => [50, 50]).download
+-      else
+-        avatar.blob.download
+-      end
++      avatar = avatar.variant(:resize_to_limit => [50, 50]).processed if avatar.variable?
++      @avatar = "avatar.#{Marcel::Magic.new(avatar.content_type).extensions.first}"
++      attachments.inline[@avatar] = avatar.download
+     else
+-      Rails.root.join("app/assets/images/avatar_small.png").read
++      @avatar = "avatar.png"
++      attachments.inline[@avatar] = Rails.root.join("app/assets/images/avatar_small.png").read
+     end
+   end
+ 
+diff --git a/app/models/user.rb b/app/models/user.rb
+index c2aa793abc..66adad5cce 100644
+--- a/app/models/user.rb
++++ b/app/models/user.rb
+@@ -100,6 +100,10 @@ class User < ApplicationRecord
+   scope :active, -> { where(:status => %w[active confirmed]) }
+   scope :identifiable, -> { where(:data_public => true) }
+ 
++  # Types which a) have trusted libvips loaders and also b) can be shown in browsers and email clients,
++  # either directly or because their variants are converted to PNG
++  AVATAR_CONTENT_TYPES = %w[image/png image/jpeg image/gif image/webp image/tiff image/heic image/heif image/avif].freeze
++
+   has_one_attached :avatar, :service => Settings.avatar_storage
+ 
+   validates :display_name, :presence => true, :length => { :maximum => 255 },
+@@ -124,8 +128,11 @@ class User < ApplicationRecord
+   validates :preferred_editor, :inclusion => Editors::ALL_EDITORS, :allow_nil => true
+   validates :auth_uid, :unless => proc { |u| u.auth_provider.nil? },
+                        :uniqueness => { :scope => :auth_provider }
+-  validates :avatar, :image => { :if => proc { |u| u.attachment_changes["avatar"] } },
+-                     :processable_file => true
++  validates :avatar, :if => proc { |u| u.attachment_changes["avatar"] },
++                     :attached => true,
++                     :content_type => { :in => AVATAR_CONTENT_TYPES },
++                     :size => { :less_than_or_equal_to => proc { Settings.max_avatar_size } }
++  validates :avatar, :processable_file => true
+   validates :description, :length => 0..65536
+ 
+   validates_email_format_of :email, :if => proc { |u| u.email_changed? }
+diff --git a/app/validators/image_validator.rb b/app/validators/image_validator.rb
+deleted file mode 100644
+index ee137557ac..0000000000
+--- a/app/validators/image_validator.rb
++++ /dev/null
+@@ -1,7 +0,0 @@
+-# frozen_string_literal: true
+-
+-class ImageValidator < ActiveModel::EachValidator
+-  def validate_each(record, attribute, value)
+-    record.errors.add(attribute, " must be an image") unless value.image?
+-  end
+-end
+diff --git a/app/views/profiles/images/show.html.erb b/app/views/profiles/images/show.html.erb
+index c8b2b5b8c9..af1b54c0ca 100644
+--- a/app/views/profiles/images/show.html.erb
++++ b/app/views/profiles/images/show.html.erb
+@@ -21,9 +21,9 @@
+       <% if current_user.avatar.attached? || current_user.image_use_gravatar? %>
+         <%= f.radio_button "avatar_action", "delete", :name => "avatar_action", :label => t(".delete image"), :checked => false %>
+       <% end %>
+-      <%= f.form_group :help => t(".image size hint"), :class => "mb-0" do %>
++      <%= f.form_group :help => t(".image upload hint", :max_size => number_to_human_size(Settings.max_avatar_size)), :class => "mb-0" do %>
+         <%= f.radio_button "avatar_action", "new", :name => "avatar_action", :label => t(".#{current_user.avatar.attached? ? 'replace' : 'new'} image"), :checked => false %>
+-        <%= f.file_field :avatar, :hide_label => true, :wrapper => { :class => "mb-0" } %>
++        <%= f.file_field :avatar, :hide_label => true, :accept => User::AVATAR_CONTENT_TYPES.join(","), :wrapper => { :class => "mb-0" } %>
+       <% end %>
+       <%= f.form_group :help => link_to(t(".gravatar.what_is_gravatar"), t(".gravatar.link")) do %>
+         <%= f.radio_button "avatar_action", "gravatar", :name => "avatar_action", :label => t(".gravatar.gravatar"), :checked => current_user.image_use_gravatar %>
+diff --git a/config/locales/en.yml b/config/locales/en.yml
+index f2cf39fa4a..57d4cedc91 100644
+--- a/config/locales/en.yml
++++ b/config/locales/en.yml
+@@ -2317,7 +2317,7 @@ en:
+         keep image: "Keep the current image"
+         delete image: "Remove the current image"
+         replace image: "Replace the current image"
+-        image size hint: "(square images at least 100x100 work best)"
++        image upload hint: "(PNG, JPEG, GIF, WebP, TIFF, HEIC or AVIF up to %{max_size}; square images at least 100x100 work best)"
+       update:
+         success: Profile image updated.
+         failure: Couldn't update profile image.
+diff --git a/config/settings.yml b/config/settings.yml
+index 4d04dd948b..41b1c12b88 100644
+--- a/config/settings.yml
++++ b/config/settings.yml
+@@ -61,6 +61,8 @@ max_note_query_limit: 10000
+ max_issues_count: 99
+ # Maximum number of points in a GPX trace
+ max_trace_size: 1000000
++# Maximum size of an uploaded profile image in bytes
++max_avatar_size: 5242880
+ # Zoom level to use for postcode results from the geocoder
+ postcode_zoom: 15
+ # Timeout for API calls in seconds
+diff --git a/test/controllers/profiles/images_controller_test.rb b/test/controllers/profiles/images_controller_test.rb
+index 287901247b..87cef214d0 100644
+--- a/test/controllers/profiles/images_controller_test.rb
++++ b/test/controllers/profiles/images_controller_test.rb
+@@ -92,6 +92,19 @@ def test_update_replace_invalid_image
+       assert_equal "Couldn't update profile image.", flash[:error]
+     end
+ 
++    def test_update_replace_unsupported_image
++      image = Rack::Test::UploadedFile.new(StringIO.new('<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"/>'), "image/svg+xml", :original_filename => "avatar.svg")
++      user = create(:user)
++      session_for(user)
++
++      put profile_image_path, :params => { :avatar_action => "new", :user => { :avatar => image } }
++
++      assert_response :success
++      assert_template :show
++      assert_equal "Couldn't update profile image.", flash[:error]
++      assert_not_predicate user.reload.avatar, :attached?
++    end
++
+     def test_update_gravatar
+       user = create(:user)
+       session_for(user)
+diff --git a/test/mailers/user_mailer_test.rb b/test/mailers/user_mailer_test.rb
+index 5a5ec93a0c..32986f9c28 100644
+--- a/test/mailers/user_mailer_test.rb
++++ b/test/mailers/user_mailer_test.rb
+@@ -127,6 +127,47 @@ def test_message_notification
+     assert_match(/<html lang=/, email.html_part.body.to_s)
+   end
+ 
++  def test_message_notification_avatar
++    sender = create(:user)
++    sender.avatar.attach(:io => StringIO.new(Vips::Image.black(100, 100).write_to_buffer(".png")), :filename => "avatar.png")
++    message = create(:message, :sender => sender)
++    email = UserMailer.with(:record => message, :recipient => message.recipient).message_notification
++
++    avatar = email.attachments["avatar.png"]
++    assert_not_nil avatar
++    assert_equal "image/png", avatar.mime_type
++    image = Vips::Image.new_from_buffer(avatar.body.decoded, "")
++    assert_equal [50, 50], [image.width, image.height]
++  end
++
++  def test_message_notification_avatar_converted
++    sender = create(:user)
++    sender.avatar.attach(:io => StringIO.new(Vips::Image.black(100, 100).write_to_buffer(".tif")), :filename => "avatar.tif")
++    message = create(:message, :sender => sender)
++    email = UserMailer.with(:record => message, :recipient => message.recipient).message_notification
++
++    avatar = email.attachments["avatar.png"]
++    assert_not_nil avatar
++    assert_equal "image/png", avatar.mime_type
++    image = Vips::Image.new_from_buffer(avatar.body.decoded, "")
++    assert_equal [50, 50], [image.width, image.height]
++  end
++
++  def test_message_notification_avatar_original
++    svg = '<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"/>'
++    sender = create(:user)
++    blob = ActiveStorage::Blob.create_and_upload!(:io => StringIO.new(svg), :filename => "avatar.svg")
++    ActiveStorage::Attachment.create!(:name => "avatar", :record => sender, :blob => blob)
++    sender.reload
++    message = create(:message, :sender => sender)
++    email = UserMailer.with(:record => message, :recipient => message.recipient).message_notification
++
++    avatar = email.attachments["avatar.svg"]
++    assert_not_nil avatar
++    assert_equal "image/svg+xml", avatar.mime_type
++    assert_equal svg, avatar.body.decoded
++  end
++
+   def test_diary_comment_notification
+     user = create(:user)
+     other_user = create(:user)
+diff --git a/test/models/user_test.rb b/test/models/user_test.rb
+index 1b1bef43c8..9ee9b1b2ad 100644
+--- a/test/models/user_test.rb
++++ b/test/models/user_test.rb
+@@ -492,6 +492,64 @@ def test_suspend_closes_issues
+     assert_equal "resolved", issue.reload.status
+   end
+ 
++  def test_avatar_supported_types
++    %w[.png .jpg .gif .webp .tif].each do |extension|
++      user = build(:user)
++      user.avatar = { :io => StringIO.new(Vips::Image.black(1, 1).write_to_buffer(extension)), :filename => "avatar#{extension}" }
++      assert_predicate user, :valid?, "#{extension} avatar should be accepted"
++    end
++  end
++
++  def test_avatar_unsupported_types
++    {
++      "avatar.bmp" => ["BM", 58, 0, 0, 54, 40, 1, 1, 1, 24, 0, 4, 2835, 2835, 0, 0].pack("a2Vv2V4v2V6") + ("\0" * 4),
++      "avatar.ico" => "\0\0\1\0\1\0#{"\0" * 40}",
++      "avatar.psd" => "8BPS\0\1#{"\0" * 40}",
++      "avatar.svg" => '<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"/>'
++    }.each do |filename, data|
++      user = build(:user)
++      user.avatar = { :io => StringIO.new(data), :filename => filename }
++      assert_not_predicate user, :valid?, "#{filename} should be rejected"
++      assert_includes user.errors.details[:avatar].pluck(:error), :content_type_invalid
++    end
++  end
++
++  # libvips loads these with libheif, whose decoder plugins aren't always
++  # installed (e.g. there's no HEIC decoder on Ubuntu by default), so only
++  # check that the content type is accepted
++  def test_avatar_heif_types
++    {
++      "avatar.heic" => "\0\0\0\x18ftypheic\0\0\0\0mif1heic#{"\0" * 20}",
++      "avatar.heif" => "\0\0\0\x18ftypmif1\0\0\0\0mif1heic#{"\0" * 20}",
++      "avatar.avif" => "\0\0\0\x1cftypavif\0\0\0\0avifmif1miaf#{"\0" * 20}"
++    }.each do |filename, data|
++      user = build(:user)
++      user.avatar = { :io => StringIO.new(data), :filename => filename }
++      user.validate
++      assert_not_includes user.errors.details[:avatar].pluck(:error), :content_type_invalid, "#{filename} should be accepted"
++    end
++  end
++
++  def test_avatar_size_limit
++    user = build(:user)
++    user.avatar = { :io => StringIO.new(Vips::Image.black(100, 100).write_to_buffer(".png")), :filename => "avatar.png" }
++    assert_predicate user, :valid?
++
++    with_settings(:max_avatar_size => user.avatar.blob.byte_size - 1) do
++      assert_not_predicate user, :valid?
++      assert_includes user.errors.details[:avatar].pluck(:error), :file_size_not_less_than_or_equal_to
++    end
++  end
++
++  def test_avatar_unsupported_type_already_attached
++    user = create(:user)
++    blob = ActiveStorage::Blob.create_and_upload!(:io => StringIO.new('<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"/>'), :filename => "avatar.svg")
++    ActiveStorage::Attachment.create!(:name => "avatar", :record => user, :blob => blob)
++    user.reload
++
++    assert_predicate user, :valid?
++  end
++
+   def test_soft_destroy
+     user = create(:user, :with_home_location, :description => "foo")
+     user.soft_destroy

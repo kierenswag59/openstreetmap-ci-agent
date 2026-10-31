@@ -1,0 +1,18 @@
+{
+  "case": "CASE-06",
+  "workflow": "Docker",
+  "original_run": "https://github.com/openstreetmap/openstreetmap-website/actions/runs/35760389282",
+  "cutoff_T": "2026-09-22T17:27:24Z",
+  "cutoff_source": "last failed job completed_at",
+  "jobs": [
+    {
+      "name": "Docker",
+      "step": "Prepare Database",
+      "log": "logs/job-106856686061.log",
+      "exit_code": 1,
+      "original_job_id": 106856686061,
+      "original_conclusion": "failure"
+    }
+  ],
+  "merge_base_sha": "a16fecb55c7f82b23e394b8568217c853f8e7d22"
+}

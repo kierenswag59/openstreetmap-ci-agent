@@ -1,0 +1,7 @@
+{
+  "title": "Bump memcached client timeout",
+  "body": "Raises the memcached client timeout used in development.",
+  "changed_files": [
+    "config/initializers/memcache_timeout.rb"
+  ]
+}

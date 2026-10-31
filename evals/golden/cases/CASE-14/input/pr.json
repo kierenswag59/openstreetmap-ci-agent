@@ -1,0 +1,14 @@
+{
+  "number": 7546,
+  "title": "Restrict avatar uploads to types we can safely resize",
+  "body": "So this rabbit-hole is much deeper and more complicated than I would have liked.\n\nThis follows on from #7469 . It's based on continuing errors found in Glitchtip, and a few things that I uncovered along the way.\n\nThere are various lists of image types, and putting them here might help:\n\n* Images considered to be \"web_image_content_type\": `[png jpeg gif webp]` - safe to show, both on webpages and in emails\n* Images that can be safely resized by libvips in strict mode: `[png jpeg gif webp tiff heic heif avif]`\n* Images that can be resized by libvips, but not in the currently enabled strict mode: `[bmp ico psd]`\n* Images that technically don't need to be resized, but can be arbitrarily complex to render: `[svg]`\n\nImages that can be resized by libvips, but are not on the web_image_content_type list, are automatically converted to png during resizing by ActiveStorage.\n\nThis PR fixes some edge cases in the email avatars, namely ensuring that the extension matches the content type of the resized image, which is not necessarily the same as the originally uploaded content type. It also ensures that the resized image exists before attempting to attach it.\n\nThis PR also restricts uploads to the list of safely re-sizeable file types (which is not, afaict, available via any libvips API) and also adds a reasonable file size limit to the upload. Due to an edge-case with Ubuntu packaging of libvips support for heic/heif formats, the resizing isn't actually done in the test suite. It will work in production on Debian but not necessarily on developer laptops, and it's not (imho) currently worth making everyone install the additional package.\n\nFollow-on work includes:\n* What should we do with existing avatars that don't meet the new requirements? Should we just remove them? It would certainly clean up the amount of BMP-resizing errors we see in the error logs, but it might be unexpected for users who have existing SVG avatars.\n\n",
+  "author": "gravitystorm",
+  "author_association": "COLLABORATOR",
+  "created_at": "2026-10-28T19:21:49Z",
+  "head_repo": "gravitystorm/openstreetmap-website",
+  "head_ref": "avatar-content-types",
+  "tested_head_sha": "3ea8c0295f0436b5f7300ea06d283eaf794be3fa",
+  "tested_base_sha": "1e375a21e15c0fe1b3dbbaee8af26b89202d2dd2",
+  "html_url": "https://github.com/openstreetmap/openstreetmap-website/pull/7546",
+  "note": "title and body are as fetched on 2026-10-31; they may have been edited after T"
+}

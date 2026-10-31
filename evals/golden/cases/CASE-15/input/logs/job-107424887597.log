@@ -1,0 +1,201 @@
+[fixture note: passing job, last 200 lines of the original log kept]
+2026-09-23T23:24:04.8704945Z   gd2-ffij!
+2026-09-23T23:24:04.8705132Z   herb
+2026-09-23T23:24:04.8705319Z   htmlentities
+2026-09-23T23:24:04.8705524Z   http_accept_language
+2026-09-23T23:24:04.8705736Z   i18n-js
+2026-09-23T23:24:04.8705971Z   i18n-tasks
+2026-09-23T23:24:04.8706267Z   image_optim
+2026-09-23T23:24:04.8706465Z   image_optim_rails
+2026-09-23T23:24:04.8706673Z   image_processing
+2026-09-23T23:24:04.8707009Z   inline_svg
+2026-09-23T23:24:04.8707243Z   jbuilder
+2026-09-23T23:24:04.8707433Z   jquery-rails
+2026-09-23T23:24:04.8707727Z   json (< 3.0.0)
+2026-09-23T23:24:04.8707943Z   jwt
+2026-09-23T23:24:04.8708128Z   kramdown
+2026-09-23T23:24:04.8708315Z   libxml-ruby
+2026-09-23T23:24:04.8708626Z   listen
+2026-09-23T23:24:04.8708813Z   marcel
+2026-09-23T23:24:04.8708996Z   maxminddb
+2026-09-23T23:24:04.8709227Z   minitest
+2026-09-23T23:24:04.8709480Z   minitest-focus
+2026-09-23T23:24:04.8709692Z   minitest-mock
+2026-09-23T23:24:04.8709898Z   noticed
+2026-09-23T23:24:04.8710264Z   omniauth
+2026-09-23T23:24:04.8710571Z   omniauth-apple
+2026-09-23T23:24:04.8710779Z   omniauth-facebook
+2026-09-23T23:24:04.8711047Z   omniauth-github
+2026-09-23T23:24:04.8711338Z   omniauth-google-oauth2
+2026-09-23T23:24:04.8711580Z   omniauth-mediawiki
+2026-09-23T23:24:04.8711848Z   omniauth-microsoft_graph
+2026-09-23T23:24:04.8712180Z   omniauth-rails_csrf_protection
+2026-09-23T23:24:04.8712429Z   open3
+2026-09-23T23:24:04.8712701Z   openstreetmap-deadlock_retry
+2026-09-23T23:24:04.8713098Z   opentelemetry-exporter-otlp
+2026-09-23T23:24:04.8713476Z   opentelemetry-instrumentation-all
+2026-09-23T23:24:04.8713871Z   opentelemetry-sdk
+2026-09-23T23:24:04.8714161Z   overcommit
+2026-09-23T23:24:04.8714363Z   pg
+2026-09-23T23:24:04.8714546Z   puma
+2026-09-23T23:24:04.8714628Z   quad_tile
+2026-09-23T23:24:04.8714719Z   rack-cors
+2026-09-23T23:24:04.8714808Z   rack-uri_sanitizer
+2026-09-23T23:24:04.8714897Z   rackup
+2026-09-23T23:24:04.8715136Z   rails (~> 8.1.0)
+2026-09-23T23:24:04.8715249Z   rails-controller-testing
+2026-09-23T23:24:04.8715336Z   rails-i18n
+2026-09-23T23:24:04.8715428Z   rails_param
+2026-09-23T23:24:04.8715514Z   rexml
+2026-09-23T23:24:04.8715594Z   rinku
+2026-09-23T23:24:04.8715681Z   rotp
+2026-09-23T23:24:04.8715761Z   rtlcss
+2026-09-23T23:24:04.8715852Z   rubocop
+2026-09-23T23:24:04.8715944Z   rubocop-capybara
+2026-09-23T23:24:04.8716046Z   rubocop-factory_bot
+2026-09-23T23:24:04.8716131Z   rubocop-minitest
+2026-09-23T23:24:04.8716229Z   rubocop-performance
+2026-09-23T23:24:04.8716319Z   rubocop-rails
+2026-09-23T23:24:04.8716407Z   rubocop-rake
+2026-09-23T23:24:04.8716492Z   ruby-vips
+2026-09-23T23:24:04.8716573Z   sanitize
+2026-09-23T23:24:04.8716671Z   sass-embedded (~> 1.64.0)
+2026-09-23T23:24:04.8716759Z   selenium-webdriver
+2026-09-23T23:24:04.8716850Z   sentry-delayed_job
+2026-09-23T23:24:04.8716936Z   sentry-rails
+2026-09-23T23:24:04.8717023Z   sentry-ruby
+2026-09-23T23:24:04.8717104Z   simplecov
+2026-09-23T23:24:04.8717197Z   simplecov-lcov
+2026-09-23T23:24:04.8717364Z   sprockets-exporters_pack
+2026-09-23T23:24:04.8717450Z   strong_migrations
+2026-09-23T23:24:04.8717536Z   teaspoon
+2026-09-23T23:24:04.8717626Z   teaspoon-mocha
+2026-09-23T23:24:04.8717709Z   terser
+2026-09-23T23:24:04.8717791Z   timeout
+2026-09-23T23:24:04.8717879Z   turbo-rails
+2026-09-23T23:24:04.8717972Z   unicode-display_width
+2026-09-23T23:24:04.8718063Z   uri (< 1.0.0)
+2026-09-23T23:24:04.8718166Z   validates_email_format_of
+2026-09-23T23:24:04.8718246Z   vendorer
+2026-09-23T23:24:04.8718331Z   webmock
+2026-09-23T23:24:04.8718411Z   webrick
+2026-09-23T23:24:04.8718421Z 
+2026-09-23T23:24:04.8718513Z BUNDLED WITH
+2026-09-23T23:24:04.8718591Z   4.0.3
+2026-09-23T23:24:04.8719027Z ##[endgroup]
+2026-09-23T23:24:04.8719974Z Cache key: setup-ruby-bundler-cache-v6-ubuntu-24.04-x64-ruby-3.3.12-wd-/home/runner/work/openstreetmap-website/openstreetmap-website-with--without--only--Gemfile.lock-3b5296698cc816d058dbf1abeba876360812d212b8ce198e9a3c40c00a2a889a
+2026-09-23T23:24:05.0801731Z Cache hit for restore-key: setup-ruby-bundler-cache-v6-ubuntu-24.04-x64-ruby-3.3.12-wd-/home/runner/work/openstreetmap-website/openstreetmap-website-with--without--only--Gemfile.lock-68f0cca05439d5cb4333188f9b6e4907562dad392e771fdd3a02ccb9bef63720
+2026-09-23T23:24:06.3217861Z Received 16777216 of 272727982 (6.2%), 16.0 MBs/sec
+2026-09-23T23:24:07.3218344Z Received 134217728 of 272727982 (49.2%), 64.0 MBs/sec
+2026-09-23T23:24:08.3219312Z Received 268533678 of 272727982 (98.5%), 85.4 MBs/sec
+2026-09-23T23:24:08.3311314Z Received 272727982 of 272727982 (100.0%), 86.4 MBs/sec
+2026-09-23T23:24:08.3314021Z Cache Size: ~260 MB (272727982 B)
+2026-09-23T23:24:08.3442374Z [command]/usr/bin/tar -xf /home/runner/work/_temp/96ce5a78-e3c6-46f6-b949-fc071633e248/cache.tzst -P -C /home/runner/work/openstreetmap-website/openstreetmap-website --use-compress-program unzstd
+2026-09-23T23:24:09.4774050Z Cache restored successfully
+2026-09-23T23:24:09.4866183Z Found cache for key: setup-ruby-bundler-cache-v6-ubuntu-24.04-x64-ruby-3.3.12-wd-/home/runner/work/openstreetmap-website/openstreetmap-website-with--without--only--Gemfile.lock-68f0cca05439d5cb4333188f9b6e4907562dad392e771fdd3a02ccb9bef63720
+2026-09-23T23:24:09.4878185Z [command]/opt/hostedtoolcache/Ruby/3.3.12/x64/bin/bundle install --jobs 4
+2026-09-23T23:24:13.0331242Z Fetching gem metadata from https://rubygems.org/........
+2026-09-23T23:24:13.1206074Z Fetching io-console 0.9.4
+2026-09-23T23:24:13.1429497Z Fetching aws-partitions 1.1289.0
+2026-09-23T23:24:13.1478886Z Fetching unicode-emoji 4.3.0
+2026-09-23T23:24:13.1558103Z Fetching rubyzip 3.7.0
+2026-09-23T23:24:13.1925034Z Installing io-console 0.9.4 with native extensions
+2026-09-23T23:24:13.1968591Z Installing rubyzip 3.7.0
+2026-09-23T23:24:13.2003928Z Installing aws-partitions 1.1289.0
+2026-09-23T23:24:13.2101776Z Installing unicode-emoji 4.3.0
+2026-09-23T23:24:13.3010304Z Fetching net-protocol 0.4.0
+2026-09-23T23:24:13.3118966Z Installing net-protocol 0.4.0
+2026-09-23T23:24:13.3495993Z Fetching opentelemetry-sdk 1.13.1
+2026-09-23T23:24:13.3526471Z Fetching faraday 2.14.4
+2026-09-23T23:24:13.3635594Z Installing opentelemetry-sdk 1.13.1
+2026-09-23T23:24:13.3701211Z Installing faraday 2.14.4
+2026-09-23T23:24:13.3919838Z Fetching opentelemetry-instrumentation-net_http 0.29.1
+2026-09-23T23:24:13.4003394Z Installing opentelemetry-instrumentation-net_http 0.29.1
+2026-09-23T23:24:13.4083028Z Fetching unicode-display_width 3.3.0
+2026-09-23T23:24:13.4165328Z Installing unicode-display_width 3.3.0
+2026-09-23T23:24:13.4214717Z Fetching aws-sdk-s3 1.232.1
+2026-09-23T23:24:13.4318445Z Fetching annotaterb 4.25.0
+2026-09-23T23:24:13.4502462Z Installing annotaterb 4.25.0
+2026-09-23T23:24:13.4540390Z Fetching database_consistency 3.0.12
+2026-09-23T23:24:13.4643074Z Installing database_consistency 3.0.12
+2026-09-23T23:24:13.4956800Z Installing aws-sdk-s3 1.232.1
+2026-09-23T23:24:13.5591523Z Fetching faraday-http-cache 2.8.0
+2026-09-23T23:24:13.5733309Z Installing faraday-http-cache 2.8.0
+2026-09-23T23:24:16.9108275Z Bundle complete! 122 Gemfile dependencies, 333 gems now installed.
+2026-09-23T23:24:16.9131376Z Bundled gems are installed into `./vendor/bundle`
+2026-09-23T23:24:16.9132014Z Post-install message from database_consistency:
+2026-09-23T23:24:16.9132384Z 
+2026-09-23T23:24:16.9132553Z Thank you for using the gem!
+2026-09-23T23:24:16.9132829Z 
+2026-09-23T23:24:16.9133299Z If the project helps you or your organization, I would be very grateful if you contribute or donate.
+2026-09-23T23:24:16.9134076Z Your support is an incredible motivation and the biggest reward for my hard work.
+2026-09-23T23:24:16.9134383Z 
+2026-09-23T23:24:16.9134576Z https://github.com/djezzzl/database_consistency#contributing
+2026-09-23T23:24:16.9134981Z https://opencollective.com/database_consistency#support
+2026-09-23T23:24:16.9135423Z 
+2026-09-23T23:24:16.9135546Z Thank you for your attention,
+2026-09-23T23:24:16.9135869Z Evgeniy Demin
+2026-09-23T23:24:16.9136024Z 
+2026-09-23T23:24:16.9164857Z 9 installed gems you directly depend on are looking for funding.
+2026-09-23T23:24:16.9165271Z   Run `bundle fund` for details
+2026-09-23T23:24:16.9851786Z [command]/opt/hostedtoolcache/Ruby/3.3.12/x64/bin/bundle clean
+2026-09-23T23:24:17.2992533Z Removing annotaterb (4.24.0)
+2026-09-23T23:24:17.3015766Z Removing aws-partitions (1.1287.0)
+2026-09-23T23:24:17.3021725Z Removing aws-sdk-s3 (1.232.0)
+2026-09-23T23:24:17.3051546Z Removing database_consistency (3.0.11)
+2026-09-23T23:24:17.3076436Z Removing faraday (2.14.3)
+2026-09-23T23:24:17.3098270Z Removing faraday-http-cache (2.7.0)
+2026-09-23T23:24:17.3107211Z Removing io-console (0.9.3)
+2026-09-23T23:24:17.3111069Z Removing net-protocol (0.3.0)
+2026-09-23T23:24:17.3113487Z Removing opentelemetry-instrumentation-net_http (0.29.0)
+2026-09-23T23:24:17.3119448Z Removing opentelemetry-sdk (1.13.0)
+2026-09-23T23:24:17.3128177Z Removing rubyzip (3.6.0)
+2026-09-23T23:24:17.3140560Z Removing unicode-display_width (3.2.0)
+2026-09-23T23:24:17.3144980Z Removing unicode-emoji (4.2.0)
+2026-09-23T23:24:17.3214489Z Saving cache
+2026-09-23T23:24:17.3335476Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/openstreetmap-website/openstreetmap-website --files-from manifest.txt --use-compress-program zstdmt
+2026-09-23T23:24:19.1822808Z Failed to save: Unable to reserve cache with key setup-ruby-bundler-cache-v6-ubuntu-24.04-x64-ruby-3.3.12-wd-/home/runner/work/openstreetmap-website/openstreetmap-website-with--without--only--Gemfile.lock-3b5296698cc816d058dbf1abeba876360812d212b8ce198e9a3c40c00a2a889a, another job may be creating this cache.
+2026-09-23T23:24:19.1972762Z Took  14.65 seconds
+2026-09-23T23:24:19.2090314Z ##[group]Run bundle exec rubocop --format fuubar
+2026-09-23T23:24:19.2090853Z [36;1mbundle exec rubocop --format fuubar[0m
+2026-09-23T23:24:19.2271790Z shell: /usr/bin/bash -e {0}
+2026-09-23T23:24:19.2272100Z env:
+2026-09-23T23:24:19.2272306Z   ruby: 3.3
+2026-09-23T23:24:19.2272503Z ##[endgroup]
+2026-09-23T23:24:20.5322823Z 
+2026-09-23T23:24:37.0146478Z Progress: |====================================================================|
+2026-09-23T23:24:37.0337393Z 
+2026-09-23T23:24:37.0337953Z 992 files inspected, no offenses detected
+2026-09-23T23:24:37.0529055Z Post job cleanup.
+2026-09-23T23:24:37.1314443Z [command]/usr/bin/git version
+2026-09-23T23:24:37.1348669Z git version 2.55.0
+2026-09-23T23:24:37.1380289Z Temporarily overriding HOME='/home/runner/work/_temp/a35864bc-0356-488e-8c6b-51da1fb42b32' before making global git config changes
+2026-09-23T23:24:37.1381611Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-23T23:24:37.1385972Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openstreetmap-website/openstreetmap-website
+2026-09-23T23:24:37.1412957Z Removing SSH command configuration
+2026-09-23T23:24:37.1418731Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-23T23:24:37.1447211Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-23T23:24:37.1621059Z Removing HTTP extra header
+2026-09-23T23:24:37.1625202Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-23T23:24:37.1651736Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-23T23:24:37.1826499Z Removing includeIf entries pointing to credentials config files
+2026-09-23T23:24:37.1831468Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-23T23:24:37.1855006Z includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path
+2026-09-23T23:24:37.1855880Z includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path
+2026-09-23T23:24:37.1856486Z includeif.gitdir:/github/workspace/.git.path
+2026-09-23T23:24:37.1857105Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-23T23:24:37.1861616Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path
+2026-09-23T23:24:37.1878510Z /home/runner/work/_temp/git-credentials-d8236a59-bb86-41f1-b6c1-a5af0eccb2cd.config
+2026-09-23T23:24:37.1886296Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-d8236a59\-bb86\-41f1\-b6c1\-a5af0eccb2cd\.config
+2026-09-23T23:24:37.1917097Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path
+2026-09-23T23:24:37.1934226Z /home/runner/work/_temp/git-credentials-d8236a59-bb86-41f1-b6c1-a5af0eccb2cd.config
+2026-09-23T23:24:37.1941140Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/openstreetmap-website/openstreetmap-website/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-d8236a59\-bb86\-41f1\-b6c1\-a5af0eccb2cd\.config
+2026-09-23T23:24:37.1966540Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-09-23T23:24:37.1983371Z /github/runner_temp/git-credentials-d8236a59-bb86-41f1-b6c1-a5af0eccb2cd.config
+2026-09-23T23:24:37.1988972Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-d8236a59\-bb86\-41f1\-b6c1\-a5af0eccb2cd\.config
+2026-09-23T23:24:37.2014007Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-23T23:24:37.2032077Z /github/runner_temp/git-credentials-d8236a59-bb86-41f1-b6c1-a5af0eccb2cd.config
+2026-09-23T23:24:37.2038432Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-d8236a59\-bb86\-41f1\-b6c1\-a5af0eccb2cd\.config
+2026-09-23T23:24:37.2065317Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-23T23:24:37.2235779Z Removing credentials config '/home/runner/work/_temp/git-credentials-d8236a59-bb86-41f1-b6c1-a5af0eccb2cd.config'
+2026-09-23T23:24:37.2361998Z Cleaning up orphan processes

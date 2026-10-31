@@ -1,0 +1,15 @@
+{
+  "id": 40753633422,
+  "name": "Tests",
+  "event": "pull_request",
+  "status": "completed",
+  "conclusion": "failure",
+  "head_sha": "fadb64d764192143d9bfce305a6d33543d847c12",
+  "head_branch": "avatar-content-types",
+  "html_url": "https://github.com/openstreetmap/openstreetmap-website/actions/runs/40753633422",
+  "run_attempt": 1,
+  "created_at": "2026-10-28T19:21:55Z",
+  "run_started_at": "2026-10-28T19:21:55Z",
+  "updated_at": "2026-10-28T19:24:10Z",
+  "display_title": "Restrict avatar uploads to types we can safely resize"
+}

@@ -182,6 +182,34 @@ If you choose to use AI tools to help create pull requests, you should follow th
 * Issues tagged for new contributors are meant as learning opportunities, not as items that need to be addressed with urgency. Using AI for these issues removes the opportunity to learn, both from you and other contributors.
 * If you submit a PR and the maintainers suspect that you haven't reviewed, tested, or understood the code, they may decline your PR without further discussion.
 
+### Automated CI-failure triage comments (sandbox addition)
+
+> This subsection is not part of upstream openstreetmap-website. It was added in this
+> sandbox for the CI-failure analyst. The "AI-Assisted Contributions" rules above are
+> upstream text, reused unchanged under the project's GPL-2.0 licence (see `LICENSE`).
+
+When a CI run on your pull request fails, the `ci-failure-analyst` workflow may post
+**one** comment marked "AI-generated first-pass triage". It reads the failed job log,
+your diff and the PR description, and says whether the failure looks caused by your
+change, with the log lines it relied on.
+
+* The comment is a suggestion, not a review. It cannot approve, merge, close, label
+  outside a fixed list, re-run jobs or push. Maintainers decide.
+* It can be wrong, including saying your change caused a failure when it did not. If
+  it is wrong, react with 👎 or open an issue linking the comment; maintainers review
+  those reports (see `docs/RUNBOOK.md`).
+* If you act on its suggestion, the AI-Assisted Contributions rules above apply in
+  full: you must review, test and understand the fix you push. "The bot said so" is not
+  a justification in a PR description.
+* Do not copy the comment into commit messages. If it helped, say so in the PR
+  conversation, for example "fixed the ESLint error the triage comment pointed to".
+* Do not write instructions to the bot in PR titles, descriptions or code. It treats
+  them as untrusted data and ignores them, and maintainers may treat attempts to steer
+  it as abuse.
+* Changes to the agent's configuration (`.github/workflows/ci-failure-analyst.*`,
+  `AGENTS.md`, `CLAUDE.md`, `.claude/`, `evals/`) need a maintainer's review through
+  `.github/CODEOWNERS`; AI-generated changes to those files are not accepted.
+
 ## Submitting Changes
 
 ### Committing

@@ -1,0 +1,35 @@
+2026-09-23T23:25:22.2732362Z ##[group]Run git diff --exit-code
+2026-09-23T23:25:22.2732602Z [36;1mgit diff --exit-code[0m
+2026-09-23T23:25:22.2788787Z shell: /usr/bin/bash -e {0}
+2026-09-23T23:25:22.2788947Z env:
+2026-09-23T23:25:22.2789064Z   ruby: 3.3
+2026-09-23T23:25:22.2789179Z   RAILS_ENV: test
+2026-09-23T23:25:22.2789306Z ##[endgroup]
+2026-09-23T23:25:22.4098465Z diff --git a/app/models/acl.rb b/app/models/acl.rb
+2026-09-23T23:25:22.4098866Z index 9b13ba0..4af209b 100644
+2026-09-23T23:25:22.4099123Z --- a/app/models/acl.rb
+2026-09-23T23:25:22.4099382Z +++ b/app/models/acl.rb
+2026-09-23T23:25:22.4099645Z @@ -14,7 +14,7 @@
+2026-09-23T23:25:22.4099840Z  # Indexes
+2026-09-23T23:25:22.4100022Z  #
+2026-09-23T23:25:22.4100224Z  #  acls_k_idx             (k)
+2026-09-23T23:25:22.4100549Z -#  index_acls_on_address  (address) USING gist
+2026-09-23T23:25:22.4100951Z +#  index_acls_on_address  (address inet_ops) USING gist
+2026-09-23T23:25:22.4101278Z  #  index_acls_on_domain   (domain)
+2026-09-23T23:25:22.4101586Z  #  index_acls_on_mx       (mx)
+2026-09-23T23:25:22.4101798Z  #
+2026-09-23T23:25:22.4102069Z diff --git a/app/models/user.rb b/app/models/user.rb
+2026-09-23T23:25:22.4102293Z index 74323bd..bb03eb0 100644
+2026-09-23T23:25:22.4102451Z --- a/app/models/user.rb
+2026-09-23T23:25:22.4102599Z +++ b/app/models/user.rb
+2026-09-23T23:25:22.4102740Z @@ -41,7 +41,7 @@
+2026-09-23T23:25:22.4102860Z  #
+2026-09-23T23:25:22.4103160Z  # Indexes
+2026-09-23T23:25:22.4103272Z  #
+2026-09-23T23:25:22.4103470Z -#  index_users_on_creation_address   (creation_address) USING gist
+2026-09-23T23:25:22.4104056Z +#  index_users_on_creation_address   (creation_address inet_ops) USING gist
+2026-09-23T23:25:22.4104365Z  #  users_auth_idx                    (auth_provider,auth_uid) UNIQUE
+2026-09-23T23:25:22.4104646Z  #  users_display_name_canonical_idx  (lower(NORMALIZE(display_name, NFKC)))
+2026-09-23T23:25:22.4105040Z  #  users_display_name_idx            (display_name) UNIQUE
+2026-09-23T23:25:22.4115963Z ##[error]Process completed with exit code 1.
+2026-09-23T23:25:22.4192784Z Post job cleanup.

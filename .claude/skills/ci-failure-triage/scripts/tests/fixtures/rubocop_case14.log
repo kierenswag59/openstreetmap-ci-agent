@@ -1,0 +1,16 @@
+2026-10-29T16:58:23.6973618Z ##[group]Run bundle exec rubocop --format fuubar
+2026-10-29T16:58:23.6974146Z [36;1mbundle exec rubocop --format fuubar[0m
+2026-10-29T16:58:23.7001797Z shell: /usr/bin/bash -e {0}
+2026-10-29T16:58:23.7002159Z env:
+2026-10-29T16:58:23.7002582Z   ruby: 3.3
+2026-10-29T16:58:23.7002869Z ##[endgroup]
+2026-10-29T16:58:24.9091519Z 
+2026-10-29T16:58:28.9765709Z Progress: |==============
+2026-10-29T16:58:28.9768246Z app/models/user.rb:53:1: R: Metrics/ClassLength: Class has too many lines. [357/356]
+2026-10-29T16:58:28.9769530Z class User < ApplicationRecord ...
+2026-10-29T16:58:28.9770296Z ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-29T16:58:40.0244932Z Progress: |====================================================================|
+2026-10-29T16:58:40.0466126Z 
+2026-10-29T16:58:40.0467562Z 993 files inspected, 1 offense detected
+2026-10-29T16:58:40.0543883Z ##[error]Process completed with exit code 1.
+2026-10-29T16:58:40.0690996Z Post job cleanup.

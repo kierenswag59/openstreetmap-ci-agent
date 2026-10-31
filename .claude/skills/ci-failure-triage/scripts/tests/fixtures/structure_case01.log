@@ -1,0 +1,28 @@
+2026-10-28T19:23:58.4126093Z ##[group]Run sed -f script/normalise-structure db/structure.sql > db/structure.expected
+2026-10-28T19:23:58.4126618Z [36;1msed -f script/normalise-structure db/structure.sql > db/structure.expected[0m
+2026-10-28T19:23:58.4126975Z [36;1mrm -f db/structure.sql[0m
+2026-10-28T19:23:58.4127213Z [36;1mbundle exec rails db:migrate[0m
+2026-10-28T19:23:58.4127700Z [36;1msed -f script/normalise-structure db/structure.sql > db/structure.actual[0m
+2026-10-28T19:23:58.4128075Z [36;1mdiff -uw db/structure.expected db/structure.actual[0m
+2026-10-28T19:23:58.4182880Z shell: /usr/bin/bash -e {0}
+2026-10-28T19:23:58.4183288Z env:
+2026-10-28T19:23:58.4183497Z   RAILS_ENV: test
+2026-10-28T19:23:58.4183703Z   OPENSTREETMAP_MEMCACHE_SERVERS: 127.0.0.1
+2026-10-28T19:23:58.4183953Z ##[endgroup]
+2026-10-28T19:24:05.7657470Z == 1 CreateOsmDb: migrating ===================================================
+2026-10-28T19:24:05.7658124Z -- create_table("current_nodes", {:id=>false})
+2026-10-28T19:24:07.2517291Z -    way_id bigint NOT NULL,
+2026-10-28T19:24:07.2517577Z +    way_id bigint CONSTRAINT way_tags_id_not_null NOT NULL,
+2026-10-28T19:24:07.2517861Z      k character varying NOT NULL,
+2026-10-28T19:24:07.2518198Z      v character varying NOT NULL,
+2026-10-28T19:24:07.2518408Z      version bigint NOT NULL
+2026-10-28T19:24:07.2518592Z  );
+2026-10-28T19:24:07.2518768Z  CREATE TABLE public.ways (
+2026-10-28T19:24:07.2518979Z -    way_id bigint NOT NULL,
+2026-10-28T19:24:07.2519215Z -    changeset_id bigint NOT NULL,
+2026-10-28T19:24:07.2519501Z +    way_id bigint CONSTRAINT ways_id_not_null NOT NULL,
+2026-10-28T19:24:07.2519874Z +    changeset_id bigint CONSTRAINT ways_user_id_not_null NOT NULL,
+2026-10-28T19:24:07.2520215Z      "timestamp" timestamp without time zone NOT NULL,
+2026-10-28T19:24:07.2520477Z      version bigint NOT NULL,
+2026-10-28T19:24:07.2520714Z      visible boolean DEFAULT true NOT NULL,
+2026-10-28T19:24:07.2529034Z ##[error]Process completed with exit code 1.

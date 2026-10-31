@@ -1,0 +1,95 @@
+diff --git a/app/assets/javascripts/leaflet.locate.js b/app/assets/javascripts/leaflet.locate.js
+index 6a3bff428b..e1b38a973b 100644
+--- a/app/assets/javascripts/leaflet.locate.js
++++ b/app/assets/javascripts/leaflet.locate.js
+@@ -8,9 +8,11 @@ L.OSM.locate = function (options) {
+       inViewNotFollowing: "stop"
+     },
+     strings: {
+-      title: OSM.i18n.t("javascripts.map.geolocate_control.find_my_location"),
++      title: OSM.i18n.t("javascripts.map.GeolocateControl.FindMyLocation"),
+       popup: function (options) {
+-        return OSM.i18n.t("javascripts.map.geolocate_control." + options.unit + "Popup", { count: options.distance });
++        let unit = options.unit;
++        let unitTranslationKey = unit.charAt(0).toUpperCase() + unit.slice(1);
++        return OSM.i18n.t("javascripts.map.GeolocateControl." + unitTranslationKey + "Popup", { count: options.distance });
+       }
+     },
+     ...options
+diff --git a/app/assets/javascripts/leaflet.zoom.js b/app/assets/javascripts/leaflet.zoom.js
+index e4302fa2e7..fdf8500cc1 100644
+--- a/app/assets/javascripts/leaflet.zoom.js
++++ b/app/assets/javascripts/leaflet.zoom.js
+@@ -10,9 +10,9 @@ L.OSM.Zoom = L.Control.extend({
+     this._map = map;
+ 
+     this._zoomInButton = this._createButton(
+-      "", OSM.i18n.t("javascripts.map.navigation_control.zoom_in"), "plus-lg", container, this._zoomIn, this);
++      "", OSM.i18n.t("javascripts.map.NavigationControl.ZoomIn"), "plus-lg", container, this._zoomIn, this);
+     this._zoomOutButton = this._createButton(
+-      "", OSM.i18n.t("javascripts.map.navigation_control.zoom_out"), "dash-lg", container, this._zoomOut, this);
++      "", OSM.i18n.t("javascripts.map.NavigationControl.ZoomOut"), "dash-lg", container, this._zoomOut, this);
+ 
+     map.on("zoomend zoomlevelschange", this._updateDisabled, this);
+ 
+diff --git a/app/assets/javascripts/maplibre/map.js b/app/assets/javascripts/maplibre/map.js
+index a582d4de7e..ee43e86650 100644
+--- a/app/assets/javascripts/maplibre/map.js
++++ b/app/assets/javascripts/maplibre/map.js
+@@ -3,8 +3,7 @@
+ //= require maplibre/popup
+ 
+ maplibregl.Map.prototype._getUIString = function (key) {
+-  const snakeCaseKey = key.replaceAll(/(?<=\w)[A-Z]/g, "_$&").toLowerCase();
+-  return OSM.i18n.t(`javascripts.map.${snakeCaseKey}`);
++  return OSM.i18n.t(`javascripts.map.${key}`);
+ };
+ 
+ OSM.MapLibre.showWebGLError = function (container) {
+diff --git a/config/locales/en.yml b/config/locales/en.yml
+index ca3eb79eb6..46545bf583 100644
+--- a/config/locales/en.yml
++++ b/config/locales/en.yml
+@@ -3759,26 +3759,26 @@ en:
+       tooltip: "Legend"
+       tooltip_disabled: "Legend not available for this layer"
+     map:
+-      map:
+-        title: Map
+-        marker:
+-          title: Map marker
+-      popup:
+-        close: Close
+-      navigation_control:
+-        zoom_in: Zoom In
+-        zoom_out: Zoom Out
+-      geolocate_control:
+-        find_my_location: Show My Location
+-        location_not_available: Location not available
+-        metersPopup:
++      Map:
++        Title: Map
++      Marker:
++        Title: Map marker
++      Popup:
++        Close: Close
++      NavigationControl:
++        ZoomIn: Zoom In
++        ZoomOut: Zoom Out
++      GeolocateControl:
++        FindMyLocation: Show My Locationnnn
++        LocationNotAvailable: Location not available
++        MetersPopup:
+           one: You are within %{count} meter of this point
+           other: You are within %{count} meters of this point
+-        feetPopup:
++        FeetPopup:
+           one: You are within %{count} foot of this point
+           other: You are within %{count} feet of this point
+-      attribution_control:
+-        toggle_attribution: Toggle Attribution
++      AttributionControl:
++        ToggleAttribution: Toggle Attribution
+       base:
+         standard: Standard
+         cyclosm: CyclOSM
