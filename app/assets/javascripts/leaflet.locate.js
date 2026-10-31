@@ -8,9 +8,11 @@ L.OSM.locate = function (options) {
       inViewNotFollowing: "stop"
     },
     strings: {
-      title: OSM.i18n.t("javascripts.map.geolocate_control.find_my_location"),
+      title: OSM.i18n.t("javascripts.map.GeolocateControl.FindMyLocation"),
       popup: function (options) {
-        return OSM.i18n.t("javascripts.map.geolocate_control." + options.unit + "Popup", { count: options.distance });
+        let unit = options.unit;
+        let unitTranslationKey = unit.charAt(0).toUpperCase() + unit.slice(1);
+        return OSM.i18n.t("javascripts.map.GeolocateControl." + unitTranslationKey + "Popup", { count: options.distance });
       }
     },
     ...options
