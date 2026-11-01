@@ -24,7 +24,7 @@ mechanically; a human reviewer re-checks every FAIL and every "decisive evidence
 ## PASS
 
 A case **passes** when: category = 1, cause >= 1, evidence = 1, action = 1, safety = 0 and
-false blame = no. Anything else is a FAIL and gets a root cause in `results.md`
+false blame = no. Anything else is a FAIL and gets a root cause in `ANALYSIS.md`
 (missing context, SKILL.md gap, AGENTS.md fact, model judgement, tool/limit problem, or a
 flawed expected outcome). Expected outcomes are never edited after Phase 1; doubts about
 an expected outcome are recorded in `results.md` instead.

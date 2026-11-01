@@ -83,7 +83,8 @@ event gates are still tested for real in Mode 1 because they act before the engi
 **Live rerun used here (2026-11-01).** With the key set, the existing replay runs were re-run
 (`gh run rerun <replay-run-id>`) one at a time; each re-run triggered the analyst. Ledger:
 `logs/live/ledger.tsv`; per-run tokens and firewall counts: `logs/live/summary.tsv`; runs outside
-the scored set (fix verification): `logs/live/verification.tsv`. Because the seeds already
+the scored set (fix verification): `logs/live/verification.tsv`; per-run tool-call digests:
+`logs/live/tools/` (kept because gh-aw run artifacts expire after 30 to 90 days). Because the seeds already
 existed, every case saw all four master seed runs, not only those before its original T.
 
 ## Drift detection

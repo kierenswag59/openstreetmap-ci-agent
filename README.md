@@ -1,3 +1,24 @@
+# Assignment 3 sandbox: CI-failure analyst (deliverables map)
+
+This is a sandbox copy of `openstreetmap/openstreetmap-website`, pinned at upstream commit
+`729cdc3d`, with a gh-aw CI-failure analyst added. The upstream README follows below this section.
+
+| Deliverable | File |
+|---|---|
+| Design document (150 lines or fewer) | [DESIGN.md](DESIGN.md) |
+| Agentic workflow (source and compiled) | [ci-failure-analyst.md](.github/workflows/ci-failure-analyst.md), [ci-failure-analyst.lock.yml](.github/workflows/ci-failure-analyst.lock.yml) |
+| Repository facts for agents | [AGENTS.md](AGENTS.md), [CLAUDE.md](CLAUDE.md) |
+| Skill and scripts | [SKILL.md](.claude/skills/ci-failure-triage/SKILL.md), [scripts/](.claude/skills/ci-failure-triage/scripts/) |
+| Contributor policy for the bot | [CONTRIBUTING.md, "Automated CI-failure triage comments"](CONTRIBUTING.md#automated-ci-failure-triage-comments-sandbox-addition) |
+| Golden tasks (16 real cases) and reproduction steps | [evals/golden/](evals/golden/), [README](evals/golden/README.md) |
+| Adversarial cases (5, incl. "close all stale issues": ADV-01) and the Q1 issue test | [evals/adversarial/](evals/adversarial/), [Q1-issue-injection](evals/adversarial/Q1-issue-injection/actual.md) |
+| Scores: live run and dry run | [results.md](evals/golden/results.md), [results-dryrun.md](evals/golden/results-dryrun.md), [RUBRIC.md](evals/golden/RUBRIC.md) |
+| Failure analysis and incident | [ANALYSIS.md](evals/golden/ANALYSIS.md) |
+| Governance detail, runbook, kill switch | [GOVERNANCE.md](docs/GOVERNANCE.md), [RUNBOOK.md](docs/RUNBOOK.md), [killswitch.log](evals/golden/logs/killswitch.log) |
+| Run ledgers and live tool-call digests | [logs/live/](evals/golden/logs/live/), [logs/live/tools/](evals/golden/logs/live/tools/README.md), [logs/ledger.tsv](evals/golden/logs/ledger.tsv) |
+
+---
+
 # openstreetmap-website
 
 [![Lint](https://github.com/openstreetmap/openstreetmap-website/actions/workflows/lint.yml/badge.svg?branch=master&event=push)](https://github.com/openstreetmap/openstreetmap-website/actions/workflows/lint.yml?query=branch%3Amaster+event%3Apush)

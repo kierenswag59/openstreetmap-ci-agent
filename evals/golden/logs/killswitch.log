@@ -9,3 +9,12 @@
 2026-10-31T12:51:02Z workflow disabled
 could not create workflow dispatch event: HTTP 422: Cannot trigger a 'workflow_dispatch' on a disabled workflow (https://api.github.com/repos/kierenswag59/openstreetmap-ci-agent/actions/workflows/402710248/dispatches)
 2026-10-31T12:51:04Z workflow re-enabled
+
+# Phone test, 2026-11-01, by the owner in a phone browser (GitHub desktop site); verified via the API
+2026-11-01T13:59:04Z CI_ANALYST_ENABLED set to false (variables API updated_at)
+2026-11-01T14:02:01Z P1 run 41314130877 (workflow_dispatch, run_id 41200800249): skipped
+2026-11-01T14:04:07Z workflow disabled, then re-enabled (workflow updated_at; Run workflow button gone while disabled)
+2026-11-01T14:05:33Z CI_ANALYST_ENABLED set to true
+2026-11-01T14:06:04Z P3 run 41314473279 dispatched, cancelled from the phone before the agent ran:
+                     pre_activation=success activation=cancelled agent=cancelled safe_outputs=cancelled; run conclusion cancelled; no new comment
+                     Screenshots: killswitch-phone/1-variable-false.png, 2-run-skipped.png (run #49), 4-run-cancelled.png (run #50); no screenshot of the disable step
