@@ -93,7 +93,13 @@ open_pr() {  # $1 base, $2 head, $3 pr.json
   local title body
   title="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["title"])' "$3")"
   body="$(mktemp)"
-  python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["body"])' "$3" > "$body"
+  # Copied upstream text must not notify anyone: wrap @mentions and upstream issue/PR URLs in
+  # code spans (a maintainer asked us to stop after the first run, sandbox issue #24).
+  python3 -c 'import json,re,sys
+b = json.load(open(sys.argv[1]))["body"] or ""
+b = re.sub(r"https://github\.com/openstreetmap/openstreetmap-website/(issues|pull)/(\d+)", r"`upstream \1/\2`", b)
+b = re.sub(r"(?<![\w`/])@([A-Za-z][\w-]*)", r"`@\1`", b)
+print(b)' "$3" > "$body"
   gh pr create --repo "$SANDBOX" --base "$1" --head "$2" --title "$title" --body-file "$body"
 }
 

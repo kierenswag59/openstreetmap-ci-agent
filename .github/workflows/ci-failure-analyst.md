@@ -82,6 +82,7 @@ tools:                                        # [C4] tool allow-list
     - "python3 .claude/skills/ci-failure-triage/scripts/validate_output.py:*"
     - "python3 .claude/skills/ci-failure-triage/scripts/extract_failure.py:*"
     - "python3 .claude/skills/ci-failure-triage/scripts/map_to_diff.py:*"
+    - "python3 -I .claude/skills/ci-failure-triage/scripts/validate_output.py:*"  # live runs: the model often added -I
 
 steps:                                        # [C2] deterministic data preparation before the agent (no model)
   - name: Collect CI failure context
@@ -111,6 +112,7 @@ safe-outputs:                                 # [C6-C9] the only writes the agen
     target: "*"
     issues: false                             # [C8] PRs only
   noop:                                       # [C9] explicit "no comment warranted" with a reason
+    report-as-issue: false                    # [C9] default true opened a "No-Op Runs" issue in live run 41291486791
   threat-detection:                           # [C9] AI threat scan of the agent output before any write
     enabled: true
     continue-on-error: false                  # [C9] fail closed: a detection failure blocks the safe outputs
