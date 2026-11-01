@@ -57,9 +57,12 @@ concurrency:                                  # [C2] one analysis per head SHA; 
   cancel-in-progress: true
   job-discriminator: ${{ github.run_id }}     # [C2] gh-aw extension: separate conclusion slot per dispatch
 
-checkout:                                     # [C4] sparse checkout: the agent sees only instructions and the skill,
-  sparse-checkout: |                          # not evals/ (expected outcomes) or application code;
-    .claude                                   # cone mode also keeps root files (AGENTS.md, CLAUDE.md)
+# [C4] sparse checkout: the agent sees only instructions and the skill, not evals/ (expected
+# outcomes) or application code; cone mode also keeps root files (AGENTS.md, CLAUDE.md).
+# No comment inside the block below: a block scalar would make it part of the path.
+checkout:
+  sparse-checkout: |
+    .claude
 
 network:                                      # [C10] AWF firewall: engine defaults plus GitHub, nothing else
   allowed:
