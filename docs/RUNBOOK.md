@@ -92,7 +92,7 @@ Re-enable: set `CI_ANALYST_ENABLED=true`, re-enable the workflow, run the golden
 
 | Limit | Value | Where |
 |---|---|---|
-| Model spend (hard) | Claude Console balance or monthly spend limit (sandbox: $5 prepaid); about $0.21 per run live | Claude Console |
+| Model spend (hard) | Claude Console balance or monthly spend limit (sandbox: $5 prepaid); $4.55 spent on 22 live runs, about $0.21 each | Claude Console |
 | Turns per run | 25 | `max-turns` in ci-failure-analyst.md |
 | Agent step time | 10 min (agent job 60 min, detection 10 min, safe outputs 15 min, compiler defaults) | `timeout-minutes`; lock file |
 | Outputs per run | 1 comment, 1 label | `safe-outputs` |

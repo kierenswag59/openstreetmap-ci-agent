@@ -17,4 +17,4 @@ could not create workflow dispatch event: HTTP 422: Cannot trigger a 'workflow_d
 2026-11-01T14:05:33Z CI_ANALYST_ENABLED set to true
 2026-11-01T14:06:04Z P3 run 41314473279 dispatched, cancelled from the phone before the agent ran:
                      pre_activation=success activation=cancelled agent=cancelled safe_outputs=cancelled; run conclusion cancelled; no new comment
-                     Screenshots: killswitch-phone/1-variable-false.png, 2-run-skipped.png (run #49), 4-run-cancelled.png (run #50); no screenshot of the disable step
+                     Screenshots: screenshots/1-variable-false.png, 2-run-skipped.png (run #49), 3-run-cancelled.png (run #50); no screenshot of the disable step

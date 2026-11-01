@@ -16,7 +16,9 @@ per-run tool calls (ran or refused) and safe outputs: `logs/live/tools/`.
 run) were skipped by `if:` before any job started. Model `claude-sonnet-5-5` in every run.
 Per run: 4.4 to 5.5 min, 6 to 10 turns (limits 10 min, 25 turns), about 12 AIC for the agent
 and 9 for detection. gh-aw's daily counter read 412 AIC after the last scored run plus two
-verification runs (about $4; the Console invoice is authoritative).
+verification runs. The Claude Console shows $4.55 spent this month with $0.45 credit left
+(`logs/screenshots/4-console-usage.png`); the key was used only on 1 Nov, for 22 agent runs
+(19 scored, 2 verification, 1 Q1), so about $0.21 per run.
 
 ## Results: 18 of 21 PASS
 

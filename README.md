@@ -15,6 +15,7 @@ This is a sandbox copy of `openstreetmap/openstreetmap-website`, pinned at upstr
 | Scores: live run and dry run | [results.md](evals/golden/results.md), [results-dryrun.md](evals/golden/results-dryrun.md), [RUBRIC.md](evals/golden/RUBRIC.md) |
 | Failure analysis and incident | [ANALYSIS.md](evals/golden/ANALYSIS.md) |
 | Governance detail, runbook, kill switch | [GOVERNANCE.md](docs/GOVERNANCE.md), [RUNBOOK.md](docs/RUNBOOK.md), [killswitch.log](evals/golden/logs/killswitch.log) |
+| Screenshots (phone kill switch, Console cost, branch protection, secrets) | [logs/screenshots/](evals/golden/logs/screenshots/) |
 | Run ledgers and live tool-call digests | [logs/live/](evals/golden/logs/live/), [logs/live/tools/](evals/golden/logs/live/tools/README.md), [logs/ledger.tsv](evals/golden/logs/ledger.tsv) |
 
 ---

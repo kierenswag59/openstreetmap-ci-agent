@@ -64,7 +64,7 @@ Each failed PR run starts one analyst run, so 300 runs, minus those cancelled by
 concurrency group (a later analysis of the same head SHA cancels an earlier one). Writes are
 bounded at 300 comments + 300 labels, at most one per run. Runtime: at most 10 min per agent
 step (live: 4.4 to 5.5 min). Cost: live runs used 152k to 213k tokens each, mostly cache reads,
-about 12 AIC for the agent and 9 for threat detection (`evals/golden/logs/live/summary.tsv`), an estimated $0.21
+about 12 AIC for the agent and 9 for threat detection (`evals/golden/logs/live/summary.tsv`), about $0.21 (Claude Console: $4.55 spent on 1 Nov for 22 agent runs, `evals/golden/logs/screenshots/4-console-usage.png`)
 per analysis at list price, so about $65 for 300. gh-aw's daily AI-credit guard (5000 AIC, about
 $50) would stop new runs after roughly 230 in one day, and the Claude Console balance or spend
 limit stops all model calls when reached. There is no per-PR or per-author cap for `workflow_run`
