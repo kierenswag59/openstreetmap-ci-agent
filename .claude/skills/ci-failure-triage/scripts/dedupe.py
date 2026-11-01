@@ -48,7 +48,8 @@ def issue_matches(issues, signature, keywords, min_keywords=2):
 
 
 def comment_matches(comments, signature):
-    rx = re.compile(r"signature:\s*`?([0-9a-f]{12})`?", re.I)
+    # gh-aw's output sanitiser posts `x` as <code>x</code>, so accept both forms
+    rx = re.compile(r"signature:\s*(?:`|<code>)?([0-9a-f]{12})", re.I)
     out = []
     for c in comments:
         found = rx.findall(c.get("body", ""))

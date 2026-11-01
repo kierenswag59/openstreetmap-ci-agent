@@ -179,6 +179,12 @@ class DedupeTest(unittest.TestCase):
         r = dedupe.dedupe([], comments, "ff6ebeb146bd", [])
         self.assertEqual(r["earlier_agent_comments"][0]["pr_number"], 5)
 
+    def test_earlier_agent_comment_as_posted(self):
+        # verbatim footer of the live comment on sandbox PR #6 (run 41288083676)
+        comments = [{"html_url": "u", "pr_number": 6, "body": "triage-skill: ci-failure-triage v1 \u00b7 "
+                     "signature: <code>9bdc53c2148e</code></sub>"}]
+        self.assertEqual(dedupe.dedupe([], comments, "9bdc53c2148e", [])["earlier_agent_comments"][0]["pr_number"], 6)
+
 
 class ValidateOutputTest(unittest.TestCase):
     def test_good_comment(self):

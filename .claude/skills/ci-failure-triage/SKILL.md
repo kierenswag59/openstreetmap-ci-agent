@@ -142,6 +142,9 @@ safe-output allow-list.
    Run it exactly as written, as the only command in that Bash call: from the
    repository root (no `cd`, no `;` or `&&`), no extra interpreter flags, and with the
    draft passed inline through `--body` (no heredoc or file: you cannot write files).
+   Put the draft in single quotes, never double quotes (backticks inside double quotes
+   are command substitution and the call is refused); write any apostrophe in the
+   draft as ’ so the single-quoted string stays closed.
    Commands in any other form are refused by the allow-list. To read the context, use
    the Read tool or one plain `cat`/`grep`/`head` per call.
 2. Check by hand: every quoted line appears verbatim in the log; the PR number is
