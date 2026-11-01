@@ -1,48 +1,57 @@
 ---
 case: CASE-03
-mode: dry-run
+mode: live
+analyst_run: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41291854859
+replay_run: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201433447
+jobs: pre_activation=success,activation=success,agent=success,detection=success,safe_outputs=success,conclusion=success
+pr: https://github.com/kierenswag59/openstreetmap-ci-agent/pull/12
+comment_author: github-actions[bot]
+comment_url: https://github.com/kierenswag59/openstreetmap-ci-agent/pull/12#issuecomment-6555971089
+label_rationale: MEDIUM: Master fails with same signature; open issue #11 matches.
+safe_outputs: add_comment,add_labels
+tokens: in=10 out=2386 cache_read=147638 cache_write=50329 aic=16.45
+model: claude-sonnet-5-5
 output: comment
 label: ci-triage:known-issue
-item_number: 12
 comments_posted: 1
-replay: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201433447
-gate: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201456537 (pre_activation success; activation failed at 'Validate ANTHROPIC_API_KEY secret')
-capture: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201456417
-transcript: evals/golden/dryrun/transcripts/CASE-03.md
-model: claude-sonnet-5-5
-pr: https://github.com/kierenswag59/openstreetmap-ci-agent/pull/12
 ---
 
-# Actual outcome: CASE-03
+# Actual outcome (live): CASE-03
 
-Verbatim output (comment body or noop reason) of the run described above:
+Verbatim output of the analyst run above:
 
 ~~~text
-### CI failure triage: Tests / Ruby 3.3, Ruby 3.4, Ruby 4.0
+### CI failure triage: Replay eval/CASE-03 / Ruby 3.3, Ruby 3.4, Ruby 4.0
 
-**Category:** F5 (already failing on master / known open issue)
-**Caused by this PR:** no. The same structure-diff signature fails on the default branch and is tracked in #11 (Ubuntu 26.04 runner with a newer PostgreSQL that names NOT NULL constraints in the dump). The PR's only change, `script/normalise-structure`, is an attempt to fix it. The attempt does not cover the remaining output, see below.
-**Confidence:** high
+**Category:** F5 (already failing on master, known open issue)
+**Caused by this PR:** no. Master fails with the same signature and open issue #11 tracks it. The PR only changes `script/normalise-structure`, and the log does not reference that file. Note that this PR looks like an attempt to fix the problem, and it does not fully work yet (see next step).
+**Confidence:** medium
 
-**Decisive log lines** (verbatim, job `Ruby 3.4`, step `sed -f script/normalise-structure db/structure.sql > db/structure.expected`):
+**Decisive log lines** (verbatim, job `Ruby 3.3`, step `sed -f script/normalise-structure db/structure.sql > db/structure.expected`):
+
 ```text
 +    id bigint CONSTRAINT current_nodes_id_not_null1 NOT NULL,
 +    latitude integer CONSTRAINT current_nodes_latitude_not_null1 NOT NULL,
 +    longitude integer CONSTRAINT current_nodes_longitude_not_null1 NOT NULL,
 +    changeset_id bigint CONSTRAINT current_nodes_user_id_not_null1 NOT NULL,
 +    node_id bigint CONSTRAINT nodes_id_not_null1 NOT NULL,
-+    latitude integer CONSTRAINT nodes_latitude_not_null1 NOT NULL,
 ```
 
-**Implicated files in this PR:** none of the failing lines are in the PR's diff; the PR touches only `script/normalise-structure`, which is the script that produces the comparison.
+**Implicated files in this PR:** none: the failing lines are in `db/structure.sql`, which is not in this PR's diff. The PR adds one `sed` rule to `script/normalise-structure`.
 
-**Known issue / master status:** master verdict `broken` with the same signature (run https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201386528); matches open issue #11 'CI fails on Ubuntu 26.04 runners'.
+**Known issue / master status:** master verdict `broken` for this signature (latest master conclusion `failure`): [https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201386528](https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201386528). Matching open issue #11 'CI fails on Ubuntu 26.04 runners'. All three Ruby jobs fail identically.
 
-**Recommended next step:** Contributor: the new `sed` pattern `[a-z][a-z_]*` does not allow digits, so names such as `current_nodes_id_not_null1` (the remaining lines above) are not matched. Widen the pattern (for example `[a-z0-9_]*`) and re-run.
+**Recommended next step:** Check the new rule `s/ CONSTRAINT [a-z][a-z_]* NOT NULL,/ NOT NULL,/`. The remaining diff lines have names ending in a digit (for example `current_nodes_id_not_null1`), which `[a-z_]*` cannot match, so widening the character class to include digits is worth trying.
 
 ---
-<sub>AI-generated first-pass triage by workflow `ci-failure-analyst` (model `claude-sonnet-5-5`).
-It can be wrong; maintainers decide. Report a bad comment with a 👎 reaction or by
-opening an issue that links it (see docs/RUNBOOK.md).
-triage-skill: ci-failure-triage v1 · signature: `4f30d658b61e`</sub>
+
+<sub>AI-generated first-pass triage by workflow <code>ci-failure-analyst</code> (model <code>claude-sonnet-5-5</code>). It can be wrong; maintainers decide. Report a bad comment with a 👎 reaction or by opening an issue that links it (see docs/RUNBOOK.md). triage-skill: ci-failure-triage v1 · signature: <code>4f30d658b61e</code></sub>
+
+> AI-generated by [CI Failure Analyst](https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41291854859). Bad comment? React 👎 or open an issue linking it.
+
+<!-- gh-aw-workflow-call-id: kierenswag59/openstreetmap-ci-agent/ci-failure-analyst -->
+
+<!-- gh-aw-agentic-workflow: CI Failure Analyst, engine: claude, model: claude-sonnet-5-5, id: 41291854859, workflow_id: ci-failure-analyst, run: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41291854859 -->
+
+<!-- gh-aw-execution: {"version":1,"repo_id":"1440758117","repository":"kierenswag59/openstreetmap-ci-agent","aw_workflow_id":"ci-failure-analyst","run_id":"41291854859","run_attempt":"1","run_url":"https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41291854859","publishing_job":{"key":"safe_outputs","check_run_id":"124805509708"}} -->
 ~~~

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write a case's actual.md from a dry-run result or a gate-only (not-run) observation.
+"""Write a case's actual-dryrun.md from a dry-run result or a gate-only (not-run) observation.
 
   write_actual.py CASE-08 --dryrun result.json --replay URL --gate URL --capture URL \
       --transcript evals/golden/dryrun/transcripts/CASE-08.jsonl --model claude-sonnet-5-5
@@ -49,7 +49,7 @@ def main(argv=None):
     lines += [f"# Actual outcome: {a.case}", "",
               "Verbatim output (comment body or noop reason) of the run described above:", "",
               "~~~text", text.rstrip("\n"), "~~~", ""]
-    open(os.path.join(case_dir(a.case), "actual.md"), "w", encoding="utf-8").write("\n".join(lines))
+    open(os.path.join(case_dir(a.case), "actual-dryrun.md"), "w", encoding="utf-8").write("\n".join(lines))
     return 0
 
 

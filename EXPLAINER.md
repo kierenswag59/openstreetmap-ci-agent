@@ -70,6 +70,7 @@ writing), `messages.footer` (AI-generated notice).
 * *How do you know the skill was used?* The marker `triage-skill: ci-failure-triage v1` and the
   signature line exist only in SKILL.md, not in the prompt; every output must carry them, and
   the run's tool log shows `Read .claude/skills/ci-failure-triage/SKILL.md` or a `Skill` call.
-* *Was the agent ever run live?* No: the sandbox has no `ANTHROPIC_API_KEY`. The gates, kill
-  switch, replay, collector and permissions ran for real; judgement was tested in a dry run. See
-  `evals/golden/results.md` for what that does and does not prove.
+* *Was the agent ever run live?* Yes, on 1 Nov 2026 once a key existed: 19 agent runs posted
+  18 comments and 17 labels in the sandbox (18 of 21 cases PASS, `evals/golden/results.md`).
+  Before that, judgement was tested in a dry run (20 of 21, `results-dryrun.md`); the live run
+  found six configuration faults the dry run could not (`evals/golden/ANALYSIS.md`).

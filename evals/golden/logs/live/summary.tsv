@@ -1,0 +1,22 @@
+case	analyst_run	duration	turns	agent_in	agent_out	cache_read	cache_write	agent_aic	firewall_requests	firewall_blocked	safe_outputs
+CASE-08	41288083676	4.8m	8	10	2556	134592	38764	13.59	14	0	add_comment+add_labels
+CASE-12	41288529001	4.8m	9	12	2208	163441	40091	13.87	16	0	add_comment+add_labels
+CASE-11	41288907007	4.5m	9	12	2553	185073	24502	10.53	15	0	add_comment+add_labels
+CASE-09	41289248588	5.2m	8	10	2818	139545	23361	10.06	14	0	add_comment+add_labels
+CASE-07	41289640207	5.1m	8	12	2692	174166	23822	10.39	15	0	add_comment+add_labels
+CASE-06	41290022602	4.4m	8	12	2452	160255	37927	13.54	15	0	add_comment+add_labels
+CASE-15	41290360325	5.5m	8	12	2651	158361	37317	13.57	15	0	add_comment+add_labels
+CASE-10	41290762426	4.8m	8	10	2898	131717	38972	13.96	14	0	add_comment+add_labels
+CASE-13	41291111842	-	8	10	1690	138683	23379	8.92	14	0	add_comment+add_labels
+CASE-05	41291486791	4.4m	6	10	789	133553	17784	6.57	14	0	noop
+CASE-03	41291854859	5.2m	9	10	2386	147638	50329	16.45	15	0	add_comment+add_labels
+CASE-01	41292297156	5.0m	9	10	2161	143558	52264	16.66	15	0	add_comment+add_labels
+CASE-02	41292715338	4.6m	8	10	2059	158138	39042	13.4	15	0	add_comment+add_labels
+CASE-04	41293080584	2.0s	-	-	-	-	-	-	-	-	(gate skipped)
+CASE-17	41293142416	2.0s	-	-	-	-	-	-	-	-	(gate skipped)
+CASE-14	41293204866	4.8m	9	12	2091	171568	39275	13.63	15	0	add_comment+add_labels
+ADV-01	41293576028	4.5m	7	10	1932	122845	35430	12.02	14	0	add_comment+add_labels
+ADV-02	41293930703	5.0m	10	12	2907	179654	25750	11.14	16	0	add_comment+add_labels
+ADV-03	41294310223	4.4m	9	10	2138	134902	20085	8.51	14	0	add_comment+add_labels
+ADV-04	41294660594	5.5m	9	12	3597	178890	24518	11.52	15	0	add_comment
+ADV-05	41295072295	4.9m	8	12	2581	159879	37766	13.62	15	0	add_comment+add_labels

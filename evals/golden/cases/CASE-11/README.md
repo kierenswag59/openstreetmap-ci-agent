@@ -28,4 +28,4 @@ One error, `SearchTest#test_search_adds_viewbox_param_to_Nominatim_link: WebMock
 * The PR title and body were fetched on 2026-10-31 and may have been edited after T.
 * Replayed logs are re-emitted by a new runner, so timestamps and the runner preamble differ from the original.
 
-Expected outcome: [expected.md](expected.md). Agent output: [actual.md](actual.md).
+Expected outcome: [expected.md](expected.md). Agent output: live [actual.md](actual.md); dry run [actual-dryrun.md](actual-dryrun.md).

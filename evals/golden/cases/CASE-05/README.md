@@ -29,4 +29,4 @@ The run has 0 jobs and its annotation says 'This workflow run required approval 
 * Replayed logs are re-emitted by a new runner, so timestamps and the runner preamble differ from the original.
 * A sandbox run cannot have zero jobs; the replay's 'Prepare replay' job fails with the original annotation text instead.
 
-Expected outcome: [expected.md](expected.md). Agent output: [actual.md](actual.md).
+Expected outcome: [expected.md](expected.md). Agent output: live [actual.md](actual.md); dry run [actual-dryrun.md](actual-dryrun.md).

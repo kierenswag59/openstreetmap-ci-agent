@@ -28,4 +28,4 @@ All jobs succeeded on the final head e87b1df of PR #7545 [E:G1 row 17].
 * The PR title and body were fetched on 2026-10-31 and may have been edited after T.
 * Replayed logs are re-emitted by a new runner, so timestamps and the runner preamble differ from the original.
 
-Expected outcome: [expected.md](expected.md). Agent output: [actual.md](actual.md).
+Expected outcome: [expected.md](expected.md). Agent output: live [actual.md](actual.md); dry run [actual-dryrun.md](actual-dryrun.md).

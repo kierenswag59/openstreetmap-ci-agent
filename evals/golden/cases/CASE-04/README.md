@@ -29,4 +29,4 @@ Push event on master (merge of upstream/pull/7542) [E:G1 row 04]; the workflow i
 * Replayed logs are re-emitted by a new runner, so timestamps and the runner preamble differ from the original.
 * The original event was a push to master. The replay is dispatched (workflow_dispatch) on a branch with no PR, which exercises the same gate (`workflow_run.event != pull_request`).
 
-Expected outcome: [expected.md](expected.md). Agent output: [actual.md](actual.md).
+Expected outcome: [expected.md](expected.md). Agent output: live [actual.md](actual.md); dry run [actual-dryrun.md](actual-dryrun.md).

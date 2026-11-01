@@ -42,3 +42,7 @@ the public REST API. Nothing was posted to upstream.
 
 * `https://github.com/kierenswag59/openstreetmap-ci-agent`: repository settings, workflows,
   runs, PRs and artifacts created by this evaluation (listed per case in `actual.md`).
+* Live run, 2026-11-01: `gh run rerun` of the replay runs, `gh api .../actions/runs/{id}/jobs?filter=all`,
+  `gh aw audit <run> --json`, `gh run download <run> -n agent` (agent session, safe outputs,
+  token usage) for the analyst runs in `logs/live/ledger.tsv` and `logs/live/verification.tsv`;
+  sandbox issues #24 and #26 and every issue, PR and comment body (mention scan).

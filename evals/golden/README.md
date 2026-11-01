@@ -3,7 +3,8 @@
 16 real historical CI runs from `openstreetmap/openstreetmap-website` (14 failures, one push
 run on master, one passing run) and 5 constructed adversarial inputs. Each case directory
 holds `README.md` (IDs, URLs, cutoff T, rationale), `input/` (everything known at T),
-`expected.md` (written before any run, hashed in `MANIFEST.sha256`) and `actual.md`.
+`expected.md` (written before any run, hashed in `MANIFEST.sha256`), `actual.md` (live run, 2026-11-01) and
+`actual-dryrun.md` (dry run, 2026-10-31).
 
 | Category | Cases |
 |---|---|
@@ -39,9 +40,10 @@ gh issue create --repo kierenswag59/openstreetmap-ci-agent \
 for id in CASE-03 CASE-01 CASE-02 CASE-04 CASE-17 CASE-14 ADV-01 ADV-02 ADV-03 ADV-04 ADV-05; do
   evals/golden/setup_case.sh "$id"; sleep 240
 done
-python3 evals/golden/run_eval.py collect-live            # writes actual.md from the PRs
+python3 evals/golden/run_eval.py collect-live            # writes actual.md from logs/live/ledger.tsv
 gh aw logs ci-failure-analyst --repo kierenswag59/openstreetmap-ci-agent -o evals/golden/logs
 python3 evals/golden/run_eval.py score --explain         # writes results.md
+# dry run: score --actual actual-dryrun.md --out results-dryrun.md
 ```
 
 The order follows `SEEDS.md` so that the sandbox's master history and open issues match
@@ -54,11 +56,11 @@ Push a historical head commit to a sandbox PR with the upstream Tests/Lint workf
 and let real CI fail (suggested: CASE-08 and CASE-14, which fail in Lint for PR-caused reasons).
 Warning: commits from before the PR #7545 fix (merged 2026-10-28) fail the Tests structure
 check on `ubuntu-latest` (Ubuntu 26.04) for an unrelated reason unless `runs-on` is pinned to
-`ubuntu-24.04`. Lint-only cases avoid this. Not run in this submission (see results.md).
+`ubuntu-24.04`. Lint-only cases avoid this. Not run in this submission.
 
 ## Mode 3 (fallback): dry run with the same configuration
 
-Used here because the sandbox has no `ANTHROPIC_API_KEY` (see results.md). Steps:
+Used on 2026-10-31, before the sandbox had an `ANTHROPIC_API_KEY` (`results-dryrun.md`). Steps:
 
 1. Run Mode 1 anyway. With `CI_ANALYST_ENABLED=true` the real workflows still run: the
    replay, the analyst's pre-activation gate, and `ci-context-capture.yml`, which runs the
@@ -70,13 +72,19 @@ Used here because the sandbox has no `ANTHROPIC_API_KEY` (see results.md). Steps
 4. Start a fresh Claude Code session (model `claude-sonnet-5-5`) in that workspace with the
    workflow body from `ci-failure-analyst.md` as the prompt, told to print the safe-output it
    would emit instead of calling it. Save the transcript in `evals/golden/dryrun/`.
-5. Paste the output into `actual.md` with `mode: dry-run` and score as above.
+5. Write the output to `actual-dryrun.md` (`tools/write_actual.py`) and score with `--actual actual-dryrun.md`.
 
 Controls a dry run cannot test: GitHub token permissions of the agent job, safe-output
 limits and allow-lists (max 1 comment, label list), the AWF network firewall, the 10-minute
 timeout and max-turns, threat detection, bot identity of the comment, the kill switch's
 effect on the agent job, and the gh-aw audit trail (`gh aw audit`). The kill switch and the
 event gates are still tested for real in Mode 1 because they act before the engine starts.
+
+**Live rerun used here (2026-11-01).** With the key set, the existing replay runs were re-run
+(`gh run rerun <replay-run-id>`) one at a time; each re-run triggered the analyst. Ledger:
+`logs/live/ledger.tsv`; per-run tokens and firewall counts: `logs/live/summary.tsv`; runs outside
+the scored set (fix verification): `logs/live/verification.tsv`. Because the seeds already
+existed, every case saw all four master seed runs, not only those before its original T.
 
 ## Drift detection
 

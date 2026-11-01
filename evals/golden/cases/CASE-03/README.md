@@ -29,4 +29,4 @@ This is the first push of the fix PR. Its one-line change adds `s/ CONSTRAINT [a
 * Replayed logs are re-emitted by a new runner, so timestamps and the runner preamble differ from the original.
 * Sandbox state at T is rebuilt by seeds: SEED-M1 (master Tests failure) and a mirror of issue #7544 (see evals/golden/SEEDS.md).
 
-Expected outcome: [expected.md](expected.md). Agent output: [actual.md](actual.md).
+Expected outcome: [expected.md](expected.md). Agent output: live [actual.md](actual.md); dry run [actual-dryrun.md](actual-dryrun.md).

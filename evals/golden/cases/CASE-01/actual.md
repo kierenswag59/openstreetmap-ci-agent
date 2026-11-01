@@ -1,52 +1,57 @@
 ---
 case: CASE-01
-mode: dry-run
+mode: live
+analyst_run: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41292297156
+replay_run: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201564444
+jobs: pre_activation=success,activation=success,agent=success,detection=success,safe_outputs=success,conclusion=success
+pr: https://github.com/kierenswag59/openstreetmap-ci-agent/pull/13
+comment_author: github-actions[bot]
+comment_url: https://github.com/kierenswag59/openstreetmap-ci-agent/pull/13#issuecomment-6556029982
+label_rationale: HIGH: Same signature fails on master and matches open issue #11.
+safe_outputs: add_comment,add_labels
+tokens: in=10 out=2161 cache_read=143558 cache_write=52264 aic=16.66
+model: claude-sonnet-5-5
 output: comment
 label: ci-triage:known-issue
-item_number: 13
 comments_posted: 1
-replay: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201564444
-gate: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201598035 (pre_activation success; activation failed at 'Validate ANTHROPIC_API_KEY secret')
-capture: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201598083
-transcript: evals/golden/dryrun/transcripts/CASE-01.md
-model: claude-sonnet-5-5
-pr: https://github.com/kierenswag59/openstreetmap-ci-agent/pull/13
 ---
 
-# Actual outcome: CASE-01
+# Actual outcome (live): CASE-01
 
-Verbatim output (comment body or noop reason) of the run described above:
+Verbatim output of the analyst run above:
 
 ~~~text
-### CI failure triage: Replay eval/CASE-01 (Tests) / Ruby 3.3, Ruby 3.4, Ruby 4.0
+### CI failure triage: Replay eval/CASE-01 / Ruby 3.3, Ruby 3.4, Ruby 4.0
 
-**Category:** F5 (already failing on master / known open issue; the underlying cause is a runner PostgreSQL change)
-**Caused by this PR:** no. The "Populate database" structure check fails identically on all three Ruby jobs, master fails with the same signature, and open issue #11 describes it. The PR diff touches none of the referenced files.
+**Category:** F5 (already failing on master, known open issue)
+**Caused by this PR:** no. Master fails with the same signature and open issue #11 tracks it. The failing lines are `CONSTRAINT <name> NOT NULL` entries in the regenerated `db/structure.sql`, which this PR does not touch. The PR changes avatar upload code, mailers, locales and tests.
 **Confidence:** high
 
-**Decisive log lines** (verbatim, job `Ruby 3.3`, step `sed -f script/normalise-structure db/structure.sql > db/structure.expected`):
+**Decisive log lines** (verbatim, job `Ruby 3.4`, step `sed -f script/normalise-structure db/structure.sql > db/structure.expected`):
+
 ```text
 +    changeset_id bigint CONSTRAINT changeset_tags_id_not_null NOT NULL,
 +    node_id bigint CONSTRAINT current_node_tags_id_not_null NOT NULL,
 +    id bigint CONSTRAINT current_nodes_id_not_null1 NOT NULL,
 +    latitude integer CONSTRAINT current_nodes_latitude_not_null1 NOT NULL,
-+    longitude integer CONSTRAINT current_nodes_longitude_not_null1 NOT NULL,
-+    changeset_id bigint CONSTRAINT current_nodes_user_id_not_null1 NOT NULL,
-+    visible boolean CONSTRAINT current_nodes_visible_not_null1 NOT NULL,
-+    relation_id bigint CONSTRAINT current_relation_members_id_not_null NOT NULL,
-+    way_id bigint CONSTRAINT current_way_nodes_id_not_null NOT NULL,
 +    to_user_visible boolean DEFAULT true CONSTRAINT messages_visible_not_null NOT NULL,
 ```
 
 **Implicated files in this PR:** none: the failing files are not in this PR's diff
 
-**Known issue / master status:** master is broken with the same signature ([run](https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201386528)); matches open issue #11 "CI fails on Ubuntu 26.04 runners" (newer PostgreSQL on `ubuntu-latest` dumps named NOT NULL constraints into `db/structure.sql`).
+**Known issue / master status:** master verdict `broken` for this signature (latest master conclusion `failure`): [https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201386528](https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201386528). Matching open issue #11 'CI fails on Ubuntu 26.04 runners'. All three Ruby jobs fail identically.
 
-**Recommended next step:** A maintainer should resolve #11 (pin PostgreSQL or make the structure check tolerate the difference); this PR needs no change for this failure, and its other test and lint results should be read once the check is fixed.
+**Recommended next step:** A maintainer should Resolves #11 (the newer PostgreSQL dump format adds named NOT NULL constraints that `script/normalise-structure` does not strip) and then re-run these jobs. This PR needs no change for it.
 
 ---
-<sub>AI-generated first-pass triage by workflow `ci-failure-analyst` (model `claude-sonnet-5-5`).
-It can be wrong; maintainers decide. Report a bad comment with a 👎 reaction or by
-opening an issue that links it (see docs/RUNBOOK.md).
-triage-skill: ci-failure-triage v1 · signature: `4f30d658b61e`</sub>
+
+<sub>AI-generated first-pass triage by workflow <code>ci-failure-analyst</code> (model <code>claude-sonnet-5-5</code>). It can be wrong; maintainers decide. Report a bad comment with a 👎 reaction or by opening an issue that links it (see docs/RUNBOOK.md). triage-skill: ci-failure-triage v1 · signature: <code>4f30d658b61e</code></sub>
+
+> AI-generated by [CI Failure Analyst](https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41292297156). Bad comment? React 👎 or open an issue linking it.
+
+<!-- gh-aw-workflow-call-id: kierenswag59/openstreetmap-ci-agent/ci-failure-analyst -->
+
+<!-- gh-aw-agentic-workflow: CI Failure Analyst, engine: claude, model: claude-sonnet-5-5, id: 41292297156, workflow_id: ci-failure-analyst, run: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41292297156 -->
+
+<!-- gh-aw-execution: {"version":1,"repo_id":"1440758117","repository":"kierenswag59/openstreetmap-ci-agent","aw_workflow_id":"ci-failure-analyst","run_id":"41292297156","run_attempt":"1","run_url":"https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41292297156","publishing_job":{"key":"safe_outputs","check_run_id":"124806841256"}} -->
 ~~~

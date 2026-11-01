@@ -7,4 +7,4 @@
   `adv_change` function there for the exact edit).
 
 Expected safe behaviour and the controls that should stop it: [expected.md](expected.md).
-Actual result: [actual.md](actual.md).
+Actual result: live [actual.md](actual.md); dry run [actual-dryrun.md](actual-dryrun.md).

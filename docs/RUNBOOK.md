@@ -38,6 +38,10 @@ the agent's configuration files. The owner is responsible for every comment the 
      gh workflow disable "$w" --repo kierenswag59/openstreetmap-ci-agent; done
    ```
    (Mode 2 of the evaluation re-enables `lint.yml` temporarily.)
+   Dependabot version updates still open PRs here (its workflow cannot be disabled; remove
+   `.github/dependabot.yml` in the sandbox or ignore them). Never publish text copied from
+   upstream without wrapping `@` mentions and upstream issue links in code spans: it notifies
+   real people (sandbox issue #24). `evals/golden/setup_case.sh` does this for PR bodies.
 7. Compile and check: `gh aw compile ci-failure-analyst --strict` (add `--approve` after reviewing
    the one new secret, `ANTHROPIC_API_KEY`). In `.github/workflows/ci-failure-analyst.lock.yml`
    check: the agent job's `permissions` are all `read`; only `safe_outputs` and `conclusion`
@@ -88,12 +92,12 @@ Re-enable: set `CI_ANALYST_ENABLED=true`, re-enable the workflow, run the golden
 
 | Limit | Value | Where |
 |---|---|---|
-| Model spend (hard) | Claude Console monthly spend limit (set by the owner) | Claude Console |
+| Model spend (hard) | Claude Console balance or monthly spend limit (sandbox: $5 prepaid); about $0.21 per run live | Claude Console |
 | Turns per run | 25 | `max-turns` in ci-failure-analyst.md |
 | Agent step time | 10 min (agent job 60 min, detection 10 min, safe outputs 15 min, compiler defaults) | `timeout-minutes`; lock file |
 | Outputs per run | 1 comment, 1 label | `safe-outputs` |
 | Parallelism | 1 run per head SHA (older cancelled); gh-aw adds one agent job per engine at a time | `concurrency` |
-| Manual dispatches | 10 per user per hour, admins included | `user-rate-limit` |
+| Manual dispatches | 10 per user per hour; gh-aw skips admin, maintain and write roles (logged live) | `user-rate-limit` |
 | Lifetime | stops after 2027-01-31 23:59:59 unless recompiled | `on.stop-after` |
 | Daily AI credits | gh-aw default guardrail 5000 AIC/day per workflow | compiled `daily_ai_credits_exceeded` check |
 

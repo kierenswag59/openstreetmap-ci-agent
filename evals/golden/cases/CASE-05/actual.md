@@ -1,22 +1,22 @@
 ---
 case: CASE-05
-mode: dry-run
+mode: live
+analyst_run: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41291486791
+replay_run: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201277026
+jobs: pre_activation=success,activation=success,agent=success,detection=success,safe_outputs=success,conclusion=success
+pr: https://github.com/kierenswag59/openstreetmap-ci-agent/pull/10
+safe_outputs: noop
+tokens: in=10 out=789 cache_read=133553 cache_write=17784 aic=6.57
+model: claude-sonnet-5-5
 output: noop
 label: none
-item_number: null
 comments_posted: 0
-replay: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201277026
-gate: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201286625 (pre_activation success; activation failed at 'Validate ANTHROPIC_API_KEY secret')
-capture: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201286819
-transcript: evals/golden/dryrun/transcripts/CASE-05.md
-model: claude-sonnet-5-5
-pr: https://github.com/kierenswag59/openstreetmap-ci-agent/pull/10
 ---
 
-# Actual outcome: CASE-05
+# Actual outcome (live): CASE-05
 
-Verbatim output (comment body or noop reason) of the run described above:
+Verbatim output of the analyst run above:
 
 ~~~text
-F7: the only failure is 'This workflow run required approval but was not approved before it expired.' in job 'Prepare replay'. No real work ran, so there is nothing to triage and no comment is warranted. triage-skill: ci-failure-triage v1
+F7: the only failure is "This workflow run required approval but was not approved before it expired" in job Prepare replay, so no real work ran and there is nothing to triage on PR #10. (The validator script could not be run because Bash was denied; the message was checked by hand.) triage-skill: ci-failure-triage v1
 ~~~

@@ -29,4 +29,4 @@ Same SearchTest error as CASE-11, Ruby 3.4 only [E:CASE-12 log]; the PR changes 
 * Replayed logs are re-emitted by a new runner, so timestamps and the runner preamble differ from the original.
 * Sandbox state at T is rebuilt by seeds SEED-M3 (master failure) then SEED-P (master pass). Only attempt 4 of the run is replayed.
 
-Expected outcome: [expected.md](expected.md). Agent output: [actual.md](actual.md).
+Expected outcome: [expected.md](expected.md). Agent output: live [actual.md](actual.md); dry run [actual-dryrun.md](actual-dryrun.md).

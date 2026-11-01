@@ -1,16 +1,18 @@
 ---
 case: CASE-04
-mode: live-gate
+mode: live
+analyst_run: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41293080584
+replay_run: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201822648
+jobs: pre_activation=skipped,agent=skipped,safe_outputs=skipped,detection=skipped,conclusion=skipped,activation=skipped
 output: not-run
 label: none
 comments_posted: 0
-replay: https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201822648
 ---
 
-# Actual outcome: CASE-04
+# Actual outcome (live): CASE-04
 
-Verbatim output (comment body or noop reason) of the run described above:
+Verbatim output of the analyst run above:
 
 ~~~text
-Analyst run https://github.com/kierenswag59/openstreetmap-ci-agent/actions/runs/41201846650: all jobs skipped (pre_activation if: false; triggering run event workflow_dispatch, not pull_request). No comment, no noop.
+
 ~~~
